@@ -1,0 +1,29 @@
+.header {
+  margin-top: 20px;
+  height: 150px;
+  display: block;
+  background-color: rgb(228, 203, 203);
+
+  p {
+    color: rgb(170, 122, 218);
+    text-align: center;
+    padding-top: 15px;
+    font-size: 33px;
+  }
+
+  nav {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      font-size: 21px;
+      text-decoration: none;
+      padding-right: 10px;
+
+      &:hover {
+        color: rgb(146, 54, 238);
+      }
+    }
+  }
+}

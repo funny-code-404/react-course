@@ -1,0 +1,31 @@
+.footer {
+  height: 100px;
+  margin-top: 80px;
+  background-color: rgb(252, 233, 233);
+  display: flex;
+  justify-content: space-around;
+
+  .footInf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      padding-bottom: 2px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  img {
+    position: relative;
+    left: 60px;
+    width: 100px;
+  }
+}
