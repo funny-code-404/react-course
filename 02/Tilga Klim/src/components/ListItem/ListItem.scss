@@ -1,0 +1,17 @@
+.list-item__ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  li {
+    width: 32%;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
