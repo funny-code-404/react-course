@@ -1,0 +1,12 @@
+.slide-bar__ul {
+  list-style: none;
+
+  li {
+    padding-bottom: 5px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+}
