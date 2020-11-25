@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main_info,
+.more_info,
+.unnecessary_info {
+  display: flex;
+  justify-content: space-around;
+}
+.main_info-inputs,
+.main_info-select {
+  width: 300px;
+}
+.main_info-inputs input {
+  width: 100%;
+}
+
+.main_info-select select {
+  width: 100%;
+  height: 20px;
+  top: 0;
+}
+.more_info-inputs {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.more_info-inputs label {
+  position: relative;
+}
+.more_info-inputs [type="checkbox"] {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+}
+.more_info-textarea {
+  resize: none;
+  width: 300px;
+  height: 120px;
+}
+.color_input,
+.range_input {
+  display: block;
+  margin: 0 auto;
+}
+.error {
+  color: red;
+}
