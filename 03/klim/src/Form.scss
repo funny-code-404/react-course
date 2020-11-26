@@ -1,0 +1,68 @@
+.app__form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  .form-first {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+
+    .form-info {
+      flex-direction: column;
+      display: flex;
+
+      & input {
+        width: 350px;
+        height: 20px;
+        margin-bottom: 7px;
+      }
+    }
+
+    .form_select {
+      & select {
+        width: 350px;
+        height: 30px;
+      }
+    }
+  }
+
+  .form-second {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 15px;
+
+    .form-add-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & input {
+        margin-right: 15px;
+      }
+    }
+
+    & textarea {
+      resize: none;
+      width: 350px;
+      height: 150px;
+    }
+  }
+
+  .form-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    margin-right: 20px;
+
+    & button {
+      border-radius: 10px;
+      width: 100px;
+      height: 30px;
+      margin-left: 20px;
+    }
+  }
+}
