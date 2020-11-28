@@ -10,6 +10,8 @@ class App extends React.Component {
         password: '',
         email: '',
         city: '',
+      },
+      additionalValues: {
         trial: '',
         subscribe: '',
         terms: '',
@@ -23,7 +25,7 @@ class App extends React.Component {
     }
   }
 
-  handleChange = (e) => {
+  handleChangeValues = (e) => {
     const { name } = e.target
     this.setState(prevState => ({
       ...prevState,
@@ -37,26 +39,37 @@ class App extends React.Component {
           ...prevState,
           errors: {
             ...prevState.errors,
-            [name]: `Warning ${name} is too long`
+            [name]: `*Warning ${name} is too long*`
           }
         }));
-        console.log(e.target.previousSibling)
-        e.target.previousSibling.textContent = `***(Warning: ${name} is too long)***`
-        e.target.previousSibling.classList.add('error')
       }
       else {
-        e.target.previousSibling.textContent = name.slice(0, 1).toUpperCase().concat(name.slice(1))
-        e.target.previousSibling.classList.remove('error')
+        this.setState(prevState => ({
+          ...prevState,
+          errors: {
+            ...prevState.errors,
+            [name]: ''
+          }
+        }));
       }
     })
   }
-
+  handleChangeAddValues = (e) => {
+    const { name } = e.target
+    this.setState(prevState => ({
+      ...prevState,
+      additionalValues: {
+        ...prevState.additionalValues,
+        [name]: e.target.value
+      }
+    }))
+  }
   handleCheckBoxChange = (e) => {
     const { name } = e.target
     this.setState(prevState => ({
       ...prevState,
-      values: {
-        ...prevState.values,
+      additionalValues: {
+        ...prevState.additionalValues,
         [name]: !prevState[name]
       }
     }))
@@ -65,15 +78,15 @@ class App extends React.Component {
     const { name } = e.target
     this.setState(prevState => ({
       ...prevState,
-      values: {
-        ...prevState.values,
+      additionalValues: {
+        ...prevState.additionalValues,
         [name]: e.target.value
       }
     }))
   }
 
   handleClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(JSON.stringify(this.state));
   }
   render() {
@@ -86,31 +99,34 @@ class App extends React.Component {
               <legend>Main info</legend>
               <div className='main_info-inputs'>
                 <label> <span>Name</span>
+                  {this.state.errors.name ? <span className="error">{this.state.errors.name}</span> : ''}
                   <input
                     name='name'
                     placeholder='enter you name'
-                    onChange={this.handleChange} />
+                    onChange={this.handleChangeValues} />
                 </label>
                 <label>
                   <span> Password</span>
+                  {this.state.errors.password ? <span className="error">{this.state.errors.password}</span> : ''}
                   <input
                     name='password'
                     placeholder='enter you pass'
-                    onChange={this.handleChange} />
+                    onChange={this.handleChangeValues} />
                 </label>
                 <label>
                   <span>Email</span>
+                  {this.state.errors.email ? <span className="error">{this.state.errors.email}</span> : ''}
                   <input
                     name='email'
                     placeholder='enter you email'
-                    onChange={this.handleChange} />
+                    onChange={this.handleChangeValues} />
                 </label>
               </div>
               <div className='main_info-select'>
                 <label> <span>City</span>
                   <select
                     name='city'
-                    onChange={this.handleChange}
+                    onChange={this.handleChangeValues}
                     defaultValue='select you city'>
                     <option disabled>select you city</option>
                     <option value='Минск'>Минск</option>
@@ -149,7 +165,7 @@ class App extends React.Component {
                   <textarea name='comment'
                     className='more_info-textarea'
                     placeholder='Any comment...'
-                    onChange={this.handleChange}></textarea>
+                    onChange={this.handleChangeAddValues}></textarea>
                 </label>
               </div>
             </fieldset>
@@ -183,7 +199,7 @@ class App extends React.Component {
               </div>
               <div className='main_info-select'>
                 <label>
-                  Quantity: {this.state.values.quantity}
+                  Quantity: {this.state.additionalValues.quantity}
                   <input className='range_input'
                     name='quantity'
                     type='range'
@@ -195,7 +211,7 @@ class App extends React.Component {
                 </label>
               </div>
             </fieldset>
-            <button onClick={this.handleClick}>Send</button>
+            <button onClick={console.log(JSON.stringify(this.state))}>Send</button>
             <button type=''>Reset</button>
           </fieldset>
         </form>
