@@ -86,7 +86,7 @@ class App extends React.Component {
   }
 
   handleClick = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     console.log(JSON.stringify(this.state));
   }
   render() {
@@ -211,7 +211,7 @@ class App extends React.Component {
                 </label>
               </div>
             </fieldset>
-            <button onClick={console.log(JSON.stringify(this.state))}>Send</button>
+            <button onClick={this.handleClick}>Send</button>
             <button type=''>Reset</button>
           </fieldset>
         </form>
