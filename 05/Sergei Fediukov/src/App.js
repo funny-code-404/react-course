@@ -1,6 +1,10 @@
-import NavigationBar from './components/NavigationBar'
-import Main from './components/Main'
-import './App.css';
+import { Navigation, Routes } from './components'
+import './App.css'
+import { CivilizationsProvider } from './context/CivilizationsContext/CivilizationsProvider'
+import { UnitsProvider } from './context/UnitsContext/UnitsProvider'
+import { StructuresProvider } from './context/StructuresContext/StructuresProvider'
+import { TechnologiesProvider } from './context/TechnologiesContext/TechnologiesProvider'
+
 const nav = [
   {
     'name': 'Home',
@@ -31,9 +35,18 @@ const nav = [
 
 function App() {
   return (
+
     <div className='App'>
-      <NavigationBar menu={nav} />
-      <Main />
+      <TechnologiesProvider>
+        <StructuresProvider>
+          <UnitsProvider>
+            <CivilizationsProvider>
+              <Navigation menu={nav} />
+              <Routes />
+            </CivilizationsProvider>
+          </UnitsProvider>
+        </StructuresProvider>
+      </TechnologiesProvider>
     </div>
   )
 }

@@ -1,18 +1,30 @@
 import React from 'react'
-import NavigationBar from '../../components/NavigationBar'
+import { Navigation, IsLoading } from '../../components'
+import { Consumer } from '../../context/TechnologiesContext/TechnologiesProvider'
+import { StyledDiv, StyledButton } from '../../Styles/styles'
+
 const Technologies = (props) => {
     const handleRedirect = () => {
         props.history.push('/')
     }
     return (
         <div>
-            <button onClick={handleRedirect}>go home</button>
+            <StyledButton onClick={handleRedirect}>go home</StyledButton>
             <h1>
                 Technologies:
-        </h1>
-            <div className='second_nav'>
-                <NavigationBar menu={props.menu} nav={props.path} />
-            </div>
+            </h1>
+            <StyledDiv>
+                <Consumer>
+                    {
+                        ({ data }) =>
+                            <>
+                                {data[0].start ? <IsLoading /> :
+                                    <Navigation menu={data} nav={props.location.pathname} />
+                                }
+                            </>
+                    }
+                </Consumer>
+            </StyledDiv>
         </div>
     )
 }

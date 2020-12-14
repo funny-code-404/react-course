@@ -1,11 +1,10 @@
 
-const Home = (props) => {
-    console.log(props)
+const Home = () => {
     return (
         <div>
             <h1>
                 Civilizations home page
-        </h1>
+           </h1>
         </div>
     )
 }

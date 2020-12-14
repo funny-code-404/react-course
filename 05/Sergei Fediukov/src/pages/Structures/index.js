@@ -1,20 +1,28 @@
 import React from 'react'
-import NavigationBar from '../../components/NavigationBar'
-const Structures = (props) => {
+import { Navigation, IsLoading } from '../../components'
+import StructuresContext from '../../context/StructuresContext/index'
+import { useContext } from 'react'
+import { StyledDiv, StyledButton } from '../../Styles/styles'
+
+const Units = (props) => {
     const handleRedirect = () => {
         props.history.push('/')
     }
+    const { data } = useContext(StructuresContext)
     return (
         <div>
-            <button onClick={handleRedirect}>go home</button>
+            <StyledButton onClick={handleRedirect}>go home</StyledButton>
             <h1>
-                Structures:
-        </h1>
-
-            <div className='second_nav'>
-                <NavigationBar menu={props.menu} nav={props.path} />
-            </div>
+                Units:
+            </h1>
+            <StyledDiv >
+                <>
+                    {data[0].start ? <IsLoading /> :
+                        <Navigation menu={data} nav={props.location.pathname} />
+                    }
+                </>
+            </StyledDiv>
         </div>
     )
 }
-export default Structures
+export default Units

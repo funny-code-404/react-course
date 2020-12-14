@@ -1,18 +1,28 @@
 import React from 'react'
-import NavigationBar from '../../components/NavigationBar'
+import { Navigation, IsLoading } from '../../components'
+import CivilizationsContext from '../../context/CivilizationsContext/index'
+import { useContext } from 'react'
+import { StyledDiv, StyledButton } from '../../Styles/styles'
+
 const Civilizations = (props) => {
     const handleRedirect = () => {
         props.history.push('/')
     }
+    const { data } = useContext(CivilizationsContext)
     return (
         <div>
-            <button onClick={handleRedirect}>go home</button>
+            <StyledButton onClick={handleRedirect}>go home</StyledButton>
             <h1>
                 Civilizations:
-        </h1>
-            <div className='second_nav'>
-                <NavigationBar menu={props.menu} nav={props.path} />
-            </div>
+            </h1>
+            <StyledDiv>
+                <>
+                    {
+                        data[0].start ? <IsLoading /> :
+                            <Navigation menu={data} nav={props.location.pathname} />
+                    }
+                </>
+            </StyledDiv>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import IsLoading from '../components/IsLoading'
 
-const withInfo = (Component, url) => class extends React.Component {
+const withFirstNav = (Component, url) => class extends React.Component {
 
     state = {
         data: {},
@@ -44,4 +44,4 @@ const withInfo = (Component, url) => class extends React.Component {
 
     }
 }
-export default withInfo
+export default withFirstNav

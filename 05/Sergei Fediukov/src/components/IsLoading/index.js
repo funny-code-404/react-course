@@ -1,10 +1,11 @@
-import loading from '../Loading.gif'
+import loading from './Loading.gif'
+import { StyledImg } from './styles'
 const IsLoading = () => {
     return (
         <div>
-            <div className='loading_img'>
+            <StyledImg>
                 <img src={loading} alt="loading..." />
-            </div>
+            </StyledImg>
         </div>
     )
 }
