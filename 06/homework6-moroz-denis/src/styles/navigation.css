@@ -1,0 +1,20 @@
+.navigation {
+    width: 30%;
+    margin: auto;
+}
+
+.navigation ul {
+    margin-bottom: 50px;
+}
+
+.navigation li {
+    display: inline;
+    padding: 15px;
+    font-size: 19px;
+    border-bottom: 1px solid black;
+    text-decoration: underline;
+}
+
+.navigation a:hover {
+    color: darkgoldenrod;
+}

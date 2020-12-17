@@ -1,0 +1,19 @@
+.item-info {
+    position: 'relative'  
+}
+
+.item-info img {
+    width: 150px;
+    height: 100px;
+    display: inline-block;
+}
+
+.item-info .flex-wrapper {
+display: flex;
+text-align: center;
+font-weight: 500;
+}
+
+.buttons {
+    margin: auto;
+}
