@@ -1,6 +1,6 @@
 import React from 'react'
+import { helper } from '../components/Helpers/hocHelper'
 import IsLoading from '../components/IsLoading'
-import { parsingData } from '../components'
 
 const withUnique = (Component) => class extends React.Component {
     state = {
@@ -8,22 +8,24 @@ const withUnique = (Component) => class extends React.Component {
         isFetching: true,
         error: null
     }
-    componentDidMount() {
-        fetch(`${this.props.src}`)
-            .then((res) => res.json())
-            .then(parsingData)
-            .then((data) => this.setState({
-                data: data,
+    async dataFromHelper() {
+        try {
+            const data = await helper(`${this.props.src}`)
+            this.setState({
+                data,
                 isFetching: false
-            }))
-            .catch(e => {
-                console.log(e)
-                this.setState(prevState => ({
-                    ...prevState,
-                    error: e
-                }))
             })
-
+        }
+        catch (e) {
+            console.log(e)
+            this.setState(prevState => ({
+                ...prevState,
+                error: e
+            }))
+        }
+    }
+    componentDidMount() {
+        this.dataFromHelper()
     }
     render() {
         const { data, isFetching, error } = this.state

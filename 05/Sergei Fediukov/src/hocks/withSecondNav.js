@@ -1,28 +1,31 @@
 import React from 'react'
-import { parsingData, IsLoading } from '../components'
+import { helper } from '../components/Helpers/hocHelper'
+import { IsLoading } from '../components'
 const withSecondNav = (Component, url) => class extends React.Component {
     state = {
         data: {},
         isFetching: true,
         error: null
     }
-
+    async dataFromHelper() {
+        try {
+            const data = await helper(`${url}/${this.props.match.params.id}`)
+            this.setState({
+                data,
+                isFetching: false
+            })
+        }
+        catch (e) {
+            console.log(e)
+            this.setState(prevState => ({
+                ...prevState,
+                error: e
+            }))
+        }
+    }
     componentDidMount() {
         (+this.props.match.params.id) ?
-            fetch(`${url}/${this.props.match.params.id}`)
-                .then((res) => res.json())
-                .then(parsingData)
-                .then((data) => this.setState({
-                    data: data,
-                    isFetching: false
-                }))
-                .catch(e => {
-                    console.log(e)
-                    this.setState(prevState => ({
-                        ...prevState,
-                        error: e
-                    }))
-                })
+            this.dataFromHelper()
             : this.props.history.goBack()
     }
     render() {
