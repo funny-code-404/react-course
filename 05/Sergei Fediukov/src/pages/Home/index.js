@@ -1,9 +1,8 @@
-
 const Home = () => {
     return (
         <div>
             <h1>
-                Civilizations home page
+                home page
            </h1>
         </div>
     )

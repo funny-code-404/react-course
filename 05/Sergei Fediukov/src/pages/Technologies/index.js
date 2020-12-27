@@ -1,7 +1,7 @@
 import React from 'react'
-import { Navigation, IsLoading } from '../../components'
-import { Consumer } from '../../context/TechnologiesContext/TechnologiesProvider'
-import { StyledDiv, StyledButton } from '../../Styles/styles'
+import { connect } from 'react-redux'
+import ResultNavigation from '../../components/ResultNavigation'
+import { titles } from '../../config'
 
 const Technologies = (props) => {
     const handleRedirect = () => {
@@ -9,23 +9,13 @@ const Technologies = (props) => {
     }
     return (
         <div>
-            <StyledButton onClick={handleRedirect}>go home</StyledButton>
-            <h1>
-                Technologies:
-            </h1>
-            <StyledDiv>
-                <Consumer>
-                    {
-                        ({ data }) =>
-                            <>
-                                {data[0].start ? <IsLoading /> :
-                                    <Navigation menu={data} nav={props.location.pathname} />
-                                }
-                            </>
-                    }
-                </Consumer>
-            </StyledDiv>
+            <button onClick={handleRedirect}>go home</button>
+            <div className='second_nav'>
+                <ResultNavigation data={props.technologies.data} path={props.location.pathname} title={titles.technologies} />
+            </div>
         </div>
     )
 }
-export default Technologies
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(Technologies)

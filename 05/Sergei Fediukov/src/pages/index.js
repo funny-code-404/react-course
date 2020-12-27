@@ -5,5 +5,7 @@ export { default as Structures } from './Structures'
 export { default as Technologies } from './Technologies'
 export { default as NotFound } from './NotFound'
 
-
-export { default as ItemsInfo } from './ItemsInfo'
+export { default as Item } from './Item'
+export { default as UniqueUnit } from './UniqueUnit'
+export { default as UniqueTech } from './UniqueTech'
+export { default as UniqueCreatedIn } from './UniqueCreatedIn'

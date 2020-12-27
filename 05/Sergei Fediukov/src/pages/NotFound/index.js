@@ -1,11 +1,9 @@
-
-const NotFound = (props) => {
-    console.log(props)
+const NotFound = () => {
     return (
         <div>
             <h1>
-                Page doesn't exist
-        </h1>
+                page doesn't exist
+           </h1>
         </div>
     )
 }

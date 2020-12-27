@@ -1,54 +1,25 @@
-import { Navigation, Routes } from './components'
-import './App.css'
-import { CivilizationsProvider } from './context/CivilizationsContext/CivilizationsProvider'
-import { UnitsProvider } from './context/UnitsContext/UnitsProvider'
-import { StructuresProvider } from './context/StructuresContext/StructuresProvider'
-import { TechnologiesProvider } from './context/TechnologiesContext/TechnologiesProvider'
-
-const nav = [
-  {
-    'name': 'Home',
-    'path': '/',
-    'id': '1'
-  },
-  {
-    'name': 'Civilizations',
-    'path': '/civilizations',
-    'id': '2'
-  },
-  {
-    'name': 'Units',
-    'path': '/units',
-    'id': '3'
-  },
-  {
-    'name': 'Structures',
-    'path': '/structures',
-    'id': '4'
-  },
-  {
-    'name': 'Technologies',
-    'path': '/technologies',
-    'id': '5'
-  },
-]
+import './App.css';
+import MainNavigation from './components/MainNavigation';
+import BigLoader from './components/Loader/BigLoader';
+import { paths, titles } from './config';
+import Routes from './components/Routes/'
+import { NavLink } from 'react-router-dom';
 
 function App() {
   return (
+    <div className="App">
+      <BigLoader />
+      <div className='menu_link' >
+        <NavLink activeClassName="nav_active" exact to={paths.home}>{titles.home}</NavLink>
+      </div>
+      <MainNavigation path={paths.civilizations} title={titles.civilizations} />
+      <MainNavigation path={paths.units} title={titles.units} />
+      <MainNavigation path={paths.structures} title={titles.structures} />
+      <MainNavigation path={paths.technologies} title={titles.technologies} />
+      <hr />
+      <Routes />
 
-    <div className='App'>
-      <TechnologiesProvider>
-        <StructuresProvider>
-          <UnitsProvider>
-            <CivilizationsProvider>
-              <Navigation menu={nav} />
-              <Routes />
-            </CivilizationsProvider>
-          </UnitsProvider>
-        </StructuresProvider>
-      </TechnologiesProvider>
     </div>
-  )
+  );
 }
 export default App;
-

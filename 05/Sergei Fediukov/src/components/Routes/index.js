@@ -1,45 +1,43 @@
-import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Home, Civilizations, Units, Structures, Technologies, ItemsInfo, NotFound } from '../../pages'
-import withFirstNav from '../../hocks/withFirstNav'
-import withSecondNav from '../../hocks/withSecondNav'
-
-
-
-const baseURL = 'https://cors-anywhere.herokuapp.com/'
+import { Home, Civilizations, Units, Structures, Technologies, Item, NotFound } from '../../pages'
 
 const Routes = () => (
 
     <Switch>
         <Route
             exact path='/'
-            component={Home} />
+            component={Home}
+        />
         <Route
             exact path='/civilizations'
-            component={Civilizations} />
+            component={Civilizations}
+        />
         <Route
             exact path='/units'
-            component={Units} />
+            exact component={Units}
+        />
         <Route
             exact path='/structures'
-            component={Structures} />
+            exact component={Structures}
+        />
         <Route
             exact path='/technologies'
-            component={Technologies} />
+            exact component={Technologies}
+        />
         <Route
-            path='/civilizations/:id'
-            component={withSecondNav(ItemsInfo, `${baseURL}https://age-of-empires-2-api.herokuapp.com/api/v1/civilization/`)} />
+            exact path='/civilizations/:id'
+            component={Item} />
         <Route
             exact path='/units/:id'
-            component={withSecondNav(ItemsInfo, `${baseURL}https://age-of-empires-2-api.herokuapp.com/api/v1/unit/`)} />
+            component={Item} />
         <Route
             exact path='/structures/:id'
-            component={withSecondNav(ItemsInfo, `${baseURL}https://age-of-empires-2-api.herokuapp.com/api/v1/structure/`)} />
+            component={Item} />
         <Route
             exact path='/technologies/:id'
-            component={withSecondNav(ItemsInfo, `${baseURL}https://age-of-empires-2-api.herokuapp.com/api/v1/technology/`)} />
+            component={Item} />
         <Route
             component={NotFound} />
-    </Switch>
+    </Switch >
 )
 export default Routes
