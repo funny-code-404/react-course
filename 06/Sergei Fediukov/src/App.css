@@ -1,0 +1,62 @@
+/* input[type="text"] {
+    height: 15px;
+    width: 250px;
+}
+button {
+    margin: 5px;
+}
+.App {
+    display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.tc {
+    height: 35px;
+    padding: 5px 0;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: content;
+}
+.table_left {
+    display: flex;
+    min-width: 690px;
+    padding: 5px;
+}
+.menu {
+    border-left: 1px solid black;
+    padding: 5px;
+}
+.coloumn {
+    width: 115px;
+    align-items: center;
+    text-align: center;
+}
+.column_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+.column_title {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+.finder_input {
+    display: flex;
+    flex-flow: column wrap;
+}
+.warning {
+    color: red;
+}
+.as_des {
+    font-size: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.ascending,
+.descending {
+    display: block;
+} */
