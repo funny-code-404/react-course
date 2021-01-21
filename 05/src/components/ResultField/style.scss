@@ -1,0 +1,19 @@
+.result__div {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 85px 45px;
+  border: 2px solid black;
+  border-radius: 10px;
+  align-items: center;
+
+  & h2 {
+    font-size: 2rem;
+    text-align: right;
+    padding: 23px 10px;
+    border-bottom: 2px solid black;
+  }
+  & p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
