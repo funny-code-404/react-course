@@ -8,11 +8,20 @@ import { Grid, Box, IconButton } from '@material-ui/core';
 
 const Column = (props) => {
     const column_sort = () => {
-        return props.title === titles.year ? [props.sortAscYearColumn, props.sortDescYearColumn]
-            : props.title === titles.price ? [props.sortAscPriceColumn, props.sortDescPriceColumn]
-                : props.title === titles.horsepower ? [props.sortAscPowerColumn, props.sortDescPowerColumn]
-                    : props.title === titles.make ? [props.sortAscMakeColumn, props.sortDescMakeColumn]
-                        : props.title === titles.model ? [props.sortAscModelColumn, props.sortDescModelColumn] : ''
+        switch (props.title) {
+            case titles.year:
+                return [props.sortAscYearColumn, props.sortDescYearColumn]
+            case titles.price:
+                return [props.sortAscPriceColumn, props.sortDescPriceColumn]
+            case titles.horsepower:
+                return [props.sortAscPowerColumn, props.sortDescPowerColumn]
+            case titles.make:
+                return [props.sortAscMakeColumn, props.sortDescMakeColumn]
+            case titles.model:
+                return [props.sortAscModelColumn, props.sortDescModelColumn]
+            default:
+                break;
+        }
     }
     return (
         <Grid

@@ -14,20 +14,10 @@ class DataList extends React.Component {
     }
 
     render() {
-        let data = ''
 
-        // Find check
-
-        Boolean(this.props.find.find_data.length) ? data = this.props.find.find_data : data = this.props.cars.data
-
-        // Ascending or descending check
-
-        data = Sort(this.props, data)
-
-        //Pagination check
-
-        data = data.slice(this.props.pagination.indexOfFirst, this.props.pagination.indexOfLast);
-
+        const data = Boolean(this.props.find.find_data.length) ?
+            Sort(this.props, this.props.find.find_data.slice(this.props.pagination.indexOfFirst, this.props.pagination.indexOfLast)) :
+            Sort(this.props, this.props.cars.data.slice(this.props.pagination.indexOfFirst, this.props.pagination.indexOfLast))
         return <>
             <Box
                 padding='5px'

@@ -13,20 +13,21 @@ class Menu extends React.Component {
 
     render() {
 
-        const handleMakeColumnCheckBox = (e) => {
-            e.target.checked ? this.props.hideMakeColumnn() : this.props.showMakeColumnn()
-        }
-        const handleModelColumnCheckBox = (e) => {
-            e.target.checked ? this.props.hideModelColumnn() : this.props.showModelColumnn()
-        }
-        const handleYearColumnCheckBox = (e) => {
-            e.target.checked ? this.props.hideYearColumnn() : this.props.showYearColumnn()
-        }
-        const handlePowerColumnCheckBox = (e) => {
-            e.target.checked ? this.props.hidePowerColumnn() : this.props.showPowerColumnn()
-        }
-        const handlePriceColumnCheckBox = (e) => {
-            e.target.checked ? this.props.hidePriceColumnn() : this.props.showPriceColumnn()
+        const handleColumnCheckBox = (e) => {
+            switch (e.target.id) {
+                case 'make':
+                    return e.target.checked ? this.props.hideMakeColumnn() : this.props.showMakeColumnn()
+                case 'model':
+                    return e.target.checked ? this.props.hideModelColumnn() : this.props.showModelColumnn()
+                case 'year':
+                    return e.target.checked ? this.props.hideYearColumnn() : this.props.showYearColumnn()
+                case 'power':
+                    e.target.checked ? this.props.hidePowerColumnn() : this.props.showPowerColumnn()
+                case 'price':
+                    return e.target.checked ? this.props.hidePriceColumnn() : this.props.showPriceColumnn()
+                default:
+                    break;
+            }
         }
         const { make, model, power, price, year } = this.props.checkboxes
         return <>
@@ -45,7 +46,8 @@ class Menu extends React.Component {
                             size="small"
                             color="default"
                             inputProps={{ 'aria-label': 'checkbox with default color' }}
-                            onClick={handleMakeColumnCheckBox} />
+                            id='make'
+                            onClick={handleColumnCheckBox} />
                         {make ? 'Hide' : 'Show'}"Make" column
                     </label>
                 </Box>
@@ -55,7 +57,8 @@ class Menu extends React.Component {
                             size="small"
                             color="default"
                             inputProps={{ 'aria-label': 'checkbox with default color' }}
-                            onClick={handleModelColumnCheckBox} />
+                            id='model'
+                            onClick={handleColumnCheckBox} />
                         {model ? 'Hide' : 'Show'}"Model" column
                     </label>
                 </Box>
@@ -65,7 +68,8 @@ class Menu extends React.Component {
                             size="small"
                             color="default"
                             inputProps={{ 'aria-label': 'checkbox with default color' }}
-                            onClick={handleYearColumnCheckBox} />
+                            id='year'
+                            onClick={handleColumnCheckBox} />
                         {year ? 'Hide' : 'Show'}"Year" column
                     </label>
                 </Box>
@@ -75,7 +79,8 @@ class Menu extends React.Component {
                             size="small"
                             color="default"
                             inputProps={{ 'aria-label': 'checkbox with default color' }}
-                            onClick={handlePowerColumnCheckBox} />
+                            id='power'
+                            onClick={handleColumnCheckBox} />
                         {power ? 'Hide' : 'Show'}"Horsepower" column
                     </label>
                 </Box>
@@ -85,7 +90,8 @@ class Menu extends React.Component {
                             size="small"
                             color="default"
                             inputProps={{ 'aria-label': 'checkbox with default color' }}
-                            onClick={handlePriceColumnCheckBox} />
+                            id='price'
+                            onClick={handleColumnCheckBox} />
                         {price ? 'Hide' : 'Show'}"Price" column
                     </label>
                 </Box>
