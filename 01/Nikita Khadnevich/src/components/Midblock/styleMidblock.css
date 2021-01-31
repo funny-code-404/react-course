@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400&family=Open+Sans:wght@300;400&display=swap');
+
+
+.midblock {
+   width: 100%;
+   border-radius: 2px;
+   height: 70vh;
+
+}
+
+.slogan > p{
+   margin: 0;
+   padding: 0;
+   font-size: 5em;
+   font-family: 'Dosis', sans-serif;
+}
+
+.midBlockMenu, .slogan  {
+   margin-top: 5%;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.midBlockMenu > div{
+   align-self: center;
+   padding: 20px;
+
+}
+.midBlockMenu  > div > a{
+   align-self: center;
+   text-decoration: none;
+   color: black;
+   transition: .2s;
+   font-size: 1.5em;
+   display: flex;
+   justify-content: center;
+}
+
+.sea > a, .peak > a, .forest > a{
+   text-align: center;
+   border-radius: 25px;
+   padding: 20px;
+   background: rgb(255,255,255);
+   background: linear-gradient(180deg, rgba(255,255,255,0.01) 4%, rgba(255,255,255,0.4) 2%);
+}
+
+.sea > a:hover {
+   background-color: #4fe5ff;
+}
+.peak > a:hover {
+   background-color: #f0fdff;
+}
+.forest > a:hover {
+   background-color: #1dffa1;
+}
+
+.midBlockMenu  > div > a:hover{
+   padding: 10px;
+   border-radius: 5px;
+   transition: .3s;
+   box-shadow: 0 0 20px 5px rgba(221, 221, 221, 0.7);
+}
+
+.slogan {
+   text-align: center;
+   margin-top: 10%;
+}
+
+.midBlockMenu {
+   display: flex;
+}
+
+[data-sea],  [data-peak], [data-forest]{
+   position: relative;
+   transition: 0.9s;
+}
+
+[data-sea]:before {
+   content: attr(data-sea);
+   display: none;
+   position: absolute;
+   z-index: 3;
+   top: 80%;
+   transition: 0.4s;
+   width: 100%;
+   padding: 20px;
+   margin-top: 25px;
+   background-color: #4fe5ff83;
+   font-size: 25px;
+   width: 750px;
+   border-radius: 15px;
+   transition: 0.9s;
+   font-style: italic;
+}
+   
+[data-sea]:hover:after,
+[data-sea]:hover:before,
+[data-peak]:hover:after,
+[data-peak]:hover:before,
+[data-forest]:hover:after,
+[data-forest]:hover:before
+ {
+   display: block;
+   transition: 0.9s;
+}
+
+[data-peak]:before {
+   content: attr(data-peak);
+   display: none;
+   position: absolute;
+   z-index: 3;
+   top: 80%;
+   left: -100%;
+   transition: 0.4s;
+   width: 100%;
+   padding: 20px;
+   margin-top: 25px;
+   background-color:  #f0fdffa1;
+   font-size: 25px;
+   width: 750px;
+   border-radius: 15px;
+   transition: 0.9s;
+   font-style: italic;
+}
+
+[data-forest]:before {
+   content: attr(data-forest);
+   display: none;
+   position: absolute;
+   z-index: 3;
+   top: 80%;
+   left: -260%;
+   transition: 0.4s;
+   width: -200%;
+   padding: 20px;
+   margin-top: 25px;
+   background-color: #1dffa183;
+   font-size: 25px;
+   width: 750px;
+   border-radius: 15px;
+   transition: 0.9s;
+   font-style: italic;
+}
