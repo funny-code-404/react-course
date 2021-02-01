@@ -4,7 +4,7 @@ import { paths } from '../../config';
 import { getDetails } from '../../redux/actions';
 import RenderItem from '../../components/RenderItem'
 
-class Item extends React.Component {
+export class Item extends React.Component {
 
     componentDidMount() {
         let path = ''
@@ -27,9 +27,10 @@ class Item extends React.Component {
             : this.props.history.goBack()
     }
     render() {
-        // console.log(this.props)
         return (
-            <RenderItem data={this.props.item.data} history={this.props.history} />
+            <RenderItem
+                data={this.props.item.data}
+                history={this.props.history} />
         )
     }
 }

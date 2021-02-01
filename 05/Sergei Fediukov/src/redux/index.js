@@ -4,20 +4,20 @@ import initialState from './initialState'
 import { rootReducer } from './rootReducer'
 import { getDataMiddleware } from './middlewares.js'
 
-const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+// const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
 
-const enhancers = [
-    devToolsExtension(),
-];
+// const enhancers = [
+//     devToolsExtension(),
+// ];
 
-const middlewares = [
+export const middlewares = [
     getDataMiddleware,
     thunkMiddleware,
 ]
 
 const composedEnhacers = compose(
     applyMiddleware(...middlewares),
-    ...enhancers,
+    // ...enhancers,
 )
 
 export default createStore(

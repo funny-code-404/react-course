@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getUniqueTechDetails } from '../../redux/actions';
 import RenderItem from '../../components/RenderItem'
 
-class UniqueTech extends React.Component {
+export class UniqueTech extends React.Component {
 
     componentDidMount() {
         const path = this.props.url.replace('https://age-of-empires-2-api.herokuapp.com/api/v1/', '/')
@@ -12,7 +12,9 @@ class UniqueTech extends React.Component {
     render() {
         return (
             <div>
-                <RenderItem data={this.props.uniqueTech.data} unique='true' />
+                <RenderItem
+                    data={this.props.uniqueTech.data}
+                    unique='true' />
             </div >
         )
     }

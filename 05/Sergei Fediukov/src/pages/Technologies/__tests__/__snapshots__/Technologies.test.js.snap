@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "Technologies" to Match Snapshot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    go home
+  </button>
+  <div
+    className="second_nav"
+  >
+    <ResultNavigation
+      data="test data"
+      path="test pathname"
+      title="Technologies"
+    />
+  </div>
+</div>
+`;

@@ -7,8 +7,8 @@ const RenderItemNavButtons = ({ props }) => {
     }
     return (
         <div>
-            <button onClick={handleGoBack}>go back</button>
-            <button onClick={handleRedirect}>go home</button>
+            <button className='go_back' onClick={handleGoBack}>go back</button>
+            <button className='redirect' onClick={handleRedirect}>go home</button>
         </div>
     )
 

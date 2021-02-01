@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<Fragment>
+  <p
+    key="test"
+  >
+    Test
+    : 
+    <span>
+      test
+    </span>
+  </p>
+</Fragment>
+`;

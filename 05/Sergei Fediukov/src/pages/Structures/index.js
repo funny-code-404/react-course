@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ResultNavigation from '../../components/ResultNavigation'
 import { titles } from '../../config'
 
-const Structures = (props) => {
+export const Structures = (props) => {
     const handleRedirect = () => {
         props.history.push('/')
     }
@@ -11,7 +11,10 @@ const Structures = (props) => {
         <div>
             <button onClick={handleRedirect}>go home</button>
             <div className='second_nav'>
-                <ResultNavigation data={props.structures.data} path={props.location.pathname} title={titles.structures} />
+                <ResultNavigation
+                    data={props.structures.data}
+                    path={props.location.pathname}
+                    title={titles.structures} />
             </div>
         </div>
     )

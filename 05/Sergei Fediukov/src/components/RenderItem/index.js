@@ -25,6 +25,7 @@ class RenderItem extends React.Component {
         const { name, army_type, expansion, team_bonus, civilization_bonus, unique_unit, unique_tech, description, age, created_in, cost, build_time, reload_time, attack_delay, movement_rate, line_of_sight, hit_points, range, attack, armor, accuracy, special, attack_bonus, search_radius } = data
         const features = [{ army_type }, { team_bonus }, { description }, { expansion }, { age }, { build_time }, { reload_time }, { attack_delay }, { movement_rate }, { line_of_sight }, { hit_points }, { range }, { attack }, { armor }, { search_radius }, { accuracy }]
         const features_mass = [{ attack_bonus, special, civilization_bonus }]
+        console.log(features_mass)
         return (<>
             {
                 !this.state.flag ?

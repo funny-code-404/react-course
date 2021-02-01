@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getUniqueDetails } from '../../redux/actions';
 import RenderItem from '../../components/RenderItem'
 
-class UniqueCreatedIn extends React.Component {
+export class UniqueCreatedIn extends React.Component {
 
     componentDidMount() {
         const path = this.props.url.replace('https://age-of-empires-2-api.herokuapp.com/api/v1/', '/')
@@ -12,7 +12,9 @@ class UniqueCreatedIn extends React.Component {
     render() {
         return (
             <div>
-                <RenderItem data={this.props.uniqueCreatedIn.data} unique='true' />
+                <RenderItem
+                    data={this.props.uniqueCreatedIn.data}
+                    unique='true' />
             </div >
         )
     }

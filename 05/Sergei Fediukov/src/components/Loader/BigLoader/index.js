@@ -4,18 +4,15 @@ import loading from './loading.gif'
 
 import './styles.css';
 
-class BigLoader extends React.Component {
+export class BigLoader extends React.Component {
 
     get isLoading() {
-        const { civilizations, units, structures, technologies, item, uniqueUnit, uniqueTech, } = this.props;
+        const { civilizations, units, structures, technologies } = this.props;
 
         return civilizations.isFetching ||
             units.isFetching ||
             structures.isFetching ||
             technologies.isFetching
-        // item.isFetching
-        // uniqueUnit.isFetching ||
-        // uniqueTech.isFetching
     }
 
     render() {
@@ -33,10 +30,7 @@ const mapStateToProps = ({ civilizations, units, structures, technologies, item,
     civilizations,
     units,
     structures,
-    technologies,
-    item,
-    uniqueUnit,
-    uniqueTech
+    technologies
 });
 
 export default connect(mapStateToProps)(BigLoader);

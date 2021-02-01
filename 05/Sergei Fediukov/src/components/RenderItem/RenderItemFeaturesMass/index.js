@@ -5,12 +5,12 @@ const RenderItemFeaturesMass = (props) => {
             for (const key in x) {
                 return (
                     x[key] &&
-                    <>
-                        <p key={key}>{key.charAt(0).toUpperCase() + key.substr(1).replace(/\_/g, ' ')} </p>
+                    <div key={key}>
+                        <p >{key.charAt(0).toUpperCase() + key.substr(1).replace(/\_/g, ' ')} </p>
                         <ul>
                             {x[key].map((x) => <li key={x}>{x}</li>)}
                         </ul>
-                    </>
+                    </div>
                 )
             }
         })

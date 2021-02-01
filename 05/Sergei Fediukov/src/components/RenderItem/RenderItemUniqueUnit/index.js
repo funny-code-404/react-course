@@ -14,7 +14,6 @@ class RenderItemUniqueUnit extends React.Component {
             this.setState(prevState => ({
                 ...prevState,
                 unique_unit: {
-                    ...prevState.unique_unit,
                     [i]: !prevState.unique_unit[i]
                 }
             }))

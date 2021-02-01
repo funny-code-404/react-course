@@ -26,18 +26,23 @@ const Routes = () => (
         />
         <Route
             exact path='/civilizations/:id'
-            component={Item} />
+            component={Item}
+        />
         <Route
             exact path='/units/:id'
-            component={Item} />
+            component={Item}
+        />
         <Route
             exact path='/structures/:id'
-            component={Item} />
+            component={Item}
+        />
         <Route
             exact path='/technologies/:id'
-            component={Item} />
+            component={Item}
+        />
         <Route
-            component={NotFound} />
+            component={NotFound}
+        />
     </Switch >
 )
 export default Routes

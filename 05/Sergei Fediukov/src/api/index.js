@@ -5,7 +5,6 @@ export const defaultConfig = {
         Accept: 'application/json',
     }
 }
-
 export const API = {
     request(url, config = {}) {
         return fetch(url, {

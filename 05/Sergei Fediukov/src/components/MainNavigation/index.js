@@ -4,7 +4,7 @@ import { getData } from '../../redux/actions';
 import { NavLink } from 'react-router-dom'
 
 
-class MainNavigation extends React.Component {
+export class MainNavigation extends React.Component {
 
     handleClick = () => {
         const { path } = this.props;
@@ -14,7 +14,11 @@ class MainNavigation extends React.Component {
         const { title, path } = this.props;
         return (
             <div className='menu_link' >
-                <NavLink activeClassName="nav_active" onClick={this.handleClick} exact to={path}>{title}</NavLink>
+                <NavLink
+                    activeClassName="nav_active"
+                    onClick={this.handleClick}
+                    exact to={path}>{title}
+                </NavLink>
             </div>
         );
     }
