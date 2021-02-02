@@ -1,0 +1,29 @@
+.banner {
+  width: 100%;
+  height: 1200px;
+  background: url('images/road_trees.jpg');
+  background-size: cover;
+  margin-top: -15px;
+  margin-left: -5px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 2.5%, rgba(27, 30, 34, 0.4) 42.42%, #1B1E22 80.67%);
+}
+
+.container {
+  width: 1128px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.places {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

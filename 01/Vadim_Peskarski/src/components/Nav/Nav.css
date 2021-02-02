@@ -1,0 +1,26 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  height: 20px;
+  padding-top: 63px;
+}
+
+li:hover {
+  border: 1px solid #FFB800;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.logo {
+  margin-left: -30px;
+  margin-right: -45px;
+  padding-bottom: 10px;
+}

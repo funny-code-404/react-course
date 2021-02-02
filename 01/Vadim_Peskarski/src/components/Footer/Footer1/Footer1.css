@@ -1,0 +1,23 @@
+.contact1 {
+  display: flex;
+  justify-content: space-around;
+  width: 924px;
+  height: 20px;
+  margin-top: 65px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 13px;
+  color: #FFB800;
+}
+
+.right3 {
+  color: #FFFFFF;
+  margin-left: -10px;
+  margin-right: 50px;
+}
+
+.right4 {
+  color: #FFFFFF;
+  margin-left: -10px;
+  margin-right: 100px;
+}

@@ -1,0 +1,31 @@
+.contact2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1030px;
+  height: 20px;
+  margin-top: 15px;
+  padding-left: 125px;
+  padding-right: 0;
+  font-size: 13px;
+  color: #FFB800;
+  line-height: 30px;
+}
+
+.contact2 img {
+  width: 18px;
+  height: 18px;
+  margin-top: 0px;
+  margin-right: 24px;
+}
+
+.right5 {
+  color: #FFFFFF;
+  margin-left: 40px;
+  margin-right: 210px;
+}
+
+.right6 {
+  color: #FFFFFF;
+  margin-right: 150px;
+}

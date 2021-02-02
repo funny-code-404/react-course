@@ -1,0 +1,122 @@
+.card {
+  width: 360px;
+  height: 432px;
+  margin: 8px;
+  background: #23282F;
+  border-radius: 4px;
+  color: #FFFFFF;
+}
+
+/* .places a {
+  text-decoration: none;
+}
+
+.places a:hover {
+  background: #FFFFFF;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+} */
+
+.card:hover {
+  background: #FFFFFF;
+  color: #333333;
+}
+
+.picture1 {
+  height: 216px;
+  background: url('images/1.png');
+  border: 1px solid #23282F;
+}
+
+.picture2 {
+  height: 216px;
+  background: url('images/2.png');
+  border: 1px solid #23282F;
+}
+
+.picture3 {
+  height: 216px;
+  background: url('images/3.png');
+  border: 1px solid #23282F;
+}
+
+
+.picture4 {
+  height: 216px;
+  background: url('images/4.png');
+  border: 1px solid #23282F;
+}
+
+.picture5 {
+  height: 216px;
+  background: url('images/5.png');
+  border: 1px solid #23282F;
+}
+
+.picture6 {
+  height: 216px;
+  background: url('images/6.png');
+  border: 1px solid #23282F;
+}
+
+.card .text {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.card p {
+  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+
+.card .bottom {
+  vertical-align: text-bottom;
+  opacity: 0.5;
+}
+
+.info {
+  width: 248px;
+  height: 32px;
+  border-radius: 0px 6px 6px 0px;
+  margin-top: 160px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.price {
+  width: 78px;
+  height: 32px;
+  background: #FFB800;
+  margin: 0px;
+  text-align: center;
+  color: #1B1E22;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.date {
+  width: 170px;
+  height: 32px;
+  background: #1B1E22;
+  opacity: 0.75;
+  margin: 0px;
+  line-height: 32px;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-align: center;
+}
