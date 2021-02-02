@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "CreatedIn" to Match Snapshot 1`] = `
+<div>
+  <RenderItem
+    data=""
+    unique="true"
+  />
+</div>
+`;

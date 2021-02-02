@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div>
+  <p>
+    Created in:
+  </p>
+  <ul>
+    <li>
+      <button
+        onClick={[Function]}
+      />
+    </li>
+  </ul>
+</div>
+`;

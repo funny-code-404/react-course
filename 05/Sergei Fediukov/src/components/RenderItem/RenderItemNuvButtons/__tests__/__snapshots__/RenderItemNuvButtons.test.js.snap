@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div>
+  <button
+    className="go_back"
+    onClick={[Function]}
+  >
+    go back
+  </button>
+  <button
+    className="redirect"
+    onClick={[Function]}
+  >
+    go home
+  </button>
+</div>
+`;

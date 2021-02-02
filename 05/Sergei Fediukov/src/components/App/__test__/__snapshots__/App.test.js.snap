@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "App" to Match Snapshot 1`] = `
+<div
+  className="App"
+>
+  <Connect(BigLoader) />
+  <div
+    className="menu_link"
+  >
+    <NavLink
+      activeClassName="nav_active"
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavLink>
+  </div>
+  <Connect(MainNavigation)
+    path="/civilizations"
+    title="Civilizations"
+  />
+  <Connect(MainNavigation)
+    path="/units"
+    title="Units"
+  />
+  <Connect(MainNavigation)
+    path="/structures"
+    title="Structures"
+  />
+  <Connect(MainNavigation)
+    path="/technologies"
+    title="Technologies"
+  />
+  <hr />
+  <Routes />
+</div>
+`;

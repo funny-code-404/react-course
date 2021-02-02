@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "Item" to Match Snapshot 1`] = `
+<RenderItem
+  data=""
+  history={
+    Object {
+      "goBack": [MockFunction] {
+        "calls": Array [
+          Array [
+            "/1",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+/>
+`;
