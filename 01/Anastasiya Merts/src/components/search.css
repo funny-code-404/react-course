@@ -1,0 +1,22 @@
+h1+p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    padding-top: 42px;
+    max-width: 474px;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 121%;
+    padding-top: 72px;
+    max-width: 582px;
+    /* color: #FFFFFF; */
+}
+
+.search{
+    display: flex;
+    color: #FFFFFF;
+    justify-content: space-between;
+}
