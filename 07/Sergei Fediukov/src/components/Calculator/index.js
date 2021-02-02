@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { resultSelector, memorySelector, operatorSelector, CALC_OFF, OPERATOR_PLUS, OPERATOR_MINUS, OPERATOR_DEVISION, OPERATOR_MULTIPLICATION, OPERATOR_RESULT, MEMORY_SAVE, MEMORY_READ, MEMORY_CLEAR } from '../../ducks/culc'
+import { resultSelector, memorySelector, operatorSelector, CALC_OFF, OPERATOR_PLUS, OPERATOR_MINUS, OPERATOR_DEVISION, OPERATOR_MULTIPLICATION, OPERATOR_RESULT, MEMORY_SAVE, MEMORY_READ, MEMORY_CLEAR } from '../../ducks/calculator'
 
 const Culc = () => {
     const dispatch = useDispatch();
@@ -64,27 +64,27 @@ const Culc = () => {
                 <button onClick={handleOffClick}>Off</button>
             </div>
             <div>
-                <button onClick={value && handleMSClick}>MS</button>
-                <button onClick={value && handleMRClick}>MR</button>
-                <button onClick={value && handleMCClick}>MC</button>
+                <button {...(value && { onClick: handleMSClick })}>MS</button>
+                <button {...(value && { onClick: handleMRClick })}>MR</button>
+                <button {...(value && { onClick: handleMCClick })}>MC</button>
             </div>
-            <button onClick={value && handleNumClick}>1</button>
-            <button onClick={value && handleNumClick}>2</button>
-            <button onClick={value && handleNumClick}>3</button>
-            <button onClick={value && handleNumClick}>4</button>
-            <button onClick={value && handleNumClick}>5</button>
-            <button onClick={value && handleNumClick}>6</button>
-            <button onClick={value && handleNumClick}>7</button>
-            <button onClick={value && handleNumClick}>8</button>
-            <button onClick={value && handleNumClick}>9</button>
-            <button onClick={value && handleNumClick}>0</button>
-            <button onClick={value && handlePlusClick}>+</button>
-            <button onClick={value && handleMinusClick}>-</button>
-            <button onClick={value && handleDevisionClick}>/</button>
-            <button onClick={value && handleMultiplicationClick}>*</button>
-            <button onClick={value && handleResultClick}>=</button>
+            <button {...(value && { onClick: handleNumClick })}>1</button>
+            <button {...(value && { onClick: handleNumClick })}>2</button>
+            <button {...(value && { onClick: handleNumClick })}>3</button>
+            <button {...(value && { onClick: handleNumClick })}>4</button>
+            <button {...(value && { onClick: handleNumClick })}>5</button>
+            <button {...(value && { onClick: handleNumClick })}>6</button>
+            <button {...(value && { onClick: handleNumClick })}>7</button>
+            <button {...(value && { onClick: handleNumClick })}>8</button>
+            <button {...(value && { onClick: handleNumClick })}>9</button>
+            <button {...(value && { onClick: handleNumClick })}>0</button>
+            <button {...(value && { onClick: handlePlusClick })}>+</button>
+            <button {...(value && { onClick: handleMinusClick })}>-</button>
+            <button {...(value && { onClick: handleDevisionClick })}>/</button>
+            <button {...(value && { onClick: handleMultiplicationClick })}>*</button>
+            <button {...(value && { onClick: handleResultClick })}>=</button>
         </div>
-    </div>
+    </div >
 }
 
 export default Culc

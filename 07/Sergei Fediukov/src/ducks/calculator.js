@@ -1,28 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const resultSelector = state => state.culc.result
-export const memorySelector = state => state.culc.memory
-export const operatorSelector = state => state.culc.operator
+export const resultSelector = state => state.calculator.result
+export const memorySelector = state => state.calculator.memory
+export const operatorSelector = state => state.calculator.operator
 
-export const initialCulcState = {
+export const initialCalculatorState = {
     result: '',
     operator: '',
     memory: ''
 }
 
-const culcReducer = createSlice({
-    name: 'culc-reducer',
-    initialState: initialCulcState,
+const calculatorReducer = createSlice({
+    name: 'calculator-reducer',
+    initialState: initialCalculatorState,
     reducers: {
         CALC_OFF: (state) => {
             state.result = '';
             state.operator = '';
         },
         OPERATOR_PLUS: (state, action) => {
-            (state.operator === "-") ? state.result = Number(state.result) - Number(action.payload) :
-                (state.operator === "*") ? state.result = Number(state.result) * Number(action.payload) :
-                    (state.operator === "/") ? state.result = Number(state.result) / Number(action.payload) :
-                        (state.result = Number(state.result) + Number(action.payload));
+            if (state.operator === "-") {
+                state.result = Number(state.result) - Number(action.payload)
+            }
+            else if (state.operator === "*") {
+                state.result = Number(state.result) * Number(action.payload)
+            }
+            else if (state.operator === "/") {
+                state.result = Number(state.result) / Number(action.payload)
+            }
+            else {
+                (state.result = Number(state.result) + Number(action.payload))
+            }
             state.operator = '+';
         },
         OPERATOR_MINUS: (state, action) => {
@@ -125,5 +133,5 @@ const culcReducer = createSlice({
         }
     }
 })
-export default culcReducer.reducer
-export const { CALC_OFF, OPERATOR_PLUS, OPERATOR_MINUS, OPERATOR_DEVISION, OPERATOR_MULTIPLICATION, OPERATOR_RESULT, MEMORY_SAVE, MEMORY_READ, MEMORY_CLEAR } = culcReducer.actions
+export default calculatorReducer.reducer
+export const { CALC_OFF, OPERATOR_PLUS, OPERATOR_MINUS, OPERATOR_DEVISION, OPERATOR_MULTIPLICATION, OPERATOR_RESULT, MEMORY_SAVE, MEMORY_READ, MEMORY_CLEAR } = calculatorReducer.actions

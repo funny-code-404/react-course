@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import culcReducer from '../ducks/culc';
+import calculatorReducer from '../ducks/calculator';
 
 export const rootReducer = combineReducers({
-    culc: culcReducer,
+    calculator: calculatorReducer,
 });
 export default rootReducer;
