@@ -1,0 +1,65 @@
+
+import { useState, useEffect, useRef } from 'react'
+import { database } from '../../firebase'
+
+const FormEdit = (props) => {
+    const [value, setValue] = useState({
+        name: '',
+        description: '',
+        rating: '',
+        img: '',
+        id: props.id,
+    })
+    useEffect(() => {
+        setRef.current = database().ref('/SET_DATA')
+    }, [])
+    let setRef = useRef()
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setRef.current.child(value.id + 1).update(value);
+        setValue(prevState => {
+            return {
+                name: '',
+                description: '',
+                rating: '',
+                img: '',
+                id: prevState.id,
+
+            }
+        })
+    }
+    const handleDelete = () => {
+        setRef.current.child(value.id + 1).remove();
+        props.redirect('/')
+    }
+    const handleChange = (e) => {
+        setValue({ ...value, [e.target.name]: e.target.value })
+    }
+    return (
+        <>
+            <form className='hotel_add-form'>
+                <div>
+                    <p>Редактировать данные:</p>
+                    <label> <span>Название</span>
+                        <input onChange={handleChange} name='name' placeholder='name' value={value.name} />
+                    </label>
+                    <label> <span>Описание</span>
+                        <input onChange={handleChange} name='description' placeholder='description' value={value.description} />
+                    </label>
+                    <label><span>Рейтинг</span>
+                        <input onChange={handleChange} name='rating' placeholder=' 1 - 5' value={value.rating} />
+                    </label>
+                    <label><span>Фото</span>
+                        <input onChange={handleChange} name='img' placeholder='http://img.jpg' value={value.img} />
+                    </label>
+                    <button {...((value.description && value.name && value.rating && value.img) && { onClick: handleSubmit })} className='hotel_add-form-btn' >Редактировать</button>
+                    {
+                        <button onClick={handleDelete} className='hotel_add-form-btn'>Удалить</button>
+                    }
+                </div>
+            </form>
+        </>
+    );
+}
+
+export default FormEdit;

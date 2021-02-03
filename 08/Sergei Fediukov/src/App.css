@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+.hotel {
+  display: flex;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+}
+.hotel:hover {
+  background-color: rgb(195, 248, 190);
+}
+.hotel_info {
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+}
+.hotel_link {
+  text-decoration: none;
+  color: black;
+}
+/* .hotel_link  {
+  text-decoration: none;
+} */
+.hotel_info p {
+  padding: 2px 15px;
+  border-bottom: 1px dashed #f2f2f2;
+  text-decoration: none;
+}
+.hotel_img img {
+  width: 200px;
+  height: 200px;
+}
+.hotel_info-title {
+  text-align: center;
+}
+.hotel_add-form label {
+  display: block;
+  margin: 10px;
+}
+.hotel_add-form input {
+  width: 300px;
+  height: 40px;
+}
+.hotel_add-form span {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+}
+.hotel_add-form-btn {
+  width: 430px;
+  margin: 10px;
+  height: 30px;
+}
+.warning {
+  color: red;
+}
