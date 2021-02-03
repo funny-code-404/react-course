@@ -13,6 +13,9 @@
 .hotel:hover {
   background-color: rgb(195, 248, 190);
 }
+.hotel_page > .hotel:hover {
+  background-color: rgb(255, 255, 255);
+}
 .hotel_info {
   padding: 10px;
   width: 100%;
@@ -23,9 +26,6 @@
   text-decoration: none;
   color: black;
 }
-/* .hotel_link  {
-  text-decoration: none;
-} */
 .hotel_info p {
   padding: 2px 15px;
   border-bottom: 1px dashed #f2f2f2;

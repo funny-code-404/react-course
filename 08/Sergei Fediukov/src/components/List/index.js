@@ -1,7 +1,6 @@
 import ItemLink from '../ItemLink'
 
 export const List = (props) => {
-    // console.log(props)
     const data = props.data ? Object.entries(props.data) : []
     return (
         <>

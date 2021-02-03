@@ -13,17 +13,17 @@ const Hotel = (props) => {
         return () => cleanupFunction = true;
     }, [])
     const mas = Object.entries(data)
-    const id = props.match.params.id - 1
+    const id = props.match.params.id
     const handleRedirect = () => {
         props.history.push('/')
     }
     !+props.match.params.id ? props.history.goBack() : ''
     return (
-        <div>
+        <div className='hotel_page'>
             <button className='nav_button' onClick={handleRedirect}>Вернуться на главную страницу</button>
             {
                 mas.map((x, i) => {
-                    return id === i ? <Item data={x} key={id} /> : ''
+                    return x[0] === id ? <Item data={x} key={id} /> : ''
                 })
             }
             <FormEdit id={id} redirect={props.history.push} />

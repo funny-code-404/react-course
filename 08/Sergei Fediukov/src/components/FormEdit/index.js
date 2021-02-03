@@ -16,7 +16,7 @@ const FormEdit = (props) => {
     let setRef = useRef()
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRef.current.child(value.id + 1).update(value);
+        setRef.current.child(value.id).update(value);
         setValue(prevState => {
             return {
                 name: '',
@@ -29,7 +29,7 @@ const FormEdit = (props) => {
         })
     }
     const handleDelete = () => {
-        setRef.current.child(value.id + 1).remove();
+        setRef.current.child(value.id).remove();
         props.redirect('/')
     }
     const handleChange = (e) => {

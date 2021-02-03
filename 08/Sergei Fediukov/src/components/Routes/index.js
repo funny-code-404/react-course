@@ -1,5 +1,4 @@
 import { Switch, Route } from 'react-router-dom'
-// import { Home, Civilizations, Units, Structures, Technologies, Item, NotFound } from '../../pages'
 import { Home, Hotel, NotFound } from '../../pages'
 const Routes = () => (
 
