@@ -1,0 +1,38 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 42px 0;
+
+  &__contact {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+      margin: auto;
+      height: 20px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 150px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 25px 0;
+    &__contact:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
