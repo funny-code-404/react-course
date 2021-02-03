@@ -1,27 +1,35 @@
 import { BASE_URL } from '../../services/api/dogs'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { ACTION_GET_DOG_PHOTO_REQUEST } from '../../ducks/dogs/actions';
+import { dogPhotoSelector } from '../../ducks/dogs/selectors';
 
 export const DogRandomPhoto = (props) => {
 
     const { breed } = props;
 
-    const path = `${BASE_URL}` + '/breed/' + `${breed}` + '/images/random';
+    const path = '/breed/' + `${breed}` + '/images/random';
 
-    const [dogPhoto, setData] = useState('');
+    const dispach = useDispatch();
+    const { data: dogPhoto } = useSelector(dogPhotoSelector);
 
-    useEffect(async () => {
-        const result = await fetch(path);
-        const { message: data } = await result.json();
-        setData(data)
-      }, []); 
+    useEffect(() => {
+        dispach(ACTION_GET_DOG_PHOTO_REQUEST(path))
+    }, []);
 
     return (
-        <div>
-            <img src = {`${dogPhoto}`}/>
-            <p>Here is the photo!</p>
-        </div>
-    )
-}
+        <>
+          {
+            Boolean(dogPhoto) &&
+              <div>
+                  <img src = {`${dogPhoto}`}/>
+                  <p>Here is the photo!</p>
+              </div>
+            }
+        </>  
+    );
+};
 
 
 

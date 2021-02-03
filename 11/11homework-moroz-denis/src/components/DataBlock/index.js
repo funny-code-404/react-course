@@ -13,8 +13,12 @@ export const DataBlock = (props) => {
     const { data } = useSelector(dogsSelector);
 
     useEffect(() => {
-        dispach(ACTION_GET_DOGS_DATA_REQUEST(path));
-        console.log('RENDER')
+
+        if(!data) {
+            dispach(ACTION_GET_DOGS_DATA_REQUEST(path));
+        } else {
+            return data;
+        }  
     }, []);
 
     return(

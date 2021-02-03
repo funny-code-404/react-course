@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const ListItem = ({ listItem }) => {
 
-    const dogBreed = listItem[0];
-    const dogBreedTypes = listItem[1]
+    const [dogBreed, dogBreedTypes] = listItem;
 
     return(
         <li>

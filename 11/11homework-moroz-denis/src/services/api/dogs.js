@@ -28,4 +28,20 @@ export const getDogsData = async (path) => {
     } catch (error) {
         throw error;
     }    
-}
+};
+
+
+export const getDogPhoto = async (path) => {
+    
+    try {
+
+        const result = await fetch(`${BASE_URL}${path}`);
+        const { message } = await result.json();
+        const data = message;
+        return data;       
+    } catch (error) {
+        throw error;
+    }    
+};
+
+
