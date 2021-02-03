@@ -1,0 +1,44 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background: teal;
+  padding: 3px;
+}
+label{
+  display: flex;
+  flex-direction: column;
+  margin: 3px 0;
+}
+input{
+  height: 30px;
+  font-size: 1.1rem;
+}
+.errorInput{
+  color: red;
+  font-size: 1rem;
+}
+button{
+  width: 100%;
+  margin: 3px 0;
+  height: 30px;
+  font-size: 1.1rem;
+  background: rgb(167, 167, 167);
+}
+.card{
+  width: 400px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.card-item span{
+  color: green;
+}
