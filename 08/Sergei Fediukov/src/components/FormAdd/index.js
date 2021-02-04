@@ -64,11 +64,11 @@ const FormAdd = () => {
                         <input onChange={handleChange} name='img' placeholder='http://img.jpg' value={value.img} />
                     </label>
                     {
-                        <button {...((value.description && value.name && value.rating && value.img) && { onClick: handleSubmit })} className='hotel_add-form-btn'>Добавить отель в список</button>
+                        <button {...((value.description && value.name && value.rating && value.img) && { onClick: handleSubmit })} className='form_btn'>Добавить отель в список</button>
                     }
                 </div>
             </form>
-            <button onClick={handleDelete} className='hotel_add-form-btn'>Удалить все отели</button>
+            <button onClick={handleDelete} className='form_btn'>Удалить все отели</button>
 
         </>
     );
