@@ -85,12 +85,12 @@ export class Form extends React.Component {
     const { mark, model, year, price } = this.state.cars;
     return (
       <FormField valid={this.state.validation}>
-        <FormInput onChange={this.handleChange} value={mark} name="mark" placeholder="Марка">
+        <FormInput onChange={this.handleChange} value={mark || this.props.data.mark} name="mark" placeholder="Марка">
         </FormInput>
-        <FormInput onChange={this.handleChange} value={model} name="model" placeholder="Модель">
+        <FormInput onChange={this.handleChange} value={model || this.props.data.model} name="model" placeholder="Модель">
         </FormInput>
-        <FormInput onChange={this.handleChange} value={year} name="year" placeholder="Год выпуска"></FormInput>
-        <FormInput onChange={this.handleChange} value={price} name="price" placeholder="Цена">
+        <FormInput onChange={this.handleChange} value={year || this.props.data.year} name="year" placeholder="Год выпуска"></FormInput>
+        <FormInput onChange={this.handleChange} value={price || this.props.data.price} name="price" placeholder="Цена">
         </FormInput>
         <FormButton onClick={this.handleClick}>Добавить</FormButton>
       </FormField>

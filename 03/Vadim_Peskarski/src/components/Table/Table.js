@@ -14,6 +14,12 @@ const CarsTable = styled.table`
 
 
 export class Table extends React.Component {
+
+  handleClick = (e) => {
+    const { data, onTableClick } = this.props;
+    onTableClick(data[e.currentTarget.dataset.value]);
+  }
+
   render() {
     const { data } = this.props;
 
@@ -27,8 +33,8 @@ export class Table extends React.Component {
         <tbody>
           {data.map((item, index) => {
             return (
-              <tr key={index+1}>
-                <td>{index+1}</td><td>{item.mark}</td><td>{item.model}</td>
+              <tr key={index + 1} data-value={index} onClick={this.handleClick}>
+                <td>{index + 1}</td><td>{item.mark}</td><td>{item.model}</td>
                 <td>{item.year}</td><td>{item.price}</td>
               </tr>
             )

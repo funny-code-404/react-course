@@ -6,22 +6,40 @@ import Table from './components/Table/Table.js';
 class App extends React.Component {
   state = {
     cars: [],
+    tableCar: {
+      mark: '',
+      model: '',
+      year: '',
+      price: ''
+    }
   }
 
   onClick = (formState) => {
     this.setState(prevState => ({
       cars: [...prevState.cars, formState],
-      sendData: true
+      tableCar: {
+        mark: '',
+        model: '',
+        year: '',
+        price: ''
+      }
+    }));
+  }
+
+  onTableClick = (tableState) => {
+    this.setState(prevState => ({
+      ...prevState,
+      tableCar: { ...tableState }
     }));
   }
 
   render() {
-    const { cars, sendData } = this.state;
+    const { cars, tableCar } = this.state;
 
     return (
       <div>
-        <Table data={cars} sendData={sendData} />
-        <Form onClick={this.onClick} />
+        <Table data={cars} onTableClick={this.onTableClick} />
+        <Form onClick={this.onClick} data={tableCar} />
       </div>
     );
   }
