@@ -6,7 +6,6 @@ import Table from './components/Table/Table.js';
 class App extends React.Component {
   state = {
     cars: [],
-    sendData: false
   }
 
   onClick = (formState) => {
