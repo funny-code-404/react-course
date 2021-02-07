@@ -1,0 +1,22 @@
+.wrapper-table{
+  width:60%;
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-item{
+  display: flex;
+  flex-direction: row;
+}
+.item{
+  width:24%;
+  border: 1px solid black;
+  padding:3px 6px;
+  text-align: center;
+}
+.item:nth-child(1){
+  width:4%;
+}
