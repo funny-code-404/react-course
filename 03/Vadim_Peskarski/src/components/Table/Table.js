@@ -1,12 +1,24 @@
 import React from 'react';
-import './Table.css';
+import styled from 'styled-components';
+
+const CarsTable = styled.table`
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 700px;
+  margin: 8px auto 32px 8px;
+  & td, th {
+    border: 1px solid black;
+    text-align: center;
+  }
+`;
+
 
 export class Table extends React.Component {
   render() {
     const { data } = this.props;
 
     return (
-      <table>
+      <CarsTable>
         <thead>
           <tr>
             <th>N</th><th>Марка</th><th>Модель</th><th>Год выпуска</th><th>Цена</th>
@@ -22,7 +34,7 @@ export class Table extends React.Component {
             )
           })}
         </tbody>
-      </table>
+      </CarsTable>
     )
   }
 }

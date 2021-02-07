@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import Form from './components/Form/Form.js';
 import Table from './components/Table/Table.js';
