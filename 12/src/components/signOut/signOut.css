@@ -1,0 +1,25 @@
+.sign-out {
+	border: none;
+	border-radius: 3px;
+	line-height: 1.2;
+	color: white;
+	background: #333333;
+	padding: 5px 8px;
+	text-transform: uppercase;
+	font-size: 12px;
+    cursor: pointer;
+    outline: none; 
+	-webkit-transition: all .6s;
+    -o-transition: all .6s;
+    -moz-transition: all .6s;
+    transition: all .6s;
+}
+
+.sign-out:hover {
+	/* color: white;
+	background: rgba(0, 0, 0, .8);
+	padding: 8px 11px; */
+	-webkit-transform: scale(1.2);
+	-ms-ransform: scale(1.2);
+	transform: scale(1.2);
+}

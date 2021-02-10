@@ -1,0 +1,7 @@
+.civilization-bonus ul{
+    padding: 1% 2%;
+}
+.civilization-bonus ul li{
+    line-height: 2;
+    text-transform: uppercase;
+}

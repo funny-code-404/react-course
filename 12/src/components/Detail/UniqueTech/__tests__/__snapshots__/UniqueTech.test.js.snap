@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DETAIL UNIQUE TECH to Match Snapshot 1`] = `
+<div
+  key="/path/1"
+>
+  <p>
+    Unique tech:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;
+
+exports[`UniqueTech to Match Snapshot 1`] = `
+<div
+  key="/path/1"
+>
+  <p>
+    Unique tech:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;

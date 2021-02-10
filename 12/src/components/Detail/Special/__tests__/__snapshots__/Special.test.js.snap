@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DETAIL SPECIAL to Match Snapshot 1`] = `
+<div>
+  <p>
+    Special:
+  </p>
+  <ul>
+    <li
+      key="text..."
+    >
+      text...
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Special to Match Snapshot 1`] = `
+<div>
+  <p>
+    Special:
+  </p>
+  <ul>
+    <li
+      key="text..."
+    >
+      text...
+    </li>
+  </ul>
+</div>
+`;

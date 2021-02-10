@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttackBonus to Match Snapshot 1`] = `
+<div>
+  <p>
+    Attack bonus:
+  </p>
+  <ul>
+    <li
+      key="Some text..."
+    >
+      Some text...
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DETAIL ATTACK BONUS to Match Snapshot 1`] = `
+<div>
+  <p>
+    Attack bonus:
+  </p>
+  <ul>
+    <li
+      key="Some text..."
+    >
+      Some text...
+    </li>
+  </ul>
+</div>
+`;
