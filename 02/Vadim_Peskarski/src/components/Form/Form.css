@@ -1,0 +1,40 @@
+.form {
+  margin: 24px auto auto 24px;
+  padding: 16px;
+  width: 400px;
+  height: 250px;
+  border: 1px solid black;
+}
+
+.input {
+  width: 368px;
+  height: 30px;
+  font-size: large;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.button {
+  margin-right: 24px;
+  float: right;
+  width: 100px;
+  height: 30px;
+  font-size: large;
+  background-color: rgb(178, 178, 224);
+  border-radius: 4px;
+  color: rgb(44, 42, 42);
+}
+
+.input-wrong {
+  width: 368px;
+  height: 30px;
+  font-size: large;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.message {
+  color: red;
+  font-size: small;
+}
+

@@ -7,7 +7,6 @@ import { AuthContext } from "../../components/context/Auth.context";
 const LogIn = () => {
     const history = useHistory();
     const { currentUser } = useContext(AuthContext);
-    currentUser && console.log(currentUser.email)
     const handleLogin = async (e) => {
         e.preventDefault();
         const { email, password } = e.target.elements;

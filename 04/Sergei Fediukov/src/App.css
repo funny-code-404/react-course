@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+fieldset {
+  border-radius: 10px;
+}
+.car_info,
+.result {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding-bottom: 40px;
+}
+.carMainInfo,
+.carAdditionalInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  height: 95px;
+  height: 120px;
+}
+.carMainInfo input,
+.carAdditionalInfo select {
+  width: 250px;
+}
+
+.carMainInfo label,
+.carMainInfo input,
+.carAdditionalInfo label,
+.carAdditionalInfo select,
+.carAdditionalInfo input {
+  margin: 5px;
+}
+.form_btn {
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+}
+.result_list,
+.result_table {
+  text-align: left;
+  width: 100%;
+  margin: 10px;
+}
+.result_list ul {
+  list-style: none;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 110px);
+}
+.cell {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
+.error {
+  color: red;
+}

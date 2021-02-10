@@ -1,0 +1,33 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    padding: 15px 0 0 0;
+}
+
+form {
+    border: 2px solid #000;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 20%;
+}
+
+input {
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 30%;
+}
+
+p {
+    color: red;
+}
