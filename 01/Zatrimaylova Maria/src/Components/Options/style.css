@@ -1,0 +1,21 @@
+.header__options {
+    display: flex;
+}
+
+.options__info {
+    display: flex;
+}
+
+.info__lang {
+    display: flex;
+}
+
+.lang__title {
+    color: lightgray;
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.lang__title:hover {
+    color: white;
+}
