@@ -1,0 +1,16 @@
+.buttons {
+  width: 195px;
+  margin: 50px;
+}
+.result {
+  width: 175px;
+  text-align: right;
+  padding: 5px;
+  background-color: lightgray;
+  height: 50px;
+  margin: 0 auto;
+}
+button {
+  width: 55px;
+  margin: 5px;
+}
