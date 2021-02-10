@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div>
+  <p>
+    Unique tech:
+  </p>
+  <ul>
+    <li
+      key="test tech"
+    >
+      <div>
+        <button
+          i={0}
+          onClick={[Function]}
+        >
+          test tech
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

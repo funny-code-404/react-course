@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div>
+  <p>
+    Costs:
+  </p>
+  <ul>
+    <li>
+      Wood - 
+      <span>
+        some wood
+      </span>
+    </li>
+    <li>
+      Gold - 
+      <span>
+        some gold
+      </span>
+    </li>
+    <li>
+      Food - 
+      <span>
+        some stone
+      </span>
+    </li>
+    <li>
+      Stone - 
+      <span>
+        some stone
+      </span>
+    </li>
+    <li>
+      Cost - 
+      <span>
+        some info
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,89 @@
+.App {
+    /* text-align: center; */
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav_active {
+    color: red !important;
+    font-weight: bold;
+}
+.menu_link {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.menu_link a {
+    text-decoration: none;
+    color: firebrick;
+}
+.second_nav ul {
+    columns: 100px 6;
+}
+.second_nav ul li {
+    display: block;
+    padding: 5px;
+}
+.result {
+    border: 1px solid firebrick;
+    border-radius: 10px 50px 50px 50px;
+    padding: 10px;
+}
+
+.result li {
+    margin-top: 5px;
+    margin-left: 40px;
+}
+.result span {
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    color: firebrick;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid firebrick;
+}
+button:hover {
+    background-color: #ffe1e1;
+    border: 1px solid white;
+}
+.details ul {
+    margin-left: 35px;
+}
+.small_loader {
+    text-align: center;
+    margin-right: 100px;
+}
+.loading img {
+    height: 705px;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 300px;
+    margin: 10px;
+    border-top: 1px solid firebrick;
+}
+.user_email {
+    margin: 10px;
+    font-weight: bold;
+    color: firebrick;
+}
+.login,
+.signup {
+    text-align: center;
+}
+.login input,
+.signup input {
+    display: block;
+    margin: 10px auto;
+}

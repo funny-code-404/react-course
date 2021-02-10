@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "UniqueUnit" to Match Snapshot 1`] = `
+<div>
+  <withRouter(RenderItem)
+    data="test data"
+    unique="true"
+  />
+</div>
+`;
