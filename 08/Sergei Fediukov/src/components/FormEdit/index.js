@@ -1,6 +1,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { database } from '../../firebase'
+import { useHistory, Link } from 'react-router-dom';
+
 
 const FormEdit = (props) => {
     const [value, setValue] = useState({
@@ -28,13 +30,15 @@ const FormEdit = (props) => {
             }
         })
     }
+    const history = useHistory();
+
     const handleDelete = () => {
         setRef.current.child(value.id).remove();
-        props.redirect('/')
-    }
+        history.push('/')
+    };
     const handleChange = (e) => {
-        setValue({ ...value, [e.target.name]: e.target.value })
-    }
+        setValue({ ...value, [e.target.name]: e.target.value });
+    };
     return (
         <>
             <form className='hotel_add-form'>
@@ -52,9 +56,9 @@ const FormEdit = (props) => {
                     <label><span>Фото</span>
                         <input onChange={handleChange} name='img' placeholder='http://img.jpg' value={value.img} />
                     </label>
-                    <button {...((value.description && value.name && value.rating && value.img) && { onClick: handleSubmit })} className='hotel_add-form-btn' >Редактировать</button>
+                    <button {...((value.description && value.name && value.rating && value.img) && { onClick: handleSubmit })} className='form_btn' >Редактировать</button>
                     {
-                        <button onClick={handleDelete} className='hotel_add-form-btn'>Удалить</button>
+                        <button onClick={handleDelete} className='form_btn'>Удалить</button>
                     }
                 </div>
             </form>
