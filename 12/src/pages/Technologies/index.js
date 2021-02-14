@@ -5,13 +5,9 @@ import { titles } from "../../config";
 import { List } from "../../components";
 
 export const Technologies = (props) => {
-	return (
-		<>
-		{
-			Boolean(props.technologies) &&
-			<List data={props.technologies} title={titles.technologies} path={props.location.pathname} />
-		}
-		</>
+	return (		
+		Boolean(props.technologies) &&
+		<List data={props.technologies} title={titles.technologies} path={props.location.pathname} />
 	)
 }
 

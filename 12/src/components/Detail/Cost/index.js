@@ -5,11 +5,9 @@ const Cost = ({ data }) => (
 	<div>
 		<p>Costs:</p>
 		<ul>
-			{data.Wood && <li>Wood - <span>{data.Wood}</span></li>}
-			{data.Gold && <li>Gold - <span>{data.Gold}</span></li>}
-			{data.Food && <li>Food - <span>{data.Food}</span></li>}
-			{data.info && <li>Cost - <span>{data.info}</span></li>}
-			{data.Stone && <li>Stone - <span>{data.Stone}</span></li>}
+			{Object.keys(data).map((e, i)=> (
+				<li key={i} >{e}<span>{data[e]}</span></li>
+			))}
 		</ul>
 	</div>
 )

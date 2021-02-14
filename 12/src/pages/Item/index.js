@@ -9,7 +9,7 @@ export class Item extends React.Component {
 	componentDidMount() {
         if (this.props.location) {
 			this.props.getDetailItem(
-				`/${this.props.location.pathname.split('/')[1].slice(0, -1)}/${this.props.match.params.id}`
+				this.props.location.pathname
 			)
         }
 	}

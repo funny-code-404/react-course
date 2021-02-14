@@ -9,7 +9,7 @@ class DetailUniqueTech extends React.Component {
 		unique_tech: false,
     }
     
-    handleUniqueTech = (e) => {
+    handleUniqueTech = () => {
 		this.setState(prevState => ({
 			...prevState,
 			unique_tech: !prevState.unique_tech,
@@ -19,19 +19,24 @@ class DetailUniqueTech extends React.Component {
     render() {
         const { data } = this.props
         return(
-            Boolean(data.length) && data.map((x) =>(
-                <div key={x} >
-                    <p>Unique tech:</p>
-                    <button onClick={this.handleUniqueTech} >
+            Boolean(data.length) && data.map((x) =>{
+                const result = x.split('/')[x.split('/').length - 1].replace('_', ' ');
+                return (
+                    <div key={x} >
+                        <p>Unique tech:</p>
+                        <button onClick={this.handleUniqueTech} >
+                            {
+                                !this.state.unique_tech 
+                                ? result
+                                : 'close'
+                            }
+                        </button>
                         {
-                            !this.state.unique_tech ? x.split('/')[x.split('/').length - 1].replace('_', ' ') : 'close'
+                            this.state.unique_tech && <UniqueTech url={x} />
                         }
-                    </button>
-                    {
-                        this.state.unique_tech && <UniqueTech url={x} />
-                    }
-                </div>
-            ))
+                    </div>
+                )
+            })
         )
     }
 }

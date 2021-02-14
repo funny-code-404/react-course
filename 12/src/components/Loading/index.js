@@ -27,14 +27,6 @@ export class Loading extends React.Component {
     }
 }
 
-// const mapStateToProps = ({ 
-//     civilizations, units, structures,technologies,
-//     item,createdIn,uniqueTech,uniqueUnit,
-// }) => ({
-// 	civilizations, units, structures,technologies,
-//     item,createdIn,uniqueTech,uniqueUnit,
-// })
-
 const mapStateToProps = state => state
 
 export default connect(mapStateToProps)(Loading);

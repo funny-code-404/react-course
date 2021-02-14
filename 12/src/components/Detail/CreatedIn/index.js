@@ -18,14 +18,14 @@ class DetailCreatedIn extends React.Component {
     
     render() {
         const { data } = this.props
+        const result = data.split('/')[data.split('/').length - 1].replace('_', ' ');
         return(
-            data &&
             <div>
                 <p>Created in:</p>
                         <button onClick={this.hendleCreatedIn}>
                             {
-                                !this.state.created_in ?
-                                data.split('/')[data.split('/').length - 1].replace('_', ' ')
+                                !this.state.created_in 
+                                ? result
                                 : 'close'
                             }
                         </button>
