@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PAGES  LOGIN to Match Snapshot 1`] = `
+<div
+  className="login-box"
+>
+  <h1>
+    Log In
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+       
+      <span>
+        Email
+      </span>
+      <input
+        name="email"
+        type="email"
+      />
+    </label>
+    <label>
+       
+      <span>
+        Password
+      </span>
+      <input
+        name="password"
+        type="password"
+      />
+    </label>
+    <button
+      className="form_btn"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+  <div
+    className="create-account-box"
+  >
+    <p>
+      Create your account :
+    </p>
+    <Link
+      to="/signup"
+    >
+      Sign up
+    </Link>
+  </div>
+</div>
+`;

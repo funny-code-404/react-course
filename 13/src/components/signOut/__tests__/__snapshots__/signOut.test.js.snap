@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PAGES  SIGN OUT to Match Snapshot 1`] = `
+<button
+  className="sign-out"
+  onClick={[Function]}
+>
+  Sign out
+</button>
+`;
