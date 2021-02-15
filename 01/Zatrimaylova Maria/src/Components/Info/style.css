@@ -1,0 +1,28 @@
+.info__content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info__title {
+    color: white;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.item__text {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.info__img {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.img__content {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}

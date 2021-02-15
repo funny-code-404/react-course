@@ -1,0 +1,23 @@
+.header__body {
+    display: flex;
+    justify-content: space-between;
+    margin: 150px 0;
+}
+
+.header__text {
+    width: 470px;
+}
+
+h1, p {
+    color: white;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.text__content {
+    font-size: 20px;
+    line-height: 38px;
+}
