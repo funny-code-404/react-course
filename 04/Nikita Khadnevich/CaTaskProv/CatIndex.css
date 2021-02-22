@@ -1,0 +1,55 @@
+body {
+  background: #EEEEEE;
+  background: -webkit-linear-gradient(top right, #EEEEEE, #BAFFEE);
+  background: -moz-linear-gradient(top right, #EEEEEE, #BAFFEE);
+  background: linear-gradient(to bottom left, #EEEEEE, #BAFFEE);
+width: 90%;
+margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.myCats {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.myCats > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 200px;
+  width: 90%;
+  max-width: 480px;
+  min-height: 20px;
+  background-color: rgb(255, 219, 237);
+  border: rgb(112, 112, 112) 2px solid;
+  padding: 3%;
+  margin: 2px;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+.myCats > div:hover {
+  margin: 10px;
+}
+
+span {
+  font-size: 2em;
+  align-items: center;
+  align-self: center;
+  transition: .3s;
+}
+
+span:hover {
+  font-size: 3em;
+  transition: .3s;
+  color: #494949;
+}
+
+h3 {
+  text-align: center;
+}
