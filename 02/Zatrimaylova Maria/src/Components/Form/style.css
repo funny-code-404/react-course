@@ -1,0 +1,79 @@
+.form__background {
+    background-color: white;
+    width: 400px;
+    max-height: 750px;
+    border-radius: 10px;
+    margin: 150px auto;
+    padding: 20px;
+}
+
+.form__title {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    margin-bottom: 10px;
+}
+
+input, button {
+    outline: none;
+}
+
+input {
+    background: none;
+}
+
+.button {
+    width: 200px;
+    height: 40px;
+    border: darksalmon;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.default {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    padding-left: 10px;
+    border: solid 1px black;
+}
+
+.invalid {
+    border: solid 1px red;
+    box-shadow: 0 0 10px rgba(221, 13, 13, 0.699);
+    width: 80%;
+    height: 35px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    padding-left: 10px;
+}
+
+.valid {
+    border: solid 1px green;
+    box-shadow: 0 0 10px rgba(18, 112, 5, 0.699);
+    width: 80%;
+    height: 35px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    padding-left: 10px;
+}
+
+.invalid__message {
+    text-align: center;
+    margin-bottom: 15px;
+    color: rgba(221, 13, 13, 0.699);
+}
