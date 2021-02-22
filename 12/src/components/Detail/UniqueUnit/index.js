@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { UniqueUnit } from "../../../pages";
+import { en } from "../config";
 
 class DetailUniqueUnit extends React.Component {
     state = {
@@ -16,22 +17,27 @@ class DetailUniqueUnit extends React.Component {
     };
 
     render() {
-        return this.props.data.map((x) => {
-            const result = x.split("/")[x.split("/").length - 1].replace("_", " ")
-            return (
-                <div key={x}>
-                    <p>Unique unit:</p>
-                    <button onClick={this.handleUniqueUnit}>
-                        {
-                            !this.state.unique_unit
-                            ? result
-                            : "close"
-                        }
-                    </button>
-                    {this.state.unique_unit && <UniqueUnit url={x} />}
-                </div>
-            )
-        });
+        const { data } = this.props;
+        let result = null;
+        
+        return (
+            Boolean(data.length) && data.map((x) => {
+                result = x.split("/")[x.split("/").length - 1].replace("_", " ")
+                return (
+                    <div key={x}>
+                        <p>{ en.uniq_unit }</p>
+                        <button onClick={this.handleUniqueUnit}>
+                            {
+                                !this.state.unique_unit
+                                ? result
+                                : "close"
+                            }
+                        </button>
+                        {this.state.unique_unit && <UniqueUnit url={x} />}
+                    </div>
+                )
+            })
+        )
     }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { UniqueTech } from "../../../pages";
+import { en } from "../config";
 
 
 class DetailUniqueTech extends React.Component {
@@ -18,12 +19,14 @@ class DetailUniqueTech extends React.Component {
     
     render() {
         const { data } = this.props
+        let result = null;
+
         return(
             Boolean(data.length) && data.map((x) =>{
-                const result = x.split('/')[x.split('/').length - 1].replace('_', ' ');
+                result = x.split('/')[x.split('/').length - 1].replace('_', ' ');
                 return (
                     <div key={x} >
-                        <p>Unique tech:</p>
+                        <p>{ en.uniq_tech }</p>
                         <button onClick={this.handleUniqueTech} >
                             {
                                 !this.state.unique_tech 

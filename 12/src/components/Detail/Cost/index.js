@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 
+import { en } from "../config";
+
 const Cost = ({ data }) => (
 	data && 
 	<div>
-		<p>Costs:</p>
+		<p>{ en.costs }</p>
 		<ul>
 			{Object.keys(data).map((e, i)=> (
 				<li key={i} >{e}<span>{data[e]}</span></li>

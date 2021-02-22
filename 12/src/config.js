@@ -4,6 +4,8 @@ export const paths = {
 	units: '/units',
 	structures: '/structures',
 	technologies: '/technologies',
+	login: '/login',
+	signup: '/signup',
 }
 
 export const titles = {

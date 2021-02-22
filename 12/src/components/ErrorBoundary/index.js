@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types'
 
+import { warning } from "./config";
+
 class ErrorBoundary extends React.Component {
     state = {
         error: false,
@@ -14,7 +16,7 @@ class ErrorBoundary extends React.Component {
 
     render(){
         const { error } =this.state;
-        return error ? <h1>Warning, you got the error</h1> : this.props.children
+        return error ? <h1>{ warning }</h1> : this.props.children
     }
 }
 

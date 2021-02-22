@@ -5,12 +5,10 @@ import { List } from "../../components";
 import { titles } from "../../config";
 
 export const Units = (props) => {
-    return(<>
-        {
-            Boolean(props.units) && 
-            <List data={props.units} title={titles.units} path={props.location.pathname} />
-        }
-    </>)
+    return(
+		Boolean(props.units) && 
+		<List data={props.units} title={titles.units} path={props.location.pathname} /> 
+    )
 }
 
 const mapStateToProps = (state) => ({

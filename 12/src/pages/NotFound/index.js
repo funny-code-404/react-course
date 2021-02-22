@@ -1,9 +1,9 @@
+import { en } from "../config";
+
 const NotFound = () => {
     return (
         <div>
-            <h1>
-                page doesn't exist
-           </h1>
+            <h1>{ en.not_found }</h1>
         </div>
     )
 }

@@ -6,12 +6,8 @@ import { List } from "../../components";
 
 export const Civilizations = (props) => {
 	return (
-		<>
-		{
-			Boolean(props.civilizations) &&
-			<List data={ props.civilizations } title={titles.civilizations} path={props.location.pathname}/>
-		}
-		</>
+		Boolean(props.civilizations) &&
+		<List data={ props.civilizations } title={titles.civilizations} path={props.location.pathname}/>
 	)
 }
 

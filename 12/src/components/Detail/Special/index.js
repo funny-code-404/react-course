@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 
+import { en } from "../config";
+
 const Special = ({ data }) => (
 	data && 
 	<div>
-		<p>Special:</p>
+		<p>{ en.special }</p>
 		<ul>
 			{data.map((x) => <li key={x}>{x}</li>)}
 		</ul>

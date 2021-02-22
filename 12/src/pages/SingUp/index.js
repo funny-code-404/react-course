@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import { Link, Redirect } from 'react-router-dom';
 
 import { getSignUpRequested } from "../../ducks/auth/actions";
+import { en } from "../config";
+import { paths } from "../../config";
 
 export const SingUp = ({ auth, getSignUp }) => {
 	
@@ -11,23 +13,21 @@ export const SingUp = ({ auth, getSignUp }) => {
 		getSignUp(email.value, password.value)
 	}
 
-	return auth.user ? <Redirect to={{ pathname: '/' }} /> : (
+	return auth.user ? <Redirect to={{ pathname: paths.home }} /> : (
 		<div className='form-box'>
-            <h1>
-                Sign up
-           </h1>
+            <h1>{ en.sign_up }</h1>
             <form onSubmit={handleSubmit}>
-                <label> <span>Email</span>
+                <label> <span>{ en.email }</span>
                     <input name='email' type='email'/>
                 </label>
-                <label> <span>Password</span>
+                <label> <span>{ en.password }</span>
                     <input name='password' type='password'/>
                 </label>
-                <button type='submit' className='form_btn'>Sign up</button>
+                <button type='submit' className='form_btn'>{ en.sign_up }</button>
             </form>
             <div className='create-account-box'>
-                <p>Already registered ?</p>
-                <Link to='/login'>Login</Link>
+                <p>{ en.registered }</p>
+                <Link to={paths.login}>{ en.login }</Link>
             </div>
         </div>
 	)

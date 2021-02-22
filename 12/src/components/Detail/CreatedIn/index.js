@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { CreatedIn } from "../../../pages";
+import { en } from "../config";
 
 
 class DetailCreatedIn extends React.Component {
@@ -19,9 +20,10 @@ class DetailCreatedIn extends React.Component {
     render() {
         const { data } = this.props
         const result = data.split('/')[data.split('/').length - 1].replace('_', ' ');
+
         return(
             <div>
-                <p>Created in:</p>
+                <p>{ en.created }</p>
                         <button onClick={this.hendleCreatedIn}>
                             {
                                 !this.state.created_in 

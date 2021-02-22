@@ -62,17 +62,15 @@ class Detail extends React.Component {
             <div className="detail">
                 <h1>{name}</h1>
                 <div className="ditail-block">
-                    {arrs.map((x) => {
-                        for (const key in x) {
-                            return (
-                                x[key] && (
+                    {arrs.map((x) => (
+                        Object.keys(x).map((key) => ( 
+                                x[key] && 
                                     <p key={key}>
                                         {key}: <span>{x[key]}</span>
                                     </p>
-                                )
-                            );
-                        }
-                    })}
+                            )
+                        )
+                    ))}
                     {cost && <Cost data={cost} />}
                     {attack_bonus && <AttackBonus data={attack_bonus} />}
                     {special && <Special data={special} />}

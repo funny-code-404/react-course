@@ -5,7 +5,6 @@ export const baseURL = 'https://cors-anywhere.herokuapp.com/https://age-of-empir
 const config = {
 	headers: {
 		'Content-Type': 'applications/json',
-		// 'Access-Control-Allow-Origin': '*'
 	}
 }
 
