@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div
+  key="test"
+>
+  <p>
+    Test
+     
+  </p>
+  <ul>
+    <li
+      key="test feature 1"
+    >
+      test feature 1
+    </li>
+    <li
+      key="test feature 2"
+    >
+      test feature 2
+    </li>
+  </ul>
+</div>
+`;

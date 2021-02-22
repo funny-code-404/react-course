@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "App" to Match Snapshot 1`] = `
+<div
+  className="App"
+>
+  <Connect(Routes) />
+</div>
+`;

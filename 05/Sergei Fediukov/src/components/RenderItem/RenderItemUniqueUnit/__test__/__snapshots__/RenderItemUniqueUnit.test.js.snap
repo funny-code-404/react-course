@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly to Match Snapshot 1`] = `
+<div
+  className="result_inner"
+>
+  <p>
+    Unique unit:
+  </p>
+  <ul>
+    <li
+      key="test unit 1"
+    >
+      <div>
+        <button
+          i={0}
+          onClick={[Function]}
+        >
+          test unit 1
+        </button>
+      </div>
+    </li>
+    <li
+      key="test unit 2"
+    >
+      <div>
+        <button
+          i={1}
+          onClick={[Function]}
+        >
+          test unit 2
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

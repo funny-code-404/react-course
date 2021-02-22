@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "LoaderPrimary" to Match Snapshot 1`] = `
+<div
+  className="loading"
+>
+  <div>
+    <span>
+      Loading...
+    </span>
+  </div>
+  <img
+    alt="loading..."
+    src="loading.gif"
+  />
+</div>
+`;

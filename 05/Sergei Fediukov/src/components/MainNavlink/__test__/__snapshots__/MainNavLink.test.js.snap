@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "MainNavLink" to Match Snapshot 1`] = `
+<div
+  className="menu_link"
+>
+  <NavLink
+    activeClassName="nav_active"
+    exact={true}
+    onClick={[Function]}
+    to="/civilizations"
+  >
+    test title
+  </NavLink>
+</div>
+`;
