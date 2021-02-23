@@ -1,59 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export const formConfig = {
-  checkIn: "Check In",
-  login: "Login",
-  accountDeleting: "Account deleting",
-};
-
-const checkInText = "Registration";
-const loginText = "Оставлять меня в системе";
-const accountDeletingComment = "Comment...";
-const accountDeletingRadio = ["1", "2", "3", "4", "5"];
-const accountDeletingText = " To evaluate the Team's work";
-const accountDeletingButton = "Send";
-
-export const Form = ({ formType }) => {
+export const Form = ({ render }) => {
   return (
     <Container>
       <Item type="text" placeholder="Name" />
       <Item type="email" placeholder="Email" />
       <Item type="password" placeholder="Password" />
-      {formType === formConfig.checkIn && (
-        <Forms>
-          <h2>{formType}</h2>
-          <Item type="checkbox" value="a2" />
-          <Item type="text" placeholder="Surname" />
-          <Item type="date" placeholder="year of birth" />
-          <Item type="tel" placeholder="telephone" />
-          <Button>{checkInText}</Button>
-        </Forms>
-      )}
-      {formType === formConfig.login && (
-        <Forms>
-          <h2>{formType}</h2>
-          <Item type="checkbox" value="a2" />
-          <p>{loginText}</p>
-          <Button>{formType} in</Button>
-        </Forms>
-      )}
-      {formType === formConfig.accountDeleting && (
-        <Forms>
-          <h2>{formType}</h2>
-          <Comment placeholder={accountDeletingComment} />
-          <p>{accountDeletingText}</p>
-          <Radio>
-            {accountDeletingRadio.map((elem) => (
-              <p>
-                <input type="radio" />
-                {elem}
-              </p>
-            ))}
-          </Radio>
-          <Button>{accountDeletingButton}</Button>
-        </Forms>
-      )}
+      {render()}
     </Container>
   );
 };
