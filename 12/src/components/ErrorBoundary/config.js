@@ -1,0 +1,1 @@
+export const warning = 'Warning, you got the error';

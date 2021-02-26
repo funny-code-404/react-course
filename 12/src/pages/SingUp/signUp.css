@@ -1,0 +1,103 @@
+.sign-up-box{
+	width: 64%;
+	background: #fff;
+	border: 1px solid #555;
+    border-radius: 10px;
+    position: relative;
+	padding: 55px 85px;
+}
+
+.sign-up-box h1 {
+	padding-bottom: 36px;
+}
+
+.sign-up-box form{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.sign-up-box label{
+	width: 100%;
+	padding-bottom: 36px;
+}
+
+.sign-up-box input{
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #e6e6e6;
+    color: #555555;
+	outline: none;
+    line-height: 1.2;
+    font-size: 18px;
+    background: transparent;
+    height: 55px;
+	padding: 0 20px;
+}
+
+.sign-up-box input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.sign-up-box span{
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    text-transform: uppercase;
+	font-weight: 600;
+	display: block;
+	padding-bottom: 11px;
+}
+
+.sign-up-box .form_btn{
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    padding: 18px 20px;
+    min-width: 150px;
+    background-color: #333333;
+	border: 0;
+    border-radius: 27px;
+	outline: none;
+	cursor: pointer;
+    -webkit-transition: all .6s;
+    -o-transition: all .6s;
+    -moz-transition: all .6s;
+    transition: all .6s;
+}
+
+.sign-up-box .form_btn:hover{
+	-webkit-transform: scale(1.1);
+	-ms-ransform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.sign-up-box .create-account-box{
+    display: flex;
+	justify-content: space-between;
+	padding-top: 36px;
+}
+
+.sign-up-box .create-account-box p {
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.4;
+}
+
+.sign-up-box a{
+    background: #555;
+	border: 0;
+	border-radius: 3px;
+	color: white;
+	padding: 5px 8px;
+	-webkit-transition: all .6s;
+    -o-transition: all .6s;
+    -moz-transition: all .6s;
+    transition: all .6s;
+}
+
+.sign-up-box a:hover{
+    -webkit-transform: scale(1.2);
+	-ms-ransform: scale(1.2);
+	transform: scale(1.2);
+}

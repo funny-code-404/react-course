@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttackBonus to Match Snapshot 1`] = `
+<div
+  className="civilization-bonus"
+>
+  <p>
+    Civilization bonus:
+  </p>
+  <ul>
+    <li
+      key="Some text..."
+    >
+      Some text...
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`CivilizationBonus to Match Snapshot 1`] = `
+<div
+  className="civilization-bonus"
+>
+  <p>
+    Civilization bonus:
+  </p>
+  <ul>
+    <li
+      key="Some text..."
+    >
+      Some text...
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DETAIL CIVILIZATIONS BONUS to Match Snapshot 1`] = `
+<div
+  className="civilization-bonus"
+>
+  <p>
+    Civilization bonus:
+  </p>
+  <ul>
+    <li
+      key="Some text..."
+    >
+      Some text...
+    </li>
+  </ul>
+</div>
+`;
