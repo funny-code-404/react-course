@@ -2,8 +2,8 @@ import React from 'react'
 import './navigationList.css'
 
 export const NavigationList = (props) => {
-  const navList = props.items;
-  const listItems = navList.map((item) =>
+  const { items } = props;
+  const listItems = items.map((item) =>
     <li><a href="#">{item}</a></li>
   );
 

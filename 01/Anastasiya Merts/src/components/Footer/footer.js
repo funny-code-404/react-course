@@ -1,4 +1,5 @@
 import './footer.css';
+import { CONTACTS } from './contacts';
 
 export const Footer = () => {
     
@@ -11,8 +12,8 @@ export const Footer = () => {
                     <p>Адрес</p>
                 </div>
                 <div class="flex">
-                    <p>wildvacation@gmail.com</p>
-                    <p>Немига 5а, офис 18,  Минск</p>
+                    <p>{CONTACTS.email}</p>
+                    <p>{CONTACTS.address}</p>
                 </div>
             </div>
             <div class="footer-flex">
@@ -20,8 +21,8 @@ export const Footer = () => {
                     <p>Телефоны</p>
                 </div>
                 <div class="flex">
-                    <p>+375 33 888-44-22</p>
-                    <p>+375 29 963-85-21</p>
+                    <p>{CONTACTS.phoneMts}</p>
+                    <p>{CONTACTS.phoneA1}</p>
                 </div>
             </div>
         </div>

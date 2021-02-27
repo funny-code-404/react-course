@@ -3,8 +3,8 @@ import './trip.css'
 
 export const TripCase = (props) => {
     
-    const allTrips = props.trips;
-    const tripsItem = allTrips.map((item) => 
+    const { trips, title} = props;
+    const tripsItem = trips.map((item) => 
         <div className="direction">
             <span className="ribbon">от <span className="price">{item.price}$</span></span>
             <span className="ribbon-dep">{item.date}</span>
@@ -16,7 +16,7 @@ export const TripCase = (props) => {
 
         return (
             <div className="container actual">
-                <h2>{props.title}</h2>
+                <h2>{title}</h2>
                 <div className="directions">
                     {tripsItem}
                 </div>
