@@ -1,17 +1,18 @@
 import './styleFooter.css';
 import Slogan from './../Midblock/Slogan/slogan'
 import Logo from './../Header/Logo/logo'
+export { phoneData, adressData, SocialData } from '../Data/Data'
 
 const Footer = () => {
    return (
       <div className='footer'>
          <div className='phoneBlock'>
-            <Slogan message='phone:'/>
-            <Slogan message='+8-800-755-35-35'/>
+            <Slogan message={phoneData.name}/>
+            <Slogan message={phoneData.phone}/>
          </div>
          <div className='adressBlock'>
-            <Slogan message='adress:'/>
-            <Slogan message='1-j per. Okrestina, 36A, Minsk'/>
+            <Slogan message={adressData.name}/>
+            <Slogan message={adressData.adredss}/>
          </div>
          <div className='socialBlock'>
             <Logo className='InstBlock'
