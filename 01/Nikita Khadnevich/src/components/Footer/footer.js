@@ -1,7 +1,7 @@
 import './styleFooter.css';
 import Slogan from './../Midblock/Slogan/slogan'
 import Logo from './../Header/Logo/logo'
-import { phoneData, adressData, SocialData } from '../Data/Data',
+import { phoneData, adressData, SocialData } from '../Data/Data'
 
 const Footer = () => {
    return (
