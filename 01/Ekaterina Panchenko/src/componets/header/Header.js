@@ -9,20 +9,20 @@ export const Header = ({ menu, contact }) => (
       <img src={logo} alt="not found" />
     </div>
     <ul className="header__menu">
-      {menu.map((item, index) => {
+      {menu.map(({ name, id }) => {
         return (
-          <li key={index} className="header__menu-item">
-            {item}
+          <li key={id} className="header__menu-item">
+            {name}
           </li>
         );
       })}
     </ul>
     <ul className="header__contact">
-      {contact.map((item, index) => {
+      {contact.map(({ name, id }) => {
         return (
-          <li key={index} className="header__contact-item">
+          <li key={id} className="header__contact-item">
             <a className="header__contact-link" src="#">
-              {item}
+              {name}
             </a>
           </li>
         );

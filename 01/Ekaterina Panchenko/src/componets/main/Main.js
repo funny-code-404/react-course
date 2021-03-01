@@ -12,15 +12,15 @@ export const Main = ({ buttonContent, mainTitle }) => (
       <h2 className="main__title">{mainTitle}</h2>
 
       <div className="main__buttons">
-        {buttonContent.map((item, index) => {
+        {buttonContent.map(({ name, id }) => {
           return (
             <button
-              key={index}
+              key={id}
               className={`main__button main__button${
-                index === 0 ? "--left" : "--right"
+                id === 0 ? "--left" : "--right"
               }`}
             >
-              {item}
+              {name}
             </button>
           );
         })}
