@@ -1,0 +1,117 @@
+.direction{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    flex-basis: 360px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #23282F;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.direction:hover{ 
+    background-color: #FFFFFF;
+    color: #333333;
+    transform: scale(1.066);
+    border-radius: 4px;
+}
+
+.directions div:nth-child(3){
+    padding-right: 0;
+}
+.directions div:nth-child(6){
+    padding-right: 0;
+} 
+
+span{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 32px;
+    color: #1B1E22;
+    vertical-align: middle;
+}
+
+.ribbon {
+    position: absolute;
+    height: 32px;
+    width: 78px;
+    top: 159px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFB800;
+    box-shadow: -1px 2px 3px rgba(0,0,0,.3);
+    color: black;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1B1E22
+}
+
+.ribbon-dep{
+    position: absolute;
+    width: 170px;
+    height: 32px;
+    left: 78px;
+    top: 159px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background: rgba(35,40,47,.9);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.direction h3{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.direction p{
+    padding: 16px 0 17px 20px; 
+}
+
+.detail{
+    text-decoration: none;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 123%;
+    opacity: .5;
+    color: inherit;
+}
+
+.view-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* vertical-align: center; */
+    border: 1px solid #FFB800;
+    border-radius: 4px;
+    color: #FFFFFF;
+    width: 216px;
+    height: 48px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+}
+
+.view-all:hover{
+    background-color: #FFB800;
+    color: #000000;
+}

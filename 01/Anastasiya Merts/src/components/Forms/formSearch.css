@@ -1,0 +1,78 @@
+.search-form{
+    /* width: 500px;
+    height: 360px; */
+    padding: 51px 70px 55px 70px;
+    background: rgba(51, 51, 51, 0.25);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    position: absolute;
+    right: -70px;
+    z-index: 1;
+}
+
+.search-form p{
+    padding-bottom: 23px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+input{
+    height: 36px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    margin-bottom: 21px;
+    padding-left: 13px;
+    background-color: rgba(51, 51, 51, 0.25);
+    color: #FFFFFF;
+}
+
+input[type="search"]{
+    display: block;
+    width: 360px;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-position-x: 335px;
+    background-position-y: 8px;
+}
+
+input[placeholder="Когда"]{
+    width: 168px;
+    margin-right: 20px;
+}
+
+input[type="text"]{
+    width: 168px;
+}
+
+select{
+    width: 360px;
+    height: 36px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    margin-bottom: 21px;
+    padding-left: 13px;
+    background-color: rgba(51, 51, 51, 0.25);
+    color: #FFFFFF;
+}
+
+input::placeholder{
+    color: #FFFFFF;
+}
+
+:focus::-webkit-input-placeholder{ opacity: 0.5; }
+:focus::-moz-placeholder{ opacity: 0.5; }
+:focus:-moz-placeholder{ opacity: 0.5; }
+:focus:-ms-input-placeholder{ opacity: 0.5; }
+
+
+button{
+    display: block;
+    width: 360px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    background: #FFB800;
+    cursor: pointer;
+}
