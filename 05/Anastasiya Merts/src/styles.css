@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    max-width: 90%;
+    margin: auto;
+}
+
+h1 {
+    text-align:center;
+    font-size: 40px;
+}
+
+.title {
+    text-align:center;
+    font-size: 25px;
+}
+
+.root {
+    max-width: 90%;
+}
