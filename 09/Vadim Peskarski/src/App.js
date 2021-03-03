@@ -4,8 +4,6 @@ import Register from './components/Register/Register.js';
 import LogIn from './components/LogIn/LogIn.js';
 import FormFooter from './components/FormFooter/FormFooter.js';
 import DeleteAccount from './components/DeleteAccount/DeleteAccount';
-import { Provider } from 'react-redux';
-import store from './store/index.js';
 
 const dataObj = {
   Register: <Register />,
@@ -17,7 +15,6 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider store={store}>
         <div className="App">
           <Form renderData={dataObj.DeleteAccount} render={data => (
             <FormFooter data={data} />
@@ -29,7 +26,6 @@ class App extends React.Component {
           <FormFooter data={data} />
         )}/> */}
         </div>
-      </Provider>
     )
   }
 }
