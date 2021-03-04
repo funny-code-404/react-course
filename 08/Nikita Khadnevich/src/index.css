@@ -1,0 +1,62 @@
+body {
+  background-color: bisque};
+
+#myForm {
+  border: green 2px solid;
+}
+
+
+#myForm > form, .myFormTwo > form, .myFormThree > form{
+  margin-top: 50px;
+  display: grid;
+  align-content: start;
+  grid-gap: 15px;
+  max-width: 40%;
+  min-width: 400px;
+  max-height: 100%;
+  margin: 0 auto;
+  border: 10px, solid, gray;
+  background-color: rgba(255, 105, 180, 0.178);
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+form > input {
+  width: 380px;
+  height: 40px;
+  margin: 0 auto;
+  border: cornsilk solid 1px;
+  border-radius: 4px;
+}
+
+button {
+  display: flex;
+  width: 30%;
+  margin:  0 auto;
+  margin-top: 10px;
+  min-height: 30px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#cheker {
+  justify-self: start;
+  display: block;
+  width: 10%;
+  max-height: 10px;
+  margin:  0;
+  margin-top: 10px;
+}
+
+h4 {
+  margin: 0;
+  text-align: left;
+}
+
+.textarea {
+  width: 100%;
+  resize: none;
+}
