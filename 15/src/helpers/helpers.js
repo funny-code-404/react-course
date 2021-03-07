@@ -1,5 +1,3 @@
-
-
 const sortByName = (a, b) => {
     const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
     if (nameA < nameB){

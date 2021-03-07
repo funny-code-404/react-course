@@ -1,14 +1,14 @@
 import Pagination from 'react-js-pagination';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ACTION_CHANGE_PAGE } from '../../ducks/paginationsReducer';
-import { pageLimitSelector } from '../../redux/selectors';
+import { ACTION_CHANGE_PAGE, pageNumberSelector } from '../../ducks/paginationsReducer/paginationsReducer';
+import { pageLimitSelector } from '../../ducks/paginationsReducer/paginationsReducer';
 import { StyledPagination } from './style';
 
 function Paginations({ totalItemsCount }) {
     
     const dispatch = useDispatch();
-    const pageNumber = useSelector(state => state.paginations.pageNumber);
+    const pageNumber = useSelector(pageNumberSelector);
     const pageLimit = useSelector(pageLimitSelector);
    
     const handlePageChange = (number) => {

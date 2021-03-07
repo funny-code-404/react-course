@@ -11,8 +11,11 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 const sagaMiddleware = createSagaMiddleware();
-const middlewares = [
-    applyMiddleware(sagaMiddleware)
+
+export const middlewares = [
+    applyMiddleware(
+        sagaMiddleware
+    )
 ];
 
 const composedEnhancers = compose(

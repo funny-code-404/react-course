@@ -43,11 +43,12 @@ const Wrapper = styled.div`
   margin: auto;
 `;
 
-const BodyWrapper = styled.div`
-  background: url(${scrollBackground}) no-repeat center/cover;
+const SwitchWrapper = styled.div`
+  background: url(${scrollBackground}) no-repeat top/cover;
   animation: 2s ${fadeIn} linear;
-  padding: 2rem 10rem;
+  padding: 5.5rem 9rem 2rem 10rem;
+  min-height: 85vh;
 `;
 
 
-export { GlobalStyle, Wrapper, BodyWrapper, mainColor };
+export { GlobalStyle, Wrapper, SwitchWrapper, mainColor };

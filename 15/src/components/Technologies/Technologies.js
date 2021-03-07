@@ -6,13 +6,10 @@ import Preloader from '../Preloader/Preloader';
 import Paginations from '../Pagination/Paginations';
 import { ACTION_GET_DATA_REQUESTED } from '../../ducks/fetchDataReducer/actions';
 import { sortByName } from '../../helpers/helpers';
-import { 
-    technologiesSelector,
-    offsetSelector, 
-    pageLimitSelector, 
-    errorSelector
-} from '../../redux/selectors';
+import { errorSelector, technologiesSelector } from '../../ducks/fetchDataReducer/selectors';
+import { offsetSelector, pageLimitSelector } from '../../ducks/paginationsReducer/paginationsReducer';
 import { technologiesUrl } from '../../redux/urls';
+import { StyledUl } from './style';
 
 
 function Technologies() {
@@ -35,15 +32,15 @@ function Technologies() {
 
         {technologies.length ? (<div>
             <Paginations totalItemsCount={technologies.length}/>
-            <ul>
+            <StyledUl>
                 {technologies.sort(sortByName).slice(offset, offset + pageLimit).map(
                 technology => <li key={technology.id}>
                     <Link to={`technologies/${technology.name}-${technology.id}`}>
                         {technology.name}
                     </Link>
                 </li>)} 
-            </ul>
-        </div>) : error || <Preloader/>}
+            </StyledUl>
+        </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
 
     </div>
     );

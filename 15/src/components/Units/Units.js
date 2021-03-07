@@ -6,13 +6,10 @@ import Paginations from '../Pagination/Paginations';
 import Preloader from '../Preloader/Preloader';
 import { ACTION_GET_DATA_REQUESTED } from '../../ducks/fetchDataReducer/actions';
 import { sortByName } from '../../helpers/helpers';
-import { 
-    errorSelector, 
-    offsetSelector, 
-    pageLimitSelector, 
-    unitsSelector 
-} from '../../redux/selectors';
+import { errorSelector, unitsSelector } from '../../ducks/fetchDataReducer/selectors';
+import { offsetSelector, pageLimitSelector } from '../../ducks/paginationsReducer/paginationsReducer';
 import { unitsUrl } from '../../redux/urls';
+import { StyledUl } from './style';
 
 
 function Units() {
@@ -35,15 +32,15 @@ function Units() {
 
         {units.length ? (<div>
             <Paginations totalItemsCount={units.length}/>
-            <ul>
+            <StyledUl>
                 {units.sort(sortByName).slice(offset, offset + pageLimit).map(
                 unit => <li key={unit.id}>
                     <Link to={`units/${unit.name}-${unit.id}`}>
                         {unit.name}
                     </Link>
                 </li>)}
-            </ul>
-        </div>) : error || <Preloader/>}
+            </StyledUl>
+        </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
         
     </div>
     );

@@ -1,12 +1,16 @@
 export const CHANGE_PAGE = 'CHANGE_PAGE';
 
+export const pageNumberSelector = state => state.paginations.pageNumber;
+export const offsetSelector = state => state.paginations.offset;
+export const pageLimitSelector = state => state.paginations.pageLimit;
+
 export const ACTION_CHANGE_PAGE = (pageNumber) => ({
     type: CHANGE_PAGE,
     pageNumber,
     offset: (pageNumber - 1) * 10
 });
 
-const initialPaginationsState = {
+export const initialPaginationsState = {
     pageNumber: 1,
     offset: 0,
     pageLimit: 10

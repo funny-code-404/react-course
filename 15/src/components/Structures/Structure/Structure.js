@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../Preloader/Preloader';
 import { ACTION_GET_DATA_REQUESTED } from '../../../ducks/fetchDataReducer/actions';
 import { structuresUrl } from '../../../redux/urls';
-import { errorSelector } from '../../../redux/selectors';
+import { errorSelector } from '../../../ducks/fetchDataReducer/selectors';
 
 
 function Structure() {
@@ -43,7 +43,7 @@ function Structure() {
                     {structure.special.map((spec, i) => <li key={i}>{spec};</li>)}
                 </ul>}  
             </ul>
-           </div>) : error || <Preloader/>}
+           </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
         </div>
     );
 };

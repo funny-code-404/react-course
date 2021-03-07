@@ -14,8 +14,7 @@ import {
     addDataSelector, 
     errorSelector, 
     fetchingSelector 
-} from '../../../redux/selectors';
-
+} from '../../../ducks/fetchDataReducer/selectors';
 
 function Civilization() {
     const dispatch = useDispatch();
@@ -73,9 +72,9 @@ function Civilization() {
             </ul>
             <ul>
                 Civilization bonuses:
-                {civilization.civilization_bonus.map((bonus, id) => <li key={id}>{bonus};</li>)}
+                {civilization.civilization_bonus?.map((bonus, id) => <li key={id}>{bonus};</li>)}
             </ul>
-           </div>) : error || <Preloader/>}
+           </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
         </div>
     );
 };

@@ -6,14 +6,10 @@ import Paginations from '../Pagination/Paginations';
 import Preloader from '../Preloader/Preloader';
 import { ACTION_GET_DATA_REQUESTED } from '../../ducks/fetchDataReducer/actions';
 import { sortByName } from '../../helpers/helpers';
-import { 
-    civilizationsSelector, 
-    offsetSelector, 
-    pageLimitSelector,
-    errorSelector
-} from '../../redux/selectors';
 import { civilizationsUrl } from '../../redux/urls';
 import { StyledUl } from './style';
+import { civilizationsSelector, errorSelector } from '../../ducks/fetchDataReducer/selectors';
+import { offsetSelector, pageLimitSelector } from '../../ducks/paginationsReducer/paginationsReducer';
 
 
 function Civilizations() {
@@ -44,7 +40,7 @@ function Civilizations() {
                         </Link>
                     </li>)}
                 </StyledUl>
-            </div>) : error || <Preloader/>}
+            </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
             
         </div>
     );

@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paginations/> unit test should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Paginations
+    totalItemsCount={20}
+  >
+    <styled.div>
+      <div
+        className="sc-dlfnbm MqQRM"
+      >
+        <Pagination
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={10}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[Function]}
+          pageRangeDisplayed={3}
+          prevPageText="⟨"
+          totalItemsCount={20}
+        >
+          <ul
+            className="pagination"
+          >
+            <Page
+              activeClass="active"
+              ariaLabel="Go to first page"
+              disabledClass="disabled"
+              href="#"
+              isActive={false}
+              isDisabled={true}
+              itemClass=""
+              key="first"
+              linkClass=""
+              onClick={[Function]}
+              pageNumber={1}
+              pageText="«"
+            >
+              <li
+                className="disabled"
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to first page"
+                  className=""
+                  href="#"
+                >
+                  «
+                </a>
+              </li>
+            </Page>
+            <Page
+              activeClass="active"
+              ariaLabel="Go to previous page"
+              disabledClass="disabled"
+              href="#"
+              isActive={false}
+              isDisabled={true}
+              itemClass=""
+              key="prev0"
+              linkClass=""
+              onClick={[Function]}
+              pageNumber={0}
+              pageText="⟨"
+            >
+              <li
+                className="disabled"
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to previous page"
+                  className=""
+                  href="#"
+                >
+                  ⟨
+                </a>
+              </li>
+            </Page>
+            <Page
+              activeClass="active"
+              ariaLabel="Go to page number 1"
+              disabledClass="disabled"
+              href="#"
+              isActive={true}
+              isDisabled={false}
+              key="1"
+              onClick={[Function]}
+              pageNumber={1}
+              pageText="1"
+            >
+              <li
+                className="active"
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to page number 1"
+                  className="undefined"
+                  href="#"
+                >
+                  1
+                </a>
+              </li>
+            </Page>
+            <Page
+              activeClass="active"
+              ariaLabel="Go to page number 2"
+              disabledClass="disabled"
+              href="#"
+              isActive={false}
+              isDisabled={false}
+              key="2"
+              onClick={[Function]}
+              pageNumber={2}
+              pageText="2"
+            >
+              <li
+                className=""
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to page number 2"
+                  className=""
+                  href="#"
+                >
+                  2
+                </a>
+              </li>
+            </Page>
+            <Page
+              activeClass="active"
+              ariaLabel="Go to next page"
+              disabledClass="disabled"
+              href="#"
+              isActive={false}
+              isDisabled={false}
+              itemClass=""
+              key="next2"
+              linkClass=""
+              onClick={[Function]}
+              pageNumber={2}
+              pageText="⟩"
+            >
+              <li
+                className=""
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to next page"
+                  className=""
+                  href="#"
+                >
+                  ⟩
+                </a>
+              </li>
+            </Page>
+            <Page
+              activeClass="active"
+              ariaLabel="Go to last page"
+              disabledClass="disabled"
+              href="#"
+              isActive={false}
+              isDisabled={false}
+              itemClass=""
+              key="last"
+              linkClass=""
+              onClick={[Function]}
+              pageNumber={2}
+              pageText="»"
+            >
+              <li
+                className=""
+                onClick={[Function]}
+              >
+                <a
+                  aria-label="Go to last page"
+                  className=""
+                  href="#"
+                >
+                  »
+                </a>
+              </li>
+            </Page>
+          </ul>
+        </Pagination>
+      </div>
+    </styled.div>
+  </Paginations>
+</Provider>
+`;

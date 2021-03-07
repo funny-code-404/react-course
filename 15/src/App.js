@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { 
   Home, 
@@ -16,17 +16,16 @@ import {
 import { 
   GlobalStyle, 
   Wrapper, 
-  BodyWrapper 
+  SwitchWrapper 
 } from './globalStyle';
-
-
-function App() {
   
+function App() {
+
   return (
-    <Wrapper>
+  <Wrapper>
       <GlobalStyle />
       <Navigation />
-    <BodyWrapper>
+    <SwitchWrapper>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/civilizations' component={Civilizations}/>
@@ -38,9 +37,10 @@ function App() {
         <Route exact path='/units' component={Units}/>
         <Route exact path='/units/:name-:unitId' component={Unit}/>
       </Switch>
-    </BodyWrapper>
-    </Wrapper>
-  );
-}
+    </SwitchWrapper>
+  </Wrapper>
+  )
+};
+    
 
 export default App;

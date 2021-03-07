@@ -9,7 +9,10 @@ import {
     ACTION_GET_DATA_REQUESTED 
 } from '../../../ducks/fetchDataReducer/actions';
 import { unitsUrl } from '../../../redux/urls';
-import { addDataSelector, errorSelector } from '../../../redux/selectors';
+import { 
+    addDataSelector, 
+    errorSelector 
+} from '../../../ducks/fetchDataReducer/selectors';
 
 
 function Unit() {
@@ -71,7 +74,7 @@ function Unit() {
                     </Link>
                 </li>))}
             </ul>
-           </div>) : error || <Preloader/>}
+           </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
         </div>
     );
 };

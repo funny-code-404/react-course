@@ -13,7 +13,7 @@ import {
     addDataSelector, 
     errorSelector, 
     fetchingSelector 
-} from '../../../redux/selectors';
+} from '../../../ducks/fetchDataReducer/selectors';
 
 
 function Technology() {
@@ -100,7 +100,7 @@ function Technology() {
                 </li>))}
             </ul>
             {applies}
-           </div>) : error || <Preloader/>}
+           </div>) : (error && <h2>{error}</h2>) || <Preloader/>}
         </div>
     );
 };

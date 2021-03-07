@@ -8,7 +8,7 @@ import {
 } from './actions';
 
 
-const initialDataState = {
+export const initialDataState = {
   fetchedData: { 
     civilizations: [],
     structures: [],
@@ -17,7 +17,7 @@ const initialDataState = {
   },
   addData: [],
   isFetching: false,
-  error: null,
+  error: null
 };
 
 export const fetchDataReducer = (state = initialDataState, action) => {

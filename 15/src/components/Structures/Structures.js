@@ -6,13 +6,11 @@ import Paginations from '../Pagination/Paginations';
 import Preloader from '../Preloader/Preloader';
 import { ACTION_GET_DATA_REQUESTED } from '../../ducks/fetchDataReducer/actions';
 import { sortByAge } from '../../helpers/helpers';
-import { 
-    structuresSelector,
-    offsetSelector, 
-    pageLimitSelector, 
-    errorSelector 
-} from '../../redux/selectors';
+
 import { structuresUrl } from '../../redux/urls';
+import { StyledUl } from './style';
+import { errorSelector, structuresSelector } from '../../ducks/fetchDataReducer/selectors';
+import { offsetSelector, pageLimitSelector } from '../../ducks/paginationsReducer/paginationsReducer';
 
 
 function Structures() {
@@ -34,15 +32,15 @@ function Structures() {
 
         {structures.length ? (<div>
             <Paginations totalItemsCount={structures.length} />
-            <ul>
+            <StyledUl>
                 {structures.sort(sortByAge).slice(offset, offset + pageLimit).map(
                 structure => <li key={structure.id}>
                     <Link to={`structures/${structure.name}-${structure.id}`}>
                         {structure.age}&nbsp;age&nbsp;{structure.name.toLowerCase()}
                     </Link>
                 </li>)}
-            </ul>
-        </div>) : error || <Preloader />}
+            </StyledUl>
+        </div>) : (error && <h2>{error}</h2>) || <Preloader />}
 
     </div>
     );

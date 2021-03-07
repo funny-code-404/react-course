@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { ACTION_CHANGE_PAGE } from '../../ducks/paginationsReducer';
+import { ACTION_CHANGE_PAGE } from '../../ducks/paginationsReducer/paginationsReducer';
 
 import { 
     StyledLink, 

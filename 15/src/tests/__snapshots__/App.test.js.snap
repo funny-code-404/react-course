@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home/> unit test should match snapshot 1`] = `
+<styled.div>
+  <Memo(l) />
+  <Navigation />
+  <styled.div>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/civilizations"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/civilizations/:civilizationType"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/structures"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/structures/:name-:structureId"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/technologies"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/technologies/:name-:technologyId"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/units"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/units/:name-:unitId"
+      />
+    </Switch>
+  </styled.div>
+</styled.div>
+`;

@@ -12,7 +12,7 @@ const zoomIn = keyframes`
 
 const StyledPagination = styled.div`
     position: absolute;
-    bottom: 75vh;
+    bottom: 65vh;
     right: 50%;
     transform: translate(50%);
     .pagination {
