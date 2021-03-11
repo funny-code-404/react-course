@@ -11,9 +11,9 @@ const Header = () => {
          links='#'
          imgLink='https://cdn.freelance.ru/img/portfolio/pics/00/34/10/3412097.jpg?mt=0a3c38dc' />
          <div className='headerMenu'>
-            <Menu name='Price' className={`price`}/>
-            <Menu name='Our Team' className={`team`}/>
-            <Menu name='About US' className={`about`}/>
+            <Menu name='Price' className='price'/>
+            <Menu name='Our Team' className='team'/>
+            <Menu name='About US' className='about'/>
          </div>   
       </div>
    )
