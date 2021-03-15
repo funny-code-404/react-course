@@ -1,0 +1,1 @@
+const DOGS = ['Akita','Chow','Boxer','Husky','Mix'];
