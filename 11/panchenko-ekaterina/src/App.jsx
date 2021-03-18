@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Todos } from "./components/Todos";
-import { TodoItem } from "./components/TodoItem";
+import { Item } from "./components/Item";
 import { Posts } from "./components/Posts";
-import { PostItem } from "./components/PostItem";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Spinner } from "./components/Spinner";
 
@@ -10,25 +9,23 @@ export const App = () => (
   <div className="App">
     <Spinner />
     <Router>
-      <div>
-        <nav>
-          <List>
-            <li>
-              <Link to="/todos">Todos</Link>
-            </li>
-            <li>
-              <Link to="/posts">Posts</Link>
-            </li>
-          </List>
-        </nav>
+      <nav>
+        <List>
+          <li>
+            <Link to="/todos">Todos</Link>
+          </li>
+          <li>
+            <Link to="/posts">Posts</Link>
+          </li>
+        </List>
+      </nav>
 
-        <Switch>
-          <Route path="/todos/:id" component={TodoItem} />
-          <Route path="/todos" component={Todos} />
-          <Route path="/posts/:id" component={PostItem} />
-          <Route path="/posts" component={Posts} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/todos/:id" component={Item} />
+        <Route path="/todos" component={Todos} />
+        <Route path="/posts/:id" component={Item} />
+        <Route path="/posts" component={Posts} />
+      </Switch>
     </Router>
   </div>
 );

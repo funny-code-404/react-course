@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { ACTION_GET_DATA } from "../middlewares/actions";
 import { Link } from "react-router-dom";
@@ -45,3 +46,9 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export const Posts = connect(mapStateToProps, mapDispatchToProps)(PostsList);
+
+PostsList.propTypes = {
+  getData: PropTypes.func,
+  data: PropTypes.array,
+  error: PropTypes.string,
+};

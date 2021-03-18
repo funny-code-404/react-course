@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const SpinnerComponent = ({ isTodosFetching }) =>
   isTodosFetching && <StyledSpinner>Loading...</StyledSpinner>;
@@ -19,3 +20,7 @@ const StyledSpinner = styled.div`
 `;
 
 export const Spinner = connect(mapStateToProps)(SpinnerComponent);
+
+SpinnerComponent.propTypes = {
+  isTodosFetching: PropTypes.object,
+};
