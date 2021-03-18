@@ -22,5 +22,5 @@ const StyledSpinner = styled.div`
 export const Spinner = connect(mapStateToProps)(SpinnerComponent);
 
 SpinnerComponent.propTypes = {
-  isTodosFetching: PropTypes.object,
+  isTodosFetching: PropTypes.bool,
 };
