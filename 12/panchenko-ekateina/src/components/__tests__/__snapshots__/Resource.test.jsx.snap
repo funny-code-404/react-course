@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Resource mounting behavior should match snapshot 1`] = `
+.c0 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  padding: 30px;
+  width: 80%;
+}
+
+.c1 {
+  font-size: 20px;
+  font-size: 25px;
+  list-style-type: none;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.c2 {
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (max-width:590px) {
+  .c0 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+<Resource
+  action={[MockFunction]}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "name": "test",
+      },
+    ]
+  }
+  type="test"
+  url="/test"
+>
+  <styled.ul>
+    <ul
+      className="c0"
+    >
+      <styled.li
+        key="1"
+      >
+        <li
+          className="c1"
+        >
+          <styled.a
+            to={
+              Object {
+                "pathname": "/test/test",
+                "state": Object {
+                  "data": Object {
+                    "id": 1,
+                    "name": "test",
+                  },
+                },
+              }
+            }
+          >
+            <a
+              className="c2"
+              to={
+                Object {
+                  "pathname": "/test/test",
+                  "state": Object {
+                    "data": Object {
+                      "id": 1,
+                      "name": "test",
+                    },
+                  },
+                }
+              }
+            >
+              test
+            </a>
+          </styled.a>
+        </li>
+      </styled.li>
+    </ul>
+  </styled.ul>
+</Resource>
+`;
