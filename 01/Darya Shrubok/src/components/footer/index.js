@@ -30,7 +30,6 @@ const addresses = [
     href: "https://goo.gl/maps/sbM9KpWbqKqaF9TNA",
   },
 ];
-
 class Footer extends React.Component {
   render() {
     return (
