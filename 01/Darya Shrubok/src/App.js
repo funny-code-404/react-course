@@ -6,12 +6,7 @@ import Main from "./components/main";
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div className="container">
       <Header />
       <Main />
       <Footer />
