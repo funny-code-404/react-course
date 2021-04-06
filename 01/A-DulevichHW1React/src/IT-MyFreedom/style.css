@@ -1,0 +1,33 @@
+.IT-MyFreedom {
+    padding-bottom: 19px;
+    background-image: url(../images/204398-OZ3P4A-964.jpg);
+    height: 376px;
+    background-size: cover;
+    color: #FCFCFC;
+    padding-top: 126px;
+    background-position: bottom;
+    padding-bottom: 136px;
+
+}
+
+.IT-MyFreedom h1 {
+    font-family: 'M PLUS 1p', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 100%;
+    color: #FCFCFC;
+    margin-bottom: 19px;
+
+}
+
+.IT-MyFreedom p {
+    font-family: 'M PLUS 1p', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 37px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #F4F4ED;
+}
