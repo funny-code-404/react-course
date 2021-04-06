@@ -1,0 +1,123 @@
+.container {
+    @include block-pos;
+    @include flex (flex, flex-start, row, flex-start);
+}
+
+aside {
+    width: 30%;
+    height: 100vh;
+    @include flex (flex, flex-start, column, unset);
+    section {
+        background-color: #363636;
+        padding: 30px;
+        color: $text_color;
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            @include text (26px, 600, 30px, 3px);
+        }
+    }
+}
+
+header {
+    @include flex (flex, center, column, inherit);
+    > img {
+        width: 100%;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+    ul {
+        padding: 40px 30px;
+        padding-right: 0;
+        background-color: #f8bb02;
+        align-self: stretch;
+        li {
+            margin-bottom: 10px;
+            @include text (16px, 600, 15px, .1px);
+            cursor: pointer;
+            svg {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            &:active {
+                background-color: #dda807;
+                border-radius: 5px;
+                outline: 1px solid #000;
+                display: inline-block;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.skills {
+    li {
+        margin-bottom: 20px;
+        &:last-child {
+            margin: 0;
+        }
+        > h3{
+            margin-bottom: 10px;
+            @include text (18px, 500, 20px, 1px);
+        }
+        > div {
+            height: 20px;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: inset -1px 2px 2px 0px rgba(0, 0, 0, .8);
+        }
+        .html {
+            background-image: linear-gradient(to right, #f8bb02 70%, #b8b7b7 70%, #b8b7b7 100%);
+        }
+        .css {
+            background-image: linear-gradient(to right, #f8bb02 70%, #b8b7b7 70%, #b8b7b7 100%);
+        }
+        .js {
+            background-image: linear-gradient(to right, #f8bb02 40%, #b8b7b7 40%, #b8b7b7 100%);
+        }
+        .react {
+            background-image: linear-gradient(to right, #f8bb02 20%, #b8b7b7 20%, #b8b7b7 100%);
+        }
+        .git {
+            background-image: linear-gradient(to right, #f8bb02 40%, #b8b7b7 40%, #b8b7b7 100%);
+        }
+    }
+}
+
+.education {
+    li {
+        margin-bottom: 20px;
+        @include flex (flex, flex-start, row, center);
+        .edu-pointer {
+            min-width: 18px;
+            height: 18px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-right: 20px;
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                border-right: 1px solid #fff;
+                width: 0;
+                height: 115px;
+                top: 15px;
+                left: 50%;
+            }
+        }
+        &:last-child {
+            .edu-pointer {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .edu-data {
+            @include text (14px, 500, 20px, 1px);
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

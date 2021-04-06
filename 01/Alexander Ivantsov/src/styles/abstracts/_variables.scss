@@ -1,0 +1,20 @@
+$text_color: #fff;
+
+@mixin block-pos {
+    max-width: 1200px;
+    margin: auto;
+}
+
+@mixin flex ($display, $justify, $direction, $align) {
+    display: $display;
+    justify-content: $justify;
+    flex-direction: $direction;
+    align-items: $align;
+}
+
+@mixin text ($size, $weight, $height, $letter-spacing) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $letter-spacing;
+}

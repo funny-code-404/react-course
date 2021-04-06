@@ -1,0 +1,70 @@
+main {
+    padding-top: 50px;
+    width: 75%;
+    h1 {
+        @include text (60px, 400, 60px, 3px);
+        max-width: 400px;
+        margin-bottom: 30px;
+        padding-left: 50px;
+        span {
+            font-weight: 700;
+        }
+    }
+    > p {
+        @include text (32px, 600, 50px, 3px);
+        padding-left: 50px;
+        background-color: #f8bb02;
+    }
+    section {
+        padding: 50px;
+        h2 {
+            @include text (26px, 700, 30px, 1px);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.work-exp {
+    li {
+        margin-bottom: 30px;
+        h3 {
+            @include flex (flex, space-between, row, center);
+            @include text (22px, 700, 30px, 1px);
+            margin-bottom: 20px;
+        }
+        h4 {
+            @include text (18px, 700, 30px, 1px);
+            margin-bottom: 20px;
+        }
+        p {
+            @include text (16px, 600, 30px, 1px);
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.lang {
+    @include flex (flex, space-between, row, center);
+    p {
+        @include text (18px, 600, 20px, 1px);
+        span {
+            margin-left: 120px;
+            opacity: .7;
+            font-weight: 500;
+        }
+    }
+}
+
+.interests {
+    div {
+        @include flex (flex, space-between, row, center);
+        svg {
+            height: 120px;
+            width: 120px;
+            fill: #363636;
+        }
+    }
+}

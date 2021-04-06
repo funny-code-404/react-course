@@ -1,0 +1,92 @@
+@media (min-width: 768px) and (max-width:1024px) {
+    aside {
+        section {
+            padding: 15px;
+            h2 {
+                font-size: 19px;
+            }
+        }
+    }
+    
+    header {
+        ul {
+            padding: 20px 10px;
+            li {
+                font-size: 11px;
+                font-weight: 500;
+                .MuiSvgIcon-root {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    .education {
+        li {
+            .edu-data {
+                font-size: 10px;
+                letter-spacing: .5px;
+                p {
+                    margin-bottom: 5px;
+                }
+            }
+            .edu-pointer::after {
+                height: 105px;
+            }
+        }
+    }
+
+    main {
+        h1 {
+            font-size: 42px;
+            line-height: 42px;
+        }
+        > p {
+            font-size: 22px;
+        }
+        section {
+            padding: 20px 50px;
+            h2 {
+                font-size: 19px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .work-exp {
+        li {
+            margin-bottom: 20px;
+            h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            h4 {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .lang {
+        p {
+            font-size: 16px;
+            letter-spacing: .1px;
+            span {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .interests {
+        padding-top: 10px;
+        div {
+            svg {
+                height: 80px;
+                width: 80px;
+            }
+        }
+    }
+}
