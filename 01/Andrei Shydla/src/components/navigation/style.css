@@ -1,0 +1,17 @@
+.nav { 
+    height: 75px;
+    background: #003395;
+    text-align: left;
+    padding-top: 28px;
+}
+.nav li {
+    display: inline-block;
+    padding-right: 62px;
+    list-style-type: none;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
