@@ -1,0 +1,32 @@
+.free {
+    width: 30px;
+
+    border-radius: 50%;
+    border: white 1px solid;
+    padding: 6px 0;
+    margin: 10px;
+    text-align: center;
+    z-index: 5;
+}
+
+.twitter {
+    background-color: #39b8ff;
+    position: absolute;
+    top: 2px;
+    left: -40px;
+}
+
+.facebook {
+    background-color: #5f85cd;
+    position: absolute;
+    top: 35px;
+    left: -40px
+}
+
+.instagramm {
+    background: linear-gradient(to bottom left, #cb2e86, #9108dc);
+    position: absolute;
+    top: 70px;
+    left: -40px
+
+}

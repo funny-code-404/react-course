@@ -1,0 +1,9 @@
+.one {
+    display: inline-block;
+    width: 17%;
+    margin: 60px 5px 0px 5px;
+}
+
+.one img {
+    width: 99%;
+}

@@ -1,0 +1,24 @@
+ .skyone {
+    position: absolute;
+    right: -127px;
+    top: -50px;
+    z-index: 4;
+} 
+
+.skytwo {
+    position: absolute;
+    z-index: 5;
+    top: 43px;
+    width: 60%;
+    left: -170px;
+
+}
+
+.skythree {
+    position: absolute;
+    top: 163px;
+    left: 385px;
+    z-index: 5;
+    width: 60%;
+    
+}
