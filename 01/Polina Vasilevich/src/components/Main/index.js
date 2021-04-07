@@ -3,7 +3,10 @@ import "./styles.scss";
 export default function Main() {
   return (
     <main className="main">
-      <Game />
+      <h1 className="main__title">Welcome to the Tic Tac Toe Game!</h1>
+      <div className="main__container">
+        <Game />
+      </div>
     </main>
   );
 }

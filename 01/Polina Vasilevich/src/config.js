@@ -1,8 +1,8 @@
 import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { FaVimeo } from "react-icons/fa";
-import { FaPinterest } from "react-icons/fa";
+import { FaVimeoV } from "react-icons/fa";
+import { FaPinterestP } from "react-icons/fa";
 
 export const config = {
   routes: [
@@ -34,7 +34,7 @@ export const config = {
     },
 
     {
-      icon: <FaInstagram />,
+      icon: <FaInstagramSquare />,
       href: "https://www.linkedin.com/",
     },
     {
@@ -43,11 +43,11 @@ export const config = {
     },
 
     {
-      icon: <FaVimeo />,
+      icon: <FaVimeoV />,
       href: "https://vimeo.com/",
     },
     {
-      icon: <FaPinterest />,
+      icon: <FaPinterestP />,
       href: "https://www.pinterest.com/",
     },
   ],

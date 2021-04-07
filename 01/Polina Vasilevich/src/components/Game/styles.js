@@ -6,10 +6,11 @@ export const Game = styled.div`
   align-items: center;
 `;
 
-export const GameInfo = styled.div`
+export const GameInfo = styled.h2`
   margin-bottom: 10px;
   margin: 20px 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  font-weight: normal;
 `;
 
 export const Button = styled.button`
@@ -20,7 +21,7 @@ export const Button = styled.button`
   border-radius: 5px;
 
   font: 14px "Century Gothic", Futura, sans-serif;
-  font-size: 1.4em;
+  font-size: 2em;
 
   background-color: #eee2e0;
   border: none;

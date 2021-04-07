@@ -21,8 +21,8 @@ export default function Footer(props) {
   return (
     <footer className="footer">
       <div className="footer__contacts">
-        {contacts.map(({ icon, href }) => (
-          <a key={icon} className="contacts__item" href={href}>
+        {contacts.map(({ icon, href }, index) => (
+          <a key={index} className="contacts__item" href={href}>
             {icon}
           </a>
         ))}

@@ -85,10 +85,9 @@ function calculateWinner(squares) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return `Winner: ${squares[a]}`;
     }
-
-    if (!squares.includes(null)) {
-      return "Finish game!";
-    }
+  }
+  if (!squares.includes(null)) {
+    return "End of the game!";
   }
   return null;
 }
