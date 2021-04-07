@@ -13,10 +13,10 @@ class Main extends React.Component {
           strive to continue being one of India and New Zealand's great food
           companies, offering quality fruits and vegetable.
         </p>
-        <a href="#" className="butt">
+        <a href="/# " className="butt">
           Read More
         </a>
-        <a href="#" className="mouse"></a>
+        <button className="mouse"></button>
       </main>
     );
   }
