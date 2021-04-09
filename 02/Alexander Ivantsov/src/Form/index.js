@@ -85,7 +85,7 @@ class Form extends React.Component {
                 <p>{error.email}</p>
                 <input className={this.errorClass(error.email)} value={email} name="email" placeholder="Введите e-mail" onChange={this.handleChange} />
                 <p>{error.password}</p>
-                <input className={this.errorClass(error.password)} value={password} name="password" placeholder="Введите пароль" onChange={this.handleChange} />
+                <input className={this.errorClass(error.password)} value={password} name="password" type="password" placeholder="Введите пароль" onChange={this.handleChange} />
                 <button onClick={this.handleClick}>Send</button>
             </form>
         )
