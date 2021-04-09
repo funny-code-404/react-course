@@ -6,7 +6,6 @@ class Form extends React.Component {
   state = {
     data: {},
     errors: {},
-    isValid: true,
   };
 
   inputs = this.props.inputs;
@@ -20,41 +19,36 @@ class Form extends React.Component {
     }));
   };
 
-  validate() {
+  validateForm() {
     const { data } = this.state;
     const errors = {};
-    let isValid = true;
 
-    this.inputs.map(({ name, type }) => {
+    this.inputs.map(({ name }) => {
       if (!data[name]) {
         errors[name] = `Please enter ${name}`;
-        isValid = false;
       } else {
-        switch (type) {
-          case "name": {
-            if (!(data[name].length > 3 && data[name].length < 30)) {
-              errors["name"] =
+        switch (name) {
+          case "name":
+            if (!(data[name].length >= 3 && data[name].length <= 30)) {
+              errors.name =
                 "The name must be between 3 and 30 characters long.";
-              isValid = false;
             }
             break;
-          }
-          case "email": {
-            if (!String(data[name]).includes("@")) {
-              errors["email"] = "The email must have symbol '@'.";
-              isValid = false;
-            } else if (!String(data[name]).includes(".")) {
-              errors["email"] = "The email must have symbol '.'";
-              isValid = false;
+
+          case "email":
+            const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!regEmail.test(String(data[name]).toLocaleLowerCase())) {
+              errors.email = "Email is not valid.";
             }
             break;
-          }
 
           case "password": {
-            if (data[name] < 7) {
-              errors["password"] =
-                "Password must be at least 8 characters long.";
-              isValid = false;
+            if (data[name].length < 7) {
+              errors.password = "Password must be at least 8 characters long.";
+            } else if (
+              !(/\d/.test(data[name]) && /[a-zA-Z]/.test(data[name]))
+            ) {
+              errors.password = "Password must contain letters and numbers.";
             }
             break;
           }
@@ -67,10 +61,9 @@ class Form extends React.Component {
     this.setState((prevState) => ({
       ...prevState,
       errors,
-      isValid,
     }));
 
-    return isValid;
+    return !Object.keys(errors).length ? true : false;
   }
 
   clearForm() {
@@ -87,7 +80,7 @@ class Form extends React.Component {
     e.preventDefault();
     const { data } = this.state;
 
-    if (this.validate()) {
+    if (this.validateForm()) {
       API.post("posts", { data })
         .then((result) => console.log(result.data))
         .catch((error) => console.log(error));
