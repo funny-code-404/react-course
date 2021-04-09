@@ -1,7 +1,7 @@
 .form {
   font-family: "Poppins", sans-serif;
   max-width: 560px;
-  width: 40%;
+  width: 55%;
   min-width: 300px;
   padding: 55px 85px;
   display: flex;
@@ -14,9 +14,15 @@
     line-height: 1.2;
     text-align: center;
   }
-  &__input {
+
+  &__container {
     margin-bottom: 36px;
-    padding: 0 20px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding-left: 20px;
     height: 55px;
 
     background-color: #fff;
@@ -64,5 +70,9 @@
     &:hover {
       background-color: #333;
     }
+  }
+
+  &__errors {
+    color: red;
   }
 }
