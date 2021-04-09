@@ -1,0 +1,108 @@
+.bar {
+	margin-left: 20px;
+	margin-bottom: 20px;
+	background-color: rgb(151, 150, 150);
+	width: 500px;
+	border-radius: 10px;
+}
+
+.arrow {
+	padding-top: 10px;
+	padding-left: 10px;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	width: 100%;
+}
+
+.arrow::before {
+	width: 8px;
+	height: 8px;
+	border-right: 2px solid red;
+	border-bottom: 2px solid red;
+	display: inline-block;
+	content: '';
+	transform: rotate(-135deg);
+    transition: all 0.2s ease-in-out;
+	position: relative;
+	left: -235px;
+}
+
+.active:before {
+	transform: rotate(45deg);
+    transition: all 0.2s ease-in-out;
+}
+
+.bar p {
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+
+h1 {
+	text-align: center;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	border: 1px solid #000;
+	margin: auto;
+	transform: translateY(20%);
+	padding: 30px 50px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+form p {
+	font-size: 14px;
+	color: red;
+	line-height: 6px;
+}
+
+form input {
+	margin-bottom: 20px;
+	outline: none;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 20px;
+}
+
+form input:focus::placeholder {
+	opacity: 0;
+	transition: opacity .5s ease;
+}
+
+form input:last-of-type {
+	margin-bottom: 40px;
+}
+
+form button {
+	background-color: rgb(16, 199, 16);
+	width: 150px;
+	height: 40px;
+	align-self: center;
+	border-radius: 20px;
+	outline: none;
+	cursor: pointer;
+	border: none;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 500;
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, .5);
+}
+
+form button:hover {
+	background-color: rgb(11, 163, 11);
+}
+
+.error {
+	border-color: red;
+}
+
+.valid {
+	border-color: rgb(16, 199, 16);
+}
