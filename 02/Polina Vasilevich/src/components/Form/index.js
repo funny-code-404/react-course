@@ -1,4 +1,5 @@
 import React from "react";
+import API from "./api";
 import "./styles.scss";
 
 class Form extends React.Component {
@@ -24,48 +25,41 @@ class Form extends React.Component {
     const errors = {};
     let isValid = true;
 
-    function validateName(name) {
-      if (!(name.length > 3 && name.length < 30)) {
-        errors["name"] = "The name must be between 3 and 30 characters long.";
-        isValid = false;
-      }
-      return isValid;
-    }
-
-    function validateEmail(email) {
-      if (!String(email).includes("@")) {
-        isValid = false;
-        errors["email"] = "The email must have symbol '@'.";
-      } else if (!String(email).includes(".")) {
-        isValid = false;
-        errors["email"] = "The email must have symbol '.'";
-      }
-
-      return isValid;
-    }
-
-    function validatePassword(password) {
-      if (password < 8) {
-        isValid = false;
-        errors["password"] = "The password must be more 8 symbols.";
-      } else if (password) {
-      }
-
-      return isValid;
-    }
-
     this.inputs.map(({ name, type }) => {
       if (!data[name]) {
-        isValid = false;
         errors[name] = `Please enter ${name}`;
+        isValid = false;
       } else {
         switch (type) {
-          case "name":
-            validateName(data[name]);
-          case "email":
-            validateEmail(data[name]);
-          case "password":
-            validatePassword(data[name]);
+          case "name": {
+            if (!(data[name].length > 3 && data[name].length < 30)) {
+              errors["name"] =
+                "The name must be between 3 and 30 characters long.";
+              isValid = false;
+            }
+            break;
+          }
+          case "email": {
+            if (!String(data[name]).includes("@")) {
+              errors["email"] = "The email must have symbol '@'.";
+              isValid = false;
+            } else if (!String(data[name]).includes(".")) {
+              errors["email"] = "The email must have symbol '.'";
+              isValid = false;
+            }
+            break;
+          }
+
+          case "password": {
+            if (data[name] < 7) {
+              errors["password"] =
+                "Password must be at least 8 characters long.";
+              isValid = false;
+            }
+            break;
+          }
+          default:
+            break;
         }
       }
     });
@@ -79,17 +73,32 @@ class Form extends React.Component {
     return isValid;
   }
 
+  clearForm() {
+    const data = {};
+    this.inputs.map(({ name }) => (data[name] = ""));
+    this.setState((prevState) => ({
+      ...prevState,
+      data,
+      isValid: true,
+    }));
+  }
+
   handleClick = (e) => {
     e.preventDefault();
+    const { data } = this.state;
 
     if (this.validate()) {
-      console.log(this.state.data);
+      API.post("posts", { data })
+        .then((result) => console.log(result.data))
+        .catch((error) => console.log(error));
+
+      this.clearForm();
     }
   };
 
   render() {
     const { inputs } = this.props;
-    const { errors } = this.state;
+    const { data, errors } = this.state;
     return (
       <form className="form" onChange={this.handleChange}>
         <h2 className="form__title">ACCOUNT LOGIN</h2>
@@ -100,6 +109,7 @@ class Form extends React.Component {
               type={type}
               name={name}
               placeholder={placeholder}
+              value={data[name]}
               className={`form__input ${errors[name] && "notValid"}`}
             />
             {errors[name] && (
