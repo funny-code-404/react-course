@@ -11,11 +11,17 @@ class Form extends React.Component {
   inputs = this.props.inputs;
 
   handleChange = (e) => {
+    const { errors } = this.state;
     const { name, value } = e.target;
+
+    if (errors[name]) {
+      errors[name] = "";
+    }
 
     this.setState((prevState) => ({
       ...prevState,
       data: { ...prevState.data, [name]: value },
+      errors,
     }));
   };
 
@@ -30,8 +36,7 @@ class Form extends React.Component {
         switch (name) {
           case "name":
             if (!(data[name].length >= 3 && data[name].length <= 30)) {
-              errors.name =
-                "The name must be between 3 and 30 characters long.";
+              errors.name = "Name must be between 3 and 30 characters long.";
             }
             break;
 
