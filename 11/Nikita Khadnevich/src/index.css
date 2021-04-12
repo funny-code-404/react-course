@@ -1,0 +1,342 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   background-color: rgba(0, 0, 0, 1);
+}
+
+.videoTag {
+   z-index: 0;
+   height: auto;
+   width: auto;
+   float: left;
+   top: 0;
+   padding: none;
+   position: fixed;
+}
+
+a {
+   text-decoration: none;
+   color: rgb(255, 255, 255);
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin: auto;
+   width: 100%;
+   text-align: center;
+}
+
+.homePage {
+   width: 100%;
+   text-align: center;
+   margin-top: 2%;
+   height: auto;
+}  
+
+.homePage > p {
+   padding: 2%;
+   border-radius: 15px;
+   display: block;
+   width: 80%;
+   margin: 0 auto;
+   background-color: rgba(0, 0, 0, 0.40);
+   color: rgba(255, 254, 254, 0.86);
+   font-size: 2em;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.homePage > p > span {
+   color: rgb(220, 203, 20)
+}
+
+#goback , #gobackUnit, #gobackStru, #gobackTech{
+   font-size: 1em;
+   color: rgb(255, 255, 255);
+   display: block;
+   width: 120px;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: rgb(220, 20, 60);
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   margin: 1% 0% 3% 5%;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   animation: show 1.5s;
+}
+
+#gobackUnit {
+   background-color: rgb(0, 154, 185);
+}
+
+#gobackStru {
+   background-color: rgb(48, 125, 48);
+}
+
+#gobackTech {
+   background-color: rgba(255, 242, 0, 0.700);
+}
+
+#goback > p {
+   margin: auto;
+   text-align: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Posts {
+   height: 100vh;
+   width: 90%;
+   margin: 0 auto;
+   z-index: 3;
+}
+
+.Items , .UnitsDetail , .StruItemDetail , .TechDetail {
+   margin-top: 30px;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 5px;
+   justify-content: center;
+   text-align: center;
+   margin: 0 auto;
+   border-radius: 10px;
+   width: 60%;
+   padding: 20px;
+   animation: show 2s;
+}
+@keyframes show {
+   from {opacity: 0;} to {opacity: 1;}
+}
+
+.Items {
+   background: rgba(220, 20, 60, 0.400);
+}
+
+.UnitsDetail {
+   background-color: rgba(0, 154, 185, 0.25);
+   margin-bottom: 10px;
+   width: 60%;
+   margin: 0 auto;
+   padding: 20px;
+}
+
+.Items > p , .UnitsDetail > p , .StruItemDetail > p , .TechDetail > p{ 
+   text-align: center;
+   text-decoration: none;
+   color: rgb(255, 255, 255);
+   font-size: 2em;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.StruItemDetail {
+   margin-bottom: 10px;
+   background-color: rgba(48, 125, 48, 0.8);
+}
+
+.CivilsItem , .CivilsItem2 , .Item , .UnitLinkItem , .TechLinkItem{ 
+   display: flex;
+   background-color: crimson;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+}
+
+.CivilsItem > a , .CivilsItem2 > a , .UnitLinkItem > a ,  .TechLinkItem > a{ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+}
+
+.navigation {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+   justify-content: space-between;
+   margin: 0 auto;
+   padding-top: 30px;
+}
+.navigation > a {
+   padding: 5px;
+   text-decoration: none;
+   font-size: 2em;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.CivilizationsWrapper , .UnitWrapper , .StruWrapper , .TechWrapper{
+   margin-top: 30px;
+   display: grid;
+   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+   grid-gap: 20px;
+   animation: show 1.5s;
+}
+.CivilizationsWrapper > div , .UnitWrapper > div , .StruWrapper > div , .TechWrapper > div {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 50px;
+   border-radius: 5px;
+}
+.CivilizationsWrapper > div > a, .UnitWrapper > div > a , .StruWrapper > div > a , .TechWrapper > div > a {
+   margin: auto;
+   text-align: center;
+   width: 100%;
+   font-size: 1.5em;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.UnitItem , .UnitLinkItem{
+   background-color: rgb(0, 154, 185);
+}
+
+.StruItem {
+   background-color: rgba(0, 100, 0, 0.700);
+}
+
+.TechItem , .TechLinkItem{
+   background-color: rgba(255, 242, 0, 0.700);
+}
+
+#Skils {
+   text-align: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color:rgb(255, 255, 255);
+   margin: 0;
+   font-size: 2em;
+   background-color: rgba(0, 0, 0, 0.85);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right:0;
+   -webkit-animation-duration: 0.5s;
+   animation-duration: 0.5s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+}
+
+#Skils:last-child {
+   -webkit-animation-duration: 1s;
+   animation-duration: 0.5s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   -webkit-animation-name: fadeRight;
+   animation-name: fadeRight;
+}
+@keyframes fadeRight {
+   from {right:-100%;}
+   to {right:0;}
+}
+
+#Skils > ul > li:last-child {
+   color: crimson;
+   -webkit-animation-duration: 1s;
+   animation-duration: 0.5s;
+}
+
+#Skils > ul > li:first-child {
+   color: rgb(0, 154, 185);
+}
+
+ul {
+   margin: 2%;
+   list-style: none;
+   padding: 0;
+}
+
+.AttackBonus {
+   text-align: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   padding-top: 10%;
+   text-align: center;
+   display: block;
+   width: 100%;
+   margin: 0 auto;
+   list-style: none;
+   padding: 0;
+   margin-bottom: 15px;
+   height: auto;
+   animation: showLeft 1s;
+   position: relative;
+}
+
+@keyframes showLeft {
+   from {left:-100%;}
+   to {left:0;}
+   }
+
+.AttackBonus > li:first-child {
+   color: crimson;
+}
+
+#Skils > li:first-child {
+   margin-top: 10%;
+}
+
+#Skils > button {
+   display: flex;
+   justify-content: center;
+   width: 40px;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+.blocks {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   position: fixed;
+   justify-content: center;
+   background: linear-gradient(to top, rgba(87, 93, 0, 0.7), rgba(0 ,0, 0, 0.9));
+   z-index: 99;
+   }
+   
+   .block {
+   --sz: 8vmin;
+   --tX: 0;
+   --animation: 700ms cubic-bezier(0.3, 0.5, 0.4, 0.9) infinite alternate-reverse;
+   --hm: 4.5vmin;
+   height: var(--sz);
+   width: var(--sz);
+   background-image: var(--bg);
+   border-radius: 50%;
+   transform: translateX(var(--tX));
+   mix-blend-mode: lighten;
+   transition: 0.4s;
+
+   }
+   
+   .orange {
+   --bg: linear-gradient(-50deg, #ff0000 0%, #ff0000 100%);
+   margin-right: var(--hm);
+   animation: attract-orange var(--animation);
+   transition: 0.4s;
+   }
+   
+   .blue {
+   --bg: linear-gradient(50deg, #ffffff 0%, #ffffff 100%);
+   margin-left: var(--hm);
+   animation: attract-blue var(--animation);
+   transition: 0.4s;
+   }
+   
+   @keyframes attract-orange {
+   to {
+      transition: 0.4s;
+      transform: translateX(calc(var(--sz) + calc(var(--hm) / 4)));
+   }
+   }
+   
+   @keyframes attract-blue {
+   to {
+      transition: 0.4s;
+      transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
+   }
+   }
