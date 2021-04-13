@@ -12,10 +12,10 @@ class Counter extends React.Component {
     handleClick = () => {
         const { isShown } = this.state;
 
-        this.setState({
-            ...this.state,
+        this.setState(prevState => ({
+            ...prevState,
             isShown: !isShown,
-        });
+        }));
     }
 
     handleClickFirst = () => {
