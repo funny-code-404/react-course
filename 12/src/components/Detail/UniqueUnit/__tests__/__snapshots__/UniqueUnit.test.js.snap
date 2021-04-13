@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DETAIL UNIQUE UNIT to Match Snapshot 1`] = `
+<div
+  key="/path/1"
+>
+  <p>
+    Unique unit:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;
+
+exports[`UniqueUnit to Match Snapshot 1`] = `
+<div
+  key="/path/1"
+>
+  <p>
+    Unique unit:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;

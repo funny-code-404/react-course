@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+.hotel {
+  display: flex;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+}
+.hotel:hover {
+  background-color: rgb(195, 248, 190);
+}
+.hotel_page > .hotel:hover {
+  background-color: rgb(255, 255, 255);
+}
+.hotel_info {
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+}
+.hotel_link,
+.login a,
+.signup a {
+  text-decoration: none;
+  color: black;
+}
+.hotel_info p {
+  padding: 2px 15px;
+  border-bottom: 1px dashed #f2f2f2;
+  text-decoration: none;
+}
+.hotel_img img {
+  width: 200px;
+  height: 200px;
+}
+.hotel_info-title {
+  text-align: center;
+}
+.hotel_add-form label,
+.login label,
+.signup label {
+  display: block;
+  margin: 10px;
+}
+.hotel_add-form input,
+.login input,
+.signup input {
+  width: 300px;
+  height: 40px;
+}
+.hotel_add-form span,
+.login span,
+.signup span {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+}
+.form_btn,
+.login a,
+.signup a {
+  width: 430px;
+  margin: 10px;
+  height: 30px;
+}
+.login a,
+.signup a {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid rgb(118, 118, 118);
+  line-height: 28px;
+  font-size: 14px;
+}
+.login a:hover,
+.logout a:hover {
+  background-color: rgb(133, 133, 133, 0.1);
+  border-color: rgb(59, 59, 59);
+}
+.warning {
+  color: red;
+}

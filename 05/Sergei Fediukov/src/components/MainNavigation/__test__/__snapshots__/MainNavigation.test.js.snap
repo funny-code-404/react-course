@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "MainNavigation" to Match Snapshot 1`] = `
+<Fragment>
+  <div
+    className="menu_link"
+  >
+    <NavLink
+      activeClassName="nav_active"
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavLink>
+  </div>
+  <Connect(MainNavLink)
+    path="/civilizations"
+    title="Civilizations"
+  />
+  <Connect(MainNavLink)
+    path="/units"
+    title="Units"
+  />
+  <Connect(MainNavLink)
+    path="/structures"
+    title="Structures"
+  />
+  <Connect(MainNavLink)
+    path="/technologies"
+    title="Technologies"
+  />
+</Fragment>
+`;

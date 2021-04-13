@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PAGES UNITS to Match Snapshot 1`] = `
+<Fragment>
+  <List
+    data={
+      Array [
+        Object {
+          "name": "text...",
+        },
+      ]
+    }
+    path="/path"
+    title="units"
+  />
+</Fragment>
+`;

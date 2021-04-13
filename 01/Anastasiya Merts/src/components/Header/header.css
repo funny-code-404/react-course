@@ -1,0 +1,18 @@
+.flex-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    font-family: 'Montserrat';
+    padding-top: 29px;
+    padding-bottom: 80px;
+}
+
+header nav{
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 178%;
+}

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MAIN NAVIGATION to Match Snapshot 1`] = `
+<li>
+  <Link
+    onClick={[Function]}
+    to="/path"
+  >
+    title
+  </Link>
+</li>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "NotFound" to Match Snapshot 1`] = `
+<div>
+  <h1>
+    page doesn't exist
+  </h1>
+</div>
+`;

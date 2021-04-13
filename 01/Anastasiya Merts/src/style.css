@@ -1,0 +1,116 @@
+/* @font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.eot');
+    src: url('fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg'),
+         url('fonts/Montserrat-Regular.ttf') format('truetype'),
+         url('fonts/Montserrat-Regular.woff') format('woff'),
+         url('fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Medium.eot');
+    src: url('fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Montserrat-Medium.svg#Montserrat-Medium') format('svg'),
+         url('fonts/Montserrat-Medium.ttf') format('truetype'),
+         url('fonts/Montserrat-Medium.woff') format('woff'),
+         url('fonts/Montserrat-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  } */
+  
+  
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat';
+    background-color: #1B1E22;
+}
+
+.container{
+    max-width: 1128px;
+    margin: auto;
+    position: relative;
+}
+
+.banner{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 2.5%, rgba(27, 30, 34, 0.4) 42.42%, #1B1E22 84.67%);
+    width: cover;
+    position: relative;
+    z-index: 5;
+}
+
+.banner-wrap{
+    background-image: url(./components/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+} 
+
+.actual{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actual h2{
+    padding-bottom: 25px;
+    padding-top: 61px;
+}
+
+.directions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    padding-bottom: 48px;
+}
+
+@media(max-width:1024px){
+    .container{
+        max-width: 90%;
+    }
+
+    .search-form{
+        padding: 20px;
+        right: 0;
+    }
+
+    .directions{
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:768px){
+    .flex-header{
+        flex-direction: column;
+    }
+
+    header{
+        padding-bottom: 0;
+    }
+
+    h1{
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 121%;
+        padding-top: 20px;
+        max-width: 582px;
+    }
+
+    .search{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*to be continue*/
+}

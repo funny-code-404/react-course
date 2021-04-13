@@ -1,0 +1,42 @@
+h3 {
+  text-align: center;
+  background-color: rgb(255, 242, 183);
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+a {
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  color: black;
+  background-color: blanchedalmond;
+}
+
+.RenderCar {
+  background-color: bisque;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.RenderCar > p{
+  text-align: center ;
+}
+
+.RenderCar > img{
+  max-width: 400px ;
+  margin: 0 auto;
+}
+
+.ListCar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

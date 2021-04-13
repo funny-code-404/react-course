@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "SignUp" to Match Snapshot 1`] = `
+<div
+  className="signup"
+>
+  <h1>
+    Sign Up
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+       
+      <span>
+        Email
+      </span>
+      <input
+        name="email"
+        placeholder="email"
+        type="email"
+      />
+    </label>
+    <label>
+       
+      <span>
+        Password
+      </span>
+      <input
+        name="password"
+        placeholder="password"
+        type="password"
+      />
+    </label>
+    <button
+      className="form_btn"
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
+  <p>
+    or
+  </p>
+  <Link
+    to="/login"
+  >
+    Log in
+  </Link>
+</div>
+`;

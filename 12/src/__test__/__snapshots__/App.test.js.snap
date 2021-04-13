@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`APP to Match Snapshot 1`] = `
+<Fragment>
+  <Connect(Loading) />
+  <div
+    className="container"
+  >
+    <header>
+      <nav
+        className="menu"
+      >
+        <ul>
+          <Connect(MainNavigation)
+            path="/"
+            title="Home"
+          />
+          <Connect(MainNavigation)
+            path="/civilizations"
+            title="Civilizations"
+          />
+          <Connect(MainNavigation)
+            path="/units"
+            title="units"
+          />
+          <Connect(MainNavigation)
+            path="/structures"
+            title="structures"
+          />
+          <Connect(MainNavigation)
+            path="/technologies"
+            title="technologies"
+          />
+        </ul>
+      </nav>
+    </header>
+    <Routers />
+  </div>
+</Fragment>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly "ResultNavigation" to Match Snapshot 1`] = `
+<div
+  className="menu_link"
+>
+  <h1>
+    test title
+  </h1>
+  <ul>
+    <li
+      key="1"
+    >
+      <Link
+        to="test path/1"
+      >
+        test name
+      </Link>
+    </li>
+    <li
+      key="2"
+    >
+      <Link
+        to="test path/2"
+      >
+        test name
+      </Link>
+    </li>
+  </ul>
+</div>
+`;

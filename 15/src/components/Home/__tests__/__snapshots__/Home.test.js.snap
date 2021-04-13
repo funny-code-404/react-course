@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home/> unit test should match snapshot 1`] = `
+<styled.div>
+  <h1>
+    Age of Empires II
+  </h1>
+</styled.div>
+`;

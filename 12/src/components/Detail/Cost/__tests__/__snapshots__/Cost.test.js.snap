@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cost to Match Snapshot 1`] = `
+<div>
+  <p>
+    Costs:
+  </p>
+  <ul>
+    <li>
+      Wood - 
+      <span>
+        1
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DETAIL COST to Match Snapshot 1`] = `
+<div>
+  <p>
+    Costs:
+  </p>
+  <ul>
+    <li>
+      Wood - 
+      <span>
+        1
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,23 @@
+
+body {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,0.83) 0%, rgba(0,0,0,1) 100%);
+    width: 95%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.wrapper {
+  display: block;
+  margin: 20px;
+  box-shadow: 0 0 25px 5px rgba(221, 221, 221, .7);
+  background-image: url(Assets/img/mount.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  height: 95vh;
+  display: grid;
+  align-content: space-between;
+  border-radius: 20px;
+}
+

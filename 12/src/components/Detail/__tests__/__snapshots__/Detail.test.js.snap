@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DETAIL to Match Snapshot 1`] = `
+<div
+  className="detail"
+>
+  <h1>
+    test
+  </h1>
+  <div
+    className="ditail-block"
+  >
+    <p
+      key="army_type"
+    >
+      army_type
+      : 
+      <span>
+        text
+      </span>
+    </p>
+    <Cost
+      data="test"
+    />
+    <AttackBonus
+      data="text"
+    />
+    <Special
+      data="test"
+    />
+    <CivilizationBonus
+      data="test"
+    />
+    <DetailUniqueUnit
+      data={
+        Array [
+          "test",
+        ]
+      }
+    />
+    <DetailUniqueTech
+      data={
+        Array [
+          "test",
+        ]
+      }
+    />
+    <DetailCreatedIn
+      data="test"
+    />
+  </div>
+</div>
+`;

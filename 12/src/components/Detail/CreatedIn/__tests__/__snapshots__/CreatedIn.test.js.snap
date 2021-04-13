@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DETAIL CREATED IN to Match Snapshot 1`] = `
+<div>
+  <p>
+    Created in:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;
+
+exports[`DetailCreatedIn to Match Snapshot 1`] = `
+<div>
+  <p>
+    Created in:
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    1
+  </button>
+</div>
+`;

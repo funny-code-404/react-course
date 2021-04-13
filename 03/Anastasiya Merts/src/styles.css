@@ -1,0 +1,23 @@
+table {
+    border: 3px solid gray;
+    border-collapse: collapse;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+td {
+    border: 2px solid green;
+    text-align: center; /* Выравнивание по центру */
+    padding: 3px; 
+}
+
+.form {
+    width: 300px;
+    border: 3px solid gray;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid gray;
+}

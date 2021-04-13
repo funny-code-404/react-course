@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LIST to Match Snapshot 1`] = `
+<div
+  className="list"
+>
+  <h1>
+    Some Text title...
+  </h1>
+  <ul>
+    <li
+      className="li"
+      key="1"
+    >
+      <Link
+        className="link"
+        to="/path/1"
+      >
+        Some text...
+      </Link>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List to Match Snapshot 1`] = `
+<div
+  className="list"
+>
+  <h1>
+    Some Text title...
+  </h1>
+  <ul>
+    <li
+      className="li"
+      key="1"
+    >
+      <Link
+        className="link"
+        to="/path/1"
+      >
+        Some text...
+      </Link>
+    </li>
+  </ul>
+</div>
+`;
