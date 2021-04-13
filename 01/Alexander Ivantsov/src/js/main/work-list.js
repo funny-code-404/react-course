@@ -2,16 +2,13 @@ import React from 'react';
 
 class WorkList extends React.Component {
     render() {
-        const title = this.props.titleCompany;
-        const position = this.props.posCompany;
-        const resp = this.props.respCompany;
-        const workTime = this.props.workTime;
+        const { titleCompany, posCompany, respCompany, workTime } = this.props;
 
         return (
             <li>
-                <h3>{title}<span>{workTime}</span></h3>
-                <h4>{position}</h4>
-                <p>{resp}</p>
+                <h3>{titleCompany}<span>{workTime}</span></h3>
+                <h4>{posCompany}</h4>
+                <p>{respCompany}</p>
             </li>
         )
     }

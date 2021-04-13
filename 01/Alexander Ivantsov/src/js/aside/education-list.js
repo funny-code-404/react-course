@@ -2,17 +2,15 @@ import React from 'react';
 
 class EducatuionList extends React.Component {
     render() {
-        const year = this.props.studyYear;
-        const place = this.props.studyPlace;
-        const spec = this.props.studySpec;
+        const { studyYear, studyPlace, studySpec } = this.props;
 
         return (
             <li>
                 <div className="edu-pointer"></div>
                 <div className="edu-data">
-                    <p>{year}</p>
-                    <p>{place}</p>
-                    <p>{spec}</p>
+                    <p>{studyYear}</p>
+                    <p>{studyPlace}</p>
+                    <p>{studySpec}</p>
                 </div>
             </li>
         )

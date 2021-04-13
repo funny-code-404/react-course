@@ -2,14 +2,12 @@ import React from 'react';
 
 class Contacts extends React.Component {
     render() {
-        const contact = this.props.contactInfo;
-        const contactIcon = this.props.contactIcons;
-        const data = this.props.contactData;
+        const { contactInfo, contactIcons } = this.props;
 
         return (
-            <li className="copy" data-value={data}>
-                {contactIcon}
-                {contact}
+            <li className="copy" onClick={() => navigator.clipboard.writeText(contactInfo)}>
+                {contactIcons}
+                {contactInfo}
             </li>
         )
     }

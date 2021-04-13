@@ -14,23 +14,19 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const contactMenu = [
     {
         text: 'Republic of Belarus, Minsk',
-        icon: <LocationOnIcon />,
-        data: 'Republic of Belarus, Minsk'
+        icon: <LocationOnIcon />
     }, 
     {
         text: '+375259559125',
-        icon: <PhoneIcon />,
-        data: '+375259559125'
+        icon: <PhoneIcon />
     }, 
     {
         text: 'pr.minsk.ivantsov@gmail.com',
-        icon: <MailIcon />,
-        data: 'pr.minsk.ivantsov@gmail.com'
+        icon: <MailIcon />
     },
     {
         text: 'github.com/ivantsov-aa',
-        icon: <GitHubIcon />,
-        data: 'github.com/ivantsov-aa'
+        icon: <GitHubIcon />
     }
 ];
 
@@ -42,7 +38,7 @@ class Aside extends React.Component {
                     <img src={photo} alt={photo}/>
                     <ul>
                         {contactMenu.map((item, i) => (
-                            <Contacts contactInfo={item.text} contactIcons={item.icon} contactData={item.data} key={i} />
+                            <Contacts contactInfo={item.text} contactIcons={item.icon} key={i} />
                         ))}
                     </ul>
                 </header>
@@ -54,13 +50,3 @@ class Aside extends React.Component {
 }
 
 export default Aside;
-
-window.onload = () => {
-    const contactsForCopy = document.querySelectorAll('.copy');
-    contactsForCopy.forEach(contact => {
-        contact.addEventListener('click', () => {
-            const text = contact.dataset.value;
-            window.navigator.clipboard.writeText(text);
-        })
-    })
-}
