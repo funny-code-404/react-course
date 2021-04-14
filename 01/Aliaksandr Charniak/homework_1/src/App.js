@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <Navigation updateData={this.updateData} countrys={data} />
+        <Navigation updateData={this.updateData} countries={data} />
         <Article index={this.state.index} info={data} />
         <Footer />
       </div>
