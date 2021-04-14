@@ -2,9 +2,6 @@ import React from 'react'
 import './style.css'
 
 class DataUser extends React.Component {
-  state = {
-  }
-
   render(){
   const { name, email, password } = this.props.dataForm
     return(
