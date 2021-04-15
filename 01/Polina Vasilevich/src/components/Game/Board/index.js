@@ -1,34 +1,36 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Square from "../Square";
 import { Board, BoardRow } from "./styles";
 
-class BoardComponent extends React.Component {
-  renderSquare(i, key) {
-    return (
-      <Square
-        key={key}
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
-
-  render() {
-    const cells = [...Array(this.props.cells).keys()];
-    let index = -1;
-    return (
-      <Board>
-        {cells.map((cell) => (
-          <BoardRow key={cell}>
-            {cell.map(() => {
-              index++;
-              return this.renderSquare(index, cell);
-            })}
-          </BoardRow>
+const BoardComponent = ({ countRows, countCols, squares, onClick }) => (
+  <Board>
+    {[...Array(countRows).keys()].map((itemRow, indexRow) => (
+      <BoardRow key={indexRow}>
+        {[...Array(countCols).keys()].map((itemCol, indexCol) => (
+          <Square
+            key={indexCol}
+            value={squares[indexRow * countCols + indexCol]}
+            onClick={() => onClick(indexRow * countCols + indexCol)}
+          />
         ))}
-      </Board>
-    );
-  }
-}
+      </BoardRow>
+    ))}
+  </Board>
+);
+
+BoardComponent.propTypes = {
+  countRows: PropTypes.number,
+  countCols: PropTypes.number,
+  squares: PropTypes.array,
+  onClick: PropTypes.func,
+};
+
+BoardComponent.defaultProps = {
+  countRows: 0,
+  countCols: 0,
+  squares: [],
+  onClick: "",
+};
 
 export default BoardComponent;

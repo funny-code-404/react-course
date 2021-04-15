@@ -1,14 +1,15 @@
 import React from "react";
 import Board from "./Board";
+import PropTypes from "prop-types";
 
 import { Game, GameInfo, Button } from "./styles";
 
 class GameComponent extends React.Component {
   state = {
-    squares: Array(this.props.cells * this.props.cells).fill(null),
+    squares: Array(this.props.countRows * this.props.countCols).fill(null),
     history: [
       {
-        squares: Array(this.props.cells * this.props.cells).fill(null),
+        squares: Array(this.props.countRows * this.props.countCols).fill(null),
       },
     ],
     stepNumber: 0,
@@ -39,7 +40,7 @@ class GameComponent extends React.Component {
 
   reset = () => {
     this.setState({
-      squares: Array(this.props.cells * this.props.cells).fill(null),
+      squares: Array(this.props.countRows * this.props.countCols).fill(null),
       xIsNext: true,
     });
   };
@@ -54,7 +55,8 @@ class GameComponent extends React.Component {
       <Game>
         <GameInfo>{status}</GameInfo>
         <Board
-          cells={this.props.cells}
+          countRows={this.props.countRows}
+          countCols={this.props.countCols}
           squares={this.state.squares}
           onClick={this.handleClick}
         />
@@ -64,6 +66,17 @@ class GameComponent extends React.Component {
     );
   }
 }
+
+GameComponent.propTypes = {
+  countRows: PropTypes.number,
+  countCols: PropTypes.number,
+};
+
+GameComponent.defaultProps = {
+  countRows: 0,
+  countCols: 0,
+};
+
 export default GameComponent;
 
 function calculateWinner(squares) {

@@ -52,5 +52,6 @@ export const config = {
     },
   ],
 
-  cells: 3,
+  countRows: 3,
+  countCols: 3,
 };
