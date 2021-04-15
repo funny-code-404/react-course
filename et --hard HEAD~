@@ -1,0 +1,249 @@
+[33mcommit 71931698edddb00d264f7d732450b1a6b7d3c7ca[m[33m ([m[1;36mHEAD -> [m[1;32mhomework2[m[33m)[m
+Author: Andrei456456 <andrei.shydla@gmail.com>
+Date:   Thu Apr 15 17:17:02 2021 +0300
+
+    Add homework2
+
+[33mcommit 59ba7eb248eab6020eb2ca279a1ca83187156dbf[m[33m ([m[1;31morigin/hw1_andrei[m[33m, [m[1;32mhw1_andrei[m[33m)[m
+Author: Andrei456456 <andrei.shydla@gmail.com>
+Date:   Wed Apr 7 13:21:08 2021 +0300
+
+    Andrei Shydla - homework 1
+
+[33mcommit 69b30acd2dd01a05ab40b5375b1a78600cc166e4[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Mon Apr 5 23:35:21 2021 +0300
+
+    Add homework-12 (#100)
+
+[33mcommit fde3895d6224c5af567ea06f99a75dac0cb9131e[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Mon Apr 5 23:33:06 2021 +0300
+
+    add homework 15 (firebase) (#99)
+
+[33mcommit 84eda3aedbe991e963cfb2db22844d512389962d[m
+Author: Darya Shrubok <55853211+DaryaShr@users.noreply.github.com>
+Date:   Mon Apr 5 23:32:14 2021 +0300
+
+    Homework 1 (#102)
+
+[33mcommit 11df9f185069f6a98e4b9f3f9a34e701bc84e59c[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Fri Mar 26 16:06:39 2021 +0300
+
+    [HOMEWORK10] Added Fetch-Thunk Spa (#92)
+
+[33mcommit 89caf80eac3494517d4ab9d294cd1632e6a5ad59[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Fri Mar 26 16:04:11 2021 +0300
+
+    [HOMEWORK9] Added Todo SPA (#91)
+
+[33mcommit de899f83d8a0dd6ea6d461e5442a642dfadeedea[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Fri Mar 26 16:03:21 2021 +0300
+
+    [HOMEWORK7] Added Cars SPA With Router (#81)
+
+[33mcommit 98f42d96f2c5cbdfff9771beaf0000ef25539b3e[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Fri Mar 26 16:00:43 2021 +0300
+
+    add homework 9 (#76)
+    
+    * add homework 9
+    
+    * homework 9 after comments
+
+[33mcommit f692c97d92af604cbdef246bc1debb91c024c65e[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Mon Mar 22 17:19:57 2021 +0300
+
+    add homework 10 (#83)
+
+[33mcommit a9aae4de4f737433d66ccd5c72ee910ca6524758[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Mon Mar 22 17:18:42 2021 +0300
+
+    add homework 11 (#87)
+
+[33mcommit 725a27edfeb87afbeaca8e10852971713da96001[m
+Author: zatrimaylova <76529464+zatrimaylova@users.noreply.github.com>
+Date:   Mon Mar 22 17:15:35 2021 +0300
+
+    added homework 5 (#89)
+
+[33mcommit 96b1ee928522189010a92af55ab965a6b4ab0784[m
+Author: MertsAnastasiya <73317252+MertsAnastasiya@users.noreply.github.com>
+Date:   Mon Mar 22 17:14:47 2021 +0300
+
+    Anastasiya added homework 7 (#93)
+    
+    Co-authored-by: Anastasiya <Anastasiya@Sergeys-MacBook-Pro.local>
+
+[33mcommit 805b2e2d6cad663b352033b1f3bba46e1d8435b7[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Mon Mar 22 17:13:43 2021 +0300
+
+    Add homework-11 (#86)
+    
+    * Add homework-11
+    
+    * Code review
+    
+    * Code review
+
+[33mcommit 6467db60b8a704ec24567b18da95c5f164fd5208[m
+Author: MertsAnastasiya <73317252+MertsAnastasiya@users.noreply.github.com>
+Date:   Mon Mar 22 17:13:15 2021 +0300
+
+    Anastasiya added homework 6 (#85)
+    
+    Co-authored-by: Anastasiya <Anastasiya@Sergeys-MacBook-Pro.local>
+
+[33mcommit c8063e2aab987e2484bf12b46ef4d58817a1ca38[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Mon Mar 22 17:12:08 2021 +0300
+
+    Add homework-10 (#84)
+
+[33mcommit 63a94f2e52506b02787953bfb1617860697b936a[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Mon Mar 22 17:10:31 2021 +0300
+
+    [HOMEWORK8] Added Redux-Style  RegForm (#82)
+
+[33mcommit d243a6781b227ebd0876848b524d325cb50e7813[m
+Author: zatrimaylova <76529464+zatrimaylova@users.noreply.github.com>
+Date:   Mon Mar 22 17:06:56 2021 +0300
+
+    added homework-3 (#88)
+
+[33mcommit f7f7c5af3f8ab138dc6d6e78612c5b0e99369cfb[m
+Author: zatrimaylova <76529464+zatrimaylova@users.noreply.github.com>
+Date:   Mon Mar 22 17:05:38 2021 +0300
+
+    added homework-6 (#90)
+
+[33mcommit 9c0fbc6c598452d978e9c2b4b54aa740976686a1[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Mon Mar 22 16:58:13 2021 +0300
+
+    add homework-12 (#95)
+
+[33mcommit 4b143ca159a623b63bff3a3ba834a6d99a792313[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Mon Mar 15 23:20:07 2021 +0300
+
+    Add homework-9 (#80)
+
+[33mcommit c61d4892f53f55eb668e514de9ab543cd93f1300[m
+Author: MertsAnastasiya <73317252+MertsAnastasiya@users.noreply.github.com>
+Date:   Mon Mar 15 23:17:32 2021 +0300
+
+    Anastasiya added homework 5 (#79)
+    
+    Co-authored-by: Anastasiya <Anastasiya@Sergeys-MacBook-Pro.local>
+
+[33mcommit 5125345224cdf62bca369c49073c13cc94b9307d[m
+Author: MertsAnastasiya <73317252+MertsAnastasiya@users.noreply.github.com>
+Date:   Mon Mar 15 23:16:10 2021 +0300
+
+    Anastasiya added homework 4 (#78)
+    
+    Co-authored-by: Anastasiya <Anastasiya@Sergeys-MacBook-Pro.local>
+
+[33mcommit ddddac74bd52bcc7d9113bdb1b327076cbd17c3e[m
+Author: AndyCuba <70431231+AndyCuba@users.noreply.github.com>
+Date:   Thu Mar 11 16:03:22 2021 +0300
+
+    [Homework15] Added AOE2 (#68)
+
+[33mcommit 36c4bcef42e2e76282a41801ce7838c91214fdf9[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Thu Mar 11 16:02:20 2021 +0300
+
+    Homework1 add Fix (#77)
+
+[33mcommit bfc3543bf9e8330cb70ae06be0e871a3e8c5d20a[m
+Author: MertsAnastasiya <73317252+MertsAnastasiya@users.noreply.github.com>
+Date:   Mon Mar 1 16:57:42 2021 +0300
+
+    Anastasiya added homework-1 (#41)
+
+[33mcommit cac5a65f32761133f537195e5af9cc22c0116bc3[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Mon Mar 1 16:57:19 2021 +0300
+
+    Add homework 1 (#44)
+    
+    * Add homework 1
+    
+    * Code review
+
+[33mcommit fe6beb8bd43f7aa378e2bd368c3f6e82e500df41[m
+Author: Kiryll26 <60568848+Kiryll26@users.noreply.github.com>
+Date:   Fri Feb 26 20:30:58 2021 +0300
+
+    [12] add home (#55)
+
+[33mcommit 66d42af0b78ff72babb6f570cad5377c49d5bb4b[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Fri Feb 26 20:30:16 2021 +0300
+
+    add homework 5 (#62)
+
+[33mcommit d7466445d6c1925c82e857818685ae020a3bb9cc[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Fri Feb 26 20:28:22 2021 +0300
+
+    Add homework-7 (#70)
+    
+    * Add homework-7
+    
+    * Add homework-7 redaction
+
+[33mcommit fdacf1c13fca51149f82d3e6236c59021c2390d3[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Fri Feb 26 20:27:11 2021 +0300
+
+    add homework 7 (#71)
+
+[33mcommit ecd8aa0e29355d055d8322fa301a11f821317f37[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Fri Feb 26 20:26:03 2021 +0300
+
+    [HOMEWORK5] added Router SPA (#72)
+
+[33mcommit 836f30345591809dae96e90663f72cade35fdf5e[m
+Author: NikitaKhadnevich <70269922+NikitaKhadnevich@users.noreply.github.com>
+Date:   Fri Feb 26 20:25:29 2021 +0300
+
+    [HOMEWORK6] added Render To Props Components (#73)
+
+[33mcommit dda47179f237618c24edd9bebcc7865853464f49[m
+Author: EkaterinaPanchenko <68436058+EkaterinaPanchenko@users.noreply.github.com>
+Date:   Fri Feb 26 20:23:58 2021 +0300
+
+    Add homework-8 (#74)
+
+[33mcommit dd35a04be2edc63d8fcf6a83d1ef85424a54e957[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Fri Feb 26 20:23:10 2021 +0300
+
+    Homework 8 (#75)
+
+[33mcommit c405748449da95aff48d0878864f91b0ef46ee3d[m
+Author: Peskarski <76529522+Peskarski@users.noreply.github.com>
+Date:   Mon Feb 22 14:14:42 2021 +0300
+
+    add homework 6 (#66)
+
+[33mcommit 02c62f6387a5e1d3162114938c355f9f4c66e7d3[m
+Author: Fediukov Sergei <59789616+Dio-Dao@users.noreply.github.com>
+Date:   Mon Feb 22 14:13:28 2021 +0300
+
+    [05] Task 5 (<Age Of Empires> with redux/sagas/auth/tests/proptypes) (#56)
+
+[33mcommit b455ab3a35dee16

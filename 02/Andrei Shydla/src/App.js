@@ -42,7 +42,6 @@ class App extends React.Component {
         <BlockDropDownList dataDDL={dataDropDownList.data1} />
         <BlockDropDownList dataDDL={dataDropDownList.data2} />
         <BlockDropDownList dataDDL={dataDropDownList.data3} />
-
         <BlockForm />
       </div>
     );
