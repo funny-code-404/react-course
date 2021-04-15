@@ -95,12 +95,11 @@ class Form extends React.Component {
   };
 
   render() {
-    const { inputs } = this.props;
     const { data, errors } = this.state;
     return (
       <form className="form" onChange={this.handleChange}>
         <h2 className="form__title">ACCOUNT LOGIN</h2>
-        {inputs.map(({ id, type, name, placeholder }) => (
+        {this.props.inputs.map(({ id, type, name, placeholder }) => (
           <div className="form__container">
             <input
               key={id}
