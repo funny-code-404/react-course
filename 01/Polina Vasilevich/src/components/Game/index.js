@@ -4,21 +4,18 @@ import Board from "./Board";
 import { Game, GameInfo, Button } from "./styles";
 
 class GameComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-      history: [
-        {
-          squares: Array(9).fill(null),
-        },
-      ],
-      stepNumber: 0,
-      xIsNext: true,
-    };
-  }
+  state = {
+    squares: Array(this.props.cells * this.props.cells).fill(null),
+    history: [
+      {
+        squares: Array(this.props.cells * this.props.cells).fill(null),
+      },
+    ],
+    stepNumber: 0,
+    xIsNext: true,
+  };
 
-  handleClick(i) {
+  handleClick = (i) => {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const squares = this.state.squares.slice();
 
@@ -38,11 +35,11 @@ class GameComponent extends React.Component {
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
     });
-  }
+  };
 
   reset = () => {
     this.setState({
-      squares: Array(9).fill(null),
+      squares: Array(this.props.cells * this.props.cells).fill(null),
       xIsNext: true,
     });
   };
@@ -57,8 +54,9 @@ class GameComponent extends React.Component {
       <Game>
         <GameInfo>{status}</GameInfo>
         <Board
+          cells={this.props.cells}
           squares={this.state.squares}
-          onClick={(i) => this.handleClick(i)}
+          onClick={this.handleClick}
         />
 
         {winner && <Button onClick={this.reset}>New game</Button>}
@@ -79,6 +77,7 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
 

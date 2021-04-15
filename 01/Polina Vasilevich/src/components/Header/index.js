@@ -18,7 +18,7 @@ export default function Header(props) {
         <ul className="list header__list">
           {routes.map(({ path, label }) => (
             <Link key={path} to={path} className="list__item">
-              {label && label[0].toUpperCase() + label.slice(1).toLowerCase()}
+              {label && (label[0].toUpperCase() + label.slice(1).toLowerCase())}
             </Link>
           ))}
         </ul>

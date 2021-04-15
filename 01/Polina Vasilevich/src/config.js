@@ -51,4 +51,6 @@ export const config = {
       href: "https://www.pinterest.com/",
     },
   ],
+
+  cells: 3,
 };
