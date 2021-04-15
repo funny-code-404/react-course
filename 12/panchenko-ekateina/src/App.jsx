@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  NavLink,
-  Switch,
-  Route,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { getResourcesRequested } from "./ducks/actions";
 import { baseUrl } from "./api";
+import { AuthProvider } from "./context/Auth.context";
 import {
   Home,
   Civilizations,
@@ -15,7 +11,20 @@ import {
   Structures,
   Units,
   Item,
+  SignUp,
+  LogIn,
+  Navigation,
+  PrivateRoute,
 } from "./components";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,41 +34,27 @@ export const App = () => {
   }, []);
 
   return (
-    <Router>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/civilizations">Civilizations</NavLink>
-            </li>
-            <li>
-              <NavLink to="/units">Units</NavLink>
-            </li>
-            <li>
-              <NavLink to="/structures">Structures</NavLink>
-            </li>
-            <li>
-              <NavLink to="/technologies">Technologies</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main className="App">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/unit/:key" component={Item} />
-          <Route path="/units" component={Units} />
-          <Route path="/civilization/:key" component={Item} />
-          <Route path="/civilizations" component={Civilizations} />
-          <Route path="/structure/:key" component={Item} />
-          <Route path="/structures" component={Structures} />
-          <Route path="/technology/:key" component={Item} />
-          <Route path="/technologies" component={Technologies} />
-        </Switch>
-      </main>
-    </Router>
+    <AuthProvider>
+      <GlobalStyle />
+      <Router>
+        <Navigation />
+        <main>
+          <Switch>
+            <Route path="/login" component={LogIn} />
+
+            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute path="/signup" component={SignUp} />
+            <PrivateRoute path="/unit/:key" component={Item} />
+            <PrivateRoute path="/units" component={Units} />
+            <PrivateRoute path="/civilization/:key" component={Item} />
+            <PrivateRoute path="/civilizations" component={Civilizations} />
+            <PrivateRoute path="/structure/:key" component={Item} />
+            <PrivateRoute path="/structures" component={Structures} />
+            <PrivateRoute path="/technology/:key" component={Item} />
+            <PrivateRoute path="/technologies" component={Technologies} />
+          </Switch>
+        </main>
+      </Router>
+    </AuthProvider>
   );
 };
