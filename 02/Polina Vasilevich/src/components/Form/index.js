@@ -8,8 +8,6 @@ class Form extends React.Component {
     errors: {},
   };
 
-  inputs = this.props.inputs;
-
   handleChange = (e) => {
     const { errors } = this.state;
     const { name, value } = e.target;
@@ -29,7 +27,7 @@ class Form extends React.Component {
     const { data } = this.state;
     const errors = {};
 
-    this.inputs.map(({ name }) => {
+    this.props.inputs.map(({ name }) => {
       if (!data[name]) {
         errors[name] = `Please enter ${name}`;
       } else {
@@ -68,12 +66,14 @@ class Form extends React.Component {
       errors,
     }));
 
-    return !Object.keys(errors).length ? true : false;
+    return !Object.keys(errors).length;
   }
 
   clearForm() {
     const data = {};
-    this.inputs.map(({ name }) => (data[name] = ""));
+
+    this.props.inputs.map(({ name }) => (data[name] = ""));
+
     this.setState((prevState) => ({
       ...prevState,
       data,
