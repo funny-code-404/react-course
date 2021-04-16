@@ -1,0 +1,8 @@
+.city {
+  display: grid;
+  grid-template-rows: repeat(4, 50px);
+  border: 1px solid blue;
+  border-radius: 5px;
+  border-color: aqua;
+  padding: 20px;
+}
