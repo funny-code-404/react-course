@@ -1,24 +1,20 @@
 export default {
-  fields: {
-    caption: "Table",
-    headers: [
-      { id: "header1", title: "ID" },
-      { id: "header2", title: "Brand" },
-      { id: "header3", title: "Model" },
-      { id: "header4", title: "Year" },
-      { id: "header5", title: "Price" },
-    ],
-  },
+  headers: [
+    { id: "header1", title: "ID" },
+    { id: "header2", title: "Brand" },
+    { id: "header3", title: "Model" },
+    { id: "header4", title: "Year" },
+    { id: "header5", title: "Price" },
+  ],
+
   cars: [
     {
-      // id: "1",
       brand: "Volkswagen",
       model: "Passat",
       year: "2018",
       price: "25000 $",
     },
     {
-      // id: "2",
       brand: "BMW",
       model: "3 series",
       year: "2017",

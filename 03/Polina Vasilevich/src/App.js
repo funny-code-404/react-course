@@ -85,7 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Table {...config.fields}>
+        <Table headers={config.headers}>
           {this.state.dataTable.map((data, index) => (
             <Table.Item
               id={index}

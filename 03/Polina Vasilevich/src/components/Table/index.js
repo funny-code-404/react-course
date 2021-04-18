@@ -3,9 +3,8 @@ import TableLine from "./TableLine";
 
 import { Table, Tr, Th } from "./styles";
 
-const TableComponent = ({ caption, headers, children }) => (
+const TableComponent = ({ headers, children }) => (
   <Table>
-    {/* <caption>{caption}</caption> */}
     <thead>
       <Tr>
         {headers.map(({ id, title }) => (
