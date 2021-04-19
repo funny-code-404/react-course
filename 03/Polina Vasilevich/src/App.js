@@ -8,73 +8,20 @@ import config from "./config";
 class App extends Component {
   state = {
     dataTable: config.cars,
-    dataForm: {},
-    errors: {},
+    dataForm: null,
   };
 
-  validateForm() {
-    const { dataForm } = this.state;
-    const errors = {};
-
-    config.inputs.map(({ name }) => {
-      if (!dataForm[name]) {
-        errors[name] = `Please enter ${name}`;
-      }
-    });
+  onClickForm = (dataForm) => {
+    const data = this.state.dataForm !== null ? this.state.dataForm : dataForm;
 
     this.setState((prevState) => ({
       ...prevState,
-      errors,
-    }));
-
-    return !Object.keys(errors).length;
-  }
-
-  clearForm() {
-    const dataForm = {};
-
-    config.inputs.map(({ name }) => (dataForm[name] = ""));
-
-    this.setState((prevState) => ({
-      ...prevState,
-      dataForm,
-    }));
-  }
-
-  handleChange = (e) => {
-    const { errors } = this.state;
-    const { name, value } = e.target;
-
-    if (errors[name]) {
-      errors[name] = "";
-    }
-
-    this.setState((prevState) => ({
-      ...prevState,
-      dataForm: {
-        ...prevState.dataForm,
-        [name]: value,
-      },
-      errors,
+      dataTable: [...prevState.dataTable, data],
+      dataForm: null,
     }));
   };
 
-  handleClick = (e) => {
-    e.preventDefault();
-    if (this.validateForm()) {
-      this.setState((prevState) => ({
-        ...prevState,
-        dataTable: [...prevState.dataTable, this.state.dataForm],
-      }));
-
-      this.clearForm();
-    }
-  };
-
-  handleClickLine = (e) => {
-    const { dataTable } = this.state;
-    const dataForm = dataTable[e.currentTarget.id];
-
+  onClickLine = (dataForm) => {
     this.setState((prevState) => ({
       ...prevState,
       dataForm,
@@ -88,17 +35,17 @@ class App extends Component {
         <Table headers={config.headers}>
           {this.state.dataTable.map((data, index) => (
             <Table.Item
+              key={`tableLine${index}`}
               id={index}
+              dataTable={this.state.dataTable}
               dataLine={data}
-              handleClickLine={this.handleClickLine}
+              onClick={this.onClickLine}
             />
           ))}
         </Table>
         <Form
           inputs={config.inputs}
-          onChange={this.handleChange}
-          onClick={this.handleClick}
-          errors={this.state.errors}
+          onClick={this.onClickForm}
           dataForm={this.state.dataForm}
         />
       </div>

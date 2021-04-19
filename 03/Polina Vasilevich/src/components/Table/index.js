@@ -1,21 +1,32 @@
 import React from "react";
-import TableLine from "./TableLine";
+import PropTypes from "prop-types";
+import TableItem from "./TableItem";
 
-import { Table, Tr, Th } from "./styles";
+import { Table, TableLine, TableLineItem } from "./styles";
 
 const TableComponent = ({ headers, children }) => (
   <Table>
     <thead>
-      <Tr>
+      <TableLine>
         {headers.map(({ id, title }) => (
-          <Th key={id}>{title}</Th>
+          <TableLineItem key={id}>{title}</TableLineItem>
         ))}
-      </Tr>
+      </TableLine>
     </thead>
     {children}
   </Table>
 );
 
-TableComponent.Item = TableLine;
+TableComponent.Item = TableItem;
+
+TableComponent.propTypes = {
+  headers: PropTypes.array,
+  children: PropTypes.array,
+};
+
+TableComponent.defaultProps = {
+  headers: [],
+  children: [],
+};
 
 export default TableComponent;
