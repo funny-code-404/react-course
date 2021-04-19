@@ -1,0 +1,16 @@
+header {
+  background-image: url(../assets/logo.png);
+  background-repeat: no-repeat;
+  background-size: 38.64;
+  background-position: 0 43px;
+}
+header nav {
+  padding: 43px 0 42.5px 118px;
+}
+
+header::after {
+  display: block;
+  content: "";
+  width: 470px;
+  border: 1px solid #c08d5d;
+}
