@@ -38,6 +38,15 @@ class Form extends React.Component {
       }));
     }
   };
+  handleClick = (e) => {
+    const { errors, ...rest } = this.state;
+    e.preventDefault();
+    if (!errors.name && !errors.email && !errors.password) {
+      console.log(JSON.stringify(rest));
+    } else {
+      alert("Complete invalid fields");
+    }
+  };
   render() {
     const { name, email, password, errors } = this.state;
     return (
