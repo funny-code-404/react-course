@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item mounting behavior should match snapshot 1`] = `
+.c0 {
+  background-image: url(ageOfEmpirescivilization.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.c1 {
+  background-color: rgba(0,0,0,0.6);
+  min-height: 100vh;
+  padding-top: 150px;
+}
+
+.c4 {
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+}
+
+.c2 {
+  background: #000;
+  color: #e5b378;
+  font-size: 25px;
+  margin: auto;
+  padding: 50px;
+  width: 35%;
+}
+
+.c3 {
+  list-style: none;
+  padding: 30px;
+}
+
+@media (max-width:780px) {
+  .c1 {
+    padding-top: 240px;
+  }
+}
+
+@media (max-width:780px) {
+  .c2 {
+    width: 90%;
+    font-size: 20px;
+  }
+}
+
+<Item
+  location={
+    Object {
+      "state": Object {
+        "data": Object {
+          "attack_bonus": Array [
+            "Attack bonus 1",
+            "Attack bonus 2",
+          ],
+          "civilization_bonus": "Test civilization bonus",
+          "develops_in": Array [
+            "https://age-of-empires-2-api.herokuapp.com/api/v1/one",
+            "https://age-of-empires-2-api.herokuapp.com/api/v1/two",
+          ],
+          "expansion": "Test expansion",
+          "name": "Test",
+        },
+      },
+    }
+  }
+>
+  <div>
+    <styled.div
+      background="ageOfEmpirescivilization.jpg"
+    >
+      <div
+        className="c0"
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <styled.div>
+              <div
+                className="c2"
+              >
+                <p>
+                  Name: 
+                  Test
+                </p>
+                <p>
+                  Expansion: 
+                  Test expansion
+                </p>
+                <div>
+                  Attack bonus
+                  :
+                   
+                  <styled.ul>
+                    <ul
+                      className="c3"
+                    >
+                      <li
+                        key="Attack bonus 1_0"
+                      >
+                        Attack bonus 1
+                      </li>
+                      <li
+                        key="Attack bonus 2_1"
+                      >
+                        Attack bonus 2
+                      </li>
+                    </ul>
+                  </styled.ul>
+                </div>
+                <div>
+                  Civilization bonus
+                  :
+                   
+                  <p>
+                    Test civilization bonus
+                  </p>
+                </div>
+                <Memo()
+                  link={
+                    Array [
+                      "https://age-of-empires-2-api.herokuapp.com/api/v1/one",
+                      "https://age-of-empires-2-api.herokuapp.com/api/v1/two",
+                    ]
+                  }
+                  title="Develops in"
+                >
+                  <p>
+                    Develops in
+                    :
+                     
+                    <styled.a
+                      key="https://age-of-empires-2-api.herokuapp.com/api/v1/one_0"
+                      to={
+                        Object {
+                          "pathname": "/one",
+                          "state": Object {
+                            "link": "https://age-of-empires-2-api.herokuapp.com/api/v1/one",
+                          },
+                        }
+                      }
+                    >
+                      <a
+                        className="c4"
+                        to={
+                          Object {
+                            "pathname": "/one",
+                            "state": Object {
+                              "link": "https://age-of-empires-2-api.herokuapp.com/api/v1/one",
+                            },
+                          }
+                        }
+                      >
+                        one
+                        , 
+                      </a>
+                    </styled.a>
+                    <styled.a
+                      key="https://age-of-empires-2-api.herokuapp.com/api/v1/two_1"
+                      to={
+                        Object {
+                          "pathname": "/two",
+                          "state": Object {
+                            "link": "https://age-of-empires-2-api.herokuapp.com/api/v1/two",
+                          },
+                        }
+                      }
+                    >
+                      <a
+                        className="c4"
+                        to={
+                          Object {
+                            "pathname": "/two",
+                            "state": Object {
+                              "link": "https://age-of-empires-2-api.herokuapp.com/api/v1/two",
+                            },
+                          }
+                        }
+                      >
+                        two
+                      </a>
+                    </styled.a>
+                  </p>
+                </Memo()>
+              </div>
+            </styled.div>
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </div>
+</Item>
+`;
