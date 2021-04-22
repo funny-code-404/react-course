@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.todo {
+    max-width: 500px;
+    margin: auto;
+    transform: translateY(100px);
+    background-color: bisque;
+    border: 2px solid rgb(253, 213, 165);
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    color: rgb(194, 126, 44);
+}
+
+.counter-tasks {
+    padding: 10px;
+    background-color: rgb(255, 240, 221);
+    border-radius: 10px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.task:hover {
+    background-color: rgb(255, 217, 170);
+}
+
+.task p {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.task svg:hover {
+    transform: scale(1.1);
+}
+
+.completed {
+    background-color: rgba(83, 83, 83, 0.5);
+    color: rgb(136, 134, 132);
+    text-decoration: line-through;
+}
+
+.completed:hover {
+    background-color: rgba(53, 53, 53, 0.5);
+}
+
+.completed svg{
+    fill: rgb(255, 240, 221);
+}
+
+.completed svg:hover {
+    transform: scale(1.1);
+}
+
+.completed-btn {
+    cursor: pointer;
+}
+
+.input-task {
+    border-radius: 10px;
+    background-color: transparent;
+    padding-top: 10px;
+}
+
+.input-task input {
+    background-color: rgb(255, 240, 221);
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .3);
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    color: rgb(194, 126, 44);
+}
+
+.input-task input::placeholder {
+    color: rgba(194, 126, 44, .6);
+
+}
