@@ -1,4 +1,26 @@
 import React from "react";
+import styled from "styled-components";
+
+const FormField = styled.form`
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 2px black solid;
+  align-self: start;
+`;
+const Button = styled.button`
+  background-color: black;
+  color: #ffc919;
+  border: none;
+  height: 40px;
+  font-size: 30px;
+  cursor: pointer;
+`;
+const Input = styled.input`
+  height: 30px;
+  font-size: 20px;
+  border: black solid 1px;
+`;
 class Form extends React.Component {
   state = {
     car: { brand: "", model: "", issueYear: "", price: "" },
@@ -26,33 +48,33 @@ class Form extends React.Component {
     const { brand, model, issueYear, price } = this.state.car;
     const { brandPr, modelPr, issueYearPr, pricePr } = this.props.data;
     return (
-      <form>
-        <input
+      <FormField>
+        <Input
           onChange={this.handleChange}
-          placeholder="Марка"
+          placeholder="Brand"
           value={brand || brandPr || ""}
           name="brand"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={this.handleChange}
-          placeholder="Модель"
+          placeholder="Model"
           value={model || modelPr || ""}
           name="model"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={this.handleChange}
-          placeholder="Год выпуска"
+          placeholder="Issue Year"
           value={issueYear || issueYearPr || ""}
           name="issueYear"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={this.handleChange}
-          placeholder="Цена"
+          placeholder="Price"
           value={price || pricePr || ""}
           name="price"
-        ></input>
-        <button onClick={this.handleClick}>Добавить</button>
-      </form>
+        ></Input>
+        <Button onClick={this.handleClick}>Добавить</Button>
+      </FormField>
     );
   }
 }
