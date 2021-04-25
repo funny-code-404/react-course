@@ -1,45 +1,43 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { ACTION_GET_TECH_DETAIL_Succeed, ACTION_GET_TECH_DETAIL_FAILED, ACTION_GET_TECH_FAILED } from '../../ducks/technologies/actions'
 import { TechData, TechDataDetail, TechError, TechisFetching } from '../../ducks/technologies/selectors'
-import { Errors } from '../About/About'
+import { TechDetailStupid } from './TechStupid'
+import { indicator, ButtonClose} from '../SmallElems/SmallElems'
+
 
 const TechDetailInfo = (props) => {
-   const data = useSelector(TechData)
    const dataDetail= useSelector(TechDataDetail)
    const fetchStatus = useSelector(TechisFetching);
-   const getError = useSelector(TechError);
-
    const  dispatches = useDispatch()
+   const { techDetailInfo } = indicator
    
    const handleLocation = () => {
-      window.history.go(-1)
-      dispatches(ACTION_GET_TECH_DETAIL_FAILED([]))
-      dispatches(ACTION_GET_TECH_FAILED([]))
-      dispatches(ACTION_GET_TECH_DETAIL_Succeed([]))
+      history.go(-1)
+      dispatches(ACTION_GET_TECH_DETAIL_Succeed({}))
+      dispatches(ACTION_GET_TECH_DETAIL_FAILED(null))
    }
 
    return (
       <>
-         {(dataDetail.id && !fetchStatus) ? 
-            <ul id='Skils' key={Math.random()}>
-               <button key={Math.random()} id='CloseDetail' onClick={handleLocation}>X</button>
-               <ul key={Math.random()}>
-                  <li key={Math.random()}>Имя: {dataDetail?.name}</li>
-                  <li key={Math.random()}>Фракция: {dataDetail?.age}</li>
-                  <li key={Math.random()}>Стоимость постройки: {dataDetail?.cost?.Wood} древесины</li>
-                  <li key={Math.random()}>Защита: {dataDetail?.armor}</li>
-                  <li key={Math.random()}>Время постройки: {dataDetail?.build_time}</li>
-                  <li key={Math.random()}>Стоимость: {dataDetail?.cost?.Wood} древесины, {dataDetail?.cost?.Gold} золота</li>
-                  <li key={Math.random()}>Единицы здоровья: {dataDetail?.hit_points}</li>
-               </ul>
-            </ul>
-         :  (!fetchStatus) ?
-            <div id='Skils'>
-               <Errors />
-               <button key={Math.random()} id='CloseDetail' onClick={handleLocation}>X</button>
-            </div>         
+         {(dataDetail[0] && !fetchStatus) ? 
+            <>
+               <div className='skilsWrap'>
+               <ButtonClose handleLocation={handleLocation} idName={'SkilsBut'} indicator={techDetailInfo} 
+               selector={TechError}/>
+                  {dataDetail.map((item,i) => {
+                     return (          
+                        <ul key={'Skils'+techDetailInfo+i} id={`Skils${i}`}>
+                           <TechDetailStupid item={item} handleLocation={handleLocation} />
+                        </ul>
+                     )
+                  })}
+               </div>
+            </> 
+            : (dataDetail.id && !fetchStatus) ?
+               <TechDetailStupid dataDetail={dataDetail} handleLocation={handleLocation} />
+            : (!fetchStatus) ?
+               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={techDetailInfo} selector={TechError}/>       
          : null }
       </>
    )

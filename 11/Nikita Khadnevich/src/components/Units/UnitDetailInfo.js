@@ -1,56 +1,44 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ACTION_GET_CIVIL_DETAIL_Succeed } from '../../ducks/civil/actions'
-import { UnitsdataUnitDetail,  UnitsisFetching} from '../../ducks/units/selectors'
+import { ACTION_GET_UNITS_DETAIL_Succeed, ACTION_GET_UNITS_DETAIL_FAILED } from '../../ducks/units/actions'
+import { UnitsdataUnitDetail,  UnitsisFetching, Unitserror} from '../../ducks/units/selectors'
+import { UnitDetailStupid } from '../Units/UnitsStupid'
+import { indicator, ButtonClose } from '../SmallElems/SmallElems'
 
 
 const UnitDetailInfo = (props) => {
    const dataUnitDetail = useSelector(UnitsdataUnitDetail)
    const fetchStatus = useSelector(UnitsisFetching);
-
+   const unitError = useSelector(Unitserror)
    const  dispatches = useDispatch()
+   const { unitDetailInfo } = indicator
    
    const handleLocation = () => {
-      window.history.go(-1)
-      dispatches(ACTION_GET_CIVIL_DETAIL_Succeed([]))
+      history.go(-1)
+      dispatches(ACTION_GET_UNITS_DETAIL_Succeed([]))
+      dispatches(ACTION_GET_UNITS_DETAIL_FAILED(null))
    }
 
    return (
       <>
-         {(dataUnitDetail[0] && !fetchStatus ) ? 
-            <ul id='Skils'>
-               <button id='CloseDetail' onClick={handleLocation}>X</button>
-               {dataUnitDetail.map((item, i) => {
-                  return (
-                     <ul>
-                        <li>Имя: {item.name}</li>
-                        <li>Фракция: {item.age}</li>
-                        <li>Время постройки: {item.build_time}</li>
-                        <li>Стоимость постройки: {item.cost.Wood} древесины</li>
-                        <li>Защита: {item.armor}</li>
-                        <li>Единицы здоровья: {item.hit_points}</li>
-                     </ul>
-                     )
-                  })
-               }
-            </ul>
+         {(dataUnitDetail[0] && !fetchStatus)  ? 
+         <>  
+            <div key={'skilsWrap'+unitDetailInfo} className='skilsWrap'>
+               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} />
+                  {dataUnitDetail.map((item, i) => {
+                     return (
+                           <ul key={'Skils'+unitDetailInfo+i} id={`Skils${i}`}>
+                              <UnitDetailStupid item={item} handleLocation={handleLocation} />   
+                           </ul> 
+                        )
+                     })
+                  }
+            </div>
+         </>
          : (dataUnitDetail.id && !fetchStatus) ?
-            <ul id='Skils'>
-               <button id='CloseDetail' onClick={handleLocation}>X</button>
-               <ul>
-                  <li>Имя: {dataUnitDetail.name}</li>
-                  <li>Фракция: {dataUnitDetail.age}</li>
-                  <li>Время постройки: {dataUnitDetail.build_time}</li>
-                  <li>Стоимость постройки: {dataUnitDetail.cost.Wood} древесины</li>
-                  <li>Защита: {dataUnitDetail.armor}</li>
-                  <li>Единицы здоровья: {dataUnitDetail.hit_points}</li>
-               </ul>
-            </ul>   
+               <UnitDetailStupid dataUnitDetail={dataUnitDetail} handleLocation={handleLocation} />
          : (!fetchStatus) ?
-         <ul id='Skils'>
-            <button id='CloseDetail' onClick={handleLocation}>X</button>
-            <li>У цивилизации нет уникального юнита</li>
-         </ul>
+               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} />
          : null }
       </>
    )

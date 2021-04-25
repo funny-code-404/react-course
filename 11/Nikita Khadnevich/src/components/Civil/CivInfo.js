@@ -1,70 +1,74 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import { ACTION_GET_CIVIL_Requested, ACTION_GET_CIVIL_REQUESTED_DETAIL , ACTION_GET_ROUTE_CIVIL_MENU } from '../../ducks/civil/actions';
-import { Civildata , CivildataDetail } from '../../ducks/civil/selectors'
+import { ACTION_GET_CIVIL_Requested, ACTION_GET_CIVIL_REQUESTED_DETAIL , ACTION_GET_ROUTE_CIVIL_MENU, ACTION_GET_CIVIL_DETAIL_FAILED } from '../../ducks/civil/actions';
+import { Civildata } from '../../ducks/civil/selectors'
 import CivDetailInfo from './CivDetailInfo'
-import CivilInfoStupid from './CivilStupid'
+import  CivilInfoStupid  from './CivilStupid'
 import  { baseUrl, Urlpath } from '../Api/Api'
-import { random } from './CivilStupid'
+import { ButtonGoBack, indicator } from '../SmallElems/SmallElems'
+
 
 const CivInfo = (props) => {
-   const { civilizations } = Urlpath
    const data = useSelector(Civildata)
-   const civilDetail = useSelector(CivildataDetail)
    const  dispatches = useDispatch()
+   const { civInfo } = indicator
+   const { civilizations } = Urlpath
+   const params = props.match.params.id
+   const urlCiv = props.match.url
 
    const getFetch = (url, path, arr) => {
-      if ( Boolean(arr) == false) {
-        dispatches(ACTION_GET_CIVIL_Requested(`${url}/${path}`));
-      } else null
-    }
-  
-    useEffect(() => {
-      getFetch(baseUrl, civilizations, data)
-    }, []);
+      if (!arr) {
+      dispatches(ACTION_GET_CIVIL_Requested(`${url}/${path}`));
+      } else return null
+   }
+   useEffect(() => {
+   getFetch(baseUrl, civilizations, data)
+   }, []);
 
    const handleclick = (e) => {
          const targetPath = e.target.dataset.path
-         console.log(`e.target.id`, e.target.id)
-         dispatches(ACTION_GET_ROUTE_CIVIL_MENU(targetPath));
-         targetPath == 'unique_unit'  ?
-         dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(data[e.target.id-1].unique_unit.join())) :
-         targetPath == 'unique_tech' ?
-         dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(data[e.target.id-1].unique_tech.join()))
-         : null
+         const targetId = e.target.id
+         dispatches(ACTION_GET_ROUTE_CIVIL_MENU(targetId));
+         targetPath ?
+         dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
    }
-
+         //^^^^
+         //Сначала была такая логика
+         // const targetUnit = data[e.target.id-1].unique_unit
+         // const targetTech = data[e.target.id-1].unique_tech
+         // (targetPath == 'unique_tech' && targetTech.length > 0) ?
+         // dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
+         // dispatches(ACTION_GET_CIVIL_DETAIL_FAILED('Данный юнит не существует'))
+         // где id = это порядковый номер элемента массива
+         //Затем я заменил на CivilInfoStupid map и потребность в диспатче еррора отпала, ибо если нет unique, то она просто не рисует кнопки
+         
    //1. Пройтись по масиву и забрать уникальное значение
    //2ю задиспатчить его уже в имеющийся новый массив
 
    // вставлю линку даты и создам новый стор для юниов 
    // путем распаршивания ее через джоин(например)
    // а уже потом у меня будет линковаться все как нужно
-
-   const handleLocation = (props) => {
-      window.history.go(-1)
+   const handleLocation = () => {
+      history.go(-1);
    }
-   
-   const params = props.match.params.id
-   const urlCiv = props.match.url
 
    return ( 
    <>
-      {data && civilDetail && data.map((item, i) => {
-         if (params === item.name) {
+      {data && data.map((item, i) => {
+         if (params === (item.name+item.id)) {
             return (
-               <Router>
-                  <a key={'terra'} id='goback' onClick={handleLocation}>Вернуться назад</a>
-                  <div className='Items' key={item.id+'terra'}>
-                     <CivilInfoStupid > 
-                        {item}{urlCiv}{handleclick}
+               <>
+                  <ButtonGoBack key={'button'+civInfo} handleLocation={handleLocation} idName={'goback'+civInfo} indicator={civInfo}/>
+                  <div key={'Items'+civInfo+i} className={'items'+civInfo}>
+                     <CivilInfoStupid key={'stupid'+civInfo+i}> 
+                        {item}{urlCiv}{handleclick}{civilizations}
                      </CivilInfoStupid>
                   </div>
                   <Switch>
                      <Route path={`${urlCiv}/:id`} component={CivDetailInfo} />
                   </Switch>
-               </Router>
+               </>
             )
          } 
       })}

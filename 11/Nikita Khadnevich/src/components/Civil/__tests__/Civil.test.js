@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import Civil from '../Civil';
 import { Civildata } from '../../../ducks/civil/selectors'
 import { configure, shallow, mount } from 'enzyme';
@@ -13,21 +12,24 @@ const mockFnEffect = jest.fn();
 const mockFnSelector = jest.fn()
 
 jest.mock('react-redux', () => ({
-  useSelector: () => mockFnSelector(),
-  useDispatch: () => mockFnDispatch,
-  useEffect: () => mockFnEffect
+   useSelector: () => mockFnSelector(),
+   useDispatch: () => mockFnDispatch,
+   useEffect: () => mockFnEffect
 }));
 
 describe('<Civil /> ', () => {
    const mockFn = jest.fn()
    const props = {
+      match: {
+         url : 'Make some url'
+      },
       onClick: mockFn,
       text: 'Bye',
    };
 
    let wrapper;
    beforeEach(() => {
-      wrapper = mount(<Civil {...props} />)
+      wrapper = mount(<Civil {...props} propsUrl={props.match.url}/>)
    });
 
    it('Is Civil component', () => {
@@ -51,6 +53,7 @@ describe('<Civil /> ', () => {
       const store = mockStore(initialState) // Put contain into Stor
       const civil = store.getState().data //useSelector
       const props = { match: { url: 'some http...' }} // add Props
+   
 
       const getFetch = (url, path, res) => {
          if ( Boolean(res) == false) {
@@ -59,8 +62,8 @@ describe('<Civil /> ', () => {
       }
       mockFnEffect(getFetch( 'www.tut.by', '/avto', civil))
 
-      console.log(`civil -- `, store.getState().data)
-      console.log(`props -- `, props.match.url)
+      // console.log(`civil -- `, store.getState().data)
+      // console.log(`props -- `, props.match.url)
 
       const wrapper = mount(
          // <Provider store={store}>
@@ -79,23 +82,18 @@ describe('<Civil /> ', () => {
    //-----------------------------------------------//
 
    it('should to find CivilizationsWrapper in the DOM', () => {
-      expect(wrapper.find('div.CivilizationsWrapper')).toHaveLength(1);// Проверка на то, что есть элемент с className = CivilizationsWrapper
+      expect(wrapper.find('div.civilizationsWrapper')).toHaveLength(1);// Проверка на то, что есть элемент с className = CivilizationsWrapper
    })
 
    //--------------------------------------------//
 
    it('should set props correctly', () => {
-      console.log(`wrapper.props().text`, wrapper.props().text)
+      // console.log(`wrapper.props().text`, wrapper.props().text)
       const nextText = 'Hello';
       wrapper.setProps( {text: nextText});
       expect(wrapper.props().text).toEqual(nextText);
-      console.log(`wrapper.props().text`, wrapper.props().text)
+      // console.log(`wrapper.props().text`, wrapper.props().text)
    })
 })
 
-
-
-
-
 //функция shallow используется для того, чтобы замаунтить компонент(return)
-// 44 provider mock store

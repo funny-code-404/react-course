@@ -31,7 +31,7 @@ export const civil = (state = initialCivilState, action) => {
         data: action.response,
         isFetching: false
       };
-        // 6 результат заносится в редьюсер - стор
+      
       case GET_CIVIL_FAILED:
         return {
         ...state,

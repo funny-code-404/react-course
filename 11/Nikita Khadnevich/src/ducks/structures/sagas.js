@@ -7,11 +7,10 @@ import {
   ACTION_GET_STRU_FAILED,
   ACTION_GET_STRU_DETAIL_FAILED
 } from './actions';
-// import { API } from '../api';
+import { proxy, errorMes } from '../../components/Api/Api'
 
 export function* getSTRUSaga({ payload }) {
   try {
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const stru = yield fetch(`${proxy}${payload}`,
       {
         headers: {
@@ -22,14 +21,13 @@ export function* getSTRUSaga({ payload }) {
     const res = yield stru.json();
 
     yield put(ACTION_GET_STRU_Succeed(res));
-  } catch (e) {
-    yield put(ACTION_GET_STRU_FAILED(e));
+  } catch (error) {
+    yield put(ACTION_GET_STRU_FAILED(errorMes));
   }
 }
 
 export function* getDETAILSaga({ payload }) {
   try {
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const unitDetail = yield fetch(`${proxy}${payload}`,
       {
         headers: {
@@ -40,8 +38,8 @@ export function* getDETAILSaga({ payload }) {
     const res = yield unitDetail.json();
 
     yield put(ACTION_GET_STRU_DETAIL_Succeed(res));
-  } catch (e) {
-    yield put(ACTION_GET_STRU_DETAIL_FAILED(e));
+  } catch (error) {
+    yield put(ACTION_GET_STRU_DETAIL_FAILED(errorMes));
   }
 }
 

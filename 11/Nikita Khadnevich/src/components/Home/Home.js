@@ -1,15 +1,12 @@
 import React from 'react'
-import About from '../About/About'
+import HomePage from '../SmallElems/SmallElems'
 
 const Home = () => {
 
    return (
-      <>
       <div className='homePage'>
-         <About />
+         <HomePage />
       </div>
-         
-      </>
    )
 }
 

@@ -7,11 +7,7 @@ import {
   ACTION_GET_TECH_DETAIL_Succeed,
   ACTION_GET_TECH_DETAIL_FAILED
 } from './actions';
-// import { API } from '../api';
-
-const getError = 'Ошибка запроса или данные не существуют :('
-
-const proxy = 'https://cors-anywhere.herokuapp.com/'
+import { proxy, errorMes } from '../../components/Api/Api'
 
 export function* getTechSaga({ payload }) {
   try {
@@ -25,8 +21,8 @@ export function* getTechSaga({ payload }) {
     const res = yield tech.json();
 
     yield put(ACTION_GET_TECH_Succeed(res));
-  } catch (getError) {
-    yield put(ACTION_GET_TECH_FAILED('Ошибка запроса или данные не существуют :('));
+  } catch (error) {
+    yield put(ACTION_GET_TECH_FAILED(errorMes));
   }
 }
 
@@ -41,8 +37,8 @@ export function* getTechDetailSaga ( {payloadDetail} ) {
     );
     const resDetail = yield techDetail.json();
     yield put(ACTION_GET_TECH_DETAIL_Succeed(resDetail))
-  } catch (getError) {
-    yield put(ACTION_GET_TECH_DETAIL_FAILED('Ошибка запроса или данные не существуют :('))
+  } catch (error) {
+    yield put(ACTION_GET_TECH_DETAIL_FAILED(errorMes))
   }
 }
 

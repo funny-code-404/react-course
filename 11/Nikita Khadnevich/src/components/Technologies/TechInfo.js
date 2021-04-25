@@ -1,57 +1,60 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-
-import { ACTION_GET_TECH_Requested, ACTION_GET_TECH_REQUESTED_DETAIL } from '../../ducks/technologies/actions';
+import { ACTION_GET_TECH_Requested, ACTION_GET_TECH_REQUESTED_DETAIL , ACTION_GET_ROUTE_TECH_MENU} from '../../ducks/technologies/actions';
 import { TechData, TechDataDetail, TechError, TechisFetching } from '../../ducks/technologies/selectors'
-import TechDetailInfo from './TechDetailInfo'
+import TechDetailInfo from '../Technologies/TechDetailInfo'
+import TechInfoStupid  from './TechStupid'
 import  { baseUrl, Urlpath } from '../Api/Api'
+import { indicator, ButtonGoBack } from '../SmallElems/SmallElems'
+
 
 const TechInfo = (props) => {
-   const { technologies } = Urlpath
    const data  = useSelector(TechData)
    const dispatches = useDispatch()
+   const { techInfo } = indicator
+   const { technologies } = Urlpath
    const params = props.match.params.id
+   const urlCiv = props.match.url
 
    const getFetch = ( url, path, arr) => {
-      if ( Boolean(arr) == false) {
+      if (!arr) {
          dispatches(ACTION_GET_TECH_Requested(`${url}/${path}`));
-      } else null
+      } else return null
       }
 
    useEffect(() => {
       getFetch(baseUrl, technologies, data)
    }, []);
 
-   const handleLocation = () => {
-      window.history.go(-1)
-   }
    const handleclick = (e) => {
-      dispatches(ACTION_GET_TECH_REQUESTED_DETAIL(data[e.target.id-1].applies_to.join()));
+      const targetPath = e.target.dataset.path
+      const targetId = e.target.id
+      dispatches(ACTION_GET_ROUTE_TECH_MENU(targetId));
+      targetPath ?
+      dispatches(ACTION_GET_TECH_REQUESTED_DETAIL(targetPath)) : null
+   }
+
+   const handleLocation = () => {
+      history.go(-1)
    }
 
    return (
       <>
-      <p id='gobackTech' onClick={handleLocation}>Вернуться назад</p>
          { data && data.map((item,i) => {
-            if (params === item.name) {
+            if (params === item.name+item.id) {
                return (
-                  <Router>
-                  <div className='TechDetail' key={Math.random()+1}>
-                     <p>Имя юнита {item.name}</p>
-                     <p>Время постоки: {item.build_time}</p>
-                     <p>Тип: {item.age}</p>
-                     <p>Отличительная особенность: {item.description}</p>
-                     <p>Распостранение: {item.expansion}</p>
-                     <p>Стоимость Юнита: {item.cost.Wood} древесины, {item.cost.Gold} золота</p>
-                     <div key={Math.random()} className='TechLinkItem'>
-                        <Link to={`${props.match.url}/tech`} id={item.id} onClick={handleclick}  data-path='unicTech'>Мануфакторум производства {item.name}</Link>
+                  <>
+                     <ButtonGoBack key={'button'+techInfo} handleLocation={handleLocation} idName={'goback'+techInfo} indicator={techInfo}/>
+                     <div key={'Items'+techInfo} className={'items'+techInfo}>
+                        <TechInfoStupid key={'stupid'+techInfo+i}> 
+                           {item}{urlCiv}{handleclick}{technologies}
+                        </TechInfoStupid>
                      </div>
                      <Switch>
-                        <Route path={`${props.match.url}/tech`} component={TechDetailInfo} />
+                        <Route path={`${urlCiv}/:id`} component={TechDetailInfo} />
                      </Switch>
-                  </div>
-                  </Router>
+                  </>
                   )
                }
             })

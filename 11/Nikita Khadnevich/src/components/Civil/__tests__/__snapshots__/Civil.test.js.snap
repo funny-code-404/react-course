@@ -32,8 +32,15 @@ exports[`<Civil />  should are working Methods in Civil 1`] = `
     }
   }
 >
-  <div
-    className="CivilizationsWrapper"
-  />
+  <ListAge
+    blockName="_civil"
+    elem="civilizations"
+    propsUrl="some http..."
+  >
+    <div
+      className="civilizationsWrapper"
+      key="civilizationsWrapper"
+    />
+  </ListAge>
 </Civil>
 `;

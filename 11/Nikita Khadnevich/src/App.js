@@ -1,5 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import history from './history';
+
 import Home from './components/Home/Home';
 
 import Civil from './components/Civil/Civil';
@@ -14,10 +16,11 @@ import StructureInfo from './components/Structure/StructureInfo';
 import Technologies from './components/Technologies/Technologies'
 import TechInfo from './components/Technologies/TechInfo'
 
-const App = (props) => {
+
+const App = () => {
   return (
     <>
-      <Router>
+      <Router history={history}>
         <div className='Posts'>
           <div className='navigation'>
             <Link to='/'>К истокам</Link>
@@ -30,16 +33,16 @@ const App = (props) => {
               <Route exact path='/' component={Home} />
 
               <Route exact path='/civilizations' component={Civil} />
-              <Route path='/civilizations/:id/' component={CivInfo} />
+              <Route path='/civilizations/:id/' component={CivInfo } />
   
               <Route exact path='/units' component={Units} />
               <Route path='/units/:id' component={UnitSkill} />
 
               <Route exact path='/structures' component={Structure} />
-              <Route exact path='/structures/:id' component={StructureInfo} />
+              <Route path='/structures/:id' component={StructureInfo} /> 
 
               <Route exact path='/technologies' component={Technologies} />
-              <Route exact path='/technologies/:id/' component={TechInfo} />
+              <Route path='/technologies/:id/' component={TechInfo} />
           </Switch>
         </div>
       </Router>

@@ -7,11 +7,10 @@ import {
   ACTION_GET_UNITS_FAILED,
   ACTION_GET_UNITS_DETAIL_FAILED
 } from './actions';
-// import { API } from '../api';
+import { proxy, errorMes } from '../../components/Api/Api'
 
 export function* getUNITSaga({ payload }) {
   try {
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const unit = yield fetch(`${proxy}${payload}`,
       {
         headers: {
@@ -20,16 +19,14 @@ export function* getUNITSaga({ payload }) {
       }
       );
     const res = yield unit.json();
-
     yield put(ACTION_GET_UNITS_Succeed(res));
-  } catch (e) {
-    yield put(ACTION_GET_UNITS_FAILED(e));
+  } catch (error) {
+    yield put(ACTION_GET_UNITS_FAILED(errorMes));
   }
 }
 
 export function* getDETAILSaga({ payload }) {
   try {
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const unitDetail = yield fetch(`${proxy}${payload}`,
       {
         headers: {
@@ -40,8 +37,8 @@ export function* getDETAILSaga({ payload }) {
     const res = yield unitDetail.json();
 
     yield put(ACTION_GET_UNITS_DETAIL_Succeed(res));
-  } catch (e) {
-    yield put(ACTION_GET_UNITS_DETAIL_FAILED(e));
+  } catch (error) {
+    yield put(ACTION_GET_UNITS_DETAIL_FAILED(errorMes));
   }
 }
 

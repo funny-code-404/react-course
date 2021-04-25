@@ -1,8 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-export const getError = (state) => state.technologies.error
+import { Router } from 'react-router';
+import {Switch, Route, Link } from 'react-router-dom';
+import { Civilerror } from '../../ducks/civil/selectors'
 
-const About = () => {
+export  const indicator = {
+   civil: '_civil',
+   civInfo: '_civInfo',
+   civDetailinfo: '_civDetail',
+   civilStupid: '_civStupid',
+
+   technology: '_technology',
+   techInfo: '_techInfo',
+   techDetailInfo: '_techDetailInfo',
+   techStupid: '_techStupid',
+
+   structure: '_structure',
+   structureInfo: '_structureInfo',
+   srtuctureStupid: '_civStupid',
+
+   units: '_units',
+   unitSkil: '_unitSkil',
+   unitDetailInfo: '_unitDetailInfo',
+   untiStupid: '_untiStupid'
+}
+
+const  HomePage = () => {
    return (
       <>
          <p>
@@ -13,14 +36,70 @@ const About = () => {
       </>
    )
 }
-export default About
 
-export const Errors = () => {
-   const e  = useSelector(getError)
+export const ListAge = (props) => {
+   const { data, blockName, elem, propsUrl, unicName } = props
    return (
-      <>
-         <p>{e}</p>
-      </>
+      <div key={elem+'Wrapper'} className={elem+'Wrapper'}>
+      { elem == 'structures' ? 
+         <>
+         {data && unicName(data).map((item, i) => 
+               
+               {
+                  return (
+                     <div id={item.name} key={i+elem} className={elem+'Item'}>
+                        <Link to={`${propsUrl}/${item}`}>{item}</Link> 
+                     </div>   
+                  )
+               }
+            )
+         }
+         </> :
+         <>
+            {data && data.map((item, i) => 
+               {
+                  return (
+                     <div id={item.name} key={i+elem} className={elem+'Item'}>
+                        <Link to={`${propsUrl}/${item.name}${item.id}`}>{item.name}</Link>
+                     </div>   
+                  )
+               }
+            )
+         }
+         </>
+      }
+      </div>
    )
 }
+
+export const ButtonGoBack = (props) => {
+   const { handleLocation, idName,  indicator } = props
+   return (
+      <div key={idName+indicator+'a'} id={idName} onClick={handleLocation}>Вернуться назад</div>
+   )
+}
+
+export const ButtonClose = (props) => {
+   const { handleLocation, idName,  indicator, selector } = props
+   const e  = useSelector(selector)
+   console.log(`e`, e)
+   return (
+   <>
+      {
+      e !== null ? 
+         <ul id={idName} key={idName+indicator} >
+            <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
+            <li>{e}</li>
+         </ul> : 
+      e == null ?
+         <>
+            <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
+         </> : null
+      }
+   </>   
+   )  
+}
+
+
+export default HomePage
 

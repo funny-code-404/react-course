@@ -5,7 +5,6 @@ import {
   GET_TECH_REQUESTED_DETAIL,
   GET_TECH_DETAIL_SUCCEED,
   GET_TECH_DETAIL_FAILED,
-  GET_SPAN_STATUS,
   GET_ROUTE_MENU} from './actions';
 
 export const initialTECHState = {
@@ -14,11 +13,11 @@ export const initialTECHState = {
   error: null,
   url: '',
   isFetching: false,
-  span: false,
   path: ''
 };
 
 export const technologies = (state = initialTECHState, action) => {
+  
   switch (action.type) {
     case GET_TECH_REQUESTED:
       return {
@@ -59,18 +58,11 @@ export const technologies = (state = initialTECHState, action) => {
           error: action.error,
           isFetching: false
         };
-      case GET_SPAN_STATUS:
-        return {
-        ...state,
-        span: action.span,
-      };
       case GET_ROUTE_MENU:
         return {
         ...state,
         path: action.path,
       };
-
-
     default:
       return { ...state };
   }

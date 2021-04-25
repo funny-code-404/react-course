@@ -15,7 +15,6 @@ export const ACTION_GET_TECH_Requested = (url) => {
     isFetching: true
   };
 };
-
 export const ACTION_GET_TECH_Succeed = (response) => {
   return {
     type: GET_TECH_SUCCEED,
@@ -23,24 +22,19 @@ export const ACTION_GET_TECH_Succeed = (response) => {
     isFetching: false
   };
 };
-
-export const ACTION_GET_TECH_FAILED = (error) => ({
+export const ACTION_GET_TECH_FAILED = (error) => {
+  return {
   type: GET_TECH_FAILED,
   error,
   isFetching: false
-});
-
-export const ACTION_GET_TECH_SPAN = (span) => ({
-  type: GET_SPAN_STATUS,
-  span,
-});
-
-export const ACTION_GET_ROUTE_TECH_MENU = (path) => ({
+  };
+};
+export const ACTION_GET_ROUTE_TECH_MENU = (path) => {
+  return {
   type: GET_ROUTE_MENU,
   path,
-});
-
-
+  };
+};
 
 export const ACTION_GET_TECH_REQUESTED_DETAIL = (url) => {
   return {
@@ -49,7 +43,6 @@ export const ACTION_GET_TECH_REQUESTED_DETAIL = (url) => {
     isFetching: true
   };
 };
-
 export const ACTION_GET_TECH_DETAIL_Succeed = (response) => {
   return {
     type: GET_TECH_DETAIL_SUCCEED,
@@ -57,7 +50,6 @@ export const ACTION_GET_TECH_DETAIL_Succeed = (response) => {
     isFetching: false
   };
 };
-
 export const ACTION_GET_TECH_DETAIL_FAILED = (error) => ({
   type: GET_TECH_DETAIL_FAILED,
   error,

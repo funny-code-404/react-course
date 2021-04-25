@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 class SpinnerHome extends React.Component {
   
-
   get fetchingState() {
     const { isFetchingCivil, isFetchingUnit, isFetchingStru, isFetchingTech } = this.props;
     // Этот гет служит для нас своеобразным хранилищем - в сонст пропс может быть уйма стэйтов спинера разных компонентов,
@@ -13,7 +12,7 @@ class SpinnerHome extends React.Component {
 
   render() {
   const { title } = this.props
-
+  
     return this.fetchingState &&
     <div className="blocks">
       <p>{title}</p>

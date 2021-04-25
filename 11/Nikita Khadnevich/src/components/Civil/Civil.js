@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ACTION_GET_CIVIL_Requested } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
+import { indicator } from '../SmallElems/SmallElems'
+import { ListAge } from '../SmallElems/SmallElems'
 
 
 const Civil = (props) => {
   const { civilizations } = Urlpath
   const data = useSelector(Civildata);
   const dispatches = useDispatch();
-  
+  const { civil } = indicator;
+  const propsUrl = props.match.url
+
   const getFetch = (url, path, arr) => {
-    if ( Boolean(arr) == false) {
+    if (!arr) {
       dispatches(ACTION_GET_CIVIL_Requested(`${url}/${path}`));
-    } else null
+    } else return null
   }
 
   useEffect(() => {
@@ -22,18 +25,7 @@ const Civil = (props) => {
   }, []);
 
   return (
-    <>
-      <div className='CivilizationsWrapper'>
-        {data && data.map((item, i) => {
-          return (
-            <div id={data.id} key={Math.random()} className='CivilsItem'>
-              <Link to={`${props.match.url}/${item.name}`}>{item.name}</Link>
-            </div>   
-            )
-          })
-        }
-      </div>
-    </>
+    <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} />
   )
 };
 

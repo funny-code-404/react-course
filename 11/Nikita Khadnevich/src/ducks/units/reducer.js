@@ -16,7 +16,7 @@ export const initialUnitsState = {
 };
 
 export const units = (state = initialUnitsState, action) => {
-  console.log('reducer');
+
   switch (action.type) {
     case GET_UNITS_REQUESTED:
       return {
@@ -34,6 +34,7 @@ export const units = (state = initialUnitsState, action) => {
         return {
         ...state,
         error: action.error,
+        isFetching: true
       };
 
       case GET_UNITS_DETAIL_REQUESTED:
@@ -52,6 +53,7 @@ export const units = (state = initialUnitsState, action) => {
           return {
           ...state,
           error: action.error,
+          isFetching: false
         };
 
       case GET_ROUTE_UNIT_MENU:
