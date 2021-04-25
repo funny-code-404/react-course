@@ -21,11 +21,12 @@ class App extends React.Component {
 
   getDataForm = (dataForm) => {
     const { data } = this.state
-    data.push(dataForm)
-    data.sort((a,b) => b.active - a.active)
+    const newData = [...data]
+    newData.push(dataForm)
+    newData.sort((a,b) => b.active - a.active)
     this.setState(prevState => ({
       ...prevState,
-      data: data,
+      data: newData,
       formShow: false,
     }))
     localStorage.setItem('data', JSON.stringify(data))
@@ -40,28 +41,29 @@ class App extends React.Component {
 
   activeNote = (id) => {
     const { data } = this.state
-    data.map(item => (
+    const newData = [...data]
+    newData.map(item => (
       item.id === id ? item.active = !item.active : ''
     ))
-    data.sort((a,b) => b.active - a.active)
+    newData.sort((a,b) => b.active - a.active)
     this.setState(prevState => ({
       ...prevState,
-      data: data,
+      data: newData,
     }))
     localStorage.setItem('data', JSON.stringify(data))
   }
 
   deleteNote = (id) => {
     const { data } = this.state
-    const arr = []
+    const newData = []
     data.map((item, i) => (
-      item.id === id ? '' : arr.push(item)
+      item.id === id ? '' : newData.push(item)
     ))
     this.setState(prevState => ({
       ...prevState,
-      data: arr,
+      data: newData,
     }))
-    localStorage.setItem('data', JSON.stringify(arr))
+    localStorage.setItem('data', JSON.stringify(newData))
   }
 
   componentDidMount (){
