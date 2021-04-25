@@ -1,0 +1,38 @@
+.dog-image-box {
+  width: 500px;
+  height: 300px;
+  border-color: blue;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+}
+.dog-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dog-nav-item {
+  display: block;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  list-style: none;
+
+  color: rgb(71, 171, 189);
+  font-size: 20px;
+  line-height: 35px;
+  font-weight: 700;
+  text-align: center;
+  border-color: rgb(71, 171, 189);
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dog-nav-item:hover {
+  color: blanchedalmond;
+  background-color: rgb(71, 171, 189);
+}
