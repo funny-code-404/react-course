@@ -5,9 +5,15 @@ import Table from "./Table";
 
 class App extends Component{
 
-    id =0
+    state ={
+        id : 0,
+        data:[],
+        selectId:'',
+        isValid: true
+    }
 
     addData = (value) =>{
+        let {id} = this.state
         if(value.brand.length === 0 || value.model.length === 0 ||value.year.length === 0 ||value.cost.length === 0){
             this.setState((prevState) => ({
                 ...prevState,
@@ -15,11 +21,13 @@ class App extends Component{
             }))
 
         }else {
-            const newData = {id: this.id++ , value: value}
-            this.setState(({data}) => {
-                const newArr = data
+            const newData = {id: id++ , value: value}
+            this.setState((prevState) => {
+                const newArr = prevState.data
                 newArr.push(newData)
                 return {
+                    ...prevState,
+                    id: id++,
                     data: newArr
                 }
             })
@@ -35,11 +43,7 @@ class App extends Component{
         }))
     }
 
-    state ={
-        data:[],
-        selectId:'',
-        isValid: true
-    }
+
     render() {
         const { isValid} = this.state
         return (
