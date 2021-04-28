@@ -5,6 +5,7 @@ import { TableBody, TableLine, TableLineItem } from "./styles";
 class TableItem extends React.Component {
   handleCLick = (e) => {
     const dataForm = this.props.dataTable[e.currentTarget.id];
+
     this.props.onClick(dataForm);
   };
 

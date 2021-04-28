@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   onClickForm = (dataForm) => {
-    const data = this.state.dataForm !== null ? this.state.dataForm : dataForm;
+    const data = this.state.dataForm || dataForm;
 
     this.setState((prevState) => ({
       ...prevState,

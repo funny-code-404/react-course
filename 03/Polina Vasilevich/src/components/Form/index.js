@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Form, FormContainer, Input, Button, Error } from "./styles";
 class FormComponent extends Component {
   state = {
@@ -25,9 +26,7 @@ class FormComponent extends Component {
   };
 
   validateForm() {
-    const dataForm =
-      this.props.dataForm !== null ? this.props.dataForm : this.state.dataForm;
-
+    const dataForm = this.props.dataForm || this.state.dataForm;
     const errors = {};
 
     this.props.inputs.map(({ name }) => {
@@ -65,6 +64,7 @@ class FormComponent extends Component {
 
   render() {
     const { dataForm, errors } = this.state;
+    const data = this.props.dataForm || dataForm;
     return (
       <Form onChange={this.handleChange}>
         {this.props.inputs.map(({ id, name, type, playceholder }) => (
@@ -74,11 +74,7 @@ class FormComponent extends Component {
               type={type}
               placeholder={playceholder}
               className={errors[name] && "notValid"}
-              value={
-                this.props.dataForm !== null
-                  ? this.props.dataForm[name]
-                  : dataForm[name]
-              }
+              value={data[name]}
             />
             {errors[name] && <Error>{errors[name]}</Error>}
           </FormContainer>
@@ -88,5 +84,17 @@ class FormComponent extends Component {
     );
   }
 }
+
+FormComponent.propTypes = {
+  inputs: PropTypes.array,
+  dataForm: PropTypes.object,
+  onClick: PropTypes.func,
+};
+
+FormComponent.defaultProps = {
+  inputs: [],
+  dataForm: {},
+  onClick: "",
+};
 
 export default FormComponent;
