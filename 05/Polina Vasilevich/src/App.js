@@ -65,12 +65,13 @@ class App extends Component {
         <h1 className="title">To Do List</h1>
         <Form onClick={this.addTask} />
         <TaskList>
-          {this.state.taskList.map((task, index) => (
+          {this.state.taskList.map(({ taskText, id, isChecked }, index) => (
             <TaskList.Item
-              key={task.id}
-              {...task}
+              key={id}
+              taskText={taskText}
+              isChecked={isChecked}
               onClick={this.removeTask.bind(this, index)}
-              setChecked={this.setChecked.bind(this, index)}
+              setChecked={this.setChecked.bind(this, index, !isChecked)}
             />
           ))}
         </TaskList>

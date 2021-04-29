@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
 import { FaPlus } from "react-icons/fa";
 import { Form, TextTask, Button, Error } from "./styles";
 
@@ -55,5 +57,9 @@ class FormComponent extends Component {
     );
   }
 }
+
+FormComponent.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default FormComponent;
