@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom';
 import { ACTION_GET_UNIT_Requested, ACTION_GET_UNIT_DETAIL_Requested, ACTION_GET_ROUTE_UNIT_MENU} from '../../ducks/units/actions';
 import { Unitsdata } from '../../ducks/units/selectors'
 import UnitDetailInfo from '../Units/UnitDetailInfo'
@@ -10,17 +10,18 @@ import { ButtonGoBack, indicator} from '../SmallElems/SmallElems'
 
 
 const UnitSkill = (props) => {
+   const history = useHistory();
+   const params = useParams()
    const dataUnit  = useSelector(Unitsdata)
    const dispatches = useDispatch()
    const { unitSkil } = indicator
    const { units } = Urlpath
-   const params = props.match.params.id
    const urlCiv = props.match.url
 
    const getFetch = (url, path, arr) => {
       if (!arr) {
          dispatches(ACTION_GET_UNIT_Requested(`${url}/${path}`));
-      } else return null
+         } else return null
       }
    useEffect(() => {
       getFetch(baseUrl, units, dataUnit)
@@ -35,25 +36,25 @@ const UnitSkill = (props) => {
    }
 
    const handleLocation = () => {
-      history.go(-1)
+      history.push('/units')
    }
 
    return (
    <>
       { dataUnit && dataUnit.map((item,i) => {
-         if ((params) === (item.name+item.id)) {
+         if (params.id === (item.name+item.id)) {
             return (
-               <>
-               <ButtonGoBack key={'button'+unitSkil} handleLocation={handleLocation} idName={'goback'+unitSkil} indicatorKey={unitSkil}/>
-               <div key={'Items'+unitSkil} className={'items'+unitSkil} >
-                  <UnitsStupid key={'stupid'+unitSkil+i}>
-                     {item}{urlCiv}{handleclick}{units}
-                  </UnitsStupid>
-               </div>   
-                  <Switch>
-                     <Route path={`${urlCiv}/:id`} component={UnitDetailInfo} />
-                  </Switch>
-               </>
+               <div key={'Wrapper'+unitSkil} >
+                  <ButtonGoBack handleLocation={handleLocation} idName={'goback'+unitSkil} indicatorKey={unitSkil}/>
+                  <div key={'Items'+unitSkil} className={'items'+unitSkil} >
+                     <UnitsStupid key={'stupid'+unitSkil+i}>
+                        {item}{urlCiv}{handleclick}{units}
+                     </UnitsStupid>
+                  </div>   
+                     <Switch>
+                        <Route path={`${urlCiv}/:id`} component={UnitDetailInfo} />
+                     </Switch>
+               </div>
                )
             }
          })

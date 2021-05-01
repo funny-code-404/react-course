@@ -38,12 +38,12 @@ const  HomePage = () => {
 }
 
 export const ListAge = (props) => {
-   const { data, blockName, elem, propsUrl, unicName } = props
+   const { data, blockName, elem, propsUrl, SortStructure, Sort } = props
    return (
       <div key={elem+'Wrapper'} className={elem+'Wrapper'}>
       { elem == 'structures' ? 
          <>
-         {data && unicName(data).map((item, i) => 
+         {data && SortStructure(data).map((item, i) => 
                
                {
                   return (
@@ -56,12 +56,13 @@ export const ListAge = (props) => {
          }
          </> :
          <>
-            {data && data.map((item, i) => 
+
+            {data && Sort(data).map((item, i) => 
                {
                   return (
                      <div id={item.name} key={i+elem} className={elem+'Item'}>
                         <Link to={`${propsUrl}/${item.name}${item.id}`}>{item.name}</Link>
-                     </div>   
+                     </div>
                   )
                }
             )
@@ -82,7 +83,6 @@ export const ButtonGoBack = (props) => {
 export const ButtonClose = (props) => {
    const { handleLocation, idName,  indicator, selector } = props
    const e  = useSelector(selector)
-   console.log(`e`, e)
    return (
    <>
       {
@@ -91,13 +91,24 @@ export const ButtonClose = (props) => {
             <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
             <li>{e}</li>
          </ul> : 
-      e == null ?
+      e === null ?
          <>
             <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
          </> : null
       }
    </>   
    )  
+}
+
+export const Sort = (data) => {
+   const sortArr = (a,b) => a.name > b.name ? 1 : -1;
+   return data.sort(sortArr)
+}
+
+export const SortStructure = (data) => {
+   const sortArr = (a,b) => a.name > b.name ? 1 : -1;
+   data.sort(sortArr)
+   return [...new Set(data.map((item, i) => item.name))];
 }
 
 

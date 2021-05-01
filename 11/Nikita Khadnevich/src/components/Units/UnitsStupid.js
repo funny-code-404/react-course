@@ -64,7 +64,7 @@ export const  UnitDetailStupid = (props) => {
             </> : 
             <ul key={'Skils'+unitDetailInfo} id='Skils'>
                <li>У цивилизации нет юнитов</li>
-            </ul>   
+            </ul>
          }
       </>
    )

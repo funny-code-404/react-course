@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom'
 import { ACTION_GET_CIVIL_Requested, ACTION_GET_CIVIL_REQUESTED_DETAIL , ACTION_GET_ROUTE_CIVIL_MENU, ACTION_GET_CIVIL_DETAIL_FAILED } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
 import CivDetailInfo from './CivDetailInfo'
@@ -10,11 +10,12 @@ import { ButtonGoBack, indicator } from '../SmallElems/SmallElems'
 
 
 const CivInfo = (props) => {
+   const history = useHistory()
+   const params = useParams()
    const data = useSelector(Civildata)
    const  dispatches = useDispatch()
    const { civInfo } = indicator
    const { civilizations } = Urlpath
-   const params = props.match.params.id
    const urlCiv = props.match.url
 
    const getFetch = (url, path, arr) => {
@@ -27,11 +28,11 @@ const CivInfo = (props) => {
    }, []);
 
    const handleclick = (e) => {
-         const targetPath = e.target.dataset.path
-         const targetId = e.target.id
-         dispatches(ACTION_GET_ROUTE_CIVIL_MENU(targetId));
-         targetPath ?
-         dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
+      const targetPath = e.target.dataset.path
+      const targetId = e.target.id
+      dispatches(ACTION_GET_ROUTE_CIVIL_MENU(targetId));
+      targetPath ?
+      dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
    }
          //^^^^
          //Сначала была такая логика
@@ -50,16 +51,16 @@ const CivInfo = (props) => {
    // путем распаршивания ее через джоин(например)
    // а уже потом у меня будет линковаться все как нужно
    const handleLocation = () => {
-      history.go(-1);
+      history.push('/civilizations');
    }
 
    return ( 
    <>
       {data && data.map((item, i) => {
-         if (params === (item.name+item.id)) {
+         if (params.id === (item.name+item.id)) {
             return (
-               <>
-                  <ButtonGoBack key={'button'+civInfo} handleLocation={handleLocation} idName={'goback'+civInfo} indicator={civInfo}/>
+               <div key={'Wrapper'+civInfo}>
+                  <ButtonGoBack handleLocation={handleLocation} idName={'goback'+civInfo} indicator={civInfo}/>
                   <div key={'Items'+civInfo+i} className={'items'+civInfo}>
                      <CivilInfoStupid key={'stupid'+civInfo+i}> 
                         {item}{urlCiv}{handleclick}{civilizations}
@@ -68,7 +69,7 @@ const CivInfo = (props) => {
                   <Switch>
                      <Route path={`${urlCiv}/:id`} component={CivDetailInfo} />
                   </Switch>
-               </>
+               </div>
             )
          } 
       })}

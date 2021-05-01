@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom';
 import { ACTION_GET_TECH_Requested, ACTION_GET_TECH_REQUESTED_DETAIL , ACTION_GET_ROUTE_TECH_MENU} from '../../ducks/technologies/actions';
 import { TechData, TechDataDetail, TechError, TechisFetching } from '../../ducks/technologies/selectors'
 import TechDetailInfo from '../Technologies/TechDetailInfo'
@@ -10,11 +10,12 @@ import { indicator, ButtonGoBack } from '../SmallElems/SmallElems'
 
 
 const TechInfo = (props) => {
+   const history = useHistory()
+   const params = useParams()
    const data  = useSelector(TechData)
    const dispatches = useDispatch()
    const { techInfo } = indicator
    const { technologies } = Urlpath
-   const params = props.match.params.id
    const urlCiv = props.match.url
 
    const getFetch = ( url, path, arr) => {
@@ -36,15 +37,15 @@ const TechInfo = (props) => {
    }
 
    const handleLocation = () => {
-      history.go(-1)
+      history.push('/technologies')
    }
 
    return (
       <>
          { data && data.map((item,i) => {
-            if (params === item.name+item.id) {
+            if (params.id === item.name+item.id) {
                return (
-                  <>
+                  <div key={'Wrapper'+techInfo} >
                      <ButtonGoBack key={'button'+techInfo} handleLocation={handleLocation} idName={'goback'+techInfo} indicator={techInfo}/>
                      <div key={'Items'+techInfo} className={'items'+techInfo}>
                         <TechInfoStupid key={'stupid'+techInfo+i}> 
@@ -54,7 +55,7 @@ const TechInfo = (props) => {
                      <Switch>
                         <Route path={`${urlCiv}/:id`} component={TechDetailInfo} />
                      </Switch>
-                  </>
+                  </div>
                   )
                }
             })

@@ -14,7 +14,7 @@ export const CivilInfoStupid = (props) => {
          <p key={item.expansion+civilStupid}>Класс война: {item.expansion}</p>
          <p key={item.army_type+civilStupid}>Тип Армии: {item.army_type}</p>
          <p key={item.team_bonus+civilStupid}>Командный бонус: {item.team_bonus}</p>
-         
+
          {(item.unique_unit && item.unique_unit[0]) ? item.unique_unit.map((linkUnit,i) => {
          return (
             <div key={'CivilsItem'+civilStupid+i} className={civilizations+'Item'}>

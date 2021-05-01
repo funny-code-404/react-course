@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ACTION_GET_CIVIL_Requested } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
-import { indicator } from '../SmallElems/SmallElems'
-import { ListAge } from '../SmallElems/SmallElems'
+import { indicator, ListAge, Sort } from '../SmallElems/SmallElems'
 
 
 const Civil = (props) => {
@@ -25,7 +24,9 @@ const Civil = (props) => {
   }, []);
 
   return (
-    <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} />
+    <>
+      <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} Sort={Sort}/>
+    </>
   )
 };
 

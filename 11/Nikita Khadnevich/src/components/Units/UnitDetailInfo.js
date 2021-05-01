@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory }  from 'react-router-dom'
 import { ACTION_GET_UNITS_DETAIL_Succeed, ACTION_GET_UNITS_DETAIL_FAILED } from '../../ducks/units/actions'
 import { UnitsdataUnitDetail,  UnitsisFetching, Unitserror} from '../../ducks/units/selectors'
 import { UnitDetailStupid } from '../Units/UnitsStupid'
@@ -7,9 +8,9 @@ import { indicator, ButtonClose } from '../SmallElems/SmallElems'
 
 
 const UnitDetailInfo = (props) => {
+   const history = useHistory()
    const dataUnitDetail = useSelector(UnitsdataUnitDetail)
    const fetchStatus = useSelector(UnitsisFetching);
-   const unitError = useSelector(Unitserror)
    const  dispatches = useDispatch()
    const { unitDetailInfo } = indicator
    
@@ -39,7 +40,7 @@ const UnitDetailInfo = (props) => {
                <UnitDetailStupid dataUnitDetail={dataUnitDetail} handleLocation={handleLocation} />
          : (!fetchStatus) ?
                <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} />
-         : null }
+         : null}
       </>
    )
 }

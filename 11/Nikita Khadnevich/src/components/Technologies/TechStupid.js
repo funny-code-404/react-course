@@ -6,7 +6,6 @@ const { technology, techInfo, techDetailInfo, techStupid } = indicator
 
 const TechInfoStupid = (props) => {
    const { children: [item, urlCiv, handleclick, technologies] } = props
-      console.log(`urlCiv`, urlCiv)
    return (
       <>
          <p>Имя юнита {item.name}</p>
@@ -15,7 +14,6 @@ const TechInfoStupid = (props) => {
          <p>Отличительная особенность: {item.description}</p>
          <p>Распостранение: {item.expansion}</p>
          <p>Стоимость Юнита: {item.cost.Wood} древесины, {item.cost.Gold} золота</p>
-
          {item.develops_in.length > 2 ? 
             <div key={'TechItem'+techStupid} className={technologies+'Item'}>
                <Link to={`${urlCiv}/tech`} id={item.id} onClick={handleclick} data-path={item.develops_in}>Мануфакторум Юнита {item.name}</Link> 

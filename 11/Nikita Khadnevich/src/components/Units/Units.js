@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ACTION_GET_UNIT_Requested } from '../../ducks/units/actions';
 import { Unitsdata } from '../../ducks/units/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
-import { ListAge, indicator} from '../SmallElems/SmallElems'
+import { ListAge, indicator, Sort } from '../SmallElems/SmallElems'
 
 const Units = (props) => {
   const { units } = Urlpath
@@ -24,7 +24,7 @@ const Units = (props) => {
 
   return (
     <>  
-      <ListAge data={dataUnit} blockName={indicator.units} elem={units} propsUrl={propsUrl}/>
+      <ListAge data={dataUnit} blockName={indicator.units} elem={units} propsUrl={propsUrl} Sort={Sort}/>
     </>
   )
 };

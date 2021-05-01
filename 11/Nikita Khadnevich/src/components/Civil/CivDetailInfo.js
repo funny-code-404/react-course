@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory }  from 'react-router-dom'
 import { CivildataDetail, CivilisFetching, Civilpath, Civilerror } from '../../ducks/civil/selectors'
 import { ACTION_GET_CIVIL_DETAIL_Succeed, ACTION_GET_CIVIL_DETAIL_FAILED } from '../../ducks/civil/actions'
 import { ButtonClose, indicator} from '../SmallElems/SmallElems'
@@ -7,6 +8,7 @@ import { CivilUnitDetailStupid, CivilTechDetailStupid } from './CivilStupid'
 
 
 const CivDetailInfo = (props) => {
+   const history = useHistory();
    const $ = useSelector(CivildataDetail);
    const fetchStatus = useSelector(CivilisFetching);
    const path = useSelector(Civilpath)

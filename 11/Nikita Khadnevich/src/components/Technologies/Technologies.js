@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ACTION_GET_TECH_Requested } from '../../ducks/technologies/actions';
 import { TechData } from '../../ducks/technologies/selectors'
-import { indicator, ListAge } from '../SmallElems/SmallElems'
+import { indicator, ListAge , Sort } from '../SmallElems/SmallElems'
 import  { baseUrl, Urlpath } from '../Api/Api'
 
 const Technologies = (props) => {
@@ -25,7 +25,7 @@ const Technologies = (props) => {
 
   return (
     <>  
-      <ListAge data={data} blockName={technology} elem={technologies} propsUrl={propsUrl} />
+      <ListAge data={data} blockName={technology} elem={technologies} propsUrl={propsUrl} Sort={Sort}/>
     </>
   )
 };

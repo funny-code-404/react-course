@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ACTION_GET_TECH_DETAIL_Succeed, ACTION_GET_TECH_DETAIL_FAILED, ACTION_GET_TECH_FAILED } from '../../ducks/technologies/actions'
+import { useHistory } from 'react-router-dom';
+import { ACTION_GET_TECH_DETAIL_Succeed, ACTION_GET_TECH_DETAIL_FAILED } from '../../ducks/technologies/actions'
 import { TechData, TechDataDetail, TechError, TechisFetching } from '../../ducks/technologies/selectors'
 import { TechDetailStupid } from './TechStupid'
 import { indicator, ButtonClose} from '../SmallElems/SmallElems'
 
 
 const TechDetailInfo = (props) => {
+   const history = useHistory()
    const dataDetail= useSelector(TechDataDetail)
    const fetchStatus = useSelector(TechisFetching);
    const  dispatches = useDispatch()
    const { techDetailInfo } = indicator
    
    const handleLocation = () => {
-      history.go(-1)
+      history.go(-1);
       dispatches(ACTION_GET_TECH_DETAIL_Succeed({}))
       dispatches(ACTION_GET_TECH_DETAIL_FAILED(null))
    }
