@@ -9,7 +9,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const taskList = JSON.parse(localStorage.getItem("taskList")) || [];
+    const taskList = localStorage.getItem("taskList")
+      ? JSON.parse(localStorage.getItem("taskList"))
+      : [];
     const id = +localStorage.getItem("id") || -1;
 
     this.setState((prevState) => ({
