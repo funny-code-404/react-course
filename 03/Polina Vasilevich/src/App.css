@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  width: 60%;
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif;
+}
