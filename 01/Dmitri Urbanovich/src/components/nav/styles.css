@@ -1,0 +1,18 @@
+nav{
+    background-color: #003395;
+    height: 75px;
+}
+
+nav li{
+    display: inline-block;
+    line-height: 75px;
+}
+
+nav a{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 62px;
+}

@@ -1,0 +1,14 @@
+.navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin:0 auto;
+}
+a{
+  text-decoration: none;
+  color: black;
+  background: lightgray;
+  border: 1px solid black;
+  padding: 3px 24px;
+}

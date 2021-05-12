@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import { getFormatedName, getFormatedPath, baseUrl } from "../api";
 import { memo } from "react";
 
+const StyledLink = styled(Link)`
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+`;
+
 export const LinkContainer = memo(({ title, link, type }) => (
   <p>
     {title}:{" "}
@@ -50,7 +56,3 @@ export const LinkContainer = memo(({ title, link, type }) => (
     )}
   </p>
 ));
-
-const StyledLink = styled(Link)`
-  text-transform: capitalize;
-`;
