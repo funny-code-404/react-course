@@ -18,12 +18,6 @@ class DogImage extends React.Component {
     },
   };
 
-  async componentDidMount() {
-    // console.log("Mount image");
-    // const { url } = this.props.data;
-    // fetch(url).then((data) => console.log(data));
-  }
-
   render() {
     console.log(`render dogImage ${this.props.data.dogBreedName}`);
     const { dogBreedName, url, classNameList } = this.props.data;

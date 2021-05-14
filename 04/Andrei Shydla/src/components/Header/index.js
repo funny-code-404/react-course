@@ -7,7 +7,7 @@ class Header extends React.Component {
   async componentDidMount() {
     // console.log("Mount");
 
-    if (this.props.data.categories === null) {
+    if (!this.props.data.categories) {
       // console.log("get new categories");
       fetch(url)
         .then((data) => data.json())
@@ -16,10 +16,6 @@ class Header extends React.Component {
           passToParent(categories);
         });
     }
-  }
-
-  componentWillUnmount() {
-    // console.log("UnMount");
   }
 
   render() {
