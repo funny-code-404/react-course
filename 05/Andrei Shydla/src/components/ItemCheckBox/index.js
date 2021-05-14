@@ -38,7 +38,7 @@ class ItemCheckBox extends React.Component {
     const { id, name, className, state } = this.props.data;
     return (
       <>
-        {state === true && (
+        {!!state && (
           <input
             id={id}
             type="checkbox"
@@ -48,7 +48,7 @@ class ItemCheckBox extends React.Component {
             defaultChecked="checked"
           />
         )}
-        {state !== true && (
+        {!state && (
           <input
             id={id}
             type="checkbox"
