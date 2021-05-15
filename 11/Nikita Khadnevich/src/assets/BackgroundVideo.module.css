@@ -1,0 +1,42 @@
+.Video {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0,0,0, 1), rgb(49, 60, 2)), url(
+    "back.mp4");
+}
+
+.Content {
+  position: absolute;
+  top: 0;
+  color:#f1f1f1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.SubContent button {
+  font-weight: bold;
+  margin-top: 30px;
+  color: #f1f1f1;
+  border: #f1f1f1 1px solid;
+  padding: 10px 5px;
+  background-color: hsla(0, 0%, 0%, 0);
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+.SubContent button:hover {
+  background-color: #f1f1f1;
+  color: #000000c0;
+}
+
+.SubContent img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  border: #f1f1f1 1px solid;
+}
