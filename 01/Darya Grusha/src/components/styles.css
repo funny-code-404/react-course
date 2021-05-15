@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fffaf3;
+  background-image: url(./assets/backgr.png);
+  background-repeat: no-repeat;
+  background-position: 778px 0;
+  background-size: 660px;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}

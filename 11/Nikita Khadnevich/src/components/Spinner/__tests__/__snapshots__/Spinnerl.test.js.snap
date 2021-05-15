@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner> Is Spinner render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(SpinnerHome)
+    title="Render correctly!"
+  >
+    <SpinnerHome
+      dispatch={[Function]}
+      isFetchingCivil={true}
+      isFetchingStru={true}
+      isFetchingTech={true}
+      isFetchingUnit={true}
+      title="Render correctly!"
+    >
+      <div
+        className="blocks"
+      >
+        <p>
+          Render correctly!
+        </p>
+        <div
+          className="block orange"
+        />
+        <div
+          className="block blue"
+        />
+      </div>
+    </SpinnerHome>
+  </Connect(SpinnerHome)>
+</Provider>
+`;

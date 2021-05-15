@@ -84,7 +84,7 @@ class Footer extends React.Component {
                     </a>
                   </div>
                 );
-              })}
+              })}             
             </div>
           </div>
           <div className="footer__image-wrapper">

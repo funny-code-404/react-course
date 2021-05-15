@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Civil />  should are working Methods in Civil 1`] = `
+<Civil
+  data={
+    Array [
+      1,
+      2,
+      3,
+      4,
+    ]
+  }
+  getFetch={[Function]}
+  match={
+    Object {
+      "url": "some http...",
+    }
+  }
+  useEffect={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <ListAge
+    blockName="_civil"
+    elem="civilizations"
+    propsUrl="some http..."
+  >
+    <div
+      className="civilizationsWrapper"
+      key="civilizationsWrapper"
+    />
+  </ListAge>
+</Civil>
+`;
