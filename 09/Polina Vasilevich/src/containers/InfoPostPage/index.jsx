@@ -1,36 +1,21 @@
-import { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
-import Spinner from "../../components/Spinner";
-import { API_POSTS } from "../../constants/api";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import Info from "../../components/Info";
+import { ACTION_GET_DETAILS } from "../../ducks/actions/getDetails";
+import { URL_POSTS } from "../../constants/api";
 
 const InfoPostPage = () => {
-  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+  const postDetails = useSelector((state) => state.postDetails.postDetails);
+
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`${API_POSTS}/${id}`)
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+    dispatch(ACTION_GET_DETAILS(URL_POSTS, id));
+  }, [dispatch, id]);
 
-  return (
-    <>
-      {data ? (
-        <div>
-          <h2>User id: {data.userId}</h2>
-          <h3>Title: {data.title}</h3>
-          <p>Post: {data.body}</p>
-        </div>
-      ) : (
-        <Spinner />
-      )}
-    </>
-  );
-};
-
-InfoPostPage.propTypes = {
-  text: PropTypes.string,
+  return postDetails && <Info {...postDetails} />;
 };
 
 export default InfoPostPage;

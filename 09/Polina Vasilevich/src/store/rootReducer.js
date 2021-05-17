@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import { dataTodosReducer } from "../ducks/todos";
-import { dataPostsReducer } from "../ducks/posts";
+import { todos } from "../ducks/reducers/todos";
+import { posts } from "../ducks/reducers/posts";
+import { postDetails } from "../ducks/reducers/postDetails";
 
 export default combineReducers({
-  todos: dataTodosReducer,
-  posts: dataPostsReducer,
+  todos,
+  posts,
+  postDetails,
 });

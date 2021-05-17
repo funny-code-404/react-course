@@ -1,7 +1,7 @@
 import TodosPage from "../containers/TodosPage";
 import PostsPage from "../containers/PostsPage";
 import InfoPostPage from "../containers/InfoPostPage";
-
+import InfoTodoPage from "../containers/InfoTodoPage";
 const routesConfig = [
   {
     path: "/",
@@ -16,7 +16,7 @@ const routesConfig = [
 
   {
     path: "/todos/:id",
-    // component: InfoPage,
+    component: InfoTodoPage,
   },
 
   {
