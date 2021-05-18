@@ -1,4 +1,4 @@
-import { Link, Redirect, useParams, useHistory } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import PropTypes from "prop-types";
 import ContactList from "../ContactList";
@@ -6,14 +6,15 @@ import NotFoundPage from "../NotFoundPage";
 import { Info, InfoItem, Photo, GoBackButton } from "./styles";
 
 const ContactInfo = (props) => {
-  const { name, phone } = useParams();
+  const { name } = useParams();
   const history = useHistory();
 
   const handleGoBack = () => history.goBack();
 
-  const contact = name
-    ? props.data.filter((item) => item.name === name)[0]
-    : props.data.filter((item) => item.phone === phone)[0];
+  const params = useParams();
+  const param = name ? "name" : "phone";
+
+  const contact = props.data.filter((item) => item[param] === params[param])[0];
 
   if (!contact) {
     return <NotFoundPage />;
