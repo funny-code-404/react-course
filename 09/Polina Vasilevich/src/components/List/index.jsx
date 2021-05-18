@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Container, List, ListItem } from "./styles";
+import capitalizeFirstLetter from "@utils/capitalizeFirstLetter";
 
 const ListComponent = ({ data, path }) => {
   return (
@@ -8,14 +10,26 @@ const ListComponent = ({ data, path }) => {
         {data.map((item) => (
           <ListItem key={item.id}>
             <h3>
-              <Link to={path + item.id}>{item.title}</Link>
+              <Link to={path + item.id}>
+                {capitalizeFirstLetter(item.title)}
+              </Link>
             </h3>
-            {item.body && <p>{item.body}</p>}
+            {item.body && <p>{capitalizeFirstLetter(item.body)}</p>}
           </ListItem>
         ))}
       </List>
     </Container>
   );
+};
+
+ListComponent.propTypes = {
+  data: PropTypes.array.isRequired,
+  path: PropTypes.string.isRequired,
+};
+
+ListComponent.defaultProps = {
+  data: [],
+  path: "",
 };
 
 export default ListComponent;

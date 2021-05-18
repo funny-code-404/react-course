@@ -1,20 +1,29 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { List, ListItem } from "./styles";
+
+const headers = [
+  {
+    path: "/todos",
+    label: "Todos",
+  },
+  {
+    path: "/posts",
+    label: "Posts",
+  },
+];
 
 const Header = () => {
   return (
     <header>
       <nav>
         <List>
-          <ListItem>
-            <Link to="/">Home</Link>
-          </ListItem>
-          <ListItem>
-            <Link to="/todos">Todos</Link>
-          </ListItem>
-          <ListItem>
-            <Link to="/posts">Posts</Link>
-          </ListItem>
+          {headers.map(({ path, label }) => (
+            <ListItem key={path}>
+              <NavLink to={path} exact>
+                {label}
+              </NavLink>
+            </ListItem>
+          ))}
         </List>
       </nav>
     </header>

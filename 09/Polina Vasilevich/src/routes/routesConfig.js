@@ -1,7 +1,7 @@
-import TodosPage from "../containers/TodosPage";
-import PostsPage from "../containers/PostsPage";
-import InfoPostPage from "../containers/InfoPostPage";
-import InfoTodoPage from "../containers/InfoTodoPage";
+import TodosPage from "@components/TodosPage";
+import PostsPage from "@components/PostsPage";
+import InfoPostPage from "@components/InfoPostPage";
+import InfoTodoPage from "@components/InfoTodoPage";
 const routesConfig = [
   {
     path: "/",
