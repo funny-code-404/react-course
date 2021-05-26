@@ -1,0 +1,18 @@
+export const GET_TECHNOLOGIES_REQUESTED = 'GET_TECHNOLOGIES_REQUESTED'
+export const GET_TECHNOLOGIES_SUCCEED = 'GET_TECHNOLOGIES_SUCCEED'
+export const GET_TECHNOLOGIES_FAILED = 'GET_TECHNOLOGIES_FAILED'
+
+export const ACTION_GET_TECHNOLOGIES_REQUESTED = (url) => ({
+  type: GET_TECHNOLOGIES_REQUESTED,
+  payload: url,
+})
+
+export const ACTION_GET_TECHNOLOGIES_SUCCEED = (data) => ({
+  type: GET_TECHNOLOGIES_SUCCEED,
+  payload: data,
+})
+
+export const ACTION_GET_TECHNOLOGIES_FAILED = (error) => ({
+  type: GET_TECHNOLOGIES_FAILED,
+  payload: error,
+})
