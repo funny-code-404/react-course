@@ -1,0 +1,16 @@
+.card {
+    display: grid;
+    background-color: lawngreen;
+    border-radius: 10px;
+}
+
+.textlinethrough {
+    text-decoration: line-through
+    ;
+}
+
+.outdated {
+    display: grid;
+    background-color: orangered;
+    border-radius: 10px;
+}
