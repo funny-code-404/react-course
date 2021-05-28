@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+}
+
+.navigation {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.contacts_navigation {
+    display: flex;
+    flex-direction: column;
+}

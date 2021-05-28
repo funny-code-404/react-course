@@ -30,7 +30,6 @@ const addresses = [
     href: "https://goo.gl/maps/sbM9KpWbqKqaF9TNA",
   },
 ];
-
 class Footer extends React.Component {
   render() {
     return (
@@ -62,7 +61,6 @@ class Footer extends React.Component {
                 <span>We are waiting</span>
                 <span>for your visit</span>
               </h3>
-
               {addresses.map((item, i) => {
                 return (
                   <div

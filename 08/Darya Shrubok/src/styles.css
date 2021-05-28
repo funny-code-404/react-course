@@ -1,0 +1,45 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    padding: 20px;
+}
+
+input[type="text"], [type="password"] {
+    margin-top: 10px;
+    width: 100%;
+    height: 20px;
+}
+
+.form_login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form_signup {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.form_signup, .form_delete button {
+    margin-top: 20px;
+}
+
+.form_delete {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
