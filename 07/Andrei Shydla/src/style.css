@@ -1,0 +1,22 @@
+.cars-list-item {
+  display: block;
+  width: 200px;
+  line-height: 25px;
+
+  text-decoration: none;
+}
+.cars-list-item-link {
+  display: inline-block;
+  width: 200px;
+  padding-left: 10px;
+  border-color: rgb(148, 96, 0);
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none;
+  line-height: 20px;
+}
+.cars-list-item-link:hover {
+  font-weight: bold;
+  background-color: orange;
+  color: papayawhip;
+}
