@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { getCorrectedArray } from '../../utils/utils'
 import { ACTION_GET_TECHNOLOGIES_REQUESTED } from '../../redux/technologies/actions'
 
 export const Technologies = (props) => {
   const { data } = props.data
   const { state } = props.location
-  const arr = data ? (data.technologies ? data.technologies : [data]) : []
+  const arr = getCorrectedArray(data, 'technologies')
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(ACTION_GET_TECHNOLOGIES_REQUESTED(state?.techUrl))
@@ -23,7 +24,7 @@ export const Technologies = (props) => {
             <li>Expansion: {item.expansion}</li>
             <li>Age: {item.age}</li>
             <li>
-              Develops In:{' '}
+              Develops In:
               <Link
                 to={{
                   pathname: `/technologies/${item.id}/develops_in/${item.develops_in.substring(
@@ -38,7 +39,7 @@ export const Technologies = (props) => {
               </Link>
             </li>
             <li>
-              Cost:{' '}
+              Cost:
               {Object.keys(item.cost).map((key, i) => {
                 return (
                   <ul key={i}>
@@ -52,7 +53,7 @@ export const Technologies = (props) => {
             <li>Build time: {item.build_time}</li>
             {item.applies_to && (
               <li>
-                Applies To:{' '}
+                Applies To:
                 {item.applies_to.map((it, i) => {
                   const unitName = it.substring(it.lastIndexOf('/') + 1)
                   return (

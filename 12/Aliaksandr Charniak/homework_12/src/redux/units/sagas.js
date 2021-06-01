@@ -5,7 +5,6 @@ import { URL } from '../../constantes'
 
 function* getUnitsSaga(action) {
   let finishUrl = ''
-  console.log(action.payload)
   if (action.payload) {
     finishUrl = action.payload
   } else {

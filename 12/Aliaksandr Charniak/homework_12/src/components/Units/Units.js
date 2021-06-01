@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { getCorrectedArray } from '../../utils/utils'
 import { ACTION_GET_UNITS_REQUESTED } from '../../redux/units/actions'
 
 export const Units = (props) => {
   const { data } = props.data
   const { state } = props.location
-  const arr = data ? (data.units ? data.units : Array.isArray(data) ? data : [data]) : []
+  const arr = getCorrectedArray(data, 'units')
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(ACTION_GET_UNITS_REQUESTED(state?.unitUrl))
@@ -23,7 +24,7 @@ export const Units = (props) => {
             <li>Expansion: {item.expansion}</li>
             <li>Age: {item.age}</li>
             <li>
-              Created in:{' '}
+              Created in:
               <Link
                 to={{
                   pathname: `/units/${item.id}/created_in/${item.created_in.substring(
@@ -38,7 +39,7 @@ export const Units = (props) => {
               </Link>
             </li>
             <li>
-              Cost:{' '}
+              Cost:
               {Object.keys(item.cost).map((key, i) => {
                 if (typeof item.cost[key] === 'object') {
                   return (
@@ -73,7 +74,7 @@ export const Units = (props) => {
             <li>Accuracy: {item.accuracy}</li>
             {item.attack_bonus && (
               <li>
-                Attack Bonus:{' '}
+                Attack Bonus:
                 {item.attack_bonus.map((it, i) => (
                   <ul key={i}>
                     <li>{it}</li>

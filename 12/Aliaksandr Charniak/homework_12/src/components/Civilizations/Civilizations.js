@@ -2,18 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { getCorrectedArray } from '../../utils/utils'
 import { ACTION_GET_CIVILIZATIONS_REQUESTED } from '../../redux/civilizations/actions'
 
 export const Civilizations = (props) => {
   const { data } = props.data
   const { state } = props.location
-  const arr = data
-    ? data.civilizations
-      ? data.civilizations
-      : Array.isArray(data)
-      ? data
-      : [data]
-    : []
+  const arr = getCorrectedArray(data, 'civilizations')
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(ACTION_GET_CIVILIZATIONS_REQUESTED(state?.unitUrl))
@@ -28,7 +23,7 @@ export const Civilizations = (props) => {
             <li>Expansion: {item.expansion}</li>
             <li>Army type: {item.army_type}</li>
             <li>
-              Unique unit:{' '}
+              Unique unit:
               {item.unique_unit.map((it, i) => {
                 const unitName = it.substring(it.lastIndexOf('/') + 1)
                 return (
@@ -48,7 +43,7 @@ export const Civilizations = (props) => {
               })}
             </li>
             <li>
-              Unique tech:{' '}
+              Unique tech:
               {item.unique_tech.map((it, i) => {
                 const techName = it.substring(it.lastIndexOf('/') + 1)
                 return (
@@ -69,7 +64,7 @@ export const Civilizations = (props) => {
             </li>
             <li>Team bonus: {item.team_bonus}</li>
             <li>
-              Civilization bonus:{' '}
+              Civilization bonus:
               {item.civilization_bonus.map((it, i) => (
                 <ul key={i}>
                   <li>{it}</li>
