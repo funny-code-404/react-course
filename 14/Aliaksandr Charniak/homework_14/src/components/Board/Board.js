@@ -21,7 +21,7 @@ export const Board = (props) => {
   }
 
   const step = () => {
-    let newBoardData = JSON.parse(JSON.stringify(boardData))
+    let newBoardData = boardData
 
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < columns; c++) {
