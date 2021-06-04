@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Todo /> mounting behaviour should match snapshot 1`] = `
+<li
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+>
+  Some text...
+</li>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> mounting behaviour should match snapshot 1`] = `
+<button
+  disabled={false}
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "marginLeft": "4px",
+    }
+  }
+>
+  <p>
+    Click me
+  </p>
+</button>
+`;
