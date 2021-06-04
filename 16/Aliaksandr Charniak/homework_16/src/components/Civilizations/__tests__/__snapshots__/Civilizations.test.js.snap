@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Civilizations /> mounting behaviour should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Connect(Civilizations)
+    data={
+      Object {
+        "civilizations": Array [
+          Object {
+            "army_type": "Infantry and Monk",
+            "civilization_bonus": Array [
+              "Villagers carry +5",
+              "Military units created 15% faster",
+              "+5 Monk hit points for each Monastery technology",
+              "Loom free",
+            ],
+            "expansion": "The Conquerors",
+            "id": 1,
+            "name": "Aztecs",
+            "team_bonus": "Relics generate +33% gold",
+            "unique_tech": Array [
+              "https://age-of-empires-2-api.herokuapp.com/api/v1/technology/garland_wars",
+            ],
+            "unique_unit": Array [
+              "https://age-of-empires-2-api.herokuapp.com/api/v1/unit/jaguar_warrior",
+            ],
+          },
+          Object {
+            "army_type": "Foot Archer",
+            "civilization_bonus": Array [
+              "Town Centers cost -50% wood upon reaching the Castle Age",
+              "Foot archers (excluding Skirmishers) have +1 range in Castle Age and +1 in Imperial Age (for +2 total)",
+              "Shepherds work 25% faster",
+            ],
+            "expansion": "Age of Kings",
+            "id": 2,
+            "name": "Britons",
+            "team_bonus": "Archery Ranges work 20% faster",
+            "unique_tech": Array [
+              "https://age-of-empires-2-api.herokuapp.com/api/v1/technology/yeomen",
+            ],
+            "unique_unit": Array [
+              "https://age-of-empires-2-api.herokuapp.com/api/v1/unit/longbowman",
+            ],
+          },
+        ],
+        "structures": "https://age-of-empires-2-api.herokuapp.com/api/v1/structures",
+        "technologies": "https://age-of-empires-2-api.herokuapp.com/api/v1/technologies",
+        "units": "https://age-of-empires-2-api.herokuapp.com/api/v1/units",
+      }
+    }
+    location={false}
+  />
+</ContextProvider>
+`;

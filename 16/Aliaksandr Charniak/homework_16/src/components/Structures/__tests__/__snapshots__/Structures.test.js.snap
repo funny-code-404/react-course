@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Structures /> mounting behaviour should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Connect(Structures)
+    data={
+      Object {
+        "civilizations": "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations",
+        "structures": Array [
+          Object {
+            "age": "Dark",
+            "armor": "0/7",
+            "build_time": 50,
+            "cost": Object {
+              "Wood": 175,
+            },
+            "expansion": "Age of Kings",
+            "hit_points": 1200,
+            "id": 1,
+            "line_of_sight": 5,
+            "name": "Barracks",
+            "special": Array [
+              "Garrison: 10 created units",
+            ],
+          },
+          Object {
+            "age": "Dark",
+            "armor": "0/7",
+            "build_time": 35,
+            "cost": Object {
+              "Wood": 150,
+            },
+            "expansion": "Age of Kings",
+            "hit_points": 1800,
+            "id": 2,
+            "line_of_sight": 5,
+            "name": "Dock",
+            "special": Array [
+              "Garrison: 10 created units",
+            ],
+          },
+        ],
+        "technologies": "https://age-of-empires-2-api.herokuapp.com/api/v1/technologies",
+        "units": "https://age-of-empires-2-api.herokuapp.com/api/v1/units",
+      }
+    }
+    location={false}
+  />
+</ContextProvider>
+`;

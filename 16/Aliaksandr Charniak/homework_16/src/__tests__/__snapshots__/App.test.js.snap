@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App unit test should match snapshot 1`] = `
+<BrowserRouter>
+  <nav
+    className="navigation"
+  >
+    <Link
+      to="/civilizations"
+    >
+      Цивилизации
+    </Link>
+    <Link
+      to="/units"
+    >
+      Юниты
+    </Link>
+    <Link
+      to="/structures"
+    >
+      Структуры
+    </Link>
+    <Link
+      to="/technologies"
+    >
+      Технологии
+    </Link>
+  </nav>
+  <Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/civilizations"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/civilizations/:id/unique_unit/:unit_name"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/civilizations/:id/unique_tech/:tech_name"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/units"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/units/:id/created_in/:created_in"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/structures"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/technologies"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/technologies/:id/develops_in/:created_in"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/technologies/:id/applies_to/unit/:unit_name"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/technologies/:id/applies_to/civilization/:unit_name"
+    />
+  </Switch>
+</BrowserRouter>
+`;
