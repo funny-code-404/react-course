@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Units /> mounting behaviour should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Connect(Units)
+    data={
+      Object {
+        "civilizations": "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations",
+        "structures": "https://age-of-empires-2-api.herokuapp.com/api/v1/structures",
+        "technologies": "https://age-of-empires-2-api.herokuapp.com/api/v1/technologies",
+        "units": Array [
+          Object {
+            "accuracy": "80%",
+            "age": "Feudal",
+            "armor": "0/0",
+            "attack": 4,
+            "attack_delay": 0.35,
+            "build_time": 35,
+            "cost": Object {
+              "Gold": 45,
+              "Wood": 25,
+            },
+            "created_in": "https://age-of-empires-2-api.herokuapp.com/api/v1/structure/archery_range",
+            "description": "Quick and light. Weak at close range; excels at battle from distance",
+            "expansion": "Age of Kings",
+            "hit_points": 4,
+            "id": 1,
+            "line_of_sight": 6,
+            "movement_rate": 0.96,
+            "name": "Archer",
+            "range": 30,
+            "reload_time": 2,
+          },
+          Object {
+            "accuracy": "85%",
+            "age": "Castle",
+            "armor": "0/0",
+            "attack": 5,
+            "attack_bonus": Array [
+              "+3 spearmen",
+            ],
+            "attack_delay": 0.35,
+            "build_time": 27,
+            "cost": Object {
+              "Gold": 45,
+              "Wood": 25,
+            },
+            "created_in": "https://age-of-empires-2-api.herokuapp.com/api/v1/structure/archery_range",
+            "description": "Upgraded archer",
+            "expansion": "Age of Kings",
+            "hit_points": 35,
+            "id": 2,
+            "line_of_sight": 7,
+            "movement_rate": 0.96,
+            "name": "Crossbowman",
+            "range": 5,
+            "reload_time": 2,
+          },
+        ],
+      }
+    }
+    location={false}
+  />
+</ContextProvider>
+`;
