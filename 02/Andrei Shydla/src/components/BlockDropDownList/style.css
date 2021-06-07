@@ -1,0 +1,35 @@
+.box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: darkblue;
+}
+
+.position {
+  display: inline-block;
+}
+
+.btn {
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  margin: 0px;
+
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: rgb(253, 250, 47);
+}
+.arrow {
+  height: 37px;
+  width: 37px;
+  background-image: url(images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: 20px;
+}
+
+.arrowRotated {
+  /* background-color: rgb(253, 250, 47); */
+  transform: rotate(-90deg);
+}

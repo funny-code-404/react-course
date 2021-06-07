@@ -1,0 +1,45 @@
+.regForm-main {
+  width: 400px;
+  margin: auto;
+  padding: 15px 20px 15px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: darkblue;
+  border-radius: 10px;
+}
+.regForm-h3 {
+  /* margin: auto; */
+  text-align: center;
+}
+.regForm-label {
+  display: inline-block;
+  width: 70px;
+  vertical-align: middle;
+}
+.regForm-input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 250px;
+}
+.regForm-verification-mark {
+  display: inline-block;
+  margin-left: 25px;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+.border-red {
+  border-color: red;
+}
+.mark-true {
+  background-image: url(images/free-icon-tick-green.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.submit-position {
+  margin-left: 82%;
+  display: block;
+}
+.submit-position:hover {
+  cursor: pointer;
+}
