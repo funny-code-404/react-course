@@ -11,11 +11,11 @@ class App1 extends React.Component {
     lastEnteredUserPassword: "",
   };
 
-  passDataToApp1 = async (user) => {
-    await this.addUserToDataBase(user);
+  passDataToApp1 = (user) => {
+    this.addUserToDataBase(user);
   };
 
-  addUserToDataBase = async (user) => {
+  addUserToDataBase = (user) => {
     const newDataBase = this.state.base[0];
 
     const userId = Object.keys(user)[0];
@@ -27,7 +27,7 @@ class App1 extends React.Component {
 
     const { name, email, password } = userData;
 
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       base: newBase,

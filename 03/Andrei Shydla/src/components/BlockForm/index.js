@@ -86,7 +86,7 @@ class BlockForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  setDefaultData = async () => {
+  setDefaultData = () => {
     const {
       valueNameDefault,
       valueEmailDefault,
@@ -95,7 +95,7 @@ class BlockForm extends React.Component {
       isRightEmailDefault,
       isRightPasswordDefault,
     } = this.state;
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       lastValueName: valueNameDefault,
@@ -107,7 +107,7 @@ class BlockForm extends React.Component {
     }));
   };
 
-  handleClick = async (event) => {
+  handleClick = (event) => {
     event.preventDefault();
     const {
       lastIsRightName,
@@ -124,8 +124,8 @@ class BlockForm extends React.Component {
       );
 
       const { passDataToApp1 } = this.props.functions;
-      await passDataToApp1(user);
-      await this.setDefaultData();
+      passDataToApp1(user);
+      this.setDefaultData();
     } else {
       alert(`expected correct data`);
     }
@@ -182,11 +182,11 @@ class BlockForm extends React.Component {
       : false;
   };
 
-  setDataToForm = async (name, value, state) => {
+  setDataToForm = (name, value, state) => {
     const keyValue = `lastValue${name[0].toUpperCase() + name.slice(1)}`;
     const keyState = `lastIsRight${name[0].toUpperCase() + name.slice(1)}`;
 
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       [keyValue]: value,

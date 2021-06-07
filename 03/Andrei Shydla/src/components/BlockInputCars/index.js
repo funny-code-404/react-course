@@ -12,11 +12,11 @@ class BlockInputCars extends React.Component {
     this.handleOnInput = this.handleOnInput.bind(this);
   }
 
-  async handleOnInput(event) {
+  handleOnInput(event) {
     const { name } = event.target;
-    await this.changeValue(name, event.target.value, false);
+    this.changeValue(name, event.target.value, false);
     if (this.checkValue(this.props.data.value, this.props.data.state)) {
-      await this.changeIsRightState(
+      this.changeIsRightState(
         name,
         this.props.data.value,
         this.props.data.state
@@ -24,9 +24,9 @@ class BlockInputCars extends React.Component {
     }
   }
 
-  changeValue = async (name, value, state) => {
+  changeValue = (name, value, state) => {
     const { setDataToForm } = this.props.functions;
-    return await setDataToForm(name, value, state);
+    return setDataToForm(name, value, state);
   };
 
   checkValue(value, state) {
@@ -46,9 +46,9 @@ class BlockInputCars extends React.Component {
     }
   }
 
-  changeIsRightState = async (name, value, state) => {
+  changeIsRightState = (name, value, state) => {
     const { setDataToForm } = this.props.functions;
-    return await setDataToForm(name, value, !state);
+    return setDataToForm(name, value, !state);
   };
 
   render() {

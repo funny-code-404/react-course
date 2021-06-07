@@ -35,13 +35,13 @@ class Cars extends React.Component {
     isRightClickedItemPrice: "0",
   };
 
-  setDefaultIsClickedCarToCars = async (name) => {
+  setDefaultIsClickedCarToCars = (name) => {
     const keyState = `isClickedCarState${
       name[0].toUpperCase() + name.slice(1)
     }`;
 
     // console.log(`${[keyState]}: ${this.state[keyState]}`);
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       [keyState]: false,
@@ -53,10 +53,10 @@ class Cars extends React.Component {
     this.setClickedItem(itemId);
   };
 
-  setClickedItem = async (itemId) => {
+  setClickedItem = (itemId) => {
     const dataBase = this.state.base[0];
     const itemData = dataBase[itemId];
-    return await this.setState((prevState) => ({
+    return this.setState((prevState) => ({
       ...prevState,
 
       isClickedCarStateBrand: true,
@@ -78,11 +78,11 @@ class Cars extends React.Component {
     }));
   };
 
-  passDataToCars = async (item) => {
-    await this.addItemToDataBase(item);
+  passDataToCars = (item) => {
+    this.addItemToDataBase(item);
   };
 
-  addItemToDataBase = async (item) => {
+  addItemToDataBase = (item) => {
     const newDataBase = this.state.base[0];
     const sumNumber = Object.keys(newDataBase).length;
     const newNumber = sumNumber + 1;
@@ -97,7 +97,7 @@ class Cars extends React.Component {
 
     const { brand, model, year, price } = itemData;
 
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       base: newBase,

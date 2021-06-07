@@ -69,7 +69,7 @@ class CarsForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  setDefaultData = async () => {
+  setDefaultData = () => {
     const {
       valueBrandDefault,
       valueModelDefault,
@@ -80,7 +80,7 @@ class CarsForm extends React.Component {
       isRightYearDefault,
       isRightPriceDefault,
     } = this.state;
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       lastValueBrand: valueBrandDefault,
@@ -94,7 +94,7 @@ class CarsForm extends React.Component {
     }));
   };
 
-  handleClick = async (event) => {
+  handleClick = (event) => {
     event.preventDefault();
     const {
       lastIsRightBrand,
@@ -123,8 +123,8 @@ class CarsForm extends React.Component {
       );
 
       const { passDataToCars } = this.props.functions;
-      await passDataToCars(item);
-      await this.setDefaultData();
+      passDataToCars(item);
+      this.setDefaultData();
     } else {
       alert(`expected correct data`);
     }
@@ -198,13 +198,13 @@ class CarsForm extends React.Component {
       : false;
   };
 
-  setDataToForm = async (name, value, state) => {
+  setDataToForm = (name, value, state) => {
     const { setDefaultIsClickedCarToCars } = this.props.functions;
-    await setDefaultIsClickedCarToCars(name);
+    setDefaultIsClickedCarToCars(name);
     const keyValue = `lastValue${name[0].toUpperCase() + name.slice(1)}`;
     const keyState = `lastIsRight${name[0].toUpperCase() + name.slice(1)}`;
 
-    await this.setState((prevState) => ({
+    this.setState((prevState) => ({
       ...prevState,
 
       [keyValue]: value,
