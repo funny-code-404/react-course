@@ -1,0 +1,29 @@
+.container {
+    max-width: 1146px;
+    margin: auto;
+}  
+.main {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+.mainaside {
+    background-color: white;
+    padding: 57px 0 32px;
+}
+.mainaside-columns { 
+    display: inline-block;
+    vertical-align: top;
+  
+}
+.mainaside-articles {
+    display: inline-block;
+    vertical-align: top;
+    width: 700px;
+    text-align: left;
+}
+.mainaside-aside {
+     display: inline-block;
+    vertical-align: top;
+    width: 360px;
+    margin-left: 24px;
+}
