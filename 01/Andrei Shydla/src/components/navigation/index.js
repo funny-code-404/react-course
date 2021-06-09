@@ -1,24 +1,21 @@
 import React from "react";
 import "./style.css";
 
+const arrayLinksForNavigation = ["Home", "Services", "Work", "About"];
+
+const listOfLinks = (arrayLinks) =>
+  arrayLinks.map((item, index) => (
+    <li key={index}>
+      <a href="#">{item}</a>
+    </li>
+  ));
+
 function Navigation() {
+  const renderListOfLinks = listOfLinks(arrayLinksForNavigation);
   return (
     <nav>
       <div className="nav">
-        <ul className="container">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Work</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-        </ul>
+        <ul className="container">{renderListOfLinks}</ul>
       </div>
     </nav>
   );
