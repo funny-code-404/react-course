@@ -1,0 +1,22 @@
+/* Basic Style */
+body {
+  background:white;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+  display: block;
+  width: 800px;
+  margin: 0 auto 0;
+}
+
+p, h3 {
+  margin: 10px;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 16px;
+  width: 50%;
+}

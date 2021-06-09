@@ -1,0 +1,14 @@
+td {
+  width: 10px;
+  height: 10px;
+  border: 1px solid whitesmoke
+}  
+.alive {
+  background-color: red
+}
+.alive:hover {
+    background-color: brown
+}  
+.dead:hover {
+    background-color: whitesmoke
+}
