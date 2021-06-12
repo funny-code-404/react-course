@@ -1,5 +1,11 @@
 import React from "react";
 import BlockInput from "../BlockInput";
+import {
+  checkValueConditionsName,
+  checkValueConditionsEmail,
+  checkValueConditionsPassword,
+} from "./controller";
+
 import "./style.css";
 
 const listData = {
@@ -79,7 +85,6 @@ class BlockForm extends React.Component {
       lastIsRightEmail: "",
       lastIsRightPassword: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -101,45 +106,6 @@ class BlockForm extends React.Component {
     } else {
       alert(`expected correct data`);
     }
-  };
-
-  checkValueConditionsName = (value) => {
-    return value[0] !== " " &&
-      value[0] !== "0" &&
-      Number.isNaN(Number(value[0])) &&
-      Boolean(value) &&
-      value.length >= 3 &&
-      value.length <= 30
-      ? true
-      : false;
-  };
-
-  checkValueConditionsEmail = (value) => {
-    return value[0] !== " " &&
-      value[0] !== "0" &&
-      Boolean(value) &&
-      value.length >= 7 &&
-      value.length <= 30 &&
-      value.indexOf("@") > -1 &&
-      value.indexOf(".") > -1
-      ? true
-      : false;
-  };
-
-  checkValueConditionsPassword = (value) => {
-    return value[0] !== " " &&
-      value[0] !== "0" &&
-      Boolean(value) &&
-      value.length >= 8 &&
-      value.length <= 30 &&
-      value.split("").some(function (i) {
-        return Number(!isNaN(Number(i)));
-      }) &&
-      value.split("").some(function (i) {
-        return Number(isNaN(Number(i)));
-      })
-      ? true
-      : false;
   };
 
   returnNameValueState = (value, state) => {
@@ -190,7 +156,7 @@ class BlockForm extends React.Component {
               state: this.state.isRightName,
             }}
             functions={{
-              checkValueConditions: this.checkValueConditionsName,
+              checkValueConditions: checkValueConditionsName,
               returnValueState: this.returnNameValueState,
             }}
           />
@@ -203,7 +169,7 @@ class BlockForm extends React.Component {
               state: this.state.isRightEmail,
             }}
             functions={{
-              checkValueConditions: this.checkValueConditionsEmail,
+              checkValueConditions: checkValueConditionsEmail,
               returnValueState: this.returnEmailValueState,
             }}
           />
@@ -215,7 +181,7 @@ class BlockForm extends React.Component {
               state: this.state.isRightPassword,
             }}
             functions={{
-              checkValueConditions: this.checkValueConditionsPassword,
+              checkValueConditions: checkValueConditionsPassword,
               returnValueState: this.returnPasswordValueState,
             }}
           />
@@ -224,9 +190,6 @@ class BlockForm extends React.Component {
             Submit
           </button>
         </form>
-        {/* <button className="submit-position" onClick={this.handleSubmit}>
-          Submit
-        </button> */}
       </div>
     );
   }

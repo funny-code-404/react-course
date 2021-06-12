@@ -1,5 +1,7 @@
 import React from "react";
 
+const arrayItems = ["point 1", "point 2", "point 3", "point 4"];
+
 class Counter extends React.Component {
   state = {
     count: 1,
@@ -13,24 +15,20 @@ class Counter extends React.Component {
       ...prevState,
       isShown: !isShown,
     }));
-    // console.log(isShown);
   };
 
-  //   isDataReceived = true;
+  listItems = (arrayItems) =>
+    arrayItems.map((item, index) => <li key={index}>{item}</li>);
 
   render() {
     const { headLabel } = this.props;
     const { isShown } = this.state;
+    const renderListItems = this.listItems(arrayItems);
 
     return (
       <div>
         {isShown && <h1>{headLabel}</h1>}
-        <ul>
-          <li>point 1</li>
-          <li>point 2</li>
-          <li>point 3</li>
-          <li>point 4</li>
-        </ul>
+        <ul>{renderListItems}</ul>
         <button onClick={this.handleClick}>Show / hide header</button>
       </div>
     );

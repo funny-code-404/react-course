@@ -34,15 +34,25 @@ const dataDropDownList = {
   },
 };
 
+const arrayItems = [
+  dataDropDownList.data1,
+  dataDropDownList.data2,
+  dataDropDownList.data3,
+];
+
 class App extends React.Component {
+  listItems = (arrayItems) =>
+    arrayItems.map((item, index) => (
+      <BlockDropDownList key={index} dataDDL={item} />
+    ));
+
   render() {
+    const renderListItems = this.listItems(arrayItems);
+
     return (
       <div>
         <Counter headLabel={data.label} />
-        <BlockDropDownList dataDDL={dataDropDownList.data1} />
-        <BlockDropDownList dataDDL={dataDropDownList.data2} />
-        <BlockDropDownList dataDDL={dataDropDownList.data3} />
-
+        <>{renderListItems} </>
         <BlockForm />
       </div>
     );

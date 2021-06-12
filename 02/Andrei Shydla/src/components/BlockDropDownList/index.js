@@ -20,7 +20,9 @@ class BlockDropDownList extends React.Component {
   };
 
   render() {
-    const { headLabel, list } = this.props.dataDDL;
+    const {
+      dataDDL: { headLabel, list },
+    } = this.props;
     const { isShown } = this.state;
     const classNameList = isShown ? "arrow" : "arrow arrowRotated";
     return (

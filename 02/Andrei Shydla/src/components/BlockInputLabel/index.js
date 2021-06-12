@@ -2,7 +2,11 @@ import React from "react";
 
 class BlockInputLabel extends React.Component {
   render() {
-    const { headLabel, classNameLabelList } = this.props.data.label;
+    const {
+      data: {
+        label: { headLabel, classNameLabelList },
+      },
+    } = this.props;
 
     return (
       <div className={classNameLabelList}>

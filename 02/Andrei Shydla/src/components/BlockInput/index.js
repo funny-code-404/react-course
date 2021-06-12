@@ -1,19 +1,20 @@
 import React from "react";
 import BlockInputLabel from "../BlockInputLabel";
-import BlockInputMark from "../BlockInputMark";
 
 class BlockInput extends React.Component {
   constructor(props) {
     super(props);
-    const { renderProp } = this.props.data;
-    this.renderProp = renderProp;
-
-    const { label, input, mark } = this.props.data.renderProp;
+    const {
+      data: {
+        renderProp: { label, input, mark },
+        value,
+        state,
+      },
+    } = this.props;
     this.label = label;
     this.input = input;
     this.mark = mark;
 
-    const { value, state } = this.props.data;
     this.state = {
       value: value,
       isRightState: state,
@@ -23,23 +24,28 @@ class BlockInput extends React.Component {
   }
 
   async handleOnInput(event) {
-    const { returnValueState } = this.props.functions;
+    const {
+      functions: { returnValueState },
+    } = this.props;
     await this.changeValue(event);
-    await this.changeDefaultIsRightState();
+    this.changeDefaultIsRightState();
+
     if (this.checkValue(this.state.value, this.state.isRightState)) {
-      await this.changeIsRightState();
+      this.changeIsRightState();
     }
+    // console.log(this.state.value + " - " + this.state.isRightState);
+
     returnValueState(this.state.value, this.state.isRightState);
   }
 
   changeValue = async (event) => {
-    return this.setState((prevState) => ({
+    return await this.setState((prevState) => ({
       ...prevState,
       value: event.target.value,
     }));
   };
 
-  changeDefaultIsRightState = async () => {
+  changeDefaultIsRightState = () => {
     return this.setState((prevState) => ({
       ...prevState,
       isRightState: false,
@@ -47,32 +53,27 @@ class BlockInput extends React.Component {
   };
 
   checkValue(value, isRightState) {
-    const { checkValueConditions } = this.props.functions;
-    if (checkValueConditions(value)) {
-      if (!isRightState) {
-        // console.log("true - true - first right changing");
-        return true;
-      } else {
-        // console.log("true - false - after first right changing");
-        return false;
-      }
-    } else {
-      if (isRightState) {
-        // console.log("false - true - clear input after changing");
-        return true;
-      } else {
-        // console.log("false - false - first wrong changing");
-        return false;
-      }
-    }
+    const {
+      functions: { checkValueConditions },
+    } = this.props;
+
+    return checkValueConditions(value) ? !isRightState : isRightState;
   }
 
-  changeIsRightState = async () => {
+  changeIsRightState = () => {
     const { isRightState } = this.state;
     return this.setState((prevState) => ({
       ...prevState,
       isRightState: !isRightState,
     }));
+  };
+
+  renderMarkState = (state, classNameDefault, classNameTrue) => {
+    const classNameListVerMarkName =
+      state === "0" || !state
+        ? classNameDefault
+        : `${classNameDefault} ${classNameTrue}`;
+    return <div className={classNameListVerMarkName} />;
   };
 
   render() {
@@ -84,11 +85,18 @@ class BlockInput extends React.Component {
     } = this.input;
 
     const { isRightState } = this.state;
+    const { classNameVerMarkListDefault, classNameVerMarkListTrue } = this.mark;
 
     const classNameListInputName =
       isRightState === "0" || isRightState
         ? classNameInputListDefault
         : `${classNameInputListDefault} ${classNameInputListFalsy}`;
+
+    const renderMark = this.renderMarkState(
+      isRightState,
+      classNameVerMarkListDefault,
+      classNameVerMarkListTrue
+    );
 
     return (
       <div>
@@ -101,9 +109,7 @@ class BlockInput extends React.Component {
           onInput={this.handleOnInput}
           value={this.state.value}
         />
-        <BlockInputMark
-          data={{ mark: this.mark, state: this.state.isRightState }}
-        />
+        <>{renderMark}</>
       </div>
     );
   }
