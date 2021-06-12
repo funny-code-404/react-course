@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #b1d3b4;
+}
+
+.nav li {
+  list-style: none;
+  padding: 8px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: brown;
+}
