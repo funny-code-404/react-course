@@ -1,5 +1,5 @@
 
-import c from "./Main.module.css";
+import c from "./Main.module.scss";
 
 const Main = (props) => {
   return (

@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #b1d3b4;
+  li {
+    list-style: none;
+    padding: 8px;
+    a {
+      text-decoration: none;
+      color: brown;
+    }
+  }
+}
