@@ -1,0 +1,22 @@
+.item {
+    width: 300px;
+    margin: 15px;
+    padding: 10px;
+
+    border: 3px solid #05a2d3;
+    border-radius: 4px;
+
+    background-color: rgba(0, 221, 255, 0.1);;
+}
+
+.item-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 7px;
+}
+
+.item-descr {
+    margin: 0px;
+}

@@ -1,0 +1,16 @@
+.main {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.main-img {
+  display: block;
+  margin: 10px auto;
+  max-width: 900px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
