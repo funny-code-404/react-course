@@ -1,34 +1,6 @@
 .main {
-  .wrapper {
-    background-image: url(./bg-image.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-  }
-  .content {
-    padding-top: 126px;
-  }
-  .head {
-    padding-bottom: 200px;
-    padding-left: 16px;
-    font-weight: 500;
-    font-size: 27px;
-    line-height: 40px;
-    p {
-      color: #f4f4ed;
-      font-weight: 800;
-      font-size: 16px;
-      line-height: 37px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-  }
-  .text {
-    width: 65%;
-    p {
-      font-weight: 500;
-      font-size: 27px;
-      line-height: 40px;
-    }
-  }
-  
+  background-image: url(./bg-image.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: 126px;
 }

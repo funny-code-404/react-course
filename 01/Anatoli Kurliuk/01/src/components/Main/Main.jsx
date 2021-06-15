@@ -1,28 +1,14 @@
 import Blocks from "./Blocks/Blocks";
+import Head from "./Head/Head";
 import c from "./Main.module.scss";
+import Text from "./Text/Text";
 
 const Main = (props) => {
   return (
     <div className={c.main}>
-      <div class={c.wrapper}>
-        <div class={c.content}>
-          <div class={c.head}>
-            <h1>IT-школа Myfreedom</h1>
-            <p>Подготовка от нуля до профи</p>
-          </div>
-          <div class={c.text}>
-            <h3>почему мы?</h3>
-            <p>
-              Мы обучаем самым востребованным на сегодняшний день
-              IT-специальностям. Занятия в Myfreedom — 30% теории, 70% практики
-              и 99% удовольствия.
-            </p>
-          </div>
-          <div class={c.blocks}>
-            <Blocks  />
-          </div>
-        </div>
-      </div>
+      <Head />
+      <Text />
+      <Blocks />
     </div>
   );
 };
