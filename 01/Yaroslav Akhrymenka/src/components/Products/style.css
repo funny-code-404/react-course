@@ -1,0 +1,34 @@
+.product-item {
+  width: 24%;
+}
+.product-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.product-item h3 {
+  font-family: "Roboto", sans-serif;
+  margin: 1rem 0;
+}
+.product-item span {
+  font-family: "Roboto Slab";
+  display: block;
+  margin: 1rem 0;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+.product-item .btn {
+  background: #009239;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.product-item .btn:hover {
+  background: #2cba54;
+}

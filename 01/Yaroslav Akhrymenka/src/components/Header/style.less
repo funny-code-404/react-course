@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@400;700;900&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "Roboto Slab", serif;
+}
+.container {
+	width: 1170px;
+	margin: 0 auto;
+	max-width: 100%;
+}
+.main__head {
+	height: 70vh;
+	background: url(./bg.webp) no-repeat;
+	background-size: cover;
+	width: 100%;
+	position: relative;
+	.container {
+		position: relative;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #222;
+		opacity: 0.5;
+	}
+	.flex_container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 1.5rem;
+	}
+	.topCaption {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		color: #fff;
+		justify-content: center;
+
+		img {
+			margin-right: 1rem;
+		}
+	}
+	.logo {
+		img {
+			width: 80%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	.phones__mail {
+		list-style: none;
+		li {
+			color: #fff;
+			font-weight: bolder;
+			margin-bottom: 0.5rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.caption {
+		padding: 2rem 0;
+		text-align: center;
+
+		h1 {
+			color: #fff;
+			font-size: 3rem;
+		}
+		h2 {
+			color: #fff;
+			font-weight: lighter;
+		}
+	}
+}

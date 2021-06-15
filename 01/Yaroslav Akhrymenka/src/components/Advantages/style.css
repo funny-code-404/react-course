@@ -1,0 +1,47 @@
+section {
+  padding: 4rem 0;
+}
+section h2 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+section h2:before {
+  content: "";
+  width: 10%;
+  height: 5px;
+  background: #009239;
+  margin-right: 10px;
+}
+section .flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section .flex-container .item {
+  width: 45%;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .flex-container .item:nth-child(3),
+section .flex-container .item:nth-child(4) {
+  margin-bottom: 0;
+}
+section .flex-container .item img {
+  width: 8%;
+}
+section .flex-container .item .caption {
+  width: 88%;
+}
+section .flex-container .item .caption h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+section .flex-container .item .caption p {
+  font-size: 1rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,20 @@
+#about {
+  background: #efefef;
+}
+#about img {
+  width: 20%;
+  object-fit: cover;
+  object-position: center;
+}
+#about .caption {
+  width: 75%;
+}
+#about .caption h2 {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+#about .caption p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #505050;
+}

@@ -1,0 +1,21 @@
+footer {
+  margin-top: -4rem;
+  background: #222;
+  padding: 1rem 0;
+}
+footer .flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .flex-container .phones__mail {
+  list-style: none;
+}
+footer .flex-container .phones__mail li {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+footer .flex-container .phones__mail li:last-child {
+  margin-bottom: 0;
+}
