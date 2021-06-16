@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataContainerForm from "../../containers/DataContainerForm";
 
-const RegisterWrapper = (props) => {
+const LoginWrapper = (props) => {
   const {
     typesOfContent,
     connectStates,
@@ -32,34 +32,22 @@ const RegisterWrapper = (props) => {
 
   const [wrapperTitle, setWrapperTitle] = useState("");
 
-  const [
-    {
-      nameValue,
-      emailValue,
-      passwordValue,
-      surnameValue,
-      yearOfBirthValue,
-      phoneNumberValue,
-    },
-    setWrapperValue,
-  ] = useState({
+  const [{ nameValue, emailValue, passwordValue }, setWrapperValue] = useState({
     nameValue: "",
     emailValue: "",
     passwordValue: "",
-    surnameValue: "",
-    yearOfBirthValue: "",
-    phoneNumberValue: "",
   });
 
   const [stateBasic, setStateBasic] = useState(clear);
   const [stateAdditionalData, setStateAdditionalData] = useState(clear);
 
   const [stateWrapper, setStateWrapper] = useState(clear);
-  const [
-    clearFormTypeOfContentLocal,
-    setClearFormTypeOfContentLocal,
-  ] = useState(showNoneForm);
+  const [keepLoggedIn, setKeepLoggedIn] = useState(false);
 
+  const [
+    stateDisabledCheckboxWrapper,
+    setStateDisabledCheckboxWrapper,
+  ] = useState(false);
   const [stateDisabledButtonWrapper, setStateDisabledButtonWrapper] = useState(
     false
   );
@@ -77,26 +65,18 @@ const RegisterWrapper = (props) => {
     sendStateLocalToApp(resultLocalState);
   };
 
-  // ------log the main states
-  // useEffect(() => {
-  //   console.log(
-  //     `RegisterWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper}, stateAdditionalData: ${stateAdditionalData}; `
-  //   );
-  // }, [
-  //   data,
-  //   clearFormTypeOfContent,
-  //   connectorForms,
-  //   stateWrapper,
-  //   stateAdditionalData,
-  // ]);
-
-  useEffect(() => {
-    if (!surnameValue && !yearOfBirthValue && !phoneNumberValue) {
-      setStateAdditionalData(clear);
-    } else if (surnameValue || yearOfBirthValue || phoneNumberValue) {
-      setStateAdditionalData(on);
-    }
-  }, [surnameValue, yearOfBirthValue, phoneNumberValue]);
+  // -------log the main states
+  //   useEffect(() => {
+  // console.log(
+  //   `RegisterWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper}, stateAdditionalData: ${stateAdditionalData}; `
+  // );
+  //   }, [
+  //     data,
+  //     clearFormTypeOfContent,
+  //     connectorForms,
+  //     stateWrapper,
+  //     stateAdditionalData,
+  //   ]);
 
   useEffect(() => {
     sendStateToApp();
@@ -126,26 +106,20 @@ const RegisterWrapper = (props) => {
   }, [formState, stateWrapper, connectorForms]);
 
   useEffect(() => {
-    if (
-      !nameValue ||
-      !emailValue ||
-      !passwordValue ||
-      !surnameValue ||
-      !yearOfBirthValue ||
-      !phoneNumberValue
-    ) {
+    if (!nameValue || !emailValue || !passwordValue) {
+      setStateDisabledCheckboxWrapper(true);
+    } else {
+      setStateDisabledCheckboxWrapper(false);
+    }
+  }, [nameValue, emailValue, passwordValue]);
+
+  useEffect(() => {
+    if (!nameValue || !emailValue || !passwordValue || !keepLoggedIn) {
       setStateDisabledButtonWrapper(true);
     } else {
       setStateDisabledButtonWrapper(false);
     }
-  }, [
-    nameValue,
-    emailValue,
-    passwordValue,
-    surnameValue,
-    yearOfBirthValue,
-    phoneNumberValue,
-  ]);
+  }, [nameValue, emailValue, passwordValue, keepLoggedIn]);
 
   return (
     <div>
@@ -165,45 +139,33 @@ const RegisterWrapper = (props) => {
           sendDataToWrapper: (nameValue, emailValue, passwordValue) => {
             setWrapperValue((prevState) => ({
               ...prevState,
-
               nameValue: nameValue,
               emailValue: emailValue,
               passwordValue: passwordValue,
             }));
           },
 
-          handleOnChange: (event) => {
-            const name = event.target.name;
-            const keyValueChanged = `${name}Value`;
-            setWrapperValue((prevState) => ({
-              ...prevState,
-
-              [keyValueChanged]: event.target.value,
-            }));
+          handleClickKeep: () => {
+            keepLoggedIn ? setKeepLoggedIn(false) : setKeepLoggedIn(true);
           },
 
           handleClickWrapper: (event) => {
             event.preventDefault();
             setStateWrapper(switching);
 
-            const message = `User registrated  ---
+            const message = `User login  ---
             name: ${nameValue}, 
             email: ${emailValue},
-            password: ${passwordValue},
-            surname: ${surnameValue},
-            yearOfBirth: ${yearOfBirthValue},
-            phoneNumber: ${phoneNumberValue};`;
+            password: ${passwordValue}`;
             console.log(message);
             alert(message);
             setWrapperValue({
               nameValue: "",
               emailValue: "",
               passwordValue: "",
-              surnameValue: "",
-              yearOfBirthValue: "",
-              phoneNumberValue: "",
             });
             setWrapperTitle("");
+            setKeepLoggedIn(false);
           },
           turnOffStateLocal: () => {
             setStateWrapper(formState);
@@ -211,33 +173,25 @@ const RegisterWrapper = (props) => {
         }}
         dataAdditionalActions={dataAdditionalActions}
         render={(functions, dataAdditionalActions) => {
-          const { handleOnChange, handleClickWrapper } = functions;
+          const { handleClickKeep, handleClickWrapper } = functions;
           const { buttonLabel, additionalBlockLabel } = dataAdditionalActions;
 
-          const additionalInputsData = [
-            ["surname", surnameValue],
-            ["yearOfBirth", yearOfBirthValue],
-            ["phoneNumber", phoneNumberValue],
-          ];
-
-          const renderAdditionalInputs = additionalInputsData.map((item) => {
-            return (
-              <input
-                key={`${item[0]}1`}
-                className="clearForm-input"
-                type="text"
-                name={item[0]}
-                placeholder={item[0]}
-                value={item[1]}
-                onChange={handleOnChange}
-              />
-            );
-          });
           return (
             <div>
               <h2>{additionalBlockLabel}</h2>
 
-              <>{renderAdditionalInputs}</>
+              <label
+                className="mainBlock-containerButtons-checkboxConnect"
+                disabled={stateDisabledCheckboxWrapper}
+              >
+                <input
+                  type="checkbox"
+                  name={"keep"}
+                  onClick={handleClickKeep}
+                  disabled={stateDisabledCheckboxWrapper}
+                />
+                {" Keep me logged in"}
+              </label>
 
               <button
                 className="clearForm-buttonLog"
@@ -254,4 +208,4 @@ const RegisterWrapper = (props) => {
   );
 };
 
-export default RegisterWrapper;
+export default LoginWrapper;

@@ -44,6 +44,9 @@ const ClearWrapper = (props) => {
   ] = useState(showNoneForm);
 
   const [userDataFromClearForm, setUserDataFromClearForm] = useState(false);
+  const [stateDisabledButtonLogCW, setStateDisabledButtonLogCW] = useState(
+    false
+  );
 
   const checkStateLocal = (state, stateAdditional) => {
     if (stateAdditionalData === state || state === on) {
@@ -58,26 +61,27 @@ const ClearWrapper = (props) => {
     sendStateLocalToApp(resultLocalState);
   };
 
-  useEffect(() => {
-    // console.log(
-    //   `_ClearWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper} `
-    // );
-  }, [clearFormTypeOfContent, connectorForms, stateWrapper]);
+  //  ----log the main states
+  // useEffect(() => {
+  //   // console.log(
+  //   //   `_ClearWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper} `
+  //   // );
+  // }, [clearFormTypeOfContent, connectorForms, stateWrapper]);
+
+  // useEffect(() => {
+  // console.log(nameValue, emailValue, passwordValue);
+  // }, [nameValue, emailValue, passwordValue]);
 
   useEffect(() => {
     sendStateToApp();
   }, [stateBasic, stateAdditionalData]);
 
   useEffect(() => {
-    // console.log(nameValue, emailValue, passwordValue);
-  }, [nameValue, emailValue, passwordValue]);
-
-  useEffect(() => {
     if (formState === on) {
-      setWrapperTitle((prevProps) => title);
-      setStateWrapper((prevProps) => formState);
-      setWrapperValue((prevProps) => ({
-        ...prevProps,
+      setWrapperTitle(title);
+      setStateWrapper(formState);
+      setWrapperValue((prevState) => ({
+        ...prevState,
         nameValue: name,
         emailValue: email,
         passwordValue: password,
@@ -87,7 +91,7 @@ const ClearWrapper = (props) => {
 
   useEffect(() => {
     if (stateWrapper === getDataClearForm && userDataFromClearForm) {
-      setStateWrapper((prevProps) => switching);
+      setStateWrapper(switching);
       const message = `User  ---
       name: ${nameValue}, 
       email: ${emailValue},
@@ -95,16 +99,22 @@ const ClearWrapper = (props) => {
       console.log(message);
       alert(message);
 
-      setWrapperValue((prevProps) => {
-        return {
-          nameValue: "",
-          emailValue: "",
-          passwordValue: "",
-        };
+      setWrapperValue({
+        nameValue: "",
+        emailValue: "",
+        passwordValue: "",
       });
-      setUserDataFromClearForm((prevProps) => false);
+      setUserDataFromClearForm(false);
     }
   }, [stateWrapper, userDataFromClearForm]);
+
+  useEffect(() => {
+    if (!nameValue || !emailValue || !passwordValue) {
+      setStateDisabledButtonLogCW(true);
+    } else {
+      setStateDisabledButtonLogCW(false);
+    }
+  }, [nameValue, emailValue, passwordValue]);
 
   return (
     <div>
@@ -122,27 +132,24 @@ const ClearWrapper = (props) => {
             setStateBasic(state);
           },
           sendDataToWrapper: (nameValue, emailValue, passwordValue) => {
-            setWrapperValue((prevProps) => ({
-              ...prevProps,
+            setWrapperValue((prevState) => ({
+              ...prevState,
               nameValue: nameValue,
               emailValue: emailValue,
               passwordValue: passwordValue,
             }));
-
-            setUserDataFromClearForm((prevProps) => true);
+            setUserDataFromClearForm(true);
           },
 
           handleClickWrapper: (event) => {
             event.preventDefault();
-            // console.log("CLICK");
-
-            setStateWrapper((prevProps) => getDataClearForm);
+            setStateWrapper(getDataClearForm);
           },
           turnOffStateLocal: () => {
             if (clearFormTypeOfContent !== showNoneForm) {
-              setStateWrapper((prevProps) => formState);
+              setStateWrapper(formState);
             } else {
-              setStateWrapper((prevProps) => clear);
+              setStateWrapper(clear);
             }
           },
         }}
@@ -155,7 +162,7 @@ const ClearWrapper = (props) => {
               <button
                 className="clearForm-buttonLog"
                 onClick={handleClickWrapper}
-                disabled={!nameValue || !emailValue || !passwordValue}
+                disabled={stateDisabledButtonLogCW}
               >
                 {"ConsoleLog"}
               </button>

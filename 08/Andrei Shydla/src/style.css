@@ -141,3 +141,45 @@ p[class="mainForm-checkboxItem"] {
   font-size: 24px;
   font-weight: bold;
 }
+.deleteForm-textarea {
+  display: block;
+  width: 99%;
+  padding: 0px;
+  resize: none;
+}
+.deleteForm-radioGroup-title {
+  display: inline-block;
+  width: 100px;
+}
+
+.deleteForm-radioGroup-title h3 {
+  margin: 0px;
+}
+.deleteForm-radioGroup {
+  display: inline-block;
+}
+.deleteForm-radioItem {
+  display: inline-block;
+  margin-top: 5px;
+  width: 25px;
+  text-align: center;
+
+  line-height: 25px;
+}
+
+.deleteForm-radioItem-input {
+  display: block;
+}
+.deleteForm-radioItem-label {
+  display: block;
+  /* text-align: center; */
+  margin: auto;
+  width: 15px;
+}
+
+.deleteForm-radioItem-input:hover {
+  cursor: pointer;
+}
+.deleteForm-radioItem-label:hover {
+  cursor: pointer;
+}

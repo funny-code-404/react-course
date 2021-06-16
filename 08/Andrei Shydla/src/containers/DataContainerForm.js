@@ -30,11 +30,18 @@ const DataContainerForm = (props) => {
     passwordValue: "",
   });
 
-  useEffect(() => {
-    // console.log(
-    //   `ClearForm - stateWrapper: ${stateWrapper}, stateBasic: ${stateBasic};`
-    // );
-  }, [stateWrapper, stateBasic]);
+  const [stateDisabledButtonLog, setStateDisabledButtonLog] = useState(false);
+
+  // -----log the main states ----
+  // useEffect(() => {
+  // console.log(
+  //   `ClearForm - stateWrapper: ${stateWrapper}, stateBasic: ${stateBasic};`
+  // );
+  // }, [stateWrapper, stateBasic]);
+
+  // useEffect(() => {
+  //   // console.log(nameValue, emailValue, passwordValue);
+  // }, [nameValue, emailValue, passwordValue]);
 
   useEffect(() => {
     //creating user data for clear form
@@ -45,11 +52,11 @@ const DataContainerForm = (props) => {
 
   useEffect(() => {
     if (stateWrapper === on) {
-      setValue((prevProps) => ({
+      setValue({
         nameValue: name,
         emailValue: email,
         passwordValue: password,
-      }));
+      });
     }
   }, [stateWrapper]);
 
@@ -73,9 +80,9 @@ const DataContainerForm = (props) => {
 
   useEffect(() => {
     if (stateWrapper === clear) {
-      setTitleForm((prevProps) => defaultTitle);
+      setTitleForm(defaultTitle);
     } else if (stateWrapper === showForm || stateWrapper === on) {
-      setTitleForm((prevProps) => title);
+      setTitleForm(title);
     }
   }, [stateWrapper]);
 
@@ -87,30 +94,34 @@ const DataContainerForm = (props) => {
 
   useEffect(() => {
     if (stateWrapper === switching) {
-      setTitleForm((prevProps) => defaultTitle);
-      setValue((prevProps) => ({
+      setTitleForm(defaultTitle);
+      setValue({
         nameValue: name,
         emailValue: email,
         passwordValue: password,
-      }));
-      setStateBasic((prevProps) => clear);
+      });
+      setStateBasic(clear);
       turnOffStateLocal();
     }
   }, [stateWrapper, nameValue, emailValue, passwordValue]);
-
-  useEffect(() => {
-    // console.log(nameValue, emailValue, passwordValue);
-  }, [nameValue, emailValue, passwordValue]);
 
   const conditionToRender = [showForm, on].some(
     (item) => stateWrapper === item
   );
 
+  useEffect(() => {
+    if (!nameValue || !emailValue || !passwordValue) {
+      setStateDisabledButtonLog(true);
+    } else {
+      setStateDisabledButtonLog(false);
+    }
+  }, [nameValue, emailValue, passwordValue]);
+
   const handleOnChangeAllForms = (event) => {
     const name = event.target.name;
     const keyValueChanged = `${name}Value`;
-    setValue((prevProps) => ({
-      ...prevProps,
+    setValue((prevState) => ({
+      ...prevState,
 
       [keyValueChanged]: event.target.value,
     }));
@@ -121,47 +132,45 @@ const DataContainerForm = (props) => {
     console.log(
       `name: ${nameValue}, e-mail: ${emailValue}, password: ${passwordValue};`
     );
-    setValue((prevProps) => ({
+    setValue({
       nameValue: "",
       emailValue: "",
       passwordValue: "",
-    }));
+    });
   };
+
+  const mainInputsData = [
+    ["name", nameValue],
+    ["email", emailValue],
+    ["password", passwordValue],
+  ];
+
+  const renderMainInputs = mainInputsData.map((item) => {
+    return (
+      <input
+        key={`${item[0]}1`}
+        className="clearForm-input"
+        type="text"
+        name={item[0]}
+        placeholder={item[0]}
+        value={item[1]}
+        onChange={handleOnChangeAllForms}
+      />
+    );
+  });
 
   return (
     <form className="clearForm">
       <div className="clearForm-container">
         <div className="clearForm-title">{titleForm}</div>
-        <input
-          className="clearForm-input"
-          type="text"
-          name={"name"}
-          placeholder="name"
-          value={nameValue}
-          onChange={handleOnChangeAllForms}
-        />
-        <input
-          className="clearForm-input"
-          type="text"
-          name={"email"}
-          placeholder="e-mail"
-          value={emailValue}
-          onChange={handleOnChangeAllForms}
-        />
-        <input
-          className="clearForm-input"
-          type="text"
-          name={"password"}
-          placeholder="password"
-          value={passwordValue}
-          onChange={handleOnChangeAllForms}
-        />
+        <>{renderMainInputs}</>
+
         <div className="clearForm-containerButtons">
           {conditionToRender || (
             <button
               className="clearForm-buttonLog"
               onClick={handleClickClearFormOnly}
-              disabled={!nameValue || !emailValue || !passwordValue}
+              disabled={stateDisabledButtonLog}
             >
               {"ConsoleLog"}
             </button>

@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+const additionalActionsLabels = {
+  showRegisterForm: ["Registration", "Register"],
+  showLoginForm: ["Log In", "Login"],
+  showDeleteAccountForm: ["Delete Account", "Delete"],
+};
+
 const logInitVariables = (object, name) => {
   let str = "";
   Object.keys(object).forEach((item) => {
@@ -59,16 +65,23 @@ const MainControlBlock = (props) => {
     { titleValue, nameValue, emailValue, passwordValue },
     setValue,
   ] = useState({
-    titleValue: "qqq",
-    nameValue: "www",
-    emailValue: "eee",
-    passwordValue: "111",
+    titleValue: "Новы гетман",
+    nameValue: "Ян Караль Хадкевiч",
+    emailValue: "1621@year.com",
+    passwordValue: "victory",
   });
 
-  const dataAdditionalActions = {
-    additionalBlockLabel: "Registration",
-    buttonLabel: "Register",
-  };
+  const [dataAdditionalActions, setDataAdditionalActions] = useState({
+    additionalBlockLabel: "",
+    buttonLabel: "",
+  });
+
+  const [
+    stateDisabledСheckboxConnect,
+    setStateDisabledСheckboxConnect,
+  ] = useState(false);
+
+  const [stateDisabledButtonSend, setStateDisabledButtonSend] = useState(false);
 
   const createDataToForm = () => {
     return {
@@ -96,11 +109,12 @@ const MainControlBlock = (props) => {
     };
   };
 
-  useEffect(() => {
-    // console.log(
-    //   `Main Block - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, formState: ${formState}, stateLocal: ${stateLocal};`
-    // );
-  }, [clearFormTypeOfContent, connectorForms, formState, stateLocal]);
+  // ------log the main states
+  // useEffect(() => {
+  //   console.log(
+  //     `Main Block - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, formState: ${formState}, stateLocal: ${stateLocal};`
+  //   );
+  // }, [clearFormTypeOfContent, connectorForms, formState, stateLocal]);
 
   useEffect(() => {
     const dataToShowClearForm = createDataToShowClearForm(
@@ -108,7 +122,6 @@ const MainControlBlock = (props) => {
     );
     const { sendDataToForm } = functions;
     sendDataToForm(dataToShowClearForm);
-    // }
   }, [clearFormTypeOfContent]);
 
   useEffect(() => {
@@ -122,15 +135,15 @@ const MainControlBlock = (props) => {
       previousStateLocal === clear &&
       connectorForms === connect
     ) {
-      setConnectorForms((prevProps) => disconnect);
+      setConnectorForms(disconnect);
       const checkboxLinkConnecter = document.getElementsByName("connect");
       checkboxLinkConnecter[0].checked = false;
-      setPreviousStateLocal((prevProps) => stateLocal);
+      setPreviousStateLocal(stateLocal);
 
       if (clearFormTypeOfContent === showNoneForm) {
-        setFormState((prevProps) => clear);
+        setFormState(clear);
       } else {
-        setFormState((prevProps) => showForm);
+        setFormState(showForm);
       }
     } else if (
       stateLocal === clear &&
@@ -138,14 +151,14 @@ const MainControlBlock = (props) => {
       clearFormTypeOfContent !== showNoneForm
     ) {
       setPreviousStateLocal(stateLocal);
-      setFormState((prevProps) => showForm);
+      setFormState(showForm);
     } else if (
       stateLocal === clear &&
       previousStateLocal === on &&
       clearFormTypeOfContent === showNoneForm
     ) {
       setPreviousStateLocal(stateLocal);
-      setFormState((prevProps) => clear);
+      setFormState(clear);
     }
   }, [stateLocal, connectorForms, previousStateLocal]);
 
@@ -156,11 +169,33 @@ const MainControlBlock = (props) => {
     }
   }, [formState]);
 
+  useEffect(() => {
+    if (
+      stateLocal === on ||
+      !titleValue ||
+      !nameValue ||
+      !emailValue ||
+      !passwordValue
+    ) {
+      setStateDisabledСheckboxConnect(true);
+    } else {
+      setStateDisabledСheckboxConnect(false);
+    }
+  }, [stateLocal, titleValue, nameValue, emailValue, passwordValue]);
+
+  useEffect(() => {
+    if (connectorForms === disconnect || stateLocal === on) {
+      setStateDisabledButtonSend(true);
+    } else {
+      setStateDisabledButtonSend(false);
+    }
+  }, [connectorForms, stateLocal]);
+
   const handleOnChange = (event) => {
     const name = event.target.name;
     const keyValueChanged = `${name}Value`;
-    setValue((prevProps) => ({
-      ...prevProps,
+    setValue((prevState) => ({
+      ...prevState,
       [keyValueChanged]: event.target.value,
     }));
   };
@@ -173,20 +208,20 @@ const MainControlBlock = (props) => {
 
   const handleClickSend = (event) => {
     event.preventDefault();
-    // console.log(" SEND clicked - Main Control Block ");
-    setFormState((prevProps) => on);
+    setFormState(on);
   };
 
   const handleClickClean = (event) => {
     event.preventDefault();
-    setValue((prevProps) => ({
+    setValue({
       titleValue: "",
       nameValue: "",
       emailValue: "",
       passwordValue: "",
       dataAdditionalActions: "",
-    }));
-    setFormState((prevProps) => clear);
+    });
+    setFormState(clear);
+    setStateDisabledСheckboxConnect(false);
   };
 
   const handleClickChangeTypeForm = (event) => {
@@ -208,114 +243,86 @@ const MainControlBlock = (props) => {
     });
 
     if (checkToShow.length > 0) {
-      setClearFormTypeOfContent((prevProps) => {
-        const currentTypeOfContent = `show${
-          event.target.name[0].toUpperCase() + event.target.name.slice(1)
-        }Form`;
-        return setClearFormTypeOfContent(currentTypeOfContent);
+      const currentTypeOfContent = `show${
+        event.target.name[0].toUpperCase() + event.target.name.slice(1)
+      }Form`;
+      setClearFormTypeOfContent(currentTypeOfContent);
+      setFormState(showForm);
+
+      setDataAdditionalActions({
+        additionalBlockLabel: additionalActionsLabels[currentTypeOfContent][0],
+        buttonLabel: additionalActionsLabels[currentTypeOfContent][1],
       });
-      setFormState((prevProps) => showForm);
     } else {
-      setClearFormTypeOfContent((prevProps) => showNoneForm);
-      setFormState((prevProps) => clear);
+      setClearFormTypeOfContent(showNoneForm);
+      setFormState(clear);
+
+      setDataAdditionalActions({ additionalBlockLabel: "", buttonLabel: "" });
     }
   };
+
+  const renderCheckboxTypes = checkboxFormTypes.map((item) => {
+    return (
+      <label
+        key={`${item.name}1`}
+        className="mainForm-checkboxItem"
+        disabled={stateLocal === on}
+      >
+        <input
+          type="checkbox"
+          onChange={handleClickChangeTypeForm}
+          name={item.name}
+          disabled={stateLocal === on}
+        />
+        {item.label}
+      </label>
+    );
+  });
+
+  const inputsData = [
+    ["title", titleValue],
+    ["name", nameValue],
+    ["email", emailValue],
+    ["password", passwordValue],
+  ];
+
+  const renderInputs = inputsData.map((item) => {
+    return (
+      <input
+        key={`${item[0]}1`}
+        className="clearForm-input"
+        type="text"
+        name={item[0]}
+        placeholder={item[0]}
+        value={item[1]}
+        onChange={handleOnChange}
+      />
+    );
+  });
 
   return (
     <form className="clearForm">
       <div className="clearForm-container">
         <div className="clearForm-title">{"MainControlBlock"}</div>
+
         <div className="mainForm-checkboxBlock">
           <p className="mainForm-checkboxItem">Choose type of Form:</p>
-
-          <label
-            className="mainForm-checkboxItem "
-            disabled={stateLocal === on}
-          >
-            <input
-              type="checkbox"
-              onChange={handleClickChangeTypeForm}
-              name={checkboxFormTypes[0].name}
-              disabled={stateLocal === on}
-            />
-            {checkboxFormTypes[0].label}
-          </label>
-          <label className="mainForm-checkboxItem" disabled={stateLocal === on}>
-            <input
-              type="checkbox"
-              onChange={handleClickChangeTypeForm}
-              name={checkboxFormTypes[1].name}
-              disabled={stateLocal === on}
-            />
-            {checkboxFormTypes[1].label}
-          </label>
-          <label className="mainForm-checkboxItem" disabled={stateLocal === on}>
-            <input
-              type="checkbox"
-              onChange={handleClickChangeTypeForm}
-              name={checkboxFormTypes[2].name}
-              disabled={stateLocal === on}
-            />
-            {checkboxFormTypes[2].label}
-          </label>
+          <>{renderCheckboxTypes}</>
         </div>
 
         <div className="mainForm-setDefaultDataBlock">
-          <input
-            className="clearForm-input"
-            type="text"
-            name={"title"}
-            placeholder="title"
-            value={titleValue}
-            onChange={handleOnChange}
-          />
-          <input
-            className="clearForm-input"
-            type="text"
-            name={"name"}
-            placeholder="name"
-            value={nameValue}
-            onChange={handleOnChange}
-          />
-          <input
-            className="clearForm-input"
-            type="text"
-            name={"email"}
-            placeholder="e-mail"
-            value={emailValue}
-            onChange={handleOnChange}
-          />
-          <input
-            className="clearForm-input"
-            type="text"
-            name={"password"}
-            placeholder="password"
-            value={passwordValue}
-            onChange={handleOnChange}
-          />
+          <>{renderInputs}</>
 
           <div className="mainBlock-containerButtons">
             <label
               className="mainBlock-containerButtons-checkboxConnect"
-              disabled={
-                stateLocal === on ||
-                !titleValue ||
-                !nameValue ||
-                !emailValue ||
-                !passwordValue
-              }
+              disabled={stateDisabledСheckboxConnect}
             >
               <input
                 type="checkbox"
                 name={"connect"}
                 onClick={handleClickConnect}
-                disabled={
-                  stateLocal === on ||
-                  !titleValue ||
-                  !nameValue ||
-                  !emailValue ||
-                  !passwordValue
-                }
+                disabled={stateDisabledСheckboxConnect}
               />
               Connect to Clear Form to send Data
             </label>
@@ -323,7 +330,7 @@ const MainControlBlock = (props) => {
             <button
               className="mainBlock-button"
               onClick={handleClickSend}
-              disabled={connectorForms === disconnect || stateLocal === on}
+              disabled={stateDisabledButtonSend}
             >
               {" Send Data To Form "}
             </button>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import FormWrapper from "./components/FormWrapper";
 import MainControlBlock from "./components/MainControlBlock";
 import ClearWrapper from "./components/ClearWrapper";
 import RegisterWrapper from "./components/RegisterWrapper";
+import LoginWrapper from "./components/LoginWrapper";
+import DeleteWrapper from "./components/DeleteWrapper";
 
 import "./style.css";
 
@@ -65,14 +66,10 @@ function App() {
   } = data;
 
   const sendDataToForm = (data) => {
-    setFormData((prevProps) => data);
+    setFormData(data);
   };
 
-  useEffect(() => {
-    // console.log(
-    //   `App - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, formState: ${formState}, stateLocal: ${stateLocal}.  `
-    // );
-  }, [clearFormTypeOfContent, connectorForms, formState]);
+  useEffect(() => {}, [clearFormTypeOfContent, connectorForms, formState]);
 
   const sendStateLocalToApp = (state) => {
     setStateLocal(state);
@@ -93,16 +90,6 @@ function App() {
           {`${clearFormTypeOfContent}, ${connectorForms}`}
         </p>
       </div>
-      {/* <FormWrapper
-        typesOfContent={typesOfContent}
-        connectStates={connectStates}
-        typesOfState={typesOfState}
-        data={data}
-        functions={{
-          setFormData: setFormData,
-          sendStateLocalToApp: sendStateLocalToApp,
-        }}
-      /> */}
       {clearFormTypeOfContent === showNoneForm && (
         <ClearWrapper
           typesOfContent={typesOfContent}
@@ -128,10 +115,28 @@ function App() {
         />
       )}
       {clearFormTypeOfContent === showLoginForm && (
-        <h3>in the process of development</h3>
+        <LoginWrapper
+          typesOfContent={typesOfContent}
+          connectStates={connectStates}
+          typesOfState={typesOfState}
+          data={data}
+          functions={{
+            setFormData: setFormData,
+            sendStateLocalToApp: sendStateLocalToApp,
+          }}
+        />
       )}
       {clearFormTypeOfContent === showDeleteAccountForm && (
-        <h3>in the process of development</h3>
+        <DeleteWrapper
+          typesOfContent={typesOfContent}
+          connectStates={connectStates}
+          typesOfState={typesOfState}
+          data={data}
+          functions={{
+            setFormData: setFormData,
+            sendStateLocalToApp: sendStateLocalToApp,
+          }}
+        />
       )}
     </div>
   );

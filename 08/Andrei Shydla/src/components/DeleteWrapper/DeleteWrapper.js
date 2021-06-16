@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import DataContainerForm from "../../containers/DataContainerForm";
 
-const RegisterWrapper = (props) => {
+const arrRadio = [1, 2, 3, 4, 5];
+const arrRadioNames = arrRadio.map((item) => `rateName${item}`);
+
+const DeleteWrapper = (props) => {
   const {
     typesOfContent,
     connectStates,
@@ -33,22 +36,14 @@ const RegisterWrapper = (props) => {
   const [wrapperTitle, setWrapperTitle] = useState("");
 
   const [
-    {
-      nameValue,
-      emailValue,
-      passwordValue,
-      surnameValue,
-      yearOfBirthValue,
-      phoneNumberValue,
-    },
+    { nameValue, emailValue, passwordValue, commentValue, rateValue },
     setWrapperValue,
   ] = useState({
     nameValue: "",
     emailValue: "",
     passwordValue: "",
-    surnameValue: "",
-    yearOfBirthValue: "",
-    phoneNumberValue: "",
+    commentValue: "",
+    rateValue: "",
   });
 
   const [stateBasic, setStateBasic] = useState(clear);
@@ -77,10 +72,10 @@ const RegisterWrapper = (props) => {
     sendStateLocalToApp(resultLocalState);
   };
 
-  // ------log the main states
+  // ------log the main states----
   // useEffect(() => {
   //   console.log(
-  //     `RegisterWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper}, stateAdditionalData: ${stateAdditionalData}; `
+  //     `DeleteWrapper - Content: ${clearFormTypeOfContent}, Connect: ${connectorForms}, StateWrapper: ${stateWrapper}, stateAdditionalData: ${stateAdditionalData}, rateValue: ${rateValue}; `
   //   );
   // }, [
   //   data,
@@ -88,15 +83,16 @@ const RegisterWrapper = (props) => {
   //   connectorForms,
   //   stateWrapper,
   //   stateAdditionalData,
+  //   rateValue,
   // ]);
 
   useEffect(() => {
-    if (!surnameValue && !yearOfBirthValue && !phoneNumberValue) {
+    if (!commentValue && !rateValue) {
       setStateAdditionalData(clear);
-    } else if (surnameValue || yearOfBirthValue || phoneNumberValue) {
+    } else if (commentValue && rateValue) {
       setStateAdditionalData(on);
     }
-  }, [surnameValue, yearOfBirthValue, phoneNumberValue]);
+  }, [commentValue, rateValue]);
 
   useEffect(() => {
     sendStateToApp();
@@ -130,22 +126,14 @@ const RegisterWrapper = (props) => {
       !nameValue ||
       !emailValue ||
       !passwordValue ||
-      !surnameValue ||
-      !yearOfBirthValue ||
-      !phoneNumberValue
+      !commentValue ||
+      !rateValue
     ) {
       setStateDisabledButtonWrapper(true);
     } else {
       setStateDisabledButtonWrapper(false);
     }
-  }, [
-    nameValue,
-    emailValue,
-    passwordValue,
-    surnameValue,
-    yearOfBirthValue,
-    phoneNumberValue,
-  ]);
+  }, [nameValue, emailValue, passwordValue, commentValue, rateValue]);
 
   return (
     <div>
@@ -182,26 +170,37 @@ const RegisterWrapper = (props) => {
             }));
           },
 
+          handleClickRate: (event) => {
+            arrRadioNames.forEach((item) => {
+              if (item !== event.target.name) {
+                const checkboxLinkItem = document.getElementsByName(item);
+                checkboxLinkItem[0].checked = false;
+              }
+            });
+
+            setWrapperValue((prevState) => ({
+              ...prevState,
+              rateValue: event.target.value,
+            }));
+          },
+
           handleClickWrapper: (event) => {
             event.preventDefault();
             setStateWrapper(switching);
-
-            const message = `User registrated  ---
+            const message = `User deleted  ---
             name: ${nameValue}, 
             email: ${emailValue},
             password: ${passwordValue},
-            surname: ${surnameValue},
-            yearOfBirth: ${yearOfBirthValue},
-            phoneNumber: ${phoneNumberValue};`;
+            comment: ${commentValue},
+            rate: ${rateValue}`;
             console.log(message);
             alert(message);
             setWrapperValue({
               nameValue: "",
               emailValue: "",
               passwordValue: "",
-              surnameValue: "",
-              yearOfBirthValue: "",
-              phoneNumberValue: "",
+              commentValue: "",
+              rateValue: "",
             });
             setWrapperTitle("");
           },
@@ -211,33 +210,50 @@ const RegisterWrapper = (props) => {
         }}
         dataAdditionalActions={dataAdditionalActions}
         render={(functions, dataAdditionalActions) => {
-          const { handleOnChange, handleClickWrapper } = functions;
+          const {
+            handleClickRate,
+            handleOnChange,
+            handleClickWrapper,
+          } = functions;
           const { buttonLabel, additionalBlockLabel } = dataAdditionalActions;
 
-          const additionalInputsData = [
-            ["surname", surnameValue],
-            ["yearOfBirth", yearOfBirthValue],
-            ["phoneNumber", phoneNumberValue],
-          ];
-
-          const renderAdditionalInputs = additionalInputsData.map((item) => {
+          const renderRadio = arrRadio.map((item) => {
             return (
-              <input
-                key={`${item[0]}1`}
-                className="clearForm-input"
-                type="text"
-                name={item[0]}
-                placeholder={item[0]}
-                value={item[1]}
-                onChange={handleOnChange}
-              />
+              <div className="deleteForm-radioItem" key={item}>
+                <input
+                  className="deleteForm-radioItem-input"
+                  type="radio"
+                  name={`rateName${item}`}
+                  id={`rate${item}`}
+                  onChange={handleClickRate}
+                  value={item}
+                />
+                <label
+                  className="deleteForm-radioItem-label"
+                  htmlFor={`rate${item}`}
+                >
+                  {item}
+                </label>
+              </div>
             );
           });
+
           return (
             <div>
               <h2>{additionalBlockLabel}</h2>
 
-              <>{renderAdditionalInputs}</>
+              <textarea
+                className="deleteForm-textarea"
+                name={"comment"}
+                placeholder="leave Your comment"
+                rows="4"
+                value={commentValue}
+                onChange={handleOnChange}
+              ></textarea>
+              <div className="deleteForm-radioGroup-title">
+                <h3>Rate the application:</h3>
+              </div>
+              <div className="deleteForm-radioGroup">{renderRadio}</div>
 
               <button
                 className="clearForm-buttonLog"
@@ -254,4 +270,4 @@ const RegisterWrapper = (props) => {
   );
 };
 
-export default RegisterWrapper;
+export default DeleteWrapper;
