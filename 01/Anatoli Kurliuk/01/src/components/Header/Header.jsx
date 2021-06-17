@@ -1,28 +1,36 @@
+import {
+  aboutLink,
+  homeLink,
+  logo,
+  servicesLink,
+  tel,
+  workLink,
+} from "./config";
 import c from "./Header.module.scss";
 
 const Header = (props) => {
   return (
     <div className={c.header}>
       <a className={c.logo} href="#s">
-        MyFreedomIT
+        {logo}
       </a>
       <nav>
         <ul>
           <li>
-            <a href="#s">Home</a>
+            <a href="#s">{homeLink}</a>
           </li>
           <li>
-            <a href="#s">Services</a>
+            <a href="#s">{servicesLink}</a>
           </li>
           <li>
-            <a href="#s">Work</a>
+            <a href="#s">{workLink}</a>
           </li>
           <li>
-            <a href="#s">About</a>
+            <a href="#s">{aboutLink}</a>
           </li>
         </ul>
       </nav>
-      <a href="tel:(01) 666 - 693 - 456">(01) 666 - 693 - 456</a>
+      <a href="tel:(01) 666 - 693 - 456">{tel}</a>
     </div>
   );
 };
