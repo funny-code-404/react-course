@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #5f5c5c;
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 50px 5px;
+  width: 500px;
+  box-shadow: 5px 5px 15px 5px #5f5c5c;
+}
+input {
+  padding: 8px;
+  border: 1px solid #5f5c5c;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 15px 5px #5f5c5c;
+}
+button {
+  padding: 8px;
+  border: 1px solid #5f5c5c;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 5px #5f5c5c;
+  font-size: 18px;
+  cursor: pointer;
+  color: #5f5c5c;
+}
+h1 {
+  margin-bottom: 15px;
+  font-size: 35px;
+  color: #5f5c5c;
+}
