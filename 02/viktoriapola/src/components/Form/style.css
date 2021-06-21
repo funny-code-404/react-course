@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+.container-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid black;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100px;
+}
