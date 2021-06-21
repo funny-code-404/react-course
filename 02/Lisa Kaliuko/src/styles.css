@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    margin: auto;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+.warning {
+    color: red;
+
+    margin: 5px;
+    margin-top: 0px;
+}
