@@ -1,0 +1,129 @@
+.section1 {
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section1 h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.item {
+    display: flex;
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.item img {
+    margin: 5px;
+    align-self: center;
+}
+
+.text {
+    margin: 0 10px;
+    align-self: flex-end;
+}
+
+.text p {
+    text-align: left;
+}
+
+.row h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.row p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #999999;
+}
+
+.section1 a {
+    text-decoration: none;
+    padding: 10px 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    background-color: #4985FF;
+    border: 1px solid #4985FF;
+    border-radius: 30px;
+}
+
+.section1 a:hover {
+    background-color: #1d428b;
+    border: 1px solid #1d428b;
+}
+
+.section2 {
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section2 img {
+    border-radius: 30px;
+    margin-left: 40px;
+}
+
+.row2 h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 53px;
+    margin-bottom: 20px;
+}
+
+.row2 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.row2 a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4985FF;
+    text-decoration-line: underline;
+}
