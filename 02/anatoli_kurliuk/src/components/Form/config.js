@@ -1,0 +1,10 @@
+export const NAME = 'name';
+export const MAIL = 'mail';
+export const PASSWORD = 'password';
+export const HEADER = 'Registration';
+export const regexp_NAME = /^[a-zA-Z ]{3,30}$/;
+export const regexp_MAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const regexp_PASSWORD = /^[a-zA-Z0-9!@#$%^&*]{8,}$/
+export const NAME_TEXT_ERROR = 'Имя должно содержать от 3 до 30 символов латинского алфавита.'
+export const MAIL_TEXT_ERROR = 'Введите корректный e-mail.'
+export const PASSWORD_TEXT_ERROR = 'Пароль должен содержать не менее 8 символов.'
