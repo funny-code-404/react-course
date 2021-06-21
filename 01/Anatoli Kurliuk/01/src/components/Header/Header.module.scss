@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 36px;
+  a {
+    color: #30233d;
+    font-weight: 800;
+    font-size: 14.4px;
+    line-height: 30px;
+  }
+  .logo {
+    display: block;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+  nav {
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-right: 54px;
+    }
+    li:last-child {
+      margin: 0;
+    }
+  }
+}
