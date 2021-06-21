@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+form {
+  width: 30%;
+  padding: 2rem;
+}
+form span {
+  display: block;
+  color: red;
+}
+form input {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: blue;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: cornflowerblue;
+}
