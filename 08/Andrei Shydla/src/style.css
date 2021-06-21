@@ -1,0 +1,185 @@
+h2 {
+  color: blue;
+  text-decoration: underline;
+}
+.clearForm {
+  display: block;
+  margin-bottom: 10px;
+  width: 400px;
+  /* height: 150px; */
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(1, 1, 194);
+  border-radius: 5px;
+  /* padding-left: 10px; */
+}
+.clearForm-container {
+  width: 95%;
+  margin: auto;
+}
+.clearForm-title {
+  line-height: 30px;
+  text-align: center;
+}
+.clearForm-input {
+  display: block;
+
+  width: 95.5%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.clearForm-containerButtons {
+  width: 97%;
+  margin: auto;
+}
+.clearForm-buttonLog {
+  display: block;
+  width: 90px;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.clearForm-buttonLog:hover {
+  cursor: pointer;
+  background-color: rgb(253, 253, 109);
+}
+.clearForm-buttonLog[disabled]:hover {
+  cursor: default;
+  background-color: rgba(239, 239, 239, 0.3);
+
+  /* background-color: rgb(253, 253, 109); */
+}
+
+.mainForm-setDefaultDataBlock {
+  width: 100%;
+
+  /* width: 95%; */
+  margin: auto;
+  margin-bottom: 5px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: rgb(1, 1, 194);
+}
+
+.mainBlock-containerButtons {
+  width: 97%;
+  height: 120px;
+  margin: auto;
+  text-align: right;
+}
+.mainBlock-button {
+  display: inline-block;
+  width: 90px;
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.mainForm-checkboxBlock {
+  /* display: block; */
+  width: 100%;
+
+  /* width: 95%; */
+  margin: auto;
+  margin-bottom: 10px;
+  /* margin-top: 0px;
+  margin-bottom: 0px; */
+
+  /* margin-right: 0px;
+  margin-left: auto; */
+  /* width: 200px; */
+  border-style: dashed;
+  border-width: 1px;
+  border-color: rgb(1, 1, 194);
+}
+.mainBlock-containerButtons-checkboxConnect:hover {
+  cursor: pointer;
+}
+.mainBlock-containerButtons-checkboxConnect[disabled] {
+  cursor: default;
+  color: rgb(179, 179, 179);
+}
+.mainBlock-containerButtons-checkboxConnect[disabled]:hover {
+  cursor: default;
+  color: rgb(179, 179, 179);
+}
+
+.mainForm-checkboxItem {
+  display: block;
+  width: 200px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.mainForm-checkboxItem[disabled] {
+  color: rgb(179, 179, 179);
+}
+
+.mainForm-checkboxItem[disabled]:hover {
+  cursor: default;
+}
+
+.mainForm-checkboxItem:hover {
+  cursor: pointer;
+}
+
+p[class="mainForm-checkboxItem"] {
+  padding-left: 5px;
+}
+.stateScreen {
+  /* color: ; */
+  /* font-stretch: narrower; */
+  /* height: 30px; */
+  text-align: center;
+  background-color: rgb(235, 139, 21);
+}
+.stateScreen-data {
+  /* line-height: 10px; */
+  color: white;
+  margin: 0px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.deleteForm-textarea {
+  display: block;
+  width: 99%;
+  padding: 0px;
+  resize: none;
+}
+.deleteForm-radioGroup-title {
+  display: inline-block;
+  width: 100px;
+}
+
+.deleteForm-radioGroup-title h3 {
+  margin: 0px;
+}
+.deleteForm-radioGroup {
+  display: inline-block;
+}
+.deleteForm-radioItem {
+  display: inline-block;
+  margin-top: 5px;
+  width: 25px;
+  text-align: center;
+
+  line-height: 25px;
+}
+
+.deleteForm-radioItem-input {
+  display: block;
+}
+.deleteForm-radioItem-label {
+  display: block;
+  /* text-align: center; */
+  margin: auto;
+  width: 15px;
+}
+
+.deleteForm-radioItem-input:hover {
+  cursor: pointer;
+}
+.deleteForm-radioItem-label:hover {
+  cursor: pointer;
+}
