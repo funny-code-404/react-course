@@ -21,7 +21,6 @@ const PRICE_KEY = 'price';
 
 const validationMessage = 'All fields must be filled';
 
-
 class Form extends React.Component {
   state = {
     values: {
@@ -82,20 +81,6 @@ class Form extends React.Component {
       })
     }
   }
-
-  // addDataFromTableToForm = () => {
-  //   const {dataFromTable} = this.props
-
-  //   this.setState({
-  //     values: {
-  //       number: dataFromTable.number,
-  //       [BRAND_KEY]: dataFromTable[BRAND_KEY],
-  //       [MODEL_KEY]: dataFromTable[MODEL_KEY],
-  //       [YEAR_KEY]: dataFromTable[YEAR_KEY],
-  //       [PRICE_KEY]: dataFromTable[PRICE_KEY],
-  //     },
-  //   })
-  // }
 
   render() {
     const {...values} = this.state.values
