@@ -1,0 +1,29 @@
+h2 {
+  padding-left: 1rem;
+  background: green;
+  color: #fff;
+  width: 30%;
+  padding: 1rem;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul li {
+  text-transform: capitalize;
+  width: 7%;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  list-style: none;
+  border: 1px solid #efefef;
+  transition: 0.3s;
+  cursor: pointer;
+}
+ul li:hover {
+  background: #efefef;
+  color: green;
+}
+ul li.current {
+  background: #efefef;
+  color: green;
+}
