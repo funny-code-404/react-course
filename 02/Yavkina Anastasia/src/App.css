@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+form {
+  width: 50%;
+  padding: 20px;
+}
+form span {
+  display: block;
+  color: red;
+}
+form input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+}
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(35, 131, 94);
+  color: #fff;
+  cursor: pointer;
+}
