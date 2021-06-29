@@ -1,0 +1,52 @@
+article {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-bottom: 1px solid #222;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+article .caption {
+  width: 80%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+article .caption p {
+  width: 84%;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+article .caption span {
+  margin-right: 1rem;
+  display: block;
+  background: #e8f4ff;
+  width: 10%;
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+  font-size: 4rem;
+}
+article button {
+  font-weight: bolder;
+  border: none;
+  font-size: 0.8rem;
+}
+article .remove-item {
+  width: 9%;
+  background: #d43e3e;
+  color: #fff;
+}
+article .jobs-done {
+  width: 9%;
+  background: #50d022;
+  color: #fff;
+}
+article.checked {
+  background: #e7eed7;
+}
+article.checked .caption span {
+  background: green;
+  color: #fff;
+  font-weight: bolder;
+}
