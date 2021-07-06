@@ -1,0 +1,1 @@
+export const BUTTON_NAME = "Add Car"
