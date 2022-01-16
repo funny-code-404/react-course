@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.info{
+  border: 2px solid black;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.contacts{
+  border: 2px solid black;
+  margin: 10px;
+}
