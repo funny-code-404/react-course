@@ -7,7 +7,7 @@ import logo from '../../logo.svg';
 
 class Header extends React.Component{
  render(){
-    const data = [LINK_TEXT, LINK_TEXT, LINK_TEXT, LINK_TEXT, LINK_TEXT]
+     
      return (
 
      <header>
@@ -17,7 +17,7 @@ class Header extends React.Component{
                 <nav>
                     <ul className='flex-wrapper'>
                         {
-                            data.map((item, i) => <li key="item"><a href="#">{item + ' ' + i}</a></li>)
+                            new Array(5).fill(LINK_TEXT).map((item, i) => <li key="item"><a href="#">{item + ' ' + i}</a></li>)
                         }
                     </ul>   
                 </nav>

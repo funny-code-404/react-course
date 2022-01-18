@@ -1,1 +1,1 @@
-export const LINK_TEXT = 'Anchor'
+export const LINK_TEXT = 'Anchor';

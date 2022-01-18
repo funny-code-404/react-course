@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { COMPANY_INFO } from './consts';
+import { CONTACTS } from './consts';
+
 import './style.css';
 
 class Footer extends React.Component{
@@ -8,10 +11,10 @@ class Footer extends React.Component{
      <footer>
          <div className='container flex-wrapper'>
             <div>
-                <p>Информация о компании</p>
+                <p>{COMPANY_INFO}</p>
             </div>
             <div>
-                <p>Контакты</p>
+                <p>{CONTACTS}</p>
             </div>
          </div>
          

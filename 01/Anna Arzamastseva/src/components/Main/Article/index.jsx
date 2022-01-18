@@ -1,14 +1,16 @@
 import React from 'react'
 
+import {ARTICLE_TITLE} from './consts';
+import {ARTICLE_TEXT} from './consts';
+import {READ_MORE_TEXT} from './consts';
+
 class Article extends React.Component{
  render(){
-     let someText = 'Apple News+ delivers an incredibly diverse collection of the world’s best publications. Vivid photography and animation, rich videos, and immersive layouts bring articles to life in stunning new ways. Swipe through issues from cover to cover or download them to read on the go.lorem ';
-
      return (
      <article>
-         <h2>Article header</h2>
-         <p>{someText}</p>
-         <a href="#">Read more</a>
+         <h2>{ARTICLE_TITLE}</h2>
+         <p>{ARTICLE_TEXT}</p>
+         <a href="#">{READ_MORE_TEXT}</a>
      </article>
      )
  }
