@@ -1,0 +1,26 @@
+main {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.card{
+  border: 2px solid black;
+  margin: 10px;
+  max-width: 200px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+p {
+  padding: 5px;
+}
+
+button{
+  background-color: yellow;
+}
