@@ -1,0 +1,9 @@
+body {
+  background-color: azure;
+}
+
+.App {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 80%;
+}
