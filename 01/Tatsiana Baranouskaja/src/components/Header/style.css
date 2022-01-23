@@ -1,0 +1,34 @@
+header {
+    background-color: rgb(83, 255, 246);
+}
+
+.flex-header {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    max-width: 80px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav a {
+    padding: 14px 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: burlywood;
+}
+
