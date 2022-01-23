@@ -4,7 +4,7 @@ import React from 'react'
 import './Form.css'
 
 class Form extends React.Component {
-  state = {
+  initialState = {
     values: {
       name: '',
       email: '',
@@ -16,6 +16,8 @@ class Form extends React.Component {
       password: ''
     }
   }
+
+  state = this.initialState
 
   // обработка input
   handleChange = (e) => {
@@ -79,10 +81,16 @@ class Form extends React.Component {
     values.email || console.log('Заполните поле ввода email')
     values.password || console.log('Заполните поле ввода пароля')
 
-    !errors.name && !errors.email && !errors.password &&
-     values.name && values.email && values.password && console.log(`Отправлено на сервер:'  ${values.name} + ${values.email} + ${values.password}`)
+    const condition = !errors.name && !errors.email && !errors.password &&
+    values.name && values.email && values.password
 
-    e.target.reset()
+    if (condition) {
+      console.log(`Отправлено на сервер: ${values.name} + ${values.email} + ${values.password}`)
+      // console.log(this.state)
+      this.setState(() => this.initialState)
+      // console.log(this.state)
+      e.target.reset()
+    }
   }
 
   render () {
