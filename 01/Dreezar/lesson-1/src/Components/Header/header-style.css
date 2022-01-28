@@ -1,0 +1,30 @@
+.container {
+    /* display: inline-block; */
+    padding: 30px;
+    margin: auto;
+    max-width: 1100px;
+}
+
+.second-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding-left: 30px;
+    font-size: x-large;
+    color: #000;
+}
