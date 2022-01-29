@@ -1,0 +1,11 @@
+.was-validated:invalid .btn {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+form {
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  max-width: 800px;
+}

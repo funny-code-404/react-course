@@ -13,9 +13,9 @@ class Form extends React.Component {
             password: ''
         },
         errors: {
-            name: false,
-            email: false,
-            password: false
+            name: '',
+            email: '',
+            password: ''
         }
     }
 
@@ -32,34 +32,31 @@ class Form extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
 
         const { name, email, password } = this.state.values;
 
-        let errName = (name.length < 3 || name.length > 30) ? true : false;
-        let errEmail = (!email.includes('&') && !email.includes('.')) ? true : false;
-        let errPassword = (password.length < 8  || !/[a-zа-яё]/i.test(password) || !/[0-9]/.test(password)) ? true : false;
+        const errName = (name.length < 3 || name.length > 30) ? {NAME_ERROR} : '';
+        const errEmail = (!email.includes('&') && !email.includes('.')) ? {EMAIL_ERROR} : '';
+        const errPassword = (password.length < 8  || !/[a-zа-яё]/i.test(password) || !/[0-9]/.test(password)) ? {PSWRD_ERROR} : '';
 
         this.setState((prevState) => ( {      
             ...prevState,
-            values: {
-                ...prevState.values,
-                [e.target.name]: e.target.value
-            },
             errors:{
-                ...prevState.values,
+                // ...prevState.values,
                 name: errName,
                 email: errEmail,
                 password: errPassword
             }
         })
+
         )
+        console.log(this.state);
+        console.log(`Имя: ${this.state.values.name}, email: ${this.state.values.email}, пароль: ${this.state.values.password}`)
     }
 
     render() {
 
         const { name, email, password } = this.state.values;
-        // const { nameEr, emailEr, passwordEr } = this.state.errors;
 
         return (
 
