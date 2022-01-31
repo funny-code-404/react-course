@@ -1,0 +1,29 @@
+form {
+  display: block;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  width: 700px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+label{
+  display: block;
+  align-items: center;
+  padding: 20px;
+}
+
+input{
+margin-left: 10px;
+}
+
+button{
+  display: block;
+  margin-left: 15px;
+}
+
+.error {
+  color: red;
+
+}
