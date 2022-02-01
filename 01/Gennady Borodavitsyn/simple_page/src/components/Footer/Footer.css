@@ -1,0 +1,27 @@
+.container_footer {
+  justify-content: space-around;
+  align-items: baseline;
+  text-align: left;
+}
+
+.info-company {
+  padding: 2rem;
+  color: white;
+  width: 50%;
+}
+
+.info-company h3,
+.contacts .info-wrap h3 {
+  padding-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.contacts {
+  padding: 2rem;
+  color: white;
+}
+
+.contacts a {
+  color: wheat;
+  text-decoration: none;
+}

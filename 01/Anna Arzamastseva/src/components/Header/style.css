@@ -1,0 +1,14 @@
+header{
+    background-color: rgb(5, 0, 80);
+    padding: 50px 20px;
+}
+
+nav li{
+    margin-left: 30px;
+    list-style: none;
+}
+
+nav a{
+    color: rgb(0, 194, 208);
+    text-decoration: none;
+}

@@ -1,0 +1,19 @@
+footer {
+    background-color: rgb(83, 255, 246);
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company {
+    width: 48%;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 48%;
+}
