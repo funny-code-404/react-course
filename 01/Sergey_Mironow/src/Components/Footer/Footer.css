@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 15px 25px;
+    line-height: 1.3rem;
+    color: midnightblue;
+    background-color: rgba(171, 255, 46, 0.6);
+}
+
+.info {
+    width: 50%;
+}
