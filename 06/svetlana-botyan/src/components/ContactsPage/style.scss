@@ -1,0 +1,35 @@
+div {
+  width: 600px;
+
+  h1 {
+    color: rgb(19, 89, 180);
+    margin: 5px;
+    text-align: center;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    h2 {
+      color: rgb(19, 89, 180);
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    li {
+      cursor: pointer;
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      &:hover {
+        background-color: rgb(216, 238, 155);
+      }
+    }
+  }
+}
