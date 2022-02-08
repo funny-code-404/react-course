@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 class TableComp extends React.Component {
   render() {
+    const { items } = this.props
     return (
       <Table striped bordered hover>
         <thead>
@@ -16,13 +17,15 @@ class TableComp extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {/* <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr> */}
+          {items.map((item, index) => (
+            <tr key={item.brand}>
+              <td>{index + 1}</td>
+              <td>{item.brand}</td>
+              <td>{item.model}</td>
+              <td>{item.year}</td>
+              <td>{`${item.price} $`}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     )
