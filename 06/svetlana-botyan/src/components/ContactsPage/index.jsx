@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-no-undef */
 import { contacts } from "../contacts/contatcs";
-import {Link} from "react-router-dom"
-import { nanoid } from 'nanoid'
-import './style.scss'
+import ListItem from "../ListItem"
+import { nanoid } from 'nanoid';
+import './style.scss';
 
 const ContactsPage = ()=>{
     return (
@@ -12,30 +13,17 @@ const ContactsPage = ()=>{
             <ul>
                 <h2>Имя</h2>
                 {contacts.map((contact)=>(
-                    <li key = {nanoid()}>                        
-                        <Link to ={
-                            {
-                            pathname:`/name:${contact.id}`,
-                            state:contact 
-                            }                            
-                        }>   {contact.name}                         
-                        </Link>
-                    </li>
+                    <ListItem key = {nanoid()} pathname={`/name:${contact.id}`}
+                    state={contact} content ={contact.name}  />                    
                 ))}
             </ul>
-            <ul>
+            <ul>        
+  
                 <h2>Номера телефонов</h2>
-                {contacts.map((contact)=>(
-                    <li key = {nanoid()}>                        
-                        <Link to ={
-                            {
-                            pathname:`/phone:${contact.id}`,
-                            state:contact 
-                            }                            
-                        }>{contact.phoneNumber}                            
-                        </Link>
-                    </li>
-                ))}
+                {contacts.map((contact)=>(                    
+                    <ListItem key = {nanoid()} pathname={`/phone:${contact.id}`}
+                    state={contact} content ={contact.phoneNumber} />                   
+               ))}
             </ul>
             </div>  
         </div>

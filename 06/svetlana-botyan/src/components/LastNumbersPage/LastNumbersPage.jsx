@@ -1,6 +1,7 @@
 import { contacts } from "../contacts/contatcs";
 import {useHistory,useLocation, Link} from "react-router-dom"
 import { nanoid } from 'nanoid'
+import './style.scss';
 
 
 const LastNumbersPage = () => {
@@ -12,7 +13,7 @@ const LastNumbersPage = () => {
     const array=contacts.sort(() => 0.5 - Math.random()).slice(0, 5)
             
     return (
-    <div>
+    <div className="info">
         <h3>Последние вызовы номера {state.phoneNumber}</h3>
         {array.map((item) => (            
                 <div key={nanoid()} id={item.id} >

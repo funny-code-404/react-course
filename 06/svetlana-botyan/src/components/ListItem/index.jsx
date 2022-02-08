@@ -2,8 +2,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-const ListItem =(props)=> {       
-    
+const ListItem =(props)=> {           
         const { content, state, pathname} = props
 
         return (

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { useHistory,useLocation, Link } from "react-router-dom"
 import Friends from "../Friends/index"
+import './style.scss';
 
 const ContactInfoPage =()=>{
     const history = useHistory()
@@ -23,14 +24,14 @@ const ContactInfoPage =()=>{
 
     const infoAboutNumber =<div id={state.id}>
                         <h3>Имя владельца {state.phoneNumber}</h3>
-                        {state.name}
+                        <p>{state.name}</p>
                         <h4>Список номеров друзей</h4>
                         <Friends condition={condition} friends={state.friends}/>
                         <button onClick={handleClick} >&larr; Назад</button>
                         </div>   
 
     
-    return   condition ? infoAboutName :infoAboutNumber
+    return  <div className="info"> {condition ? infoAboutName :infoAboutNumber}</div>
 
 }
 
