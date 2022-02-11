@@ -1,0 +1,43 @@
+.ContactCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: brown;
+    h3,h4 {
+        color: lightgrey;
+        font-size: 1.8rem;
+    }
+    a {
+        color: antiquewhite;
+        text-decoration: none;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: underline;
+            color: lavender;
+        }
+    }
+    & > a {
+        font-size: 1.6rem;
+    }
+    .cardList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 25px;
+        padding: 0 50px;
+        border: 1px solid lightcoral;
+    }
+    button {
+        padding: 5px;
+        margin: 10px 0 30px 0;
+        border-radius: 10px;
+        color: brown;
+        background-color: antiquewhite;
+        &:hover {
+            cursor: pointer;
+            color: crimson;
+            background-color: peachpuff;
+        }
+    }
+
+}
