@@ -1,1 +1,0 @@
-export const footerText = '© 2021 Anatoli Kurliuk. All right reserved.';

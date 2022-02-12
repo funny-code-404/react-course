@@ -1,7 +1,0 @@
-export const NAME_PLACEHOLDER = 'Имя'
-export const EMAIl_PLACEHOLDER = 'Почта'
-export const PASSWORD_PLACEHOLDER = 'Пароль'
-export const EMPTY_ERROR = 'Поле должно быть заполнено!'
-export const NAME_ERROR = 'Имя не должно быть меньше 3 символов и больше 30 символов!'
-export const EMAIL_ERROR = 'Почта должна содержать символ @ и .!'
-export const PASSWORD_ERROR = 'Пароль должен содержать цифры и буквы и длину не менее 8 символов!'

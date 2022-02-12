@@ -1,6 +1,0 @@
-.weather {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 20px;
-  padding: 20px;
-}

@@ -1,4 +1,0 @@
-.reg{
-    display: grid;
-    grid-template-row: repeat(5, 1fr);
-}
