@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.footer {
+     background-color: rgb(205, 219, 219);
+     text-decoration: none;   
+     padding:50px;
+     column-count: 2;
+ }
+.footer-text {
+font-family: Arial, Helvetica, sans-serif;
+}
+.footer_text-secondary {
+    color:black;
+    padding-bottom: 50px;
+    text-align: justify;
+    padding-right: 20px;
+}
