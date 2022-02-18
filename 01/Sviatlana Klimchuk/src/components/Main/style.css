@@ -1,0 +1,29 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+.main {
+    column-count: 3;
+    text-align: justify;
+
+    background-color: rgb(222, 243, 237);
+
+   }
+   .main_text {
+      padding: 30px 50px;
+   }
+   .main_text-secondary {
+
+width: 500px;
+padding: 5px 40px 50px 50px;
+   }
+   .main_button {
+    width: 30%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 50px;
+    color: wheat;
+    background-color: lightseagreen;
+    margin-bottom: 200px;
+   }
