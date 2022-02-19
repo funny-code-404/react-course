@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ACTION_GET_COMMENTS_DATA } from '../../redux/middlewares/actions';
 import { commentsDataSelector } from '../../ducks/comments';
 
-const url = 'https://jsonplaceholder.typicode.com/comments';
+import { url } from '../CONST';
 
 function CommentList() {
   const dispatch = useDispatch();
@@ -13,11 +13,8 @@ function CommentList() {
     dispatch(ACTION_GET_COMMENTS_DATA(url));
   }, [dispatch]);
 
-  console.log(data);
-
   return (
     <div>
-      <h1>Comment List:</h1>
       <ul>
         <h3>Comments from custom middleware:</h3>
         {data.map((item) => (
