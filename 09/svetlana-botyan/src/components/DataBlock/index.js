@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { dataSelector } from '../../ducks/users';
-import { ACTION_DELETE_USER, ACTION_UPDATE_USER } from '../../ducks/users';
+import { ACTION_DELETE_USER, ACTION_SHOW_FORM_UPDATE_USER } from '../../ducks/users';
+import { v4 as uuidv4 } from 'uuid';
+import FormEdit from '../FormEdit';
 import styled from 'styled-components';
 
 const Wrapper = styled.li`
@@ -14,53 +16,25 @@ const DataBlock = () => {
   const data = useSelector(dataSelector);
   const dispatch = useDispatch();
 
-
   const handleClickDelete = ({ target }) => {
-    const { id } = target
-
-    data.forEach(function (el, i) {
-      if (el.id === id) data.splice(i, 1)
-    })
-    dispatch(ACTION_DELETE_USER(data));
+    dispatch(ACTION_DELETE_USER(target.id));
   };
 
-
+  // показать/спрятать inputs для обновления данных
   const handleClickUpdate = ({ target }) => {
-    const { id } = target
-
-    data.forEach(function (el) {
-      if (el.id === id) el.isEdit = !el.isEdit
-    })
-
-    dispatch(ACTION_UPDATE_USER(data))
+    dispatch(ACTION_SHOW_FORM_UPDATE_USER(target.id))
   };
-
-
-  const handleChange = ({ target }) => {
-    const { id } = target
-    data.forEach(function (el) {
-
-      if (el.id === id) el[target.name] = [target.value]
-    })
-
-    dispatch(ACTION_UPDATE_USER(data))
-  };
-
-
 
   return (
     <ul>
       {data.map((user) => (
-        <Wrapper key={user.id}>
+        <Wrapper key={uuidv4()}>
           {!user.isEdit ? <>
             <button id={user.id} onClick={handleClickDelete}>Delete</button>
             <button id={user.id} onClick={handleClickUpdate}>Update</button>
             <h3>{user.name}</h3>
             <p>{user.email}</p>
-          </> : <>
-            <input id={user.id} name="name" value={user.name} onChange={handleChange} />
-            <input id={user.id} name="email" value={user.email} onChange={handleChange} />
-            <button id={user.id} onClick={handleClickUpdate}>Ready</button></>
+          </> : <FormEdit id={user.id} name={user.name} email={user.email} />
           }
         </Wrapper>
       ))}

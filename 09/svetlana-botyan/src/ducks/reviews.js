@@ -3,7 +3,7 @@ export const initialState = {
 };
 
 export const reviewsReducer = (state = initialState, action) => {
-  console.log(action);
+
   return {
     ...state,
   };

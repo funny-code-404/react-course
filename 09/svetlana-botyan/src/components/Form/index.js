@@ -5,7 +5,6 @@ import { ACTION_CREATE_USER } from '../../ducks/users';
 const initialState = {
   name: '',
   email: '',
-  isEdit: false,
 };
 
 const Form = () => {
