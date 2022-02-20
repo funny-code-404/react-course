@@ -30,7 +30,7 @@ export const getCommentsData = (url) => async (dispatch) => {
     dispatch(ACTION_COMMENTS_DATA_REQUESTED());
     const res = await fetch(url);
     const data = await res.json();
-    const newData = data.slice(50, 80);
+    const newData = data.slice(50, 60);
 
     dispatch(ACTION_COMMENTS_DATA_SUCCEED_THUNK(newData));
   } catch (error) {

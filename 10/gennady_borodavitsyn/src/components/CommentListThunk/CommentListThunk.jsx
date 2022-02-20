@@ -4,8 +4,23 @@ import {
   commentsDataThunkSelector,
   getCommentsData,
 } from '../../ducks/comments';
+import styled from 'styled-components';
 
 import { url } from '../CONST';
+
+const H3 = styled.h3`
+  background-color: aqua;
+`;
+const Ul = styled.ul`
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  list-style-type: none;
+  background-color: aqua;
+`;
+const Li = styled.li`
+  border: solid black 1px;
+`;
 
 function CommentListThunk() {
   const dispatch = useDispatch();
@@ -16,16 +31,16 @@ function CommentListThunk() {
   }, [dispatch]);
 
   return (
-    <ul>
-      <h3>Comments from thunk middleware:</h3>
+    <Ul>
+      <H3>Comments from thunk middleware:</H3>
       {data.map((item) => (
-        <li key={item.id}>
+        <Li key={item.id}>
           <h5>title: {item.name}</h5>
           <p>email: {item.email}</p>
           <p>{item.body}</p>
-        </li>
+        </Li>
       ))}
-    </ul>
+    </Ul>
   );
 }
 
