@@ -4,11 +4,12 @@ import {
   commentsDataThunkSelector,
   getCommentsData,
 } from '../../ducks/comments';
+import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { url } from '../CONST';
 
-const H3 = styled.h3`
+const Title = styled.h3`
   background-color: aqua;
 `;
 const Ul = styled.ul`
@@ -17,9 +18,10 @@ const Ul = styled.ul`
   padding: 1rem;
   list-style-type: none;
   background-color: aqua;
-`;
-const Li = styled.li`
-  border: solid black 1px;
+
+  li {
+    border: solid black 1px;
+  }
 `;
 
 function CommentListThunk() {
@@ -30,17 +32,27 @@ function CommentListThunk() {
     dispatch(getCommentsData(url));
   }, [dispatch]);
 
+  let history = useHistory();
+
+  function handleClick() {
+    history.push('/');
+  }
+
   return (
-    <Ul>
-      <H3>Comments from thunk middleware:</H3>
-      {data.map((item) => (
-        <Li key={item.id}>
-          <h5>title: {item.name}</h5>
-          <p>email: {item.email}</p>
-          <p>{item.body}</p>
-        </Li>
-      ))}
-    </Ul>
+    <div>
+      <button onClick={handleClick}>go home</button>
+      <Ul>
+        <Title>Comments from thunk middleware:</Title>
+        {data.map((item) => (
+          <Link to={`/CommentListThunk/info/${item.id}`} key={item.id}>
+            <li>
+              <h5>title: {item.name}</h5>
+              <p>email: {item.email}</p>
+            </li>
+          </Link>
+        ))}
+      </Ul>
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ import { getCommentsDataMiddleware } from './middlewares/getCommentsDataMiddlewa
 
 const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__;
 
-const middlewares = [thunkMiddleware, getCommentsDataMiddleware];
+const middlewares = [getCommentsDataMiddleware, thunkMiddleware];
 const enhancers = [reduxDevTools()];
 
 const composedEnhancers = compose(

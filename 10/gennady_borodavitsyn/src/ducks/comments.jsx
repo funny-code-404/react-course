@@ -1,12 +1,19 @@
 // ACTION TYPES
 const COMMENTS_DATA_REQUESTED = 'COMMENTS_DATA_REQUESTED';
+const COMMENTS_DATA_DETAILS_REQUESTED = 'COMMENTS_DATA_DETAILS_REQUESTED';
 const COMMENTS_DATA_SUCCEED = 'COMMENTS_DATA_SUCCEED';
 const COMMENTS_DATA_SUCCEED_THUNK = 'COMMENTS_DATA_SUCCEED_THUNK';
+const COMMENTS_DATA_DETAILS_SUCCEED_THUNK =
+  'COMMENTS_DATA_DETAILS_SUCCEED_THUNK';
 const COMMENTS_DATA_FAILED = 'COMMENTS_DATA_FAILED';
 
 // ACTION CREATORS
 export const ACTION_COMMENTS_DATA_REQUESTED = () => ({
   type: COMMENTS_DATA_REQUESTED,
+});
+
+export const ACTION_COMMENTS_DATA_DETAILS_REQUESTED = () => ({
+  type: COMMENTS_DATA_DETAILS_REQUESTED,
 });
 
 export const ACTION_COMMENTS_DATA_SUCCEED = (payload) => ({
@@ -16,6 +23,11 @@ export const ACTION_COMMENTS_DATA_SUCCEED = (payload) => ({
 
 export const ACTION_COMMENTS_DATA_SUCCEED_THUNK = (payload) => ({
   type: COMMENTS_DATA_SUCCEED_THUNK,
+  payload,
+});
+
+export const ACTION_COMMENTS_DATA_DETAILS_SUCCEED_THUNK = (payload) => ({
+  type: COMMENTS_DATA_DETAILS_SUCCEED_THUNK,
   payload,
 });
 
@@ -38,10 +50,23 @@ export const getCommentsData = (url) => async (dispatch) => {
   }
 };
 
+export const getCommentsDetails = (url) => async (dispatch) => {
+  try {
+    dispatch(ACTION_COMMENTS_DATA_DETAILS_REQUESTED());
+    const res = await fetch(url);
+    const data = await res.json();
+
+    dispatch(ACTION_COMMENTS_DATA_DETAILS_SUCCEED_THUNK(data));
+  } catch (error) {
+    dispatch(ACTION_COMMENTS_DATA_FAILED(error));
+  }
+};
+
 // INITIAL STATE
 export const initialState = {
   data: [],
   dataThunk: [],
+  dataDetailsThunk: [],
   error: null,
   isFetching: false,
 };
@@ -49,11 +74,18 @@ export const initialState = {
 // SELECTORS
 export const commentsDataSelector = (state) => state.data;
 export const commentsDataThunkSelector = (state) => state.dataThunk;
+export const commentsDataDetailsThunkSelector = (state) =>
+  state.dataDetailsThunk;
 
 // REDUCER
 export const commentsReducer = (state = initialState, action) => {
   switch (action.type) {
     case COMMENTS_DATA_REQUESTED:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case COMMENTS_DATA_DETAILS_REQUESTED:
       return {
         ...state,
         isFetching: true,
@@ -68,6 +100,12 @@ export const commentsReducer = (state = initialState, action) => {
       return {
         ...state,
         dataThunk: action.payload,
+        isFetching: false,
+      };
+    case COMMENTS_DATA_DETAILS_SUCCEED_THUNK:
+      return {
+        ...state,
+        dataDetailsThunk: action.payload,
         isFetching: false,
       };
     case COMMENTS_DATA_FAILED:
