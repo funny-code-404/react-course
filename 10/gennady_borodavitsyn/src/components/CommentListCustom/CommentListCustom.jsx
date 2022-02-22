@@ -5,8 +5,6 @@ import { ACTION_GET_COMMENTS_DATA } from '../../redux/middlewares/actions';
 import { commentsDataSelector } from '../../ducks/comments';
 import styled from 'styled-components';
 
-import { url } from '../CONST';
-
 const Title = styled.h3`
   background-color: green;
 `;
@@ -27,7 +25,7 @@ function CommentListCustom() {
   const data = useSelector(commentsDataSelector);
 
   useEffect(() => {
-    dispatch(ACTION_GET_COMMENTS_DATA(url));
+    dispatch(ACTION_GET_COMMENTS_DATA());
   }, [dispatch]);
 
   let history = useHistory();
@@ -46,7 +44,7 @@ function CommentListCustom() {
           <li key={item.id}>
             <h5>title: {item.name}</h5>
             <p>email: {item.email}</p>
-            <p>{item.body}</p>
+            <p>{item.commentBody}</p>
           </li>
         ))}
       </Ul>

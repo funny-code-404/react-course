@@ -15,7 +15,7 @@ function Comments() {
       <Link to={`/CommentListThunk`}>
         <LinkText>to thunk comments</LinkText>
       </Link>
-      <Link to={`/CommentList`}>
+      <Link to={`/CommentListCustom`}>
         <LinkText>to custom comments</LinkText>
       </Link>
     </>

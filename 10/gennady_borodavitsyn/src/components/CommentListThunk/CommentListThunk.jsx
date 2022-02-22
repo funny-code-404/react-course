@@ -7,8 +7,6 @@ import {
 import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { url } from '../CONST';
-
 const Title = styled.h3`
   background-color: aqua;
 `;
@@ -29,7 +27,7 @@ function CommentListThunk() {
   const data = useSelector(commentsDataThunkSelector);
 
   useEffect(() => {
-    dispatch(getCommentsData(url));
+    dispatch(getCommentsData());
   }, [dispatch]);
 
   let history = useHistory();
@@ -47,7 +45,7 @@ function CommentListThunk() {
           <Link to={`/CommentListThunk/info/${item.id}`} key={item.id}>
             <li>
               <h5>title: {item.name}</h5>
-              <p>email: {item.email}</p>
+              <p>email: {item.commentUserEmail}</p>
             </li>
           </Link>
         ))}

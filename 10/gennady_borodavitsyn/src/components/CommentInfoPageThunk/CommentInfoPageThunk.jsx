@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   commentsDataThunkSelector,
   commentsDataDetailsThunkSelector,
-  getCommentsDetails,
+  getCommentDetails,
 } from '../../ducks/comments';
 import styled from 'styled-components';
-
-import { url } from '../CONST';
 
 const Title = styled.h3`
   background-color: aqua;
@@ -29,14 +27,17 @@ function CommentInfoPageThunk() {
   const dispatch = useDispatch();
 
   const { id } = useParams();
-  console.log(`comment id: ${id}`);
+  // console.log(`comment id: ${id}`);
 
   const data = useSelector(commentsDataThunkSelector);
-  console.log(data);
+
+  function isEmpty(data) {
+    return data.length === 0;
+  }
 
   useEffect(() => {
-    if (!data.some((comment) => comment.id)) {
-      dispatch(getCommentsDetails(`${url}/${id}`));
+    if (isEmpty(data)) {
+      dispatch(getCommentDetails(id));
     }
   }, [data, id, dispatch]);
 
@@ -52,7 +53,7 @@ function CommentInfoPageThunk() {
 
   return (
     <>
-      {!data.some((comment) => comment.id) ? (
+      {isEmpty(data) ? (
         <Ul>
           <Title>Info comment from thunk middleware:</Title>
           <li>
