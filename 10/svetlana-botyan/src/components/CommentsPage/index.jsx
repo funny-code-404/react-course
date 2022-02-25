@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getCommentsData,
-  commentsDataSelector,
-} from '../../ducks/comments';
+import { getCommentsData, commentsDataSelector } from '../../ducks/comments';
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from '../ListItem';
 import './style.scss';
@@ -24,7 +21,7 @@ export const CommentsPage = () => {
       {data.map((comment) => (
         <ListItem
           key={uuidv4()}
-          pathname={`/${comment.id}`}
+          pathname={comment.id}
           state={comment}
           content={comment.name}
         />

@@ -1,14 +1,19 @@
-export const getCommentsData = (payload) => async (dispatch) => {
-  try {
-    dispatch(ACTION_COMMENTS_DATA_REQUESTED());
-    const res = await fetch(payload);
-    const data = await res.json();
+import { store } from '../redux/store';
+export const getCommentsData =
+  (payload, id = null) =>
+  async (dispatch) => {
+    try {
+      dispatch(ACTION_COMMENTS_DATA_REQUESTED());
+      const res = await fetch(payload);
+      const data = await res.json();
+      const arr = data.splice(0, 85);
 
-    dispatch(ACTION_COMMENTS_DATA_SUCCEED(data));
-  } catch (e) {
-    dispatch(ACTION_COMMENTS_DATA_FAILED(e));
-  }
-};
+      dispatch(ACTION_COMMENTS_DATA_SUCCEED(arr));
+      id && dispatch(ACTION_COMMENT_REQUESTED(id));
+    } catch (e) {
+      dispatch(ACTION_COMMENTS_DATA_FAILED(e));
+    }
+  };
 
 const COMMENTS_DATA_REQUESTED = 'COMMENTS_DATA_REQUESTED';
 export const ACTION_COMMENTS_DATA_REQUESTED = () => {
@@ -18,11 +23,25 @@ export const ACTION_COMMENTS_DATA_REQUESTED = () => {
 };
 
 const COMMENTS_DATA_SUCCEED = 'COMMENTS_DATA_SUCCEED';
-export const ACTION_COMMENTS_DATA_SUCCEED = (arr) => {
-  const payload = arr.splice(0, 85);
-
+export const ACTION_COMMENTS_DATA_SUCCEED = (payload) => {
   return {
     type: COMMENTS_DATA_SUCCEED,
+    payload,
+  };
+};
+
+// запрос одного comment при перезагрузке
+const COMMENT_REQUESTED = 'COMMENT_REQUESTED';
+export const ACTION_COMMENT_REQUESTED = (id) => {
+  const arr = store
+    .getState()
+    .comments.data.filter((item) => item.id === Number.parseInt(id));
+
+  const payload = arr[0];
+  console.log(payload);
+
+  return {
+    type: COMMENT_REQUESTED,
     payload,
   };
 };
@@ -40,10 +59,12 @@ export const initialState = {
   data: [],
   error: null,
   isFetching: false,
+  comment: null,
 };
 
 // SELECTORS
 export const commentsDataSelector = (state) => state.comments.data;
+export const commentDataSelector = (state) => state.comments.comment;
 
 export const commentsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -57,6 +78,11 @@ export const commentsReducer = (state = initialState, action) => {
         ...state,
         data: action.payload,
         isFetching: false,
+      };
+    case COMMENT_REQUESTED:
+      return {
+        ...state,
+        comment: action.payload,
       };
     case COMMENTS_DATA_FAILED:
       return {
