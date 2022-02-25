@@ -1,0 +1,24 @@
+.comment {
+ margin: auto;
+ width: 50%;
+ padding: 10px;
+ border: 2px solid rgba(156, 238, 211, 0.616);
+ border-radius: 16px;
+
+ h2 {
+  margin: auto;
+ }
+
+ div {
+  display: flex;
+  align-items: baseline;
+
+  h3 {
+   color: rgba(45, 236, 173, 0.993);
+  }
+
+  p {
+   margin-left: 10px;
+  }
+ }
+}

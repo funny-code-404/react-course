@@ -1,0 +1,14 @@
+nav {
+ a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid rgba(156, 238, 211, 0.616);
+  border-radius: 5px;
+
+  &:hover {
+   background-color: rgba(156, 238, 211, 0.616);
+   border-radius: 5px;
+  }
+ }
+}
