@@ -10,18 +10,16 @@ function Form() {
   const { onChange, onSubmit, value } = useContext(FormContext);
 
   return (
-    <>
-      <FormStyled onSubmit={onSubmit}>
-        <input
-          type="text"
-          name="todo"
-          value={value}
-          placeholder="write any ToDo"
-          onChange={onChange}
-        />
-        <button>add ToDo</button>
-      </FormStyled>
-    </>
+    <FormStyled onSubmit={onSubmit}>
+      <input
+        type="text"
+        name="todo"
+        value={value}
+        placeholder="write any ToDo"
+        onChange={onChange}
+      />
+      <button>add ToDo</button>
+    </FormStyled>
   );
 }
 

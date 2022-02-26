@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { FormContext } from '../../context/formContext/context';
 import styled from 'styled-components';
 
-const Ul = styled.ul`
+const List = styled.ul`
   list-style-type: none;
   padding: 0;
 
@@ -29,14 +29,14 @@ function ToDoList() {
   return (
     <>
       <h3>ToDo LIST:</h3>
-      <Ul>
+      <List>
         {list.map((todo) => (
           <li key={todo.id}>
             {todo.body}
             <button onClick={() => onDeleteClick(todo.id)}>delete</button>
           </li>
         ))}
-      </Ul>
+      </List>
     </>
   );
 }
