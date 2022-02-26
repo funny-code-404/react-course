@@ -7,7 +7,7 @@ import {
 import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Title = styled.h3`
+const ListTitle = styled.h3`
   background-color: aqua;
 `;
 const Ul = styled.ul`
@@ -40,7 +40,7 @@ function CommentListThunk() {
     <div>
       <button onClick={handleClick}>go home</button>
       <Ul>
-        <Title>Comments from thunk middleware:</Title>
+        <ListTitle>Comments from thunk middleware:</ListTitle>
         {data.map((item) => (
           <Link to={`/CommentListThunk/info/${item.id}`} key={item.id}>
             <li>

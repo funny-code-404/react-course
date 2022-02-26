@@ -8,7 +8,7 @@ import {
 } from '../../ducks/comments';
 import styled from 'styled-components';
 
-const Title = styled.h3`
+const ListTitle = styled.h3`
   background-color: aqua;
 `;
 const Ul = styled.ul`
@@ -27,12 +27,11 @@ function CommentInfoPageThunk() {
   const dispatch = useDispatch();
 
   const { id } = useParams();
-  // console.log(`comment id: ${id}`);
 
   const data = useSelector(commentsDataThunkSelector);
 
   function isEmpty(data) {
-    return data.length === 0;
+    return !data.length;
   }
 
   useEffect(() => {
@@ -55,7 +54,7 @@ function CommentInfoPageThunk() {
     <>
       {isEmpty(data) ? (
         <Ul>
-          <Title>Info comment from thunk middleware:</Title>
+          <ListTitle>Info comment from thunk middleware:</ListTitle>
           <li>
             <h5>title: {dataDetails.name}</h5>
             <p>{dataDetails.body}</p>
@@ -64,7 +63,7 @@ function CommentInfoPageThunk() {
         </Ul>
       ) : (
         <Ul>
-          <Title>Info comment from thunk middleware:</Title>
+          <ListTitle>Info comment from thunk middleware:</ListTitle>
           <li>
             <h5>title: {comment.name}</h5>
             <p>{comment.body}</p>

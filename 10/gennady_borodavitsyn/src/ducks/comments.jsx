@@ -63,10 +63,6 @@ export const ACTION_COMMENT_DETAILS_THUNK_FAILED = (error) => ({
 export const getCommentsData = () => async (dispatch) => {
   try {
     dispatch(ACTION_COMMENTS_DATA_THUNK_REQUESTED());
-    // // fast variant, not recommend:
-    // const res = await fetch(url);
-    // const data = await res.json();
-    // const newData = data.slice(50, 60);
 
     const data = await getSomeCommentsThunk();
 
@@ -79,9 +75,6 @@ export const getCommentsData = () => async (dispatch) => {
 export const getCommentDetails = (id) => async (dispatch) => {
   try {
     dispatch(ACTION_COMMENT_DETAILS_THUNK_REQUESTED());
-    // // fast variant, not recommend:
-    // const res = await fetch(url);
-    // const data = await res.json();
 
     const data = await getCommentThunk(id);
 

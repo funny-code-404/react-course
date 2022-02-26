@@ -5,7 +5,7 @@ import { ACTION_GET_COMMENTS_DATA } from '../../redux/middlewares/actions';
 import { commentsDataSelector } from '../../ducks/comments';
 import styled from 'styled-components';
 
-const Title = styled.h3`
+const ListTitle = styled.h3`
   background-color: green;
 `;
 const Ul = styled.ul`
@@ -39,7 +39,7 @@ function CommentListCustom() {
       <button onClick={handleClick}>go home</button>
 
       <Ul>
-        <Title>Comments from custom middleware:</Title>
+        <ListTitle>Comments from custom middleware:</ListTitle>
         {data.map((item) => (
           <li key={item.id}>
             <h5>title: {item.name}</h5>
