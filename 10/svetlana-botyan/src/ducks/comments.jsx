@@ -30,7 +30,6 @@ export const ACTION_COMMENTS_DATA_SUCCEED = (payload) => {
   };
 };
 
-// запрос одного comment при перезагрузке
 const COMMENT_REQUESTED = 'COMMENT_REQUESTED';
 export const ACTION_COMMENT_REQUESTED = (id) => {
   const arr = store
@@ -38,7 +37,6 @@ export const ACTION_COMMENT_REQUESTED = (id) => {
     .comments.data.filter((item) => item.id === Number.parseInt(id));
 
   const payload = arr[0];
-  console.log(payload);
 
   return {
     type: COMMENT_REQUESTED,

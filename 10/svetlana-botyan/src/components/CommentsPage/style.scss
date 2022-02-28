@@ -9,13 +9,14 @@ li {
  width: 50%;
  padding: 10px 15px;
  border-bottom: solid gray 1px;
- cursor: pointer;
+
  &:hover {
   background-color: rgba(156, 238, 211, 0.616);
  }
 
  a {
   text-decoration: none;
+  padding: 10px 15px;
   color: black;
  }
 }

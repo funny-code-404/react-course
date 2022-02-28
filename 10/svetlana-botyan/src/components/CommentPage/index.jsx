@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCommentsData, commentDataSelector } from '../../ducks/comments';
+import {
+  getCommentsData,
+  ACTION_COMMENT_REQUESTED,
+  commentDataSelector,
+} from '../../ducks/comments';
 
 import './style.scss';
 const url = 'https://jsonplaceholder.typicode.com/comments';
@@ -9,8 +13,9 @@ const url = 'https://jsonplaceholder.typicode.com/comments';
 export const CommentPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  let { state } = useLocation();
-  state = useSelector(commentDataSelector);
+  dispatch(ACTION_COMMENT_REQUESTED(id));
+
+  const state = useSelector(commentDataSelector);
 
   useEffect(() => {
     if (!state) {
