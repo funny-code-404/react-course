@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   REVIEWS_DATA_REQUESTED,
@@ -25,26 +25,32 @@ function ListReviews() {
     dispatch(REVIEWS_DATA_REQUESTED());
   }, [dispatch]);
 
-  const handleClickRemove = (review) => {
-    dispatch(DELETE_REVIEW(review));
-  };
+  const handleClickRemove = useCallback(
+    (review) => {
+      dispatch(DELETE_REVIEW(review));
+    },
+    [dispatch]
+  );
 
-  const handleClickEdit = (review) => {
-    dispatch(SHOW_FORM_EDIT_REVIEW());
+  const handleClickEdit = useCallback(
+    (review) => {
+      dispatch(SHOW_FORM_EDIT_REVIEW());
 
-    setValue(review);
-  };
+      setValue(review);
+    },
+    [dispatch]
+  );
 
-  const handleChange = ({ target }) => {
+  const handleChange = useCallback(({ target }) => {
     setValue((prevState) => ({
       ...prevState,
       [target.name]: target.value,
     }));
-  };
+  }, []);
 
-  const handleClickUpdate = () => {
+  const handleClickUpdate = useCallback(() => {
     dispatch(UPDATE_REVIEW(value));
-  };
+  }, [dispatch, value]);
 
   return (
     <ul>
