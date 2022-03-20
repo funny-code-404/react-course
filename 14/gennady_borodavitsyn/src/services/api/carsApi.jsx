@@ -1,9 +1,10 @@
 import createInstance from '../utils/instance';
+import { getAllCarsFromServer } from '../../services/utils/mapping/dataFromServer';
 
 const API = createInstance();
 
-export const getCars = async (config = {}) => {
+export const getCarsData = async (config = {}) => {
   const res = await API.get('/cars', config);
 
-  return res;
+  return getAllCarsFromServer(res);
 };

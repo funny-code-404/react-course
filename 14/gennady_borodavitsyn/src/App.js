@@ -1,10 +1,14 @@
 import { TableContextProvider } from './context/TableContext/TableContextProvider/TableContextProvider';
-import './App.css';
+
+// COMPONENT
+import TableData from './component/TableData/TableData';
 
 function App() {
   return (
     <TableContextProvider>
-      <div className="App">App</div>
+      <div className="App">
+        <TableData />
+      </div>
     </TableContextProvider>
   );
 }
