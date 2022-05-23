@@ -1,8 +1,0 @@
-.isDone {
-    text-decoration: line-through;
-}
-
-.todoItem{
-    display: grid;
-    grid-template-columns:50px 100px 200px;
-}
