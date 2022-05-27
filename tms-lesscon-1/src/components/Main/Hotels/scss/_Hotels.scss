@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #eaf0f9;
+}
+.slider__title {
+  margin: 110px;
+  font-family: 'Roboto', sans-serif;;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  color: #383838;
+  text-align: center;
+}
+
+.slider__cards {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  max-width: 1235px;
+  gap: 14px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.cards__item {
+  list-style: none;
+}
+
+.item__name {
+    margin: 25px 0;
+  font-family: 'Roboto', sans-serif;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #3077c6;
+}
+
+.item__location {
+  font-family: 'Roboto', sans-serif;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #bfbfbf;
+}
