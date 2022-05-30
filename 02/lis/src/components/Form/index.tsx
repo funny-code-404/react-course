@@ -7,7 +7,7 @@ export type Props = {
 
 const Form = ({ onChange, value }: Props) => (
   <div className="header">
-    <h2 className="hotel__title"> Homes guests loves</h2>
+    <h2 className="hotel__title">Available hotels</h2>
     <input
       className="search__hotel"
       value={value}
