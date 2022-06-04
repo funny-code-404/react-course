@@ -1,0 +1,51 @@
+.search-homes {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 500;
+    font-size: $xl;
+    line-height: 47px;
+    color: $text-color-main;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    padding: 5px;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid grey;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    float: left;
+  }
+
+  &__button {
+    float: left;
+    padding: 10px;
+    font-size: 17px;
+    background: $general-blue;
+    color: white;
+    border: 1px solid grey;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: none;
+    cursor: pointer;
+  }
+
+}
