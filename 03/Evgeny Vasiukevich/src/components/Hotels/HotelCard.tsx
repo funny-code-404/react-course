@@ -1,8 +1,12 @@
 import React, { memo } from 'react';
-import { Hotel } from '../../styles/layout/Hotels';
-import { THotel } from '../../types/THotel';
+import { Hotel } from './styles';
+import { THotel } from '../../types/types';
 
-const HotelCard = memo(({hotel}: { hotel: THotel}) => {
+type Props = {
+    hotel: THotel,
+}
+
+const HotelCard = memo(({hotel}: Props) => {
     return (
         <Hotel className='hotel'>
             <img src={hotel.imageUrl} alt={hotel.name} className='hotel__image'/>

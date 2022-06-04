@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
-import { Hotels } from '../../styles/layout/Hotels';
-import { THotel } from '../../types/THotel';
+import { THotel } from '../../types/types';
 import HotelCard from './HotelCard';
+import { Hotels } from './styles';
 
-type Hotels = {
+type Props = {
     hotels: THotel[],
     title: string,
 };
 
-const HotelsElem: React.FC<Hotels> = memo(({hotels, title}: Hotels) => {
+const HotelsElem = memo(({hotels, title}: Props) => {
     return (
         <Hotels className='hotels'>
             <div className='container hotels__container'>

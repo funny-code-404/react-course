@@ -1,7 +1,6 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ApiService from '../../API/ApiService';
-import { THotel } from '../../types/THotel';
-import SearchForm from '../UI/SearchForm/SearchForm';
+import { THotel } from '../../types/types';
 import HotelsElem from './HotelsElem';
 
 type Props = {
