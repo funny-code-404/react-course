@@ -1,7 +1,11 @@
 import React from 'react';
 import { THotels } from '../../types/THotels';
 
-const HotelItem = ({hotel}: { hotel: THotels}) => {
+type Props = { 
+    hotel: THotels,
+}
+
+const HotelItem = ({hotel}: Props) => {
     return (
         <div>
             <article className='hotel'>
