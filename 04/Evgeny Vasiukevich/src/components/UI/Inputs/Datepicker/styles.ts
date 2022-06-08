@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import { baseTheme } from "../../../../styles/theme";
-import { getFontsFragment } from "../../../../utils/utils";
+import { getFontsFragment, mediaMax } from "../../../../utils/utils";
 
 export const StyledWrapper = styled.div<{border: string}>`
     flex-basis: 25%;
+    margin: -3px 0;
+    
+    ${mediaMax(baseTheme.media.medium,
+        `display: flex;
+        gap: 8px;
+        margin: 0;`
+    )}
 
     &::after{
         content: 'Check-in — Check-out';
@@ -12,6 +19,11 @@ export const StyledWrapper = styled.div<{border: string}>`
         left: 24px;
         width: 300px;
         ${getFontsFragment('md')}
+        color: ${baseTheme.colors.generalWhite};
+
+        ${mediaMax(baseTheme.media.medium,
+            `display: none;`
+        )}
     }
 
     & .react-datepicker-wrapper {
@@ -19,6 +31,26 @@ export const StyledWrapper = styled.div<{border: string}>`
         border: 1px solid #CECECE;
         border-radius: 8px;
         ${props => props.border}
+        background: ${baseTheme.colors.generalWhite};
+
+        ${mediaMax(baseTheme.media.medium,
+            `height: 48px;
+            border-radius: 4px;`
+        )}
+    }
+
+    & .react-datepicker-wrapper::before {
+        content: 'Check-in date';
+        position: relative;
+        top: 0px;
+        left: 16px;
+        width: 200px;
+        ${getFontsFragment('xs')}
+        color: ${baseTheme.colors.textColor};     
+    }
+
+    & .react-datepicker-wrapper:nth-last-child(1)::before {
+        content: 'Check-out date';    
     }
 
     & .react-datepicker__input-container {
@@ -31,6 +63,14 @@ export const StyledWrapper = styled.div<{border: string}>`
         width: 100%;
         height: 100%;
         padding-left: 24px;
+
+        ${mediaMax(baseTheme.media.medium,
+            `padding-left: 16px;
+            margin-top: -44px;
+            padding-top: 17px;
+            ${getFontsFragment('sm')}
+            font-weight: ${baseTheme.fontWeights.medium}`
+        )}
     }
 
     input::-webkit-input-placeholder { 
