@@ -17,10 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "../../../Новая папка/hw-1/node_modules/.bin/react-scripts start",
-    "build": "../../../Новая папка/hw-1/node_modules/.bin/react-scripts build",
-    "test": "../../../Новая папка/hw-1/node_modules/.bin/react-scripts test",
-    "eject": "../../../Новая папка/hw-1/node_modules/.bin/react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
