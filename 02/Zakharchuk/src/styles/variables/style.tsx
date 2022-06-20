@@ -1,0 +1,11 @@
+export const GeneralBlue = '#10367C';
+export const AccentBlue = '#3077C6';
+export const AccentYellow = '#F5BD41';
+export const DarkModel1 = '#121212';
+export const DarkModel2 = '#1D1E1F';
+export const DarkModel3 = '#4D4D4D';
+export const StrokeColorMain = '#F3F3F4';
+export const TextColorMain = '#383838';
+export const GeneralWhite = '#FFFFFF';
+export const SecondaryText = '#BFBFBF'
+export const BagColorMain = '#EAF0F9'
