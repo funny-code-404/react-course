@@ -1,12 +1,4 @@
-export type Data = {
-  id: string;
-  name: string;
-  city: string;
-  country: string;
-  imageUrl: string;
-}
-
-export const data: Array<Data> = [
+const data = [
   {
     id: '71ce9eac-e9b9-44f0-a342-9ff0b565f3b7',
     name: 'Hotel Leopold',
@@ -72,3 +64,5 @@ export const data: Array<Data> = [
       'https://res.cloudinary.com/intellectfox/image/upload/v1610379365/fe/the-andaman-resort_d2xksj.jpg',
   },
 ];
+
+export default data;

@@ -1,0 +1,148 @@
+// * {
+// //   margin: 0;
+// //   padding: 0;
+// //   box-sizing: border-box;
+// }
+
+.header {
+  background: url("/assets/background/bg-homepage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  // background-color: gray;
+  //   height: 900px;
+}
+
+.header_nav {
+  padding: 51px 104px 196px 104px;
+  max-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_subtitle {
+  margin-right: 48px;
+  margin-left: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.nav_switch {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 24px;
+}
+
+.header_title {
+  margin: 0 0 145px 104px;
+  max-width: 542px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 59px;
+  color: #ffffff;
+}
+
+.search_form_titles {
+  display: flex;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.search_form_title_destination {
+  margin-left: 215px;
+  margin-right: 865px;
+}
+
+.header_search_form {
+  display: flex;
+  justify-content: center;
+}
+
+.search_form_input {
+  width: 1040px;
+  height: 56px;
+  margin-right: -15px;
+  padding-bottom: 2px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  padding-left: 70px;
+  color: #383838;
+  background: #ffffff;
+  border: 3px solid #f3f3f4;
+  border-radius: 8px;
+}
+
+.search_form_input:focus {
+  border: 3px solid #f5bd41;
+}
+
+.react-datepicker-wrapper {
+  max-width: 259px;
+  width: 100%;
+}
+
+.datepicker {
+  width: 259px;
+  height: 58px;
+  font-family: "Roboto";
+  text-align: center;
+  border-radius: 8px;
+  border: 3px solid #f5bd41;
+}
+
+.datepicker:focus {
+  border: 3px solid #f5bd41;
+}
+
+.search_form_button {
+  margin-left: -15px;
+  width: 192px;
+  height: 64px;
+  margin-bottom: 120px;
+  padding: 20px 57px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #ffffff;
+  background: #3077c6;
+  border: 0;
+  border-radius: 8px;
+}
+
+.header_download_block {
+  display: flex;
+  justify-content: center;
+}
+
+.download_google_play {
+  margin-right: 8px;
+  margin-bottom: 130px;
+}
+
+.download_app_store {
+  margin-left: 8px;
+  margin-bottom: 130px;
+}

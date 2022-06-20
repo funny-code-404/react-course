@@ -1,12 +1,5 @@
-export type Data = {
-  id: string;
-  name: string;
-  city: string;
-  country: string;
-  imageUrl: string;
-}
-
-export const data: Array<Data> = [
+import { THotel } from "../types/types";
+export const data: THotel[] = [
   {
     id: '71ce9eac-e9b9-44f0-a342-9ff0b565f3b7',
     name: 'Hotel Leopold',
