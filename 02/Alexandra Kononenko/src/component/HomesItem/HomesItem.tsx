@@ -1,11 +1,10 @@
 import { HomesContent } from "../../data/data";
 
 type PropsHome = {
-  key: string;
   home: HomesContent;
 }
 
-const HomesItem = ({key, home}: PropsHome) => {
+const HomesItem = ({home}: PropsHome) => {
     return (
       <li className="hotel" key={home.id}>
         <img className="hotel__image" src={home.imageUrl} alt="hotel" />

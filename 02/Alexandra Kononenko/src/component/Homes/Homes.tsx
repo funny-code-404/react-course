@@ -7,11 +7,6 @@ const Homes = () => {
         <section className="homes container">
             <h2 className="homes__title">Homes guests loves</h2>
             <SearchList homes={data}/>
-            {/*<ul className="homes__items">
-                {data.map((home) =>(
-                    <HomesItem key={home.id} home={home}/>
-                ))}
-                </ul>*/}
         </section>
     )
 };
