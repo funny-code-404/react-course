@@ -21,6 +21,7 @@ function Hotels({ cards }: Props) {
           {cards.map((card: Hotels) => (
             <Card
               id={card.id}
+              key={card.id}
               imageUrl={card.imageUrl}
               country={card.country}
               city={card.city}

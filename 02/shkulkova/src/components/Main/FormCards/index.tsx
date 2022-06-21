@@ -9,7 +9,7 @@ export const FormCards = () => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     filterCards(
       data.filter((card) =>
-        (card.name + card.city + card.country).toUpperCase().includes(e.target.value.toUpperCase())
+        (`${card.name}${card.city}${card.country}`).toUpperCase().includes(e.target.value.toUpperCase())
       )
     );
   };

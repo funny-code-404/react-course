@@ -1,0 +1,24 @@
+li{
+    list-style-type: none;
+}
+
+.hotel-list__title{
+    text-align: center;
+}
+
+.hotel-list__hotels{
+    display: flex;
+    overflow: hidden;
+}
+
+.hotel{
+    margin: 5px;
+}
+
+.hotel__name{
+    color: #3077C6;
+}
+
+.hotel__location {
+    color: #BFBFBF;
+}

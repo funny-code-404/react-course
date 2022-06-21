@@ -1,0 +1,13 @@
+@import './Form//style.css';
+.top-section {
+  height: 100vh;
+  background-image: url('../../../imgs/top-section-background.png');
+  object-fit: cover;
+}
+
+.top-section-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 100px;
+}
