@@ -1,29 +1,8 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
-import iconSearch from '../../../assets/icons/icon-search.svg';
-import { SearchContext } from '../../../context/SearchContext/SearchContext';
-import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import { getFontsFragment } from '../../../utils/utils';
+import styled from "styled-components";
+import { getFontsFragment } from "../../../../utils/utils";
+import iconSearch from '../../../../assets/icons/icon-search.svg';
 
-const SearchInput = () => {
-    const { searchValue, handleChange } = useContext(SearchContext);
-    const { width } = useWindowDimensions();
-
-    return (
-        <StyledContainer>
-            <StyledInput 
-                value={searchValue} 
-                type="text" 
-                placeholder={width <= 768 ? 'Your destination or hotel name' : 'Search...'}
-                onChange={handleChange}
-            />
-        </StyledContainer>
-    );
-};
-
-export default SearchInput;
-
-const StyledContainer = styled.div`
+export const StyledContainer = styled.div`
     flex-basis: 30%;
     flex-grow: 1;
 
@@ -46,7 +25,7 @@ const StyledContainer = styled.div`
     }
 `
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
     width: 100%;
     height: 100%;
     background: ${({ theme }) => theme.colors.generalWhite};

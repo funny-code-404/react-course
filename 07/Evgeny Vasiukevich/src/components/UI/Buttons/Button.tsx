@@ -4,7 +4,7 @@ import { getFontsFragment } from '../../../utils/utils';
 
 type TForButton = {
     children: string,
-    onClick: (event: MouseEvent<HTMLButtonElement>) => void,
+    onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
 }
 
 const Button: React.FC<TForButton> = ({children, onClick}: TForButton) => {

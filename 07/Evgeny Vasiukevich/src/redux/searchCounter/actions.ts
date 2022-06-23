@@ -1,38 +1,13 @@
-import { TCounterProperties, TElemsState } from "../../types/types";
+import { createAction } from "redux-actions";
 
 export enum searchCounterTypesActions {
     ADULTS = 'ADULTS',
     CHILDREN = 'CHILDREN',
-    ROOMS = 'ROOMS'
+    ROOMS = 'ROOMS',
+    ELEMS_STATES = 'ELEMS_STATES'
 };
 
-export enum elemsStateTypeAction { ELEMS_STATES = 'ELEMS_STATES' };
-
-type TAction = {
-    type: searchCounterTypesActions,
-    payload: TCounterProperties,
-};
-
-type TFuncAction = {(
-    type: searchCounterTypesActions,
-    properties: TCounterProperties,
-    ): TAction
-};
-
-type TElemsStateAction = {
-    type: elemsStateTypeAction,
-    payload: TElemsState,
-};
-
-export const changePropertiesAction = (
-    type: searchCounterTypesActions,
-    properties: TCounterProperties
-    ): TAction => ({
-    type: type,
-    payload: properties
-});
-
-export const changeElemsStateAction = (state: TElemsState): TElemsStateAction => ({
-    type: elemsStateTypeAction.ELEMS_STATES,
-    payload: state
-});
+export const actionChangeAdults = createAction(searchCounterTypesActions.ADULTS);
+export const actionChangeChildren = createAction(searchCounterTypesActions.CHILDREN);
+export const actionChangeRooms = createAction(searchCounterTypesActions.ROOMS);
+export const actionChangeCounterStates = createAction(searchCounterTypesActions.ELEMS_STATES);

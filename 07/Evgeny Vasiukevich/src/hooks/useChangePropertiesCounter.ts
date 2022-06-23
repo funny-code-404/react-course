@@ -1,12 +1,12 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { changeElemsStateAction, changePropertiesAction, searchCounterTypesActions } from "../redux/searchCounter/actions";
-import { initalState } from "../store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { actionChangeAdults, actionChangeChildren, actionChangeCounterStates, actionChangeRooms } from "../redux/searchCounter/actions";
+import { searchCounterPropertiesSelector, searchCounterStatesSelector } from "../redux/searchCounter/selectors";
 
 
 export const useChangePropertiesCounter = () => {
-    const {properties, states} = useSelector((state: initalState) => state.searchCounter);
-    let { payload: { adults, children, rooms }} = properties;
+    const properties = useSelector(searchCounterPropertiesSelector);
+    const states = useSelector(searchCounterStatesSelector);
+    let { adults, children, rooms } = properties;
     const dispatch = useDispatch();
     
     // Object for condition current value of different properties with base limit
@@ -26,46 +26,37 @@ export const useChangePropertiesCounter = () => {
     // Functions for decreases
     function onDecreaseAdults() {
         if (condition.decrease.adults) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.ADULTS,
-                {...properties.payload, 
-                    adults: adults -= 1
-                }
+            dispatch(actionChangeAdults(
+                { adults: adults -= 1 }
             ))
         }
     };
 
     function onDecreaseChildren() {
-        const agesChildrenLength = properties.payload.agesChildren.length;
+        const agesChildrenLength = properties.agesChildren.length;
 
         if (condition.decrease.children) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.CHILDREN,
-                {...properties.payload, 
-                    children: children -= 1
-                }
+            dispatch(actionChangeChildren(
+                { children: children -= 1 }
             ))
         };
 
-        dispatch(changeElemsStateAction(
-            {...states.payload, 
+        dispatch(actionChangeCounterStates(
+            {...states, 
                 isSelectAvailable: false, 
                 isSelectChange: true
             }
         ));
 
-        if (states.payload.isSelectAvailable && agesChildrenLength) {
-            --properties.payload.agesChildren.length;
+        if (agesChildrenLength) {
+            --properties.agesChildren.length;
         };
     };
 
     function onDecreaseRooms() {
         if (condition.decrease.rooms) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.ROOMS,
-                {...properties.payload, 
-                    rooms: rooms -= 1
-                }
+            dispatch(actionChangeRooms(
+                { rooms: rooms -= 1 }
             ))
         }
     };
@@ -73,27 +64,21 @@ export const useChangePropertiesCounter = () => {
     // Functions for increases
     function onIncreaseAdults() {
         if (condition.increase.adults) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.ADULTS,
-                {...properties.payload, 
-                    adults: adults += 1
-                }
+            dispatch(actionChangeAdults(
+                { adults: adults += 1 }
             ))
         }
     };
 
     function onIncreaseChildren() {
         if (condition.increase.children) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.CHILDREN,
-                {...properties.payload, 
-                    children: children += 1
-                }
+            dispatch(actionChangeChildren(
+                { children: children += 1 }
             ))
         };
 
-        dispatch(changeElemsStateAction(
-            {...states.payload, 
+        dispatch(actionChangeCounterStates(
+            {...states, 
                 isSelectAvailable: true, 
                 isSelectChange: false
             }
@@ -102,11 +87,8 @@ export const useChangePropertiesCounter = () => {
 
     function onIncreaseRooms() {
         if (condition.increase.rooms) {
-            dispatch(changePropertiesAction(
-                searchCounterTypesActions.ROOMS,
-                {...properties.payload, 
-                    rooms: rooms += 1
-                }
+            dispatch(actionChangeRooms(
+                { rooms: rooms += 1 }
             ))
         }
     };

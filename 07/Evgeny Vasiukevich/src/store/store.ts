@@ -1,10 +1,11 @@
 import { createStore } from "redux";
-import { TState } from "../redux/searchCounter/reducer";
+import { THotelsState, TSearchCounterState } from "../types/types";
 import { initialState } from "./initialStore";
 import { reducer } from "./rootReducer";
 
 export type initalState = {
-    searchCounter: TState,
+    searchCounter: TSearchCounterState,
+    hotels: THotelsState,
 }
 
 const store = createStore(

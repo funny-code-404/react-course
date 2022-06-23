@@ -1,29 +1,28 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ApiService from '../API/ApiService';
 import Navbar from '../components/UI/Navbar/Navbar';
+import { hotelsCurrentHottels } from '../redux/Hotels/selectors';
 import { THotel } from '../types/types';
 
-interface ILocation {
-    state: THotel;
-    key: string;
-}
-
 const HotelPage = () => {
-    const params = useParams();
-    const location: any = useLocation();
-    const [hotel, setHotel] = useState<THotel>();
+    // const params = useParams();
+    // const location = useLocation();
+    // const [hotel, setHotel] = useState<THotel>();
 
-    async function fetchHotels() {
-        const response = await ApiService.getHotelById(params.id);
-        const hotel = response.data;
-        setHotel(hotel);
-    };
+    // async function fetchHotels() {
+    //     const response = await ApiService.getHotelById(params.id);
+    //     const hotel = response.data;
+    //     setHotel(hotel);
+    // };
 
-    useEffect(() => {
-        location.state ? setHotel(location.state as THotel) : fetchHotels();
-    }, [location]);
+    // useEffect(() => {
+    //     location.state ? setHotel(location.state as THotel) : fetchHotels();
+    // }, []);
+
+    const hotel = useSelector(hotelsCurrentHottels);
 
     return (
         <StyledContainer>

@@ -1,4 +1,5 @@
 import { ChangeEvent, LegacyRef, MouseEvent } from "react";
+import { HotelsTypesActions } from "../redux/Hotels/actions";
 
 export type THotel = {
     id: string,
@@ -38,20 +39,37 @@ export type TSearchContext = {
     hotels: THotel[],
 }
 
-// Types for SeatchCounter store
+// Types for SearchCounter store
 type TAdults = { adults: number };
-
-type TChildren = {
-    children: number,
-    agesChildren: string[],
-};
-
+type Children = { children: number };
+type AgesChildren = { agesChildren: string[] };
+type TChildren = Children & AgesChildren;
 type TRooms = { rooms: number };
 
 export type TCounterProperties = TAdults & TChildren & TRooms;
+export type TCounterProperty = TAdults | Children | AgesChildren | TRooms;
 
 export type TElemsState = {
     isModalOpen: boolean,
     isSelectAvailable: boolean,
     isSelectChange: boolean,
 };
+
+export type TSearchCounterState = {
+    properties: TCounterProperties,
+    states: TElemsState
+};
+
+// Types for Hotels store
+export type THotelsActions = {
+    type: HotelsTypesActions,
+    payload: THotel[],
+};
+
+export type THotelsState = {
+    allHotels: THotel[] | null,
+    popularHotels: THotel[] | null,
+    isLoading: boolean,
+    error: null | Error,
+    currentHotel: THotel | null,
+}

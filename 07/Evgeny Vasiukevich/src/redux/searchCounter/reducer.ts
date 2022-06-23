@@ -1,65 +1,49 @@
-import { TCounterProperties, TElemsState } from "../../types/types"
-import { elemsStateTypeAction, searchCounterTypesActions } from "./actions"
+import { TCounterProperties, TElemsState, TSearchCounterState } from "../../types/types";
+import { searchCounterTypesActions } from "./actions";
 
-type TPropertiesActions = {
+type TActions = {
     type: searchCounterTypesActions,
-    payload: TCounterProperties,
-};
-
-type TElemsStateAction = {
-    type: elemsStateTypeAction,
-    payload: TElemsState,
-};
-
-export type TState = {
-    properties: TPropertiesActions,
-    states: TElemsStateAction
+    payload: TCounterProperties | TElemsState,
 };
 
 export const initialSearchCounterState = {
     properties: {
-        type: searchCounterTypesActions.ADULTS,
-        payload: {
-            adults: 0,
-            children: 0,
-            agesChildren: [],
-            rooms: 1
-        },
+        adults: 0,
+        children: 0,
+        agesChildren: [],
+        rooms: 1
     },
     states: {
-        type: elemsStateTypeAction.ELEMS_STATES,
-        payload: {
-            isModalOpen: false,
-            isSelectAvailable: false,
-            isSelectChange: true,
-        },
+        isModalOpen: false,
+        isSelectAvailable: false,
+        isSelectChange: true,
     }
 };
 
 export const searchCounterReducer = (
-    state: TState = initialSearchCounterState,
-    action: TPropertiesActions | TElemsStateAction
+    state: TSearchCounterState = initialSearchCounterState,
+    action: TActions
 ) => {
     switch (action.type) {
         case searchCounterTypesActions.ADULTS:
             return {
                 ...state,
-                properties: {...state.properties, payload: action.payload}
+                properties: {...state.properties, ...action.payload}
             }
         case searchCounterTypesActions.CHILDREN:
             return {
                 ...state,
-                properties: {...state.properties, payload: action.payload}
+                properties: {...state.properties, ...action.payload}
             }
         case searchCounterTypesActions.ROOMS:
             return {
                 ...state,
-                properties: {...state.properties, payload: action.payload}
+                properties: {...state.properties, ...action.payload}
             }
-        case elemsStateTypeAction.ELEMS_STATES:
+        case searchCounterTypesActions.ELEMS_STATES:
             return {
                 ...state,
-                states:  {...state.states, payload: action.payload}
+                states:  {...state.states, ...action.payload}
             }
         default:
             return state;

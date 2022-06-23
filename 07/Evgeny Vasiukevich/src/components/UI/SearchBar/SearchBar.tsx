@@ -1,22 +1,42 @@
-import { FormEvent, useContext } from 'react';
-import { SearchContext } from '../../../context/SearchContext/SearchContext';
+import { ChangeEvent, FormEvent, RefObject, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import ApiService from '../../../API/ApiService';
+import { actionGetAllHotels } from '../../../redux/Hotels/actions';
 import Button from '../Buttons/Button';
 import Datepicker from '../Inputs/Datepicker/Datepicker';
-import SearchInput from '../Inputs/SearchInput';
+import SearchInput from '../Inputs/SearchInput/SearchInput';
 import SearchCounter from '../SearchCounter/SearchCounter';
 import { StyledForm } from './styles';
 
-const SearchBar = () => {
-    const { handleRender } = useContext(SearchContext);
+type Props = {
+    scrollRef: RefObject<HTMLDivElement>,
+}
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
+const SearchBar = ({ scrollRef }: Props) => {
+    const dispatch = useDispatch();
+    const [searchValue, setSearchValue] = useState('');
+    const searchRef = useRef<HTMLInputElement>(null);
+
+    async function fetchAllHotels(value: string = '') {
+        const response = await ApiService.getHotels(value);
+        dispatch(actionGetAllHotels(response.data));
+    };
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        fetchAllHotels(searchRef?.current?.value);
+        setSearchValue('');
+        scrollRef?.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => setSearchValue(event.target.value);
 
     return (
         <StyledForm className='form-search' onSubmit={handleSubmit}>
-            <SearchInput />
+            <SearchInput searchRef={searchRef} searchValue={searchValue} handleChange={handleChange} />
             <Datepicker/>
             <SearchCounter/>
-            <Button onClick={handleRender}>Search</Button>
+            <Button>Search</Button>
         </StyledForm>
     );
 };

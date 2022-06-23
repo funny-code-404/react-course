@@ -1,6 +1,6 @@
 import { LegacyRef } from 'react';
 import { useSelector } from 'react-redux';
-import { initalState } from '../../../store/store';
+import { searchCounterPropertiesSelector, searchCounterStatesSelector } from '../../../redux/searchCounter/selectors';
 import ChooseAgeChildren from './ChooseAgeChildren';
 import RowCounter from './RowCounter';
 import { StyledModalCounter } from './styles';
@@ -11,9 +11,10 @@ type Props = {
 }
 
 const ModalCounter = ({selectRef, selectChange}: Props) => {
-    const { properties, states } = useSelector((state: initalState) => state.searchCounter);
-    const { payload: { agesChildren }} = properties;
-    const { payload: { isSelectAvailable, isSelectChange }} = states;
+    const properties = useSelector(searchCounterPropertiesSelector);
+    const states = useSelector(searchCounterStatesSelector);
+    const { agesChildren } = properties;
+    const { isSelectAvailable, isSelectChange } = states;
 
     return (
         <StyledModalCounter className='modal-counter'>

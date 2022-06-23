@@ -17,7 +17,10 @@ const ButtonChangesCounter = ({ operation, operationFunc, disabled, isSelectChan
         compareOperation ? 
         <button 
             className='decrement' 
-            onClick={() => operationFunc()} 
+            onClick={(e) => {
+                e.preventDefault();
+                operationFunc();
+            }} 
             disabled={!disabled} >
             <img 
                 src={disabled ? 
@@ -28,7 +31,10 @@ const ButtonChangesCounter = ({ operation, operationFunc, disabled, isSelectChan
         </button>
         : <button 
             className='increment' 
-            onClick={() => operationFunc()} 
+            onClick={(e) => {
+                e.preventDefault();
+                operationFunc();
+            }} 
             disabled={!disabled || !(isSelectChange ?? true)} >
             <img 
                 src={disabled && (isSelectChange ?? true) ? 

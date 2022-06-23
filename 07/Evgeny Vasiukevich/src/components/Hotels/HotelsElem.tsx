@@ -1,12 +1,12 @@
-import React, { LegacyRef, memo } from 'react';
+import { memo, RefObject } from 'react';
 import { THotel } from '../../types/types';
 import NotFound from '../UI/NotFound';
 import HotelCard from './HotelCard';
-import { Hotels, StyledTitleNotFound } from './styles';
+import { Hotels } from './styles';
 
 type Props = {
-    searchRef?: LegacyRef<HTMLDivElement>,
-    hotels: THotel[],
+    searchRef?: RefObject<HTMLDivElement>,
+    hotels: THotel[] | null,
     title: string,
 };
 
@@ -16,7 +16,7 @@ const HotelsElem = memo(({searchRef, hotels, title}: Props) => {
             <div ref={searchRef} className='container hotels__container'>
                 <h2 className='hotels__title'>{title}</h2>
                 <div className='hotels__items'>
-                    {hotels.length 
+                    {hotels?.length 
                         ? hotels.map((hotel: THotel) => <HotelCard key={hotel.id} hotel={hotel}/>) 
                         : <NotFound title='No hotels found...'/>
                     }

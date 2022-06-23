@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useChangePropertiesCounter } from '../../../hooks/useChangePropertiesCounter';
-import { initalState } from '../../../store/store';
+import { searchCounterPropertiesSelector } from '../../../redux/searchCounter/selectors';
 import { TCounter } from '../../../types/types';
 import { getCapitalLetter, getComparisonCounter } from '../../../utils/utils';
 import ButtonChangesCounter from '../Buttons/ButtonChangesCounter';
@@ -13,11 +13,10 @@ type Props = {
 }
 
 const RowCounter = memo(({ title, isSelectChange }: Props) => {
-    const { properties } = useSelector((state: initalState) => state.searchCounter);
-    const { payload } = properties;
+    const properties = useSelector(searchCounterPropertiesSelector);
     const { onDecrease, onIncrease } = useChangePropertiesCounter();
-    const comparisonDecreaseCounter = getComparisonCounter(title, 'decrease', payload[title]);
-    const comparisonIncreaseCounter = getComparisonCounter(title, 'increase', payload[title]);
+    const comparisonDecreaseCounter = getComparisonCounter(title, 'decrease', properties[title]);
+    const comparisonIncreaseCounter = getComparisonCounter(title, 'increase', properties[title]);
 
     return (
         <StyledRowCounter>
@@ -27,7 +26,7 @@ const RowCounter = memo(({ title, isSelectChange }: Props) => {
                 operationFunc={onDecrease[title]}
                 disabled={comparisonDecreaseCounter}
             />
-            <p className='count'>{payload[title]}</p>
+            <p className='count'>{properties[title]}</p>
             <ButtonChangesCounter 
                 operation='increase'
                 operationFunc={onIncrease[title]}

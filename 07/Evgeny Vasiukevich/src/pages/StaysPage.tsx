@@ -1,13 +1,15 @@
+import { useRef } from 'react';
 import HomePage from '../components/HomePage/HomePage';
 import HotelsBlock from '../components/Hotels/HotelsBlock';
-import { SearchContextProvider } from '../context/SearchContext/SearchContextProvider';
 
 function StaysPage() {
+  const searchScrollRef = useRef<HTMLDivElement>(null);
+
   return (
-    <SearchContextProvider>
-      <HomePage />
-      <HotelsBlock />
-    </SearchContextProvider>
+    <>
+      <HomePage scrollRef={searchScrollRef} />
+      <HotelsBlock scrollRef={searchScrollRef} />
+    </>
   );
 }
 
