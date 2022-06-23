@@ -1,0 +1,88 @@
+.header {
+    background:  center/cover no-repeat url(../images/bg-homepage.jpg);
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 59px;
+        color: #FFFFFF;
+        margin-left: 70px;
+    }
+
+    &__form-text {
+        display: flex;
+        justify-content: center;
+        max-width: 760px;
+    }
+
+    &__text {
+        flex-grow: 1;
+        text-align: left;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn-google {
+        margin: 10px;
+    }
+
+    &__btn-app {
+        margin: 10px;
+    }
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    height: 64px;
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    line-height: 21px;
+    color: #383838;
+    margin-top: 15px;
+    &__input {
+        background: #FFFFFF;
+        border: 3px solid #F3F3F4;
+        border-radius: 8px;
+        width: 470px;
+        padding-left: 15px;
+    }
+
+    &__date {
+        background: #FFFFFF;
+        border: 3px solid #F3F3F4;
+        border-radius: 8px;
+        width: 259px;
+        padding-left: 15px;
+    }
+
+    &__ticket {
+        background: #FFFFFF;
+        border: 3px solid #F3F3F4;
+        border-radius: 8px;
+        width: 313px;
+        padding-left: 15px;
+    }
+
+    &__btn {
+        color: #FFFFFF;
+        background: #3077C6;
+        border-radius: 8px;
+        width: 192px;
+    }
+}
