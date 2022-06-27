@@ -1,0 +1,73 @@
+.hotel-title {
+    padding-top: 100px;
+    padding-bottom: 20px;
+
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #383838;
+}
+
+.search {
+    display: flex;
+    flex-direction: column; 
+
+    margin-left: 70px;
+
+    &__input{
+        box-sizing: border-box;
+        font-size: 20px;
+        width: 500px;
+        height: 64px;
+        margin-left: 32%;
+        background: #FFFFFF;
+        border: 3px solid #F3F3F4;
+        border-radius: 8px;
+    }
+
+    &__ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-left: 50px;
+    }
+    
+    &__li {
+    text-align: center;
+    line-height: 1.6;
+    display: inline-block;
+    list-style: none;
+    border: 30px;
+    }
+
+}
+
+img {
+    margin: 20px;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #3077C6;
+}
+
+p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #BFBFBF;
+} 
+
