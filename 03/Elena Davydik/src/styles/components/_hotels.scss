@@ -1,0 +1,90 @@
+.hotels {
+    background: $main-background-color;
+
+    &__content {
+        display: grid;
+        align-self: center;
+        grid-template-rows: inherit;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 16px;
+
+        overflow: hidden;
+
+        @include xl {
+            grid-template-columns: repeat(3, 1fr); 
+        }
+        @include md {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+}
+
+.hotel {
+    max-width: 296px;
+    width: 100%;
+    max-height: 436px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        width: auto;
+    }
+
+    @include xs {
+        max-width: 156px;
+        height: 193px;
+    }
+    
+    &__photo {
+        max-width: 100%;
+        width: auto;
+        max-height: 296px;
+        height: 100%;
+
+        overflow: hidden;
+
+        @include xs {
+            max-width: 156px;
+        }
+    }
+    
+    &__name {
+        margin: 24px 0;
+        @include font ($lg, $regular, $lg);
+        color: $accent-blue-color;
+
+        @include md {
+            margin: 16px 0;
+            @include font ($md, $regular, $md);
+        }
+
+        @include sm {
+            margin: 8px 0;
+            @include font ($mobile-xs, $regular, $mobile-xs);
+        }
+
+        @include xs {
+            margin: 8px 0 4px 0;
+            @include font ($xxxs, $regular, $xxxs);
+        }
+    }
+    
+    &__location {
+        @include font ($lg, $regular, $lg);
+        color: $secondary-text-color;
+
+        @include md {
+            @include font ($md, $regular, $md);
+        }
+
+        @include sm {
+            @include font ($mobile-xs, $regular, $mobile-xs)
+        }
+
+        @include xs {
+            @include font ($xxxs, $regular, $xxxs);
+        }
+    }
+}

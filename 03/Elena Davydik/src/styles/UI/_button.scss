@@ -1,0 +1,16 @@
+.button {
+    width: 192px;
+    height: 64px;
+    padding: 0;
+    @include font ($lg, $medium, $lg);
+    color: $general-white-color;
+    background: $accent-blue-color;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    @include sm {
+        width: 99px;
+        height: 48px;
+        @include font ($sm, $medium, $sm);
+    }
+}
