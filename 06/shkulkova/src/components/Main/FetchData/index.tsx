@@ -1,6 +1,4 @@
 
-// const url = "https://fe-student-api.herokuapp.com/api/hotels";
-
 export const fetchData = async (
   url: string,
   onSuccess: (data: any) => void,
