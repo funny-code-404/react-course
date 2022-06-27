@@ -20,6 +20,7 @@ function Hotels({ cards }: Props) {
         <ul className="slider__cards cards">
           {cards.map((card: Hotels) => (
             <Card
+              id={card.id}
               key={card.id}
               imageUrl={card.imageUrl}
               country={card.country}
