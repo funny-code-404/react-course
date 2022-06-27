@@ -1,0 +1,55 @@
+.nav_container {
+  background-color: $general-blue;
+  padding: 55px 10px;
+}
+
+.nav_block {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hotel_card {
+  padding: 50px 0;
+}
+
+.card_container {
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__image {
+  width: 600px;
+  height: 600px;
+}
+
+.card_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card__title {
+  font-family: $font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $fs-xl;
+  line-height: 36px;
+  line-height: 28px;
+  color: $accept-blue;
+}
+
+.card__subtitle {
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-lg;
+  line-height: 28px;
+  color: $secondary-text;
+}

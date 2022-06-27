@@ -1,0 +1,30 @@
+.header_nav {
+  padding: 51px 0 100px;
+  max-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_link {
+  margin-left: 24px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-lg;
+  line-height: 28px;
+  text-align: center;
+  color: $general-white;
+}
+
+.nav_switch {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 24px;
+  margin-left: 40px;
+}

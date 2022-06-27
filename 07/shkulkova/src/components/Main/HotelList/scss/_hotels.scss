@@ -1,0 +1,50 @@
+.main_available_hotels {
+  background: $bg-color;
+  padding-top: 120px;
+}
+
+.available_hotels_title {
+  margin-bottom: 70px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $fs-xxl;
+  line-height: 47px;
+  text-align: center;
+  color: $text-color;
+}
+
+.available_hotels_list {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  max-width: 1235px;
+  gap: 25px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.hotels_list_item_image {
+  width: 296px;
+  height: 296px;
+}
+
+.hotels_list_item_name {
+  margin: 25px 0;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $fs-lg;
+  line-height: 28px;
+  color: $accept-blue;
+}
+
+.hotels_list_item_location {
+padding-bottom: 115px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-lg;
+  line-height: 28px;
+  color: $secondary-text;
+}
