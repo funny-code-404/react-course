@@ -1,4 +1,4 @@
-const OfferSection = () => {
+const OfferSection = memo(() => {
     
   return (
     <main className="main">
@@ -41,6 +41,6 @@ const OfferSection = () => {
       </section>
     </main>
   );
-};
+});
 
 export default OfferSection;
