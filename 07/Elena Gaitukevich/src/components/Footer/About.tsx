@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { StyledList, StyledListItem } from "./index";
 import { config } from "./config";
 
-export const About = () => {
+export const About = memo(() => {
   return (
     <StyledList>
       <h5 className="list__title">{config.about.title}</h5>
@@ -12,4 +13,4 @@ export const About = () => {
       </div>
     </StyledList>
   );
-};
+};)

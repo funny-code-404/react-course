@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { StyledList, StyledListItem } from "./index";
 import { config } from "./config";
 
-export const Support = () => {
+export const Support = memo(() => {
   return (
     <StyledList>
       <h5 className="list__title">{config.support.title}</h5>
@@ -12,4 +13,4 @@ export const Support = () => {
       </div>
     </StyledList>
   );
-};
+};)
