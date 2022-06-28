@@ -1,14 +1,17 @@
 import { FilterPopupItem } from "./styles";
-import { memo, useState } from "react";
+import { memo, useState, useEffect, MouseEvent } from "react";
 import { useDispatch } from "react-redux";
 import { adultsFilterAction } from "../../../../redux/searchFormFilter/actions";
 
 export const Adults = memo(() => {
   const [countAdults, setCountAdults] = useState<number>(2);
   const dispatch = useDispatch();
-  dispatch(adultsFilterAction(countAdults));
 
-  const adultsHandleClickMinus = (event: any) => {
+  useEffect(() => {
+    dispatch(adultsFilterAction(countAdults));
+  }, [countAdults]);
+
+  const adultsHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countAdults > 0 && countAdults <= 30) {
       event.preventDefault();
       setCountAdults(countAdults - 1);
@@ -16,7 +19,7 @@ export const Adults = memo(() => {
     event.preventDefault();
   };
 
-  const adultsHandleClickPlus = (event: any) => {
+  const adultsHandleClickPlus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countAdults >= 0 && countAdults < 30) {
       event.preventDefault();
       setCountAdults(countAdults + 1);

@@ -12,7 +12,7 @@ export const urlSearchHotels =
 export const SearchHotelsContextProvider = ({ children }: Props) => {
   const [value, setValue] = useState<string>("");
   const [data, setData] = useState<THotel[]>([]);
-  const [url, setUrl] = useState<string>("");
+  const [url, setUrl] = useState<string>(urlSearchHotels);
   const [isClickedSearch, setClickedSearch] = useState<boolean>(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

@@ -1,14 +1,17 @@
 import { FilterPopupItem } from "./styles";
-import { memo, useState } from "react";
+import { memo, useState, useEffect, MouseEvent } from "react";
 import { useDispatch } from "react-redux";
 import { roomsFilterAction } from "../../../../redux/searchFormFilter/actions";
 
 export const Rooms = memo(() => {
   const [countRooms, setCountRooms] = useState<number>(1);
   const dispatch = useDispatch();
-  dispatch(roomsFilterAction(countRooms));
 
-  const roomsHandleClickMinus = (event: any) => {
+  useEffect(() => {
+    dispatch(roomsFilterAction(countRooms));
+  }, [countRooms]);
+
+  const roomsHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countRooms > 1 && countRooms <= 30) {
       event.preventDefault();
       setCountRooms(countRooms - 1);
@@ -16,7 +19,7 @@ export const Rooms = memo(() => {
     event.preventDefault();
   };
 
-  const roomsHandleClickPlus = (event: any) => {
+  const roomsHandleClickPlus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countRooms >= 1 && countRooms < 30) {
       event.preventDefault();
       setCountRooms(countRooms + 1);

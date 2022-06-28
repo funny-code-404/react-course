@@ -20,7 +20,6 @@ export const DatePickerBlock = () => {
         onChange={(update) => {
           setDateRange(update);
         }}
-        isClearable={true}
         monthsShown={2}
         className="datepicker"
         placeholderText="Check-in — Check-out"
@@ -61,6 +60,10 @@ const StyledDatePicker = styled.div`
 
   & .datepicker:focus {
     border: 3px solid ${LightTheme.colors.accentYellow};
+  }
+
+  .react-datepicker {
+    width: 484px;
   }
 
   & .react-datepicker-wrapper {

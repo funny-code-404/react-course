@@ -18,8 +18,9 @@ export function GetPopularHotels() {
             <StyledLink
               to="/hotel/${id}"
               state={{ id, name, city, country, imageUrl }}
+              key={id}
             >
-              <Hotel key={id} className="hotel">
+              <Hotel className="hotel">
                 <img
                   src={imageUrl}
                   alt={name}

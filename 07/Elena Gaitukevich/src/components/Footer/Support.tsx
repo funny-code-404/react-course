@@ -1,12 +1,14 @@
 import { StyledList, StyledListItem } from "./index";
+import { config } from "./config";
 
 export const Support = () => {
   return (
     <StyledList>
-      <h5 className="list__title">Support</h5>
+      <h5 className="list__title">{config.support.title}</h5>
       <div className="active">
-        <StyledListItem>Contact Customer Service</StyledListItem>
-        <StyledListItem>FAQ</StyledListItem>
+        {config.support.data.map((item) => (
+          <StyledListItem key={item}>{item}</StyledListItem>
+        ))}
       </div>
     </StyledList>
   );
