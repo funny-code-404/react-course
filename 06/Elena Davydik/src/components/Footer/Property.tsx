@@ -1,16 +1,14 @@
 import { StyledList, StyledListItem } from "./index";
+import { config } from "./config";
 
 export const Property = () => {
   return (
     <StyledList>
-      <h5 className="list__title">Property types</h5>
+      <h5 className="list__title">{config.property.title}</h5>
       <div className="active">
-        <StyledListItem>Guest houses</StyledListItem>
-        <StyledListItem>Hotels</StyledListItem>
-        <StyledListItem>Apartments</StyledListItem>
-        <StyledListItem>Villas</StyledListItem>
-        <StyledListItem>Holiday homes</StyledListItem>
-        <StyledListItem>Hostels</StyledListItem>
+        {config.property.data.map((item) => (
+          <StyledListItem key={item}>{item}</StyledListItem>
+        ))}
       </div>
     </StyledList>
   );

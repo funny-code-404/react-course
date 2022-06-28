@@ -4,6 +4,7 @@ import { getFont } from "../../styles/styled-components/mixins";
 import { About } from "./About";
 import { Property } from "./Property";
 import { Support } from "./Support";
+import { config } from "./config";
 
 export const Footer = () => {
   return (
@@ -13,9 +14,7 @@ export const Footer = () => {
         <Property />
         <Support />
       </FooterNav>
-      <License className="container">
-        © 2020 Triphouse, Inc. All rights reserved
-      </License>
+      <License className="container">{config.licenseTitle}</License>
     </StyledFooter>
   );
 };

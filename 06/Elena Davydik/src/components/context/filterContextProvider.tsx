@@ -1,5 +1,5 @@
 import { FilterContext } from "./filterContext";
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export const FilterContextProvider = ({ children }: Props) => {
   const [countChildren, setCountChildren] = useState<number>(0);
   const [countRooms, setCountRooms] = useState<number>(1);
 
-  const adultsHandleClickMinus = (event: any) => {
+  const adultsHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countAdults > 0 && countAdults <= 30) {
       event.preventDefault();
       setCountAdults(countAdults - 1);
@@ -18,7 +18,7 @@ export const FilterContextProvider = ({ children }: Props) => {
     event.preventDefault();
   };
 
-  const adultsHandleClickPlus = (event: any) => {
+  const adultsHandleClickPlus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countAdults >= 0 && countAdults < 30) {
       event.preventDefault();
       setCountAdults(countAdults + 1);
@@ -26,7 +26,7 @@ export const FilterContextProvider = ({ children }: Props) => {
     event.preventDefault();
   };
 
-  const childrenHandleClickMinus = (event: any) => {
+  const childrenHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countChildren > 0 && countChildren <= 30) {
       event.preventDefault();
       setCountChildren(countChildren - 1);
@@ -34,7 +34,7 @@ export const FilterContextProvider = ({ children }: Props) => {
     event.preventDefault();
   };
 
-  const childrenHandleClickPlus = (event: any) => {
+  const childrenHandleClickPlus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countChildren >= 0 && countChildren < 30) {
       event.preventDefault();
       setCountChildren(countChildren + 1);
@@ -42,7 +42,7 @@ export const FilterContextProvider = ({ children }: Props) => {
     event.preventDefault();
   };
 
-  const roomsHandleClickMinus = (event: any) => {
+  const roomsHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countRooms > 1 && countRooms <= 30) {
       event.preventDefault();
       setCountRooms(countRooms - 1);
@@ -50,7 +50,7 @@ export const FilterContextProvider = ({ children }: Props) => {
     event.preventDefault();
   };
 
-  const roomsHandleClickPlus = (event: any) => {
+  const roomsHandleClickPlus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countRooms >= 1 && countRooms < 30) {
       event.preventDefault();
       setCountRooms(countRooms + 1);
