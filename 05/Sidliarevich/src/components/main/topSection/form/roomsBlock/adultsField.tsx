@@ -1,13 +1,19 @@
-import {useContext} from "react";
+import {useContext, memo} from "react";
 import {DataContext} from "../../../../context/dataContext";
 import {config} from "../../../../config/locales/en";
+
 const {subtitles: {filterBoard: {adults}}} = config;
 
-export const AdultsField = () => {
-    const { adultsCounter, setAdultsCounter } = useContext(DataContext);
+export const AdultsField = memo(() => {
+    const {adultsCounter, setAdultsCounter} = useContext(DataContext);
 
-    const plusClick =() => {if (adultsCounter < 30) setAdultsCounter(adultsCounter + 1)};
-    const minusClick = () => {if (adultsCounter > 0 ) setAdultsCounter(adultsCounter - 1)};
+    const plusClick = () => {
+        if (adultsCounter < 30) setAdultsCounter(adultsCounter + 1)
+    };
+
+    const minusClick = () => {
+        if (adultsCounter > 0) setAdultsCounter(adultsCounter - 1)
+    };
 
     return <div className="filter-board__field">
         <p className="filter-board__name">{adults}</p>
@@ -15,4 +21,4 @@ export const AdultsField = () => {
         <p className="filter-board__counter">{adultsCounter}</p>
         <button className="filter-board__btn-add" onClick={plusClick} disabled={adultsCounter === 30}>+</button>
     </div>
-}
+})

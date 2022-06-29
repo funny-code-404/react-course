@@ -1,12 +1,13 @@
-import React from "react";
-import { ListOfHomes } from "./listOfHomes";
-import { Data } from "../../../data";
-import { config } from "../../config/locales/en";
-const { titles, texts } = config;
+import React, {memo} from "react";
+import {ListOfHomes} from "./listOfHomes";
+import {Data} from "../../../data";
+import {config} from "../../config/locales/en";
 
-type Props = { data:Data[] }
+const {titles, texts} = config;
 
-export const SearchHomes = ({data}:Props) => {
+type Props = { data: Data[] }
+
+export const SearchHomes = memo(({data}: Props) => {
 
     if (data?.length) {
         return (
@@ -27,4 +28,4 @@ export const SearchHomes = ({data}:Props) => {
         )
     }
 
-}
+})

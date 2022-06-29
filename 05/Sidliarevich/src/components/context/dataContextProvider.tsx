@@ -8,14 +8,14 @@ type Props = {
     children: ReactNode
 }
 
-export  const DataContextProvider = ({ children }:Props) => {
+export const DataContextProvider = ({children}: Props) => {
     const [data, setData] = useState<Data[]>([])
     const [value, setValue] = useState("");
     const [error, setError] = useState("")
 
     useEffect(() => {
         fetchData(buildUrl(value), setData, setError)
-    },[]);
+    }, []);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
@@ -25,7 +25,7 @@ export  const DataContextProvider = ({ children }:Props) => {
         }
     };
 
-    const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
         console.log("pererisovka")
     };

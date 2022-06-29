@@ -1,11 +1,11 @@
-import React from "react";
-import { Data } from "../../../data";
+import React, {memo} from "react";
+import {Data} from "../../../data";
 
 type Props = {
     homes: Data;
 }
 
-export const HomeItem = ({homes}: Props) => {
+export const HomeItem = memo(({homes}: Props) => {
     return (
         <div className="home">
             <img className="home__image" src={homes.imageUrl} alt=""/>
@@ -13,4 +13,4 @@ export const HomeItem = ({homes}: Props) => {
             <p className="home__location">{homes.city}, {homes.country}</p>
         </div>
     );
-};
+});

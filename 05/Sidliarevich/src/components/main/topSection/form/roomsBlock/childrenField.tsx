@@ -5,7 +5,7 @@ import {DataContext} from "../../../../context/dataContext";
 const {subtitles: {filterBoard: {children}}} = config;
 
 export const ChildrenField = () => {
-    const { childrenCounter, setChildrenCounter } = useContext(DataContext);
+    const {childrenCounter, setChildrenCounter} = useContext(DataContext);
 
     const plusClick =() => {if (childrenCounter < 10) setChildrenCounter(childrenCounter + 1)};
     const minusClick = () => {if (childrenCounter > 0 ) setChildrenCounter(childrenCounter - 1)};

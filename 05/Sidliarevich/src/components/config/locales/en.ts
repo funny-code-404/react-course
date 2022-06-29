@@ -1,5 +1,4 @@
-
-export const config ={
+export const config = {
     locale: "en,",
     titles: {
         topSection: "Discover stays to live, work or just relax",

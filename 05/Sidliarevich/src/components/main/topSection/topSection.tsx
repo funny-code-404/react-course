@@ -1,10 +1,11 @@
-import { Navigation } from "./navigation";
-import { SearchForm } from "./form/searchForm";
-import React from "react";
-import { config } from "../../config/locales/en"
-const { titles, subtitles: {topSection} } = config;
+import {Navigation} from "./navigation";
+import {SearchForm} from "./form/searchForm";
+import React, {memo} from "react";
+import {config} from "../../config/locales/en"
 
-export const TopSection = () => {
+const {titles, subtitles: {topSection}} = config;
+
+export const TopSection = memo(() => {
 
     // type Props ={
 //     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -15,13 +16,13 @@ export const TopSection = () => {
     return (
         <section className="top-section">
             <div className="container">
-                <Navigation />
+                <Navigation/>
                 <h2 className="top-section__title">{titles.topSection}</h2>
                 <div className="top-section__form-description">
                     <h4 className="top-section__description">{topSection.detination}</h4>
                     <h4 className="top-section__description">{topSection.date}</h4>
                 </div>
-                <SearchForm />
+                <SearchForm/>
                 <div className="top-section__buttons-block">
                     <button className="top-section__google-play-btn"></button>
                     <button className="top-section__app-store-btn"></button>
@@ -29,4 +30,4 @@ export const TopSection = () => {
             </div>
         </section>
     )
-}
+})

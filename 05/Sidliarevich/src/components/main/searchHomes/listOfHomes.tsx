@@ -1,11 +1,11 @@
 import React from "react";
-import { HomeItem } from "./homeItem";
+import {HomeItem} from "./homeItem";
 
 type Props = {
     children: React.ReactNode;
 }
 
-export const ListOfHomes = ({ children }:Props) => {
+export const ListOfHomes = ({children}: Props) => {
     return <div className="search-homes__content">{children}</div>
 }
 

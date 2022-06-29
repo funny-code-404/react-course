@@ -1,16 +1,15 @@
-import { TopSection } from "./topSection/topSection";
-import { SearchHomes } from "./searchHomes/searchHomes";
-import React, { memo, useContext } from "react";
-import { DataContext } from "../context/dataContext";
+import {TopSection} from "./topSection/topSection";
+import {SearchHomes} from "./searchHomes/searchHomes";
+import React, {memo, useContext} from "react";
+import {DataContext} from "../context/dataContext";
 
-export const
-    Main = memo(() => {
+export const Main = memo(() => {
 
-    const { data } = useContext(DataContext);
+    const {data} = useContext(DataContext);
 
-    return  <main>
-                <TopSection />
-                <SearchHomes data={data} />
-            </main>
+    return <main>
+        <TopSection/>
+        <SearchHomes data={data}/>
+    </main>
 })
 
