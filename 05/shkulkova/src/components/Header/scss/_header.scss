@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header_container {
+  max-width: 1223px;
+  margin: 0 auto;
+}
+
+.header {
+  background: url("/assets/background/bg-homepage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+}
+
+.header_nav {
+  padding: 51px 0 196px;
+  max-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_subtitle {
+  margin-left: 24px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-lg;
+  line-height: 28px;
+  text-align: center;
+  color: $general-white;
+}
+
+.nav_switch {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 24px;
+  margin-left: 40px;
+}
+
+.header_title {
+  max-width: 542px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 59px;
+  color: $general-white;
+  margin: 0 auto 100px 0;
+}
+
+.search_form_titles {
+  display: flex;
+  padding-bottom: 24px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 21px;
+  text-align: center;
+  color: $general-white;
+}
+.search_form_title_chekIn {
+  padding-left: 220px;
+}
+
+.header_search_form {
+  display: flex;
+  justify-content: center;
+  background-color: $bg-color;
+  border-radius: 8px;
+
+}
+
+.search_form_input {
+  height: 64px;
+  flex: 1;
+  max-width: 467px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 21px;
+  padding-left: 70px;
+
+  color: $text-color;
+  background: $general-white;
+  border: 3px solid $stroke-color;
+  border-radius: 8px;
+}
+
+.search_form_input:focus {
+  border: 3px solid $stroke-color;
+}
+
+.react-datepicker-wrapper {
+  max-width: 259px;
+  width: 100%;
+}
+
+.datepicker {
+  max-width: 259px;
+  width: 100%;
+  height: 64px;
+  font-family: $font;
+  text-align: center;
+  border-radius: 8px;
+  border: 3px solid $accept-yellow;
+}
+
+.datepicker:focus {
+  border: 3px solid $accept-yellow;
+}
+
+.search_form_button {
+  width: 192px;
+  height: 64px;
+  padding: 20px 57px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $fs-lg;
+  line-height: 28px;
+  text-align: center;
+
+  color: $general-white;
+  background: $accept-blue;
+  border: 0;
+  border-radius: 8px;
+}
+
+.header_download_block {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.download_google_play {
+  margin-right: 8px;
+  margin-bottom: 130px;
+}
+
+.download_app_store {
+  margin-left: 8px;
+  margin-bottom: 130px;
+}
+
+.params_container {
+  background-color: $stroke-color;
+  position: absolute;
+  padding: 10px;
+  min-width: 259px;
+  left: 57.5%;
+  top: 64%;
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.params_item {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.params_button {
+  max-width: 314px;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+  border: 3px solid $stroke-color;
+  border-radius: 8px;
+  font-family: $font;
+  font-style: normal;
+  color: $text-color;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 21px;
+}
+
+.nav_logo {
+  height: 40px;
+  width: 205px;
+}
+
+.nav_switch {
+  height: 30px;
+  width: 30px;
+}
+
+.nav_signin {
+  height: 40px;
+  width: 40px;
+}
+
+.params_item_title {
+  min-width: 80px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 19px;
+  color: $modal-color;
+}
+
+.params_item_btn {
+  padding: 4px 9px;
+  border: 1px solid $accept-blue;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 21px;
+  text-align: center;
+  color: $accept-blue;
+}
+
+.item_counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.params_item_number {
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs-md;
+  line-height: 19px;
+  color: $modal-color;
+}
