@@ -1,5 +1,5 @@
 import { TSearchBarState } from "../redux/searchBar/types";
-import { TInitialState } from "../store/store";
+import { TInitialState } from "../store/types";
 import { baseTheme } from "../styles/theme";
 
 // Function to get a fonts fragment

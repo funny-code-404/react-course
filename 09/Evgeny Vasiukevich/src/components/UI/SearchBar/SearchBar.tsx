@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useContext, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { RefsContext } from '../../../context/RefsContext';
-import { getAvailableHotels } from '../../../redux/hotels/middlewares';
+import { actionGetAvailableHotelsRequested } from '../../../redux/hotels/actions';
+import { actionSetSearch } from '../../../redux/searchBar/actions';
 import Button from '../Buttons/Button';
 import Datepicker from '../Inputs/Datepicker/Datepicker';
 import SearchInput from '../Inputs/SearchInput/SearchInput';
@@ -18,7 +19,8 @@ const SearchBar = () => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (previousSearchValue !== searchValue) {
-            dispatch(getAvailableHotels(searchValue) as any);
+            dispatch(actionSetSearch(searchValue));
+            dispatch(actionGetAvailableHotelsRequested());
             toAvailableHotelsRef?.current?.scrollIntoView({ behavior: 'smooth' });
         };
         

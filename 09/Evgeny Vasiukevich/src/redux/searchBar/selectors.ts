@@ -1,4 +1,4 @@
-import { TInitialState } from "../../store/store";
+import { TInitialState } from "../../store/types";
 
 export const searchBarSearchSelector = (state: TInitialState) => state.searchBar.search;
 export const searchBarDateRangeSelector = (state: TInitialState) => state.searchBar.dateRange;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAvailableHotels, getPopularHotels } from "../redux/hotels/middlewares";
+import { actionGetAvailableHotelsRequested, actionGetPopularHotelsRequested } from "../redux/hotels/actions";
 import { availableHotelsSucceedSelector, popularHotelsSucceedSelector } from "../redux/hotels/selectors";
 
 export const useRequestHotels = () => {
@@ -10,11 +10,11 @@ export const useRequestHotels = () => {
 
     useEffect(() => {
         if (availableHotels === null) {
-            dispatch(getAvailableHotels() as any)
+            dispatch(actionGetAvailableHotelsRequested());
         };
 
         if (popularHotels === null) {
-            dispatch(getPopularHotels() as any);
+            dispatch(actionGetPopularHotelsRequested());
         };
 
     }, [dispatch, availableHotels, popularHotels])

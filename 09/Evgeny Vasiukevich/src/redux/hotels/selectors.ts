@@ -1,4 +1,4 @@
-import { TInitialState } from "../../store/store";
+import { TInitialState } from "../../store/types";
 
 export const popularHotelsLoadingSelector = (state: TInitialState) => state.hotels.popularHotels.isLoading;
 export const popularHotelsSucceedSelector = (state: TInitialState) => state.hotels.popularHotels.hotels;

@@ -1,6 +1,8 @@
 import { THotel } from "../../types/types";
 import { HotelsTypesActions } from "./actions";
 
+export type TResponse = { data: THotel[] };
+
 // Types for hotels store
 export type THotelsActions = {
     type: HotelsTypesActions,

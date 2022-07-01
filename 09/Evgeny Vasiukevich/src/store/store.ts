@@ -1,23 +1,21 @@
+import createSagaMiddleware from '@redux-saga/core';
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import thunkMiddleware from 'redux-thunk';
-import logger from 'redux-logger'
-import { THotelsState } from "../redux/hotels/types";
-import { TSearchBarState } from "../redux/searchBar/types";
+import logger from 'redux-logger';
 import { initialState } from "./initialStore";
 import { reducer } from "./rootReducer";
+import { rootSaga } from "./rootSaga";
+import { TEnhancers } from "./types";
 
-export type TInitialState = {
-    searchBar: TSearchBarState,
-    hotels: THotelsState
-};
-
-const enhancers: any[] = [thunkMiddleware, logger]
+const sagaMiddleware = createSagaMiddleware();
+const enhancers: TEnhancers = [sagaMiddleware, logger];
 
 const store = createStore(
     reducer,
     initialState as any,
     composeWithDevTools(applyMiddleware(...enhancers))
 );
+
+sagaMiddleware.run(rootSaga);
 
 export default store;
