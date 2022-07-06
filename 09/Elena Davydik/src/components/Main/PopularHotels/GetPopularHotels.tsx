@@ -1,15 +1,12 @@
 import { StyledLink } from "../../../styles/styled-components/base";
 import { THotel } from "../../../redux/popularHotels/types";
 import { Hotels, Hotel } from "./styles";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { dataSelector } from "../../../redux/popularHotels/selectors";
 import { useEffect } from "react";
 import { getHotelsData } from "../../../redux/popularHotels/middlewares";
-
-const urlPopularHotels =
-  "https://fe-student-api.herokuapp.com/api/hotels/popular";
-const hotelsTitle = "Homes guests loves";
+import Slider from "react-slick";
+import { urlPopularHotels, hotelsTitle, settings } from "./config";
 
 export function GetPopularHotels() {
   const dispatch = useDispatch();
@@ -23,7 +20,7 @@ export function GetPopularHotels() {
     <Hotels className="hotels block">
       <div className="container">
         <h2 className="title">{hotelsTitle}</h2>
-        <ul className="hotels__content">
+        <Slider {...settings}>
           {data?.map(({ id, name, city, country, imageUrl }: THotel) => (
             <StyledLink
               to="/hotel/${id}"
@@ -43,7 +40,7 @@ export function GetPopularHotels() {
               </Hotel>
             </StyledLink>
           ))}
-        </ul>
+        </Slider>
       </div>
     </Hotels>
   );
