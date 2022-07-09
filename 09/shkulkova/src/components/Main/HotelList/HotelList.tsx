@@ -46,4 +46,3 @@ export function HotelsList() {
   );
 }
 
-// export default HotelsList;
