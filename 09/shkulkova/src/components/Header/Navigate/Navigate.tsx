@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navigate = () => {
   return (
     <div className="header_container">
-      {/* <Link to={"/hotels"}> */}
+      <Link to={"/hotels"}>
         <nav className="header_nav">
           <img className="nav_logo" src="/assets/icons/icon-logo.svg" alt="#" />
           <div className="nav_menu">
@@ -25,7 +25,7 @@ const Navigate = () => {
             </a>
           </div>
         </nav>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 };
