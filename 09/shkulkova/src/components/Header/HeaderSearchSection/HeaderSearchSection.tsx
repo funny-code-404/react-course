@@ -6,12 +6,6 @@ import Navigate from "../Navigate/Navigate";
 import { actionSetSearch } from "../../redux/headerSerchSection/actions";
 import { actionGetHotelsRequested } from "../../redux/availableHotels/actions";
 
-// type SearchSectionProps = {
-//   value: string;
-//   handleSubmit: (param: FormEvent<HTMLFormElement>) => void;
-//   handleChange: (param: ChangeEvent<HTMLInputElement>) => void;
-// };
-
 const SearchSection = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchPreviousValue, setSearchPreviousValue] = useState("");
