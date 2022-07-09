@@ -16,34 +16,6 @@ export type Hotel = {
 };
 
 export const HotelApp = () => {
-  // const [data, setData] = useState<Hotel[]>([]);
-  // const [error, setError] = useState("");
-  // const [value, setValue] = useState("");
-
-  // const buildUrl = (searchValue: string) => `${url}?search=${searchValue}`;
-
-  // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   setValue(event.target.value);
-  // };
-
-  // const prevValue = usePrevious(value);
-
-  // const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-
-  //   if (prevValue !== value) {
-  //     const passedUrl = buildUrl(value);
-
-  //     fetchData(passedUrl, setData, setError);
-  //     setValue("");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const passedUrl = buildUrl(value);
-
-  //   fetchData(passedUrl, setData, setError);
-  // }, []);
 
   return (
     <div>
