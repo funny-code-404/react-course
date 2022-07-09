@@ -9,8 +9,6 @@ export const initialSearchSectionState = {
     adults: 0,
    children: [],
   rooms: 1,
-    // isModalOpen: false,
-
 };
 
 export const SearchSectionReducer = (
