@@ -29,8 +29,3 @@ export const actionGetHotelsFailed = (error: HotelsPayloadError) => ({
   type: REQUEST_AVAILABLE_HOTELS_FAILED, 
   payload: error
 });
-
-// export const actionGetHotelsRequested = createAction(REQUEST_AVAILABLE_HOTELS);
-// export const actionGetHotelsSucceed = createAction(REQUEST_AVAILABLE_HOTELS_SUCCEED);
-// export const HotelsPayloadError = createAction(REQUEST_AVAILABLE_HOTELS_FAILED);
-// export const certainHotel = createAction(CERTAIN_HOTEL);
