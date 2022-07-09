@@ -7,7 +7,6 @@ export const fetchData = async (
   onError: (error: string) => void
 ) => {
   try {
-    // !!!!!!!!
     const response = await fetch(url);
     const res = await response.json();
 
