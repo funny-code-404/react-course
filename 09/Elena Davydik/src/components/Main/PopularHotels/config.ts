@@ -17,7 +17,7 @@ export const settings = {
     {
       breakpoint: 1200,
       settings: {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -27,7 +27,7 @@ export const settings = {
     {
       breakpoint: 768,
       settings: {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 2,

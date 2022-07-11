@@ -14,7 +14,6 @@ import {
   actionUrl,
   actionClearAvailableData,
 } from "../../../../redux/availableHotels/actions";
-import { getAvailableHotelsData } from "../../../../redux/availableHotels/middlewares";
 import {
   dateFromSelector,
   dateToSelector,
@@ -25,6 +24,7 @@ import {
   roomsSelector,
 } from "../../../../redux/searchFormFilter/selectors";
 import { getSearchParams } from "./getSearchParams";
+import { actionGetAvailableHotelsRequested } from "../../../../redux/availableHotels/actions";
 
 export const HotelsSearchFormList = () => {
   const dispatch = useDispatch();
@@ -38,8 +38,8 @@ export const HotelsSearchFormList = () => {
   const rooms = useSelector(roomsSelector);
 
   useEffect(() => {
-    isClicked && dispatch(getAvailableHotelsData(url) as any);
-  }, [url]);
+    isClicked && dispatch(actionGetAvailableHotelsRequested());
+  }, [url, isClicked, dispatch]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(actionInputValue(event.target.value));

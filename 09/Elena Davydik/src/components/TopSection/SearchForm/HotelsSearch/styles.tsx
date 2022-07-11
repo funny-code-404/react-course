@@ -70,11 +70,6 @@ export const SearchForm = styled.div`
       }
     }
 
-    /* & .searchForm__input:focus {
-      border: 3px solid ${LightTheme.colors.accentYellow};
-      border-radius: 8px;
-    } */
-
     & .searchForm__list {
       background: ${LightTheme.colors.generalWhite};
     }

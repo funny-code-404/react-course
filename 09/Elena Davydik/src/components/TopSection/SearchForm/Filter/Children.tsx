@@ -9,7 +9,7 @@ export const Children = memo(() => {
 
   useEffect(() => {
     dispatch(childrenFilterAction(countChildren));
-  }, [countChildren]);
+  }, [countChildren, dispatch]);
 
   const childrenHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countChildren > 0 && countChildren <= 30) {

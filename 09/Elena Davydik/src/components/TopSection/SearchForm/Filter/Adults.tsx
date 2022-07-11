@@ -9,7 +9,7 @@ export const Adults = memo(() => {
 
   useEffect(() => {
     dispatch(adultsFilterAction(countAdults));
-  }, [countAdults]);
+  }, [countAdults, dispatch]);
 
   const adultsHandleClickMinus = (event: MouseEvent<HTMLButtonElement>) => {
     if (countAdults > 0 && countAdults <= 30) {

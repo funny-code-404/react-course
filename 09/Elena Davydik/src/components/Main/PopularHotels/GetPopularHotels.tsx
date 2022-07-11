@@ -4,17 +4,17 @@ import { Hotels, Hotel } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { dataSelector } from "../../../redux/popularHotels/selectors";
 import { useEffect } from "react";
-import { getHotelsData } from "../../../redux/popularHotels/middlewares";
 import Slider from "react-slick";
-import { urlPopularHotels, hotelsTitle, settings } from "./config";
+import { hotelsTitle, settings } from "./config";
+import { actionGetHotelsRequested } from "../../../redux/popularHotels/actions";
 
 export function GetPopularHotels() {
   const dispatch = useDispatch();
   const data = useSelector(dataSelector);
 
   useEffect(() => {
-    dispatch(getHotelsData(urlPopularHotels) as any);
-  }, []);
+    data === null && dispatch(actionGetHotelsRequested());
+  }, [data]);
 
   return (
     <Hotels className="hotels block">

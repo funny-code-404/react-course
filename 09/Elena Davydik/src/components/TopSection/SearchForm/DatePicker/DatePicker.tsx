@@ -21,11 +21,11 @@ export const DatePickerBlock = () => {
 
   useEffect(() => {
     dispatch(actionDateFromPicker(startDate));
-  }, [startDate]);
+  }, [startDate, dispatch]);
 
   useEffect(() => {
     dispatch(actionDateToPicker(endDate));
-  }, [endDate]);
+  }, [endDate, dispatch]);
 
   return (
     <StyledDatePicker>
