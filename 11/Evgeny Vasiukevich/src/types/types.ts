@@ -47,3 +47,7 @@ export type TAvailableHotelsParams = {
     children: string,
     rooms: number,
 };
+
+export type TStorage = {
+    [key: string]: any,
+};

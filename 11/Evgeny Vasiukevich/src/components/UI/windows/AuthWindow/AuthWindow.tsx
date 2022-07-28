@@ -1,4 +1,6 @@
-import { ChangeEvent, memo, MouseEvent, useRef, useState } from 'react';
+import { ChangeEvent, memo, MouseEvent, useContext, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../context/AuthContext/AuthContext';
 import { auth } from '../../../../firebase';
 import { validateEmail } from '../../../../utils/utils';
 import SignInButton from '../../Buttons/SignInButton';
@@ -9,6 +11,8 @@ const AuthWindow = () => {
     const [errorMessage, seterrorMessage] = useState<string>('');
     const emailRef = useRef<HTMLInputElement | null>(null);
     const passwordRef = useRef<HTMLInputElement | null>(null);
+    const { setItem } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     function handleSubmit(event: MouseEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -16,7 +20,9 @@ const AuthWindow = () => {
         const password = passwordRef.current?.value ?? '';
 
         auth.signInWithEmailAndPassword(email, password)
-            .catch(error => seterrorMessage(error.message))
+            .then(() => setItem({isAuth: false}))
+            .catch(error => seterrorMessage(error.message));
+        navigate('/hotels');
     };
 
     function handleChangeEmail(event: ChangeEvent<HTMLInputElement>) {

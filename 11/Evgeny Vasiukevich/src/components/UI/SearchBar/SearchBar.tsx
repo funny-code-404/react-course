@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useContext, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { RefsContext } from '../../../context/RefsContext';
+import { RefsContext } from '../../../context/RefsContext/RefsContext';
 import { actionGetAvailableHotelsRequested } from '../../../redux/hotels/actions';
 import { actionSetSearch } from '../../../redux/searchBar/actions';
 import Button from '../Buttons/Button';

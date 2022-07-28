@@ -1,6 +1,6 @@
 import { memo, useContext } from 'react';
 import { useSelector } from 'react-redux';
-import { RefsContext } from '../../context/RefsContext';
+import { RefsContext } from '../../context/RefsContext/RefsContext';
 import { useRequestHotels } from '../../hooks/useRequestHotels';
 import { availableHotelsLoadingSelector, popularHotelsLoadingSelector } from '../../redux/hotels/selectors';
 import HotelsElem from './HotelsElem';
