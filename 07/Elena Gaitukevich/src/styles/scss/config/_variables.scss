@@ -1,0 +1,41 @@
+// ------ MEDIA QUERIS ------\\
+$screen-xs-min: 414px;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+// ------ COLORS ------\\
+$general-blue-color: #10367C;
+$accent-blue-color: #3077C6;
+$accent-yellow-color: #F5BD41;
+$darc-mode1-color: #121212;
+$darc-mode2-color: #1D1E1F;
+$darc-mode3-color: #4D4D4D;
+$main-stroke-color: #F3F3F4;
+$main-text-color: #383838;
+$general-white-color: #FFFFFF;
+$secondary-text-color: #BFBFBF;
+$main-background-color: #EAF0F9;
+
+// ------ TYPOGRAPHY ------\\
+// FONT SIZE LAPTOP
+$xxxs: 12px;
+$xxs: 14px;
+$xs: 16px;
+$sm: 18px;
+$md: 20px;
+$lg: 24px;
+$xl: 40px;
+$xxl: 50px;
+
+// FONT SIZE MOBILE
+$mobile-xs: 15px;
+$mobile-sm: 19px;
+$mobile-md: 28px;
+$mobile-lg: 30px;
+
+// FONT WEIGHT
+$regular: 400;
+$medium: 500;
+$bold: 700;
