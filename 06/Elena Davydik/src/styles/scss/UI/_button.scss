@@ -1,0 +1,33 @@
+.button {
+    max-width: 192px;
+    width: 100%;
+    height: 64px;
+    padding: 0 10px;
+
+    position: relative;
+    left: 3px;
+
+    @include font ($lg, $medium, $lg);
+    color: $general-white-color;
+
+    background: $accent-blue-color;
+    border: none;
+    border-radius: 8px;
+
+    @include lg {
+        max-width: 162px;
+        width: 100%;
+    }
+
+    @include md {
+        max-width: 132px;
+        width: 100%;
+    }
+    
+    @include sm {
+        width: 99px;
+        height: 42px;
+        
+        @include font ($sm, $medium, $sm);
+    }
+}
