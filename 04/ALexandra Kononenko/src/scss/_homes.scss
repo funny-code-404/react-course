@@ -1,0 +1,95 @@
+.homes {
+    background: #EAF0F9;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 47px;
+        color: #383838;
+        text-align: center;
+        margin: 100px 0;
+
+        @include media(md) {
+            margin: 65px 0;
+            font-size: 28px;
+            line-height: 33px;
+        }
+
+        @include media(xs) {
+            margin: 35px 0;
+        }
+    }
+
+    &__items {
+        margin: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.hotel {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    max-height: 435px;
+    margin: 16px;
+
+    &__name {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #3077C6;
+
+        margin-bottom: 24px;
+        text-align: start;
+
+        @include media(sm) {
+            margin-bottom: 12px;
+            font-size: 18px;
+            line-height:22px;;
+        }
+
+        @include media(xs) {
+            margin-bottom: 4px;
+            font-size: 15px;
+            line-height: 18px;
+        }
+    }
+
+    &__local{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #BFBFBF;
+        margin-bottom: 24px;
+        text-align: start;
+
+        @include media(sm) {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height:22px;;
+        }
+
+        @include media(xs) {
+            font-size: 15px;
+            line-height: 18px;
+        }
+    }
+
+    &__image {
+        max-width: 296px;
+        margin-bottom: 24px;
+
+        @include media(sm) {
+            max-width: 220px;
+            margin-bottom: 8px;
+        }
+
+        @include media(xs) {
+            max-width: 156px;
+        }
+    }
+}

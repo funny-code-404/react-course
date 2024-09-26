@@ -1,0 +1,42 @@
+.nav {
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        margin: 0, auto;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    &__words {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-right: 25px;
+    }
+
+    &__words:hover {
+        text-decoration: solid underline #F5BD41 4px;
+    }
+
+    &__button {
+        margin-left: 25px;
+    }
+}
