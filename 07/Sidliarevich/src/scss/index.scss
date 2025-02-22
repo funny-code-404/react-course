@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+// config
+@import "config/reset";
+@import "config/base";
+@import "config/variables";
+@import "config/mixins";
+
+// components
+@import "components/homes";
+@import "components/searchHomes";
+@import "components/topSection";
+@import "components/hotel";
+@import "components/preloader";
